@@ -24,41 +24,41 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
 1. From the lab virtual machine, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/).
 
-    ![Picture 1](../images/dp-3300-module-01-lab-01.png)
+    ![Picture 1](../images/dp-300-module-01-lab-01.png)
 
 1. In the Azure Portal, type subscription in the search bar at the top of the screen. Click on the **Subscriptions** icon. (You may need to log in first.)
 
-    ![Picture 2](../images/dp-3300-module-01-lab-02.png)
+    ![Picture 2](../images/dp-300-module-01-lab-02.png)
 
 1. On the **Subscriptions** blade, click on the subscription available. Review your Subscription name, subscription ID, and your role. (You may have a different subscription name)
 
-    ![Picture 3](../images/dp-3300-module-01-lab-03.png)
+    ![Picture 3](../images/dp-300-module-01-lab-03.png)
 
 1. Launch the left navigation pane by clicking the horizontal lines next to Microsoft Azure in the top left of the portal. Then select **All resources**. The **All resources** page will list all Azure resources within your selected subscriptions.
 
-    ![Picture 5](../images/dp-3300-module-01-lab-05.png)
+    ![Picture 5](../images/dp-300-module-01-lab-05.png)
 
 1. Select **Resource groups** in the left navigation. The **Resource groups** blade will list all Azure resource groups within your selected subscriptions.
 
-    ![Picture 6](../images/dp-3300-module-01-lab-06.png)
+    ![Picture 6](../images/dp-300-module-01-lab-06.png)
 
 1. On the **Resource groups** blade, review the **Location** property. (You may have a different location assigned)
 
-    ![Picture 7](../images/dp-3300-module-01-lab-07.png)
+    ![Picture 7](../images/dp-300-module-01-lab-07.png)
 
 1. Locate the search bar at the top of the page. Search for **Azure SQL**. Select the search result for **Azure SQL** that appears in the results under **Services**.
 
-    ![Picture 9](../images/dp-3300-module-01-lab-09.png)
+    ![Picture 9](../images/dp-300-module-01-lab-09.png)
 
 ## Provision a SQL Server on an Azure Virtual Machine
 
 1. On the **Azure SQL** blade, select **Create**.
 
-    ![Picture 10](../images/dp-3300-module-01-lab-10.png)
+    ![Picture 10](../images/dp-300-module-01-lab-10.png)
 
 1. On the **Select SQL deployment option** blade, click on the drop-down box under **SQL virtual machines**. Select the option labeled Free SQL Server License: SQL 2019 Developer on Windows Server 2019. Then select **Create**.
 
-    ![Picture 11](../images/dp-3300-module-01-lab-11.png)
+    ![Picture 11](../images/dp-300-module-01-lab-11.png)
 
 1. On the Create a virtual machine blade, enter the following information:
 
@@ -77,81 +77,81 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
     Make note of the username and password for later use.
 
-    ![Picture 12](../images/dp-3300-module-01-lab-12.png)
+    ![Picture 12](../images/dp-300-module-01-lab-12.png)
 
 1. Navigate to the Disks tab and review the configuration.
 
-    ![Picture 13](../images/dp-3300-module-01-lab-13.png)
+    ![Picture 13](../images/dp-300-module-01-lab-13.png)
 
 1. Navigate to the Networking tab and review the configuration.
 
-    ![Picture 14](../images/dp-3300-module-01-lab-14.png)
+    ![Picture 14](../images/dp-300-module-01-lab-14.png)
 
 1. Navigate to the Management tab and review the configuration.
 
-    ![Picture 15](../images/dp-3300-module-01-lab-15.png)
+    ![Picture 15](../images/dp-300-module-01-lab-15.png)
 
     Make sure that **Boot diagnostics** has the button for **Enable with managed storage account (recommended)** selected.
     Verify that **Enable auto_shutdown** is off.
 
 1. Navigate to the Advanced tab and review the configuration.
 
-    ![Picture 16](../images/dp-3300-module-01-lab-16.png)
+    ![Picture 16](../images/dp-300-module-01-lab-16.png)
 
 1. Navigate to the SQL Server settings tab and review the configuration.
 
-    ![Picture 17](../images/dp-3300-module-01-lab-17.png)
+    ![Picture 17](../images/dp-300-module-01-lab-17.png)
 
     Note—you can also configure the storage for your SQL Server VM on this screen. By default, the SQL Server Azure VM templates create one premium disk with read caching for data, one premium disk without caching for transaction log, and uses the local SSD (D:\ on Windows) for tempdb.
 
 1. Select the Review + create button. Then select the Create button.  
-    ![Picture 18](../images/dp-3300-module-01-lab-18.png)
+    ![Picture 18](../images/dp-300-module-01-lab-18.png)
 
 1. On the deployment blade, wait until the deployment is complete. The VM will take approximate 5-10 minutes to deploy. Then select the Go to resource button. 
 
-    ![Picture 19](../images/dp-3300-module-01-lab-19.png)
+    ![Picture 19](../images/dp-300-module-01-lab-19.png)
 
 1. On the overview page for the virtual machine, scroll through the menu options for the resource to review what is available.
 
-    ![Picture 20](../images/dp-3300-module-01-lab-20.png)
+    ![Picture 20](../images/dp-300-module-01-lab-20.png)
 
 ## Connect to SQL Server on an Azure Virtual Machine
 
 1. On the Overview page for the virtual machine, select the Connect button and choose RDP.
 
-    ![Picture 21](../images/dp-3300-module-01-lab-21.png)
+    ![Picture 21](../images/dp-300-module-01-lab-21.png)
 
 1. On the RDP tab, select the Download RDP File button.
 
-    ![Picture 22](../images/dp-3300-module-01-lab-22.png)
+    ![Picture 22](../images/dp-300-module-01-lab-22.png)
 
 1. Open the RDP file that was just downloaded. When a dialog appears asking if you want to connect, select the Connect button.
 
-    ![Picture 23](../images/dp-3300-module-01-lab-23.png)
+    ![Picture 23](../images/dp-300-module-01-lab-23.png)
 
 1. In the Windows Security dialog if you receive the PIN dialog, select More choices. Then choose Use a different account. If you don’t receive the PIN dialog, you can proceed to Step 5.
 
-    ![Picture 24](../images/dp-3300-module-01-lab-24.png)
+    ![Picture 24](../images/dp-300-module-01-lab-24.png)
 
 1. Enter the username and password selected during the virtual machine provisioning process. Then select the OK button.
 
-    ![Picture 25](../images/dp-3300-module-01-lab-25.png)
+    ![Picture 25](../images/dp-300-module-01-lab-25.png)
 
 1. When the Remote Desktop Connection dialog appears asking if you want to connect, select the Yes button.
 
-    ![Picture 26](../images/dp-3300-module-01-lab-26.png)
+    ![Picture 26](../images/dp-300-module-01-lab-26.png)
 
 1. A Remote Desktop window will open. On the right, select the No button to indicate you do not want the computer to be discoverable by other devices on the network. Close the small Server Manager popup dialog by clicking the X in the top right of the box. Keep the big Server Manager Window open.
 
-    ![Picture 27](../images/dp-3300-module-01-lab-27.png)
+    ![Picture 27](../images/dp-300-module-01-lab-27.png)
 
 1. In the Server Manager window, select Local Server on the left and then select On next to IE Enhanced Security Configuration.
 
-    ![Picture 28](../images/dp-3300-module-01-lab-28.png)
+    ![Picture 28](../images/dp-300-module-01-lab-28.png)
 
 1. When the Internet Explorer Enhanced Security Configuration dialog appears, set Administrators to Off. Then select the OK button.
 
-    ![Picture 29](../images/dp-3300-module-01-lab-29.png)
+    ![Picture 29](../images/dp-300-module-01-lab-29.png)
 
 The Azure portal gives you powerful tools to manage a SQL Server hosted in a virtual machine. These tools include control over automated patching, automated backups, and giving you an easy way to setup high availability.
 
