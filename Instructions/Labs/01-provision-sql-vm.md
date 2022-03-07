@@ -1,7 +1,7 @@
 ---
 lab:
     title: 'Lab 1 - Provision SQL Server on an Azure Virtual Machine'
-    module: 'Deploy IaaS resources for Azure SQL'
+    module: 'Deploy IaaS resources with Azure SQL'
 ---
 
 # Provision a SQL Server on an Azure Virtual Machine
