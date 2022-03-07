@@ -153,6 +153,14 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
     ![Picture 29](../images/dp-300-module-01-lab-29.png)
 
+1. Select the Windows Start button and type SSMS. Select **Microsoft SQL Server Management Studio 18** from the list.  
+
+    ![Picture 34](../images/dp-300-module-01-lab-34.png)
+
+1. When Management Studio opens, the Connect to Server dialog will be pre-populated to the local machine. Select the Connect button. 
+
+    ![Picture 35](../images/dp-300-module-01-lab-35.png)
+
 The Azure portal gives you powerful tools to manage a SQL Server hosted in a virtual machine. These tools include control over automated patching, automated backups, and giving you an easy way to setup high availability.
 
 To finish this exercise select **Done** below.
