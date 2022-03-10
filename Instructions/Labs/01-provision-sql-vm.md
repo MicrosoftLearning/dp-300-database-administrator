@@ -52,7 +52,7 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
     - **Subscription:** &lt;Your subscription&gt;
     - **Resource group:** starting with *contoso-rg*
-    - **Virtual machine name:**  azureSQLserverVM
+    - **Virtual machine name:**  azureSQLServerVM
     - **Region:** &lt;your local region, same as the selected region for your resource group&gt;
     - **Availability Options:** No infrastructure redundancy required
     - **Image:** Free SQL Server License: SQL 2019 Developer on Windows Server 2019 - Gen1
@@ -90,12 +90,13 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
     ![Picture 17](../images/dp-300-module-01-lab-17.png)
 
-    Note—you can also configure the storage for your SQL Server VM on this screen. By default, the SQL Server Azure VM templates create one premium disk with read caching for data, one premium disk without caching for transaction log, and uses the local SSD (D:\ on Windows) for tempdb.
+    **Note —** you can also configure the storage for your SQL Server VM on this screen. By default, the SQL Server Azure VM templates create one premium disk with read caching for data, one premium disk without caching for transaction log, and uses the local SSD (D:\ on Windows) for tempdb.
 
-1. Select the Review + create button. Then select the Create button.  
+1. Select the **Review + create** button. Then select **Create**.
+
     ![Picture 18](../images/dp-300-module-01-lab-18.png)
 
-1. On the deployment blade, wait until the deployment is complete. The VM will take approximate 5-10 minutes to deploy. Then select the Go to resource button.
+1. On the deployment blade, wait until the deployment is complete. The VM will take approximate 5-10 minutes to deploy. After the deployment is complete, select  **Go to resource**.
 
     ![Picture 19](../images/dp-300-module-01-lab-19.png)
 
@@ -113,39 +114,23 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
     ![Picture 22](../images/dp-300-module-01-lab-22.png)
 
-1. Open the RDP file that was just downloaded. When a dialog appears asking if you want to connect, select the Connect button.
+1. Open the RDP file that was just downloaded. When a dialog appears asking if you want to connect, select **Connect**.
 
     ![Picture 23](../images/dp-300-module-01-lab-23.png)
 
-1. In the Windows Security dialog if you receive the PIN dialog, select More choices. Then choose Use a different account. If you don’t receive the PIN dialog, you can proceed to Step 5.
+1. Enter the username and password selected during the virtual machine provisioning process. Then select **OK**.
 
     ![Picture 24](../images/dp-300-module-01-lab-24.png)
 
-1. Enter the username and password selected during the virtual machine provisioning process. Then select the OK button.
-
-    ![Picture 25](../images/dp-300-module-01-lab-25.png)
-
-1. When the Remote Desktop Connection dialog appears asking if you want to connect, select the Yes button.
+1. When the Remote Desktop Connection dialog appears asking if you want to connect, select **Yes**.
 
     ![Picture 26](../images/dp-300-module-01-lab-26.png)
-
-1. A Remote Desktop window will open. On the right, select the No button to indicate you do not want the computer to be discoverable by other devices on the network. Close the small Server Manager popup dialog by clicking the X in the top right of the box. Keep the big Server Manager Window open.
-
-    ![Picture 27](../images/dp-300-module-01-lab-27.png)
-
-1. In the Server Manager window, select Local Server on the left and then select On next to IE Enhanced Security Configuration.
-
-    ![Picture 28](../images/dp-300-module-01-lab-28.png)
-
-1. When the Internet Explorer Enhanced Security Configuration dialog appears, set Administrators to Off. Then select the OK button.
-
-    ![Picture 29](../images/dp-300-module-01-lab-29.png)
 
 1. Select the Windows Start button and type SSMS. Select **Microsoft SQL Server Management Studio 18** from the list.  
 
     ![Picture 34](../images/dp-300-module-01-lab-34.png)
 
-1. When Management Studio opens, the Connect to Server dialog will be pre-populated to the local machine. Select the Connect button. 
+1. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name. Select **Connect**.
 
     ![Picture 35](../images/dp-300-module-01-lab-35.png)
 
