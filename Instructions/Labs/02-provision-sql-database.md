@@ -94,112 +94,98 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
     - **Name:** DP-300-SQL-Endpoint
     - **Target sub-resource:** SqlServer
     - **Virtual network:** lab02-vnet
-    - **Subnet:** default (10.x.0.0/24)
-    - The Private DNS integration options can remain at the default
+    - **Subnet:** lab02-vnet/default (10.x.0.0/24)
+    - **Integrate with private DNS zone:** Yes
+    - **Private DNS zone:** keep the default value
     - Review settings, and then click **OK**  
 
-	![Picture 21](../images/dp-300-module-02-lab-16.png)
+    ![Picture 10](../images/dp-300-module-02-lab-16.png)
 
-10. Confirm the endpoint appears on the Networking page. 
+1. The new endpoint will appear on the **Private endpoints** list.
 
-	![Picture 22](../images/dp-300-module-02-lab-17.png)
+    ![Picture 11](../images/dp-300-module-02-lab-17.png)
 
-11. Click the **Next: Security** button, and then **Next: Additional settings** button.  
+1. Click **Next: Security**, and then **Next: Additional settings**.  
 
-12. On the Additional Settings page, select the following options:
+1. On the **Additional settings** page, select **Sample** on the **Use existing data** option:
 
-	- Set Use existing data to **Sample**
+    ![Picture 12](../images/dp-300-module-02-lab-18.png)
 
-	![Picture 23](../images/dp-300-module-02-lab-18.png)
+1. Click **Review + Create**.
 
-13. Click **Review + Create**
+1. Review the settings before clicking **Create**.
 
-14. Review the settings before clicking **Create**
+1. Once the deployment is complete, click **Go to resource**.
 
-15. Once the deployment is complete, click the **Go to resource** button  
+## Enable access to an Azure SQL Database
 
+1. From the **SQL database** page, click on the link for the server name in the top section:
 
-## Task 2: Enable All Azure Services access to new SQL Server
+    ![Picture 13](../images/dp-300-module-02-lab-19.png)
 
-1. From the SQL Database blade, click on the link for the Server name in the top section  
+1. On the SQL servers navigation blade, click **Firewalls and virtual networks** under **Security**
 
-	![Picture 3](../images/dp-300-module-02-lab-19.png)
+    ![Picture 14](../images/dp-300-module-02-lab-20.png)
 
-2. On the SQL Server object’s navigation blade, click **Firewalls and virtual networks** under **Security**
+1. Set **Allow Azure services and resources to access this server** to **Yes**, and then click **Save**.
 
-	![Picture 27](../images/dp-300-module-02-lab-20.png)
+    ![Picture 15](../images/dp-300-module-02-lab-21.png)
 
-3. Set **Allow Azure services and resources to access this server** to **Yes**  
+## Connect to an Azure SQL Database in Azure Data Studio
 
-	![Picture 6](../images/dp-300-module-02-lab-21.png)
+1. Launch Azure Data Studio from the lab virtual machine.
 
-4. Click **Save**, and then click **OK** on the Success message pane.
+    - You may see this pop-up at initial launch of Azure Data Studio. If you receive it, click **Yes (recommended)**  
 
-# Exercise 3: Connect to Azure SQL Database
+        ![Picture 16](../images/dp-300-module-02-lab-22.png)
 
-## Task 1: Register Azure SQL Database Instance in Azure Data Studio
+1. When Azure Data Studio opens, click the **New** button in Azure Data Studio’s welcome page, then **New connection**.
 
-1. Launch Azure Data Studio (ADS) from the lab VM
+    ![Picture 17](../images/dp-300-module-02-lab-25.png)
 
-	- You may see this pop-up at initial launch of Azure Data Studio. If you receive it, click **Yes**  
-![Picture 24](../images/dp-300-module-02-lab-22.png)
+1. In the **Connection** sidebar, fill out the **Connection Details** section with connection information to connect to the SQL database created previously.
 
-2. When Azure Data Studio opens, click the **Connections** button in Azure Data Studio’s left sidebar, then the **Add Connection** button
-	
-	![Picture 30](../images/dp-300-module-02-lab-25.png)
+    - Connection Type: **Microsoft SQL Server**
+    - Server: Enter the name of the SQL Server created previously. For example: **dp300-lab-xxx.database.windows.net**.	[Note that you were asked to create a server name with your initials, instead of ‘xxx’]
+    - Authentication Type: **SQL Login**
+    - User name: **dp300admin**
+    - Password: **dp300P@ssword!**
+    - Expand the Database drop-down to select **AdventureWorksLT.** 
+	    - **NOTE:** You may be asked to add a firewall rule that allows your client IP access to this server. If you are asked to add a firewall rule, click on **Add account** and login to your Azure account. On **Create new firewall rule** screen, click **OK**.
 
-3. In the **Connections** sidebar, fill out the Connection Details section with connection information to connect to the SQL database created in the previous Exercise
+        ![Picture 18](../images/dp-300-module-02-lab-26.png)
 
-	- Connection Type: **Microsoft SQL Server**
-
-	- Server: Enter the name of the SQL Server created in Exercise 2, Task 1. For example: **dp300-lab-xx.database.windows.net**  
-	[Note that you were asked to create a server name with your initials, instead of ‘xx’]
-
-	- Authentication Type: **SQL Login**
-
-	- User name: **dp300admin**
-
-	- Password: **dp300P@ssword!**
-
-	- Expand the Database drop-down to select **AdventureWorksLT.** 
-	    - **NOTE:** You may be asked to add a firewall rule that allows your client IP access to this server. If you are asked to add a firewall rule, click on **Add account** and login to your Azure account. On Create new firewall screen rule screen, click **OK**.
-		
-	    ![Picture 10](../images/dp-300-module-02-lab-26.png)
-	    
     Back on the Connection sidebar, continue filling out the connection details:  
-	
-	- Server group will remain on **&lt;default&gt;**
 
-	- Name (optional) can be populated with a friendly name of the database, if desired
+    - Server group will remain on **&lt;default&gt;**
+    - Name (optional) can be populated with a friendly name of the database, if desired
+    - Review settings and click **Connect**  
 
-	- Review settings and click **Connect**  
+    ![Picture 19](../images/dp-300-module-02-lab-27.png)
 
-	![A screenshot of a cell phone Description automatically generated](../images/dp-300-module-02-lab-27.png)
+1. Azure Data Studio will connect to the database, and show some basic information about the database, plus a partial list of objects.
 
-4. Azure Data Studio will connect to the database and show some basic information about the database, plus a partial list of objects  
+    ![Picture 20](../images/dp-300-module-02-lab-28.png)
 
-	![A screenshot of a cell phone Description automatically generated](../images/dp-300-module-02-lab-28.png)
+## Query an Azure SQL Database with a SQL Notebook
 
-## Task 2: Query Azure SQL Database with a SQL Notebook
+1. In Azure Data Studio, connected to this lab’s AdventureWorksLT database, click the **New Notebook** button.
 
-1. In Azure Data Studio, connected to this lab’s AdventureWorksLT database, click the **New Notebook** button  
+    ![Picture 21](../images/dp-300-module-02-lab-29.png)
 
-	![Picture 13](../images/dp-300-module-02-lab-29.png)
+1. Click the **+Text** button to add a new text box in the notebook  
 
-2. Click the **+Text** button to add a new text box in the notebook  
-
-	![Picture 14](../images/dp-300-module-02-lab-30.png)
-
+    ![Picture 22](../images/dp-300-module-02-lab-30.png)
 
 **Note:** Within the notebook you can embed plain text to explain queries or result sets.
 
-3. Enter the text **Top Ten Customers by Order SubTotal**, making it Bold if desired  
+1. Enter the text **Top Ten Customers by Order SubTotal**, making it Bold if desired  
 
-	![A screenshot of a cell phone Description automatically generated](../images/dp-300-module-02-lab-31.png)
+    ![A screenshot of a cell phone Description automatically generated](../images/dp-300-module-02-lab-31.png)
 
-4. Click the **+ Code** button to add a new cell at the end of the notebook to put a query in  
+1. Click the **+ Code** button to add a new cell at the end of the notebook to put a query in  
 
-	![Picture 16](../images/dp-300-module-02-lab-32.png)
+    ![Picture 16](../images/dp-300-module-02-lab-32.png)
 
 5. Paste the following SQL statement into the new cell
 

@@ -37,4 +37,11 @@ Ideally, you should complete these labs in a hosted lab environment. If you want
 ### SQL Server Management Studio
 
 1. Download and install from [https://aka.ms/ssmsfullsetup].
+
+    - Use the default options in the installer.
+
+### Azure Data Studio
+
+1. Download and install from [https://docs.microsoft.com/sql/azure-data-studio/download-azure-data-studio].
+
     - Use the default options in the installer.
