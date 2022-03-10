@@ -8,15 +8,7 @@ lab:
 
 **Estimated Time: 30 minutes**
 
-Students will explore the Azure Portal and use it to create an Azure VM with SQL Server 2019 installed. Then they will connect to the virtual machine through Remote Desktop Protocol and restore a database using SQL Server Management Studio.
-
-The students will:
-
-- Interact with the Azure portal
-
-- Create a SQL Server Virtual Machine
-
-- Use SQL Server Management Studio to restore a database
+Students will explore the Azure Portal and use it to create an Azure VM with SQL Server 2019 installed. Then they will connect to the virtual machine through Remote Desktop Protocol.
 
 You are a database administrator for AdventureWorks. You need to create a test environment for use in a proof of concept. The proof of concept will use SQL Server on an Azure Virtual Machine and a backup of the AdventureWorksDW database. You need to set up the Virtual Machine, restore the database, and query it to ensure it is available.
 
@@ -34,15 +26,11 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
     ![Picture 3](../images/dp-300-module-01-lab-03.png)
 
-1. Launch the left navigation pane by clicking the horizontal lines next to Microsoft Azure in the top left of the portal. Then select **All resources**. The **All resources** page will list all Azure resources within your selected subscriptions.
-
-    ![Picture 5](../images/dp-300-module-01-lab-05.png)
-
 1. Select **Resource groups** in the left navigation. The **Resource groups** blade will list all Azure resource groups within your selected subscriptions.
 
     ![Picture 6](../images/dp-300-module-01-lab-06.png)
 
-1. On the **Resource groups** blade, review the **Location** property. (You may have a different location assigned)
+1. Select the resource group name starting with **contoso-rg** in the list. On the **Resource groups** blade, review the **Location** property. (You may have a different location assigned)
 
     ![Picture 7](../images/dp-300-module-01-lab-07.png)
 
@@ -56,24 +44,24 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
     ![Picture 10](../images/dp-300-module-01-lab-10.png)
 
-1. On the **Select SQL deployment option** blade, click on the drop-down box under **SQL virtual machines**. Select the option labeled Free SQL Server License: SQL 2019 Developer on Windows Server 2019. Then select **Create**.
+1. On the **Select SQL deployment option** blade, click on the drop-down box under **SQL virtual machines**. Select the option labeled **Free SQL Server License: SQL 2019 Developer on Windows Server 2019**. Then select **Create**.
 
     ![Picture 11](../images/dp-300-module-01-lab-11.png)
 
-1. On the Create a virtual machine blade, enter the following information:
+1. On the **Create a virtual machine** page, enter the following information:
 
-    - Subscription: **&lt;Your subscription&gt;**
-    - Resource group: **DP-300-Lab01**
-    - Virtual machine name:  **dp300sqlvmlab01**
-    - Region: **&lt;your local region, same as the selected region for your resource group&gt;**
-    - Availability Options: **No infrastructure redundancy required**
-    - Image: **Free SQL Server License: SQL 2019 Developer on Windows Server 2019 - Gen1**
-    - Azure spot instance: **No**
-    - Size: Standard **D2s_v3** (2 vCPUs, 8 GiB memory; you may need to select the "See all sizes" link to see this option)
-    - Administrator account username: **dp300sqlvmlab01admin**
-    - Administrator account password: **pwd!DP300lab01** (or your own password that meets the criteria)
-    - Select inbound ports: **RDP (3389)**
-    - Would you like to use an existing Windows Server license?: **No**
+    - **Subscription:** &lt;Your subscription&gt;
+    - **Resource group:** starting with *contoso-rg*
+    - **Virtual machine name:**  dp300sqlvmlab01
+    - **Region:** &lt;your local region, same as the selected region for your resource group&gt;
+    - **Availability Options:** No infrastructure redundancy required
+    - **Image:** Free SQL Server License: SQL 2019 Developer on Windows Server 2019 - Gen1
+    - **Azure spot instance:** No (unchecked)
+    - **Size:** Standard *D2s_v3* (2 vCPUs, 8 GiB memory). You may need to select the "See all sizes" link to see this option)
+    - **Administrator account username:** dp300sqlvmlab01admin
+    - **Administrator account password:** pwd!DP300lab01 (or your own password that meets the criteria)
+    - **Select inbound ports:** RDP (3389)
+    - **Would you like to use an existing Windows Server license?:** No (unchecked)
 
     Make note of the username and password for later use.
 
@@ -92,7 +80,7 @@ You are a database administrator for AdventureWorks. You need to create a test e
     ![Picture 15](../images/dp-300-module-01-lab-15.png)
 
     Make sure that **Boot diagnostics** has the button for **Enable with managed storage account (recommended)** selected.
-    Verify that **Enable auto_shutdown** is off.
+    Verify that **Enable auto_shutdown** is unchecked.
 
 1. Navigate to the Advanced tab and review the configuration.
 
@@ -107,7 +95,7 @@ You are a database administrator for AdventureWorks. You need to create a test e
 1. Select the Review + create button. Then select the Create button.  
     ![Picture 18](../images/dp-300-module-01-lab-18.png)
 
-1. On the deployment blade, wait until the deployment is complete. The VM will take approximate 5-10 minutes to deploy. Then select the Go to resource button. 
+1. On the deployment blade, wait until the deployment is complete. The VM will take approximate 5-10 minutes to deploy. Then select the Go to resource button.
 
     ![Picture 19](../images/dp-300-module-01-lab-19.png)
 
