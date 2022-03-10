@@ -52,7 +52,7 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
     - **Subscription:** &lt;Your subscription&gt;
     - **Resource group:** starting with *contoso-rg*
-    - **Virtual machine name:**  dp300sqlvmlab01
+    - **Virtual machine name:**  azureSQLserverVM
     - **Region:** &lt;your local region, same as the selected region for your resource group&gt;
     - **Availability Options:** No infrastructure redundancy required
     - **Image:** Free SQL Server License: SQL 2019 Developer on Windows Server 2019 - Gen1
