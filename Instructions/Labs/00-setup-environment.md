@@ -28,7 +28,7 @@ Ideally, you should complete these labs in a hosted lab environment. If you want
 
     - Use the default options in the installer.
 
-### Visual Studio Code (and extensions)
+### Visual Studio Code
 
 1. Download and install from [code.visualstudio.com/download].
 
