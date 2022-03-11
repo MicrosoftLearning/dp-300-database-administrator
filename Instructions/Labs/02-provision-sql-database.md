@@ -39,7 +39,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
         ![Picture 4](../images/dp-300-module-02-lab-07.png)
 
     - In the **Edit subnet** pane on the right, expand the **Services** drop-down, and select **Microsoft.Sql**. Select **Save**.
-    - Click the **Review + Create** button, review the settings for the new virtual network, and then click **Create**
+    - Click the **Review + Create** button, review the settings for the new virtual network, and then click **Create**.
 
 ## Provision an Azure SQL Database
 
@@ -47,11 +47,11 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
     ![Picture 5](../images/dp-300-module-02-lab-09.png)
 
-1. Search for “SQL databases” in the search box at the top, then click **SQL Databases** from the list of options.
+1. Search for “SQL databases” in the search box at the top, then click **SQL databases** from the list of options.
 
     ![Picture 6](../images/dp-300-module-02-lab-10.png)
 
-1. Click the **Create** button
+1. Click the **Create** button.
 
 1. On the **Create SQL Database** page, select the following options on the **Basics** tab and then click **Next: Networking**.
 
@@ -139,7 +139,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
         ![Picture 16](../images/dp-300-module-02-lab-22.png)
 
-1. When Azure Data Studio opens, click the **New** button in Azure Data Studio’s welcome page, then **New connection**.
+1. When Azure Data Studio opens, click the **Connections** button in top left corner, and then **Add Connection**.
 
     ![Picture 17](../images/dp-300-module-02-lab-25.png)
 
@@ -173,65 +173,59 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
     ![Picture 21](../images/dp-300-module-02-lab-29.png)
 
-1. Click the **+Text** button to add a new text box in the notebook  
+1. Click the **+Text** link to add a new text box in the notebook  
 
     ![Picture 22](../images/dp-300-module-02-lab-30.png)
 
 **Note:** Within the notebook you can embed plain text to explain queries or result sets.
 
-1. Enter the text **Top Ten Customers by Order SubTotal**, making it Bold if desired  
+1. Enter the text **Top Ten Customers by Order SubTotal**, making it Bold if desired.
 
     ![A screenshot of a cell phone Description automatically generated](../images/dp-300-module-02-lab-31.png)
 
-1. Click the **+ Code** button to add a new cell at the end of the notebook to put a query in  
+1. Click the **+ Cell** button, then **Code cell** to add a new code cell at the end of the notebook.  
 
-    ![Picture 16](../images/dp-300-module-02-lab-32.png)
+    ![Picture 23](../images/dp-300-module-02-lab-32.png)
 
-5. Paste the following SQL statement into the new cell
+5. Paste the following SQL statement into the new cell:
 
 ```sql
-select top 10 cust.[CustomerID], cust.[CompanyName], sum(sohead.[SubTotal]) as OverallOrderSubTotal
-
-  from [SalesLT].[Customer] cust
-
-    inner join [SalesLT].[SalesOrderHeader] sohead
-
-        on sohead.[CustomerID] = cust.[CustomerID]
-
-   group by cust.[CustomerID], cust.[CompanyName]
-
-   order by [OverallOrderSubTotal] desc
+SELECT TOP 10 cust.[CustomerID], 
+    cust.[CompanyName], 
+    SUM(sohead.[SubTotal]) as OverallOrderSubTotal
+FROM [SalesLT].[Customer] cust
+    INNER JOIN [SalesLT].[SalesOrderHeader] sohead
+         ON sohead.[CustomerID] = cust.[CustomerID]
+GROUP BY cust.[CustomerID], cust.[CompanyName]
+ORDER BY [OverallOrderSubTotal] DESC
    ```
 
-6. Click on the blue circle with the arrow to execute the query. Note how the results are included within the cell with the query.
+1. Click on the blue circle with the arrow to execute the query. Note how the results are included within the cell with the query.
 
-7. Click the **+ Text** button to add a new text cell.
+1. Click the **+ Text** button to add a new text cell.
 
-8. Enter the text **Top Ten Ordered Product Categories**, making it Bold if desired
+1. Enter the text **Top Ten Ordered Product Categories**, making it Bold if desired.
 
-9. Click the **+ Code** button again to add a new cell, and paste the following SQL statement into the cell
+1. Click the **+ Code** button again to add a new cell, and paste the following SQL statement into the cell:
 
 ```sql
-select top 10 cat.[Name] as ProductCategory, sum(detail.[OrderQty]) as OrderedQuantity
-
-	from salesLT.[ProductCategory] cat
-
-	   inner join saleslt.[Product] prod
-      
-	      on prod.[ProductCategoryID] = cat.[ProductCategoryID]
-
-	   inner join salesLT.[SalesOrderDetail] detail
-
-	      on detail.[ProductID] = prod.[ProductID]
-
-	group by cat.[name]
-
-	order by [OrderedQuantity] desc
+SELECT TOP 10 cat.[Name] AS ProductCategory, 
+    SUM(detail.[OrderQty]) AS OrderedQuantity
+FROM salesLT.[ProductCategory] cat
+   INNER JOIN [SalesLT].[Product] prod
+      ON prod.[ProductCategoryID] = cat.[ProductCategoryID]
+   INNER JOIN [SalesLT].[SalesOrderDetail] detail
+      ON detail.[ProductID] = prod.[ProductID]
+GROUP BY cat.[name]
+ORDER BY [OrderedQuantity] DESC
 ```
-10.  Click on the blue circle with the arrow to execute the query 
 
-11. To run all cells in the notebook and present results, click the **Run Cells** button in the toolbar  
+1. Click on the blue circle with the arrow to execute the query.
+
+1. To run all cells in the notebook and present results, click the **Run all** button in the toolbar.
 
 	![Picture 17](../images/dp-300-module-02-lab-33.png)
 
-12. Within Azure Data Studio save the notebook from File menu (either Save or Save As) to the D:\Labfiles\Deploy Azure SQL Database (this folder already exists on the VM) directory. Close the tab for the Notebook from inside of Azure Data Studio. From the File Menu, select Open File, and open the notebook you just saved. Observe that query results were saved along with the queries in the notebook.
+1. Within Azure Data Studio save the notebook from File menu (either Save or Save As) to the D:\Labfiles\Deploy Azure SQL Database location (create the folder structure if it does not exist).
+
+1. Close the tab for the Notebook from inside of Azure Data Studio. From the File Menu, select Open File, and open the notebook you just saved. Observe that query results were saved along with the queries in the notebook.
