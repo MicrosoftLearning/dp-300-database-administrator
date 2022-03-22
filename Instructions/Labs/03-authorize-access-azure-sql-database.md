@@ -20,7 +20,7 @@ You've been hired as a Senior Database Administrator to help ensure the security
 
     ![Screenshot of the Azure portal home page, selecting All resources](../images/dp-300-module-03-lab-01.png)
 
-1. Select the Azure SQL Database server **azuresql-lab-xxxxxx**, where **xxxxxx** is a random string, and select **Not Configured** next to **Active Directory Admin**.
+1. Select the Azure SQL Database server **dp300-lab-xxxxxx**, where **xxxxxx** is a random string, and select **Not Configured** next to **Active Directory Admin**.
 
     ![Screenshot selecting Not Configured](../images/dp-300-module-03-lab-02.png)
 
@@ -28,9 +28,7 @@ You've been hired as a Senior Database Administrator to help ensure the security
 
     ![Screenshot selecting Set admin](../images/dp-300-module-03-lab-03.png)
 
-1. In the **Set admin** screen, search for the Azure username you logged into the Azure portal with.
-
-    When you have found it, select the username, and then select the **Select** button. You will be returned to the above **Active Directory Admin** screen.
+1. In the **Azure Active Directory** sidebar, search for the Azure username you logged into the Azure portal with, then click on **Select**.
 
 1. Select **Save** to complete the process. This will make your username the Azure Active Directory admin for the server as shown below.
 
@@ -44,7 +42,7 @@ You've been hired as a Senior Database Administrator to help ensure the security
 
     ![Screenshot of the Connect to server dialog](../images/dp-300-module-03-lab-06.png)
 
-    In the **User name** select the Azure **Username** from the **Resources** tab.
+    For the **User name** field, select the Azure **Username** from the **Resources** tab.
 
 1. Select **Connect**.
 
@@ -54,17 +52,16 @@ You've been hired as a Senior Database Administrator to help ensure the security
 
 ## Manage access to database objects
 
-In this task you will manage access to the database and its objects. The first thing you will do is create two users in the *AdventureWorks* database.
+In this task you will manage access to the database and its objects. The first thing you will do is create two users in the *AdventureWorksLT* database.
 
 1. Use the **Object Explorer** and expand **Databases**.
 1. Right-click on **AdventureWorksLT**, and select **New Query**.
 
     ![Screenshot of the new query menu option](../images/dp-300-module-03-lab-08.png)
 
-1.  In the new query window and copy and paste the below T-SQL into it. Execute the query to create the two users.
+1. In the new query window, copy and paste the below T-SQL into it. Execute the query to create the two users.
 
     ```sql
-
     CREATE USER [DP300User1] WITH PASSWORD = 'Azur3Pa$$';
     GO
 
@@ -72,9 +69,9 @@ In this task you will manage access to the database and its objects. The first t
     GO
     ```
 
-    Note these users are created in the scope of the AdventureWorksLT database. Next you will create a custom role and add the users to it.
+    **Note:** These users are created in the scope of the AdventureWorksLT database. Next you will create a custom role and add the users to it.
 
-1. Execute the following T-SQL in the same query window as in step 1.
+1. Execute the following T-SQL in the same query window.
 
     ```sql
     CREATE ROLE [SalesReader];
@@ -103,7 +100,7 @@ In this task you will manage access to the database and its objects. The first t
     GO
     ```
 
-    Next use the **EXECUTE AS USER** syntax to test out the security. This allows the database engine to execute a query in the context of your user.
+    Next use the `EXECUTE AS USER` syntax to test out the security. This allows the database engine to execute a query in the context of your user.
 
 1. Execute the following T-SQL.
 
@@ -136,5 +133,3 @@ In this task you will manage access to the database and its objects. The first t
     ![Screenshot showing the returned rows of data from the stored procedure](../images/dp-300-module-03-lab-10.png)
 
 In this exercise you've seen how you can use Azure Active Directory to grant Azure credentials  access to a SQL Server hosted in Azure. You've also used T-SQL statement to create new database users and granted them permissions to run stored procedures.
-
-To finish this exercise select **Continue** below.
