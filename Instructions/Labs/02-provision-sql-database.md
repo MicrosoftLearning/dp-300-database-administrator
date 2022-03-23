@@ -14,13 +14,17 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
 ## Create a Virtual Network
 
-1. From the lab virtual machine, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/). Connect to the Portal using the Azure **Username** and **Password** provided on **Resources** tab. 
+1. From the lab virtual machine, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/). Connect to the Portal using the Azure **Username** and **Password** provided on the **Resources** tab for this lab virtual machine.
 
     ![Picture 1](../images/dp-300-module-01-lab-01.png)
 
+1. In the Azure portal home page, select the left hand menu.  
+
+    ![Picture 2](../images/dp-300-module-02-lab-01_1.png)
+
 1. In the left navigation pane, click **Virtual Networks**  
 
-    ![Picture 1](../images/dp-300-module-02-lab-04.png)
+    ![Picture 3](../images/dp-300-module-02-lab-04.png)
 
 1. Click **+ Create** to open the **Create Virtual Network** page. On the **Basics** tab, complete the following information:
 
@@ -37,7 +41,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
 1. Configure the virtual network’s IP range for the Azure SQL database endpoint as follow:
 
-    - On the IP Addresses tab, leave the defaults for the IPv4 address.
+    - On the **IP Addresses** tab, leave the defaults for the IPv4 address.
     - Click on the **default** subnet link. Note that the Subnet address range you see might be different.
 
         ![Picture 4](../images/dp-300-module-02-lab-07.png)
@@ -47,15 +51,13 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
 ## Provision an Azure SQL Database
 
-1. From the Azure Portal, click on **+ Create a Resource** at the top of the left side navigation bar.
+1. From the Azure Portal, search for “SQL databases” in the search box at the top, then click **SQL databases** from the list of options.
 
-    ![Picture 5](../images/dp-300-module-02-lab-09.png)
+    ![Picture 5](../images/dp-300-module-02-lab-10.png)
 
-1. Search for “SQL databases” in the search box at the top, then click **SQL databases** from the list of options.
+1. On the **SQL databases** blade, select **+ Create**.
 
-    ![Picture 6](../images/dp-300-module-02-lab-10.png)
-
-1. Click the **Create** button.
+    ![Picture 6](../images/dp-300-module-02-lab-10_1.png)
 
 1. On the **Create SQL Database** page, select the following options on the **Basics** tab and then click **Next: Networking**.
 
@@ -76,7 +78,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
     -  Back to the **Create SQL Database** page, make sure **Want to use Elastic Pool?** is set to **No**.
     -  On the **Compute + Storage** option, click on **Configure database** link. On the **Configure** page, for **Service tier** dropdown, select **Basic**, and then **Apply**.
 
-**Note: Make note of this server name, and your login information. You will use it in subsequent labs.**
+    **Note:** Make note of this server name, and your login information. You will use it in subsequent labs.
 
 1. For the **Backup storage redundancy** option, keep the default value: **Geo-redundant backup storage**.
 
