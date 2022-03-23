@@ -135,5 +135,3 @@ You are a database administrator for AdventureWorks. You need to create a test e
     ![Picture 35](../images/dp-300-module-01-lab-35.png)
 
 The Azure portal gives you powerful tools to manage a SQL Server hosted in a virtual machine. These tools include control over automated patching, automated backups, and giving you an easy way to setup high availability.
-
-To finish this exercise select **Done** below.

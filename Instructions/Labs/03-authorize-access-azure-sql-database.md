@@ -136,4 +136,4 @@ In this task you will manage access to the database and its objects. The first t
 
     ![Screenshot showing the returned rows of data from the stored procedure](../images/dp-300-module-03-lab-10.png)
 
-In this exercise you've seen how you can use Azure Active Directory to grant Azure credentials  access to a SQL Server hosted in Azure. You've also used T-SQL statement to create new database users and granted them permissions to run stored procedures.
+In this exercise, you've seen how you can use Azure Active Directory to grant Azure credentials  access to a SQL Server hosted in Azure. You've also used T-SQL statement to create new database users and granted them permissions to run stored procedures.
