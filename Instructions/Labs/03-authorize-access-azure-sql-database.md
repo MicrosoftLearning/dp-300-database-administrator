@@ -16,6 +16,10 @@ You've been hired as a Senior Database Administrator to help ensure the security
 
 ## Authorize access to Azure SQL Database with Azure Active Directory
 
+1. From the lab virtual machine, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/). Connect to the Portal using the Azure **Username** and **Password** provided on **Resources** tab.
+
+    ![Picture 1](../images/dp-300-module-01-lab-01.png)
+
 1. On the Azure portal home page select **All resources**.
 
     ![Screenshot of the Azure portal home page, selecting All resources](../images/dp-300-module-03-lab-01.png)

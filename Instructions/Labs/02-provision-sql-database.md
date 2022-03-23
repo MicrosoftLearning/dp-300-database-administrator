@@ -14,6 +14,10 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
 ## Create a Virtual Network
 
+1. From the lab virtual machine, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/). Connect to the Portal using the Azure **Username** and **Password** provided on **Resources** tab. 
+
+    ![Picture 1](../images/dp-300-module-01-lab-01.png)
+
 1. In the left navigation pane, click **Virtual Networks**  
 
     ![Picture 1](../images/dp-300-module-02-lab-04.png)

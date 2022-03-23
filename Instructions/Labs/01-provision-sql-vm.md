@@ -14,31 +14,31 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
 ## Explore the Azure Portal
 
-1. From the lab virtual machine, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/).
+1. From the lab virtual machine, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/). Connect to the Portal using the Azure **Username** and **Password** provided on **Resources** tab.
 
     ![Picture 1](../images/dp-300-module-01-lab-01.png)
 
-1. In the Azure Portal, type subscription in the search bar at the top of the screen. Click on the **Subscriptions** icon. (You may need to log in first.)
+1. In the Azure Portal home page, select **Resource groups** icon located in the middle of the page.
 
     ![Picture 2](../images/dp-300-module-01-lab-02.png)
 
-1. On the **Subscriptions** blade, click on the subscription available. Review your Subscription name, subscription ID, and your role. (You may have a different subscription name)
+1. On the **Resource groups** blade, click on the resource group available. Your resource group name should start with **contoso-rg**.
 
     ![Picture 3](../images/dp-300-module-01-lab-03.png)
 
-1. Select **Resource groups** in the left navigation. The **Resource groups** blade will list all Azure resource groups within your selected subscriptions.
+    **Note:** The **Resource groups** blade will list all Azure resource groups within your  subscriptions.
+
+1. On the **Resource group** page, review your resource group name, subscription name, and the location assigned. (You may have a different location assigned)
 
     ![Picture 6](../images/dp-300-module-01-lab-06.png)
 
-1. Select the resource group name starting with **contoso-rg** in the list. On the **Resource groups** blade, review the **Location** property. (You may have a different location assigned)
+    At this point you were able to explore the Azure Portal and check some of the properties of your resource group. Next, we will provision a SQL Server on an Azure Virtual Machine.
 
-    ![Picture 7](../images/dp-300-module-01-lab-07.png)
+## Provision a SQL Server on an Azure Virtual Machine
 
 1. Locate the search bar at the top of the page. Search for **Azure SQL**. Select the search result for **Azure SQL** that appears in the results under **Services**.
 
     ![Picture 9](../images/dp-300-module-01-lab-09.png)
-
-## Provision a SQL Server on an Azure Virtual Machine
 
 1. On the **Azure SQL** blade, select **Create**.
 
@@ -57,7 +57,7 @@ You are a database administrator for AdventureWorks. You need to create a test e
     - **Availability Options:** No infrastructure redundancy required
     - **Image:** Free SQL Server License: SQL 2019 Developer on Windows Server 2019 - Gen1
     - **Azure spot instance:** No (unchecked)
-    - **Size:** Standard *D2s_v3* (2 vCPUs, 8 GiB memory). You may need to select the "See all sizes" link to see this option)
+    - **Size:** Standard *D2s_v2* (2 vCPUs, 8 GiB memory). You may need to select the "See all sizes" link to see this option)
     - **Administrator account username:** dp300sqlvmlab01admin
     - **Administrator account password:** pwd!DP300lab01 (or your own password that meets the criteria)
     - **Select inbound ports:** RDP (3389)
@@ -67,26 +67,26 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
     ![Picture 12](../images/dp-300-module-01-lab-12.png)
 
-1. Navigate to the Disks tab and review the configuration.
+1. Navigate to the **Disks** tab and review the configuration.
 
     ![Picture 13](../images/dp-300-module-01-lab-13.png)
 
-1. Navigate to the Networking tab and review the configuration.
+1. Navigate to the **Networking** tab and review the configuration.
 
     ![Picture 14](../images/dp-300-module-01-lab-14.png)
 
-1. Navigate to the Management tab and review the configuration.
+1. Navigate to the **Management** tab and review the configuration.
 
     ![Picture 15](../images/dp-300-module-01-lab-15.png)
 
     Make sure that **Boot diagnostics** has the button for **Enable with managed storage account (recommended)** selected.
     Verify that **Enable auto_shutdown** is unchecked.
 
-1. Navigate to the Advanced tab and review the configuration.
+1. Navigate to the **Advanced** tab and review the configuration.
 
     ![Picture 16](../images/dp-300-module-01-lab-16.png)
 
-1. Navigate to the SQL Server settings tab and review the configuration.
+1. Navigate to the **SQL Server settings** tab and review the configuration.
 
     ![Picture 17](../images/dp-300-module-01-lab-17.png)
 
@@ -100,17 +100,17 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
     ![Picture 19](../images/dp-300-module-01-lab-19.png)
 
-1. On the overview page for the virtual machine, scroll through the menu options for the resource to review what is available.
+1. On the **Overview** page for the virtual machine, explore the menu options for this resource to review what is available.
 
     ![Picture 20](../images/dp-300-module-01-lab-20.png)
 
 ## Connect to SQL Server on an Azure Virtual Machine
 
-1. On the Overview page for the virtual machine, select the Connect button and choose RDP.
+1. On the **Overview** page for the virtual machine, select the **Connect** button and choose RDP.
 
     ![Picture 21](../images/dp-300-module-01-lab-21.png)
 
-1. On the RDP tab, select the Download RDP File button.
+1. On the RDP tab, select the **Download RDP File** button.
 
     ![Picture 22](../images/dp-300-module-01-lab-22.png)
 
@@ -122,7 +122,7 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
     ![Picture 24](../images/dp-300-module-01-lab-24.png)
 
-1. When the Remote Desktop Connection dialog appears asking if you want to connect, select **Yes**.
+1. When the **Remote Desktop Connection** dialog appears asking if you want to connect, select **Yes**.
 
     ![Picture 26](../images/dp-300-module-01-lab-26.png)
 
