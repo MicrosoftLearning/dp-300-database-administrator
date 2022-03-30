@@ -66,7 +66,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
     - **Database Name:** AdventureWorksLT
     - **Server:** click on **Create new** link. The **Create SQL Database Server** page will open. Provide the server details as follow:
         - **Server name:** dp300-lab-&lt;your initials (lower case)&gt; (server name must be globally unique)
-        - **Location:** &lt;your local region, same as the selected region for your resource group&gt;
+        - **Location:** &lt;your local region, same as the selected region for your resource group, otherwise it may fail&gt;
         - **Server admin login:** dp300admin
         - **Password:** dp300P@ssword!
         - **Confirm password:** dp300P@ssword!
@@ -96,7 +96,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
     - **Subscription:** &lt;Your subscription&gt;
     - **Resource group:** starting with *contoso-rg*
-    - **Location:** &lt;your local region, same as the selected region for your resource group&gt;
+    - **Location:** &lt;your local region, same as the selected region for your resource group, otherwise it may fail&gt;
     - **Name:** DP-300-SQL-Endpoint
     - **Target sub-resource:** SqlServer
     - **Virtual network:** lab02-vnet
@@ -232,7 +232,7 @@ ORDER BY [OrderedQuantity] DESC
 
 	![Picture 17](../images/dp-300-module-02-lab-33.png)
 
-1. Within Azure Data Studio save the notebook from File menu (either Save or Save As) to the D:\Labfiles\Deploy Azure SQL Database location (create the folder structure if it does not exist).
+1. Within Azure Data Studio save the notebook from File menu (either Save or Save As) to the **C:\Labfiles\Deploy Azure SQL Database** path (create the folder structure if it does not exist). Make sure the file extension is **.ipynb**
 
 1. Close the tab for the Notebook from inside of Azure Data Studio. From the File Menu, select Open File, and open the notebook you just saved. Observe that query results were saved along with the queries in the notebook.
 
