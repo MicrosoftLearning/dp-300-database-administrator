@@ -59,73 +59,78 @@ You have been hired as a Senior Database Administrator to help ensure the securi
 
 1. In the **Import Data Tier Application** dialog, click **Next** on the first screen.
 
-1. In the Import Settings screen, click Browse and navigate to D:\Labfiles\Secure Environment folder and click on the AdventureWorks.bacpac file and click open. Then in the Import Data-tier application screen click **Next**.
+1. Download the .bacpac file located on **https://github.com/MicrosoftLearning/dp-300-database-administrator/blob/master/Instructions/Templates/AdventureWorks.bacpac** to **C:\LabFiles\Secure Environment**  path on the lab VM (create the folder structure if it does not exist).
 
-	![Picture 996777398](../images/dp-3300-module-33-lab-08.png)
+1. In the **Import Settings** screen, click **Browse** and navigate to **C:\LabFiles\Secure Environment** folder, click on the **AdventureWorks.bacpac** file, and then click **Open**. Back to the **Import Data-tier Application** screen click **Next**.
 
-	![A screenshot of a social media post Description automatically generated](../images/dp-3300-module-33-lab-09.png)
+    ![A screenshot of a social media post Description automatically generated](../images/dp-300-module-04-lab-8.png)
 
-9. On the database settings screen, change the edition of Azure SQL Database to General Purpose. Change the Service Objective to **GP_Gen5_2** and click **Next**. 
+    ![A screenshot of a social media post Description automatically generated](../images/dp-300-module-04-lab-9.png)
 
-	![A screenshot of a cell phone Description automatically generated](../images/dp-3300-module-33-lab-10.png)
+1. On the **Database Settings** screen, make the changes as below:
 
-10.  On the Summary screen click **Finish**. When your import completes you will see the results below. Then click **Close**
-	![A screenshot of a cell phone Description automatically generated](../images/dp-3300-module-33-lab-11.png)
+    - **Database name:** AdventureWorksFromBacpac
+    - **Edition of Microsoft Azure SQL Database**: Basic
 
-11. In Object Explorer, expand the Databases folder. Then right-click on AdventureWorks and click on new query. 
+    ![A screenshot of a cell phone Description automatically generated](../images/dp-300-module-04-lab-10.png)
 
-	![A screenshot of a cell phone Description automatically generated](../images/dp-3300-module-33-lab-12.png)
+1. Click **Next**.
 
-12. Execute the following T-SQL query by pasting the text into your query window. **Important:** Replace 192.168.1.1. with your client IP address from Step 4. Click execute or press F5.
+1. On the **Summary** screen click **Finish**. When your import completes you will see the results below. Then click **Close**.
 
-	```sql
-	EXECUTE sp_set_database_firewall_rule @name = N'ContosoFirewallRule',
+    ![A screenshot of a cell phone Description automatically generated](../images/dp-300-module-04-lab-11.png)
 
-	@start_ip_address = '192.168.1.1', @end_ip_address = '192.168.1.1'
-	```
+1. Back to SQL Server Management Studio, in **Object Explorer**, expand the **Databases** folder. Then right-click on **AdventureWorksFromBacpac** database, and then **New Query**.
 
-13. Next you will create a contained user in the AdventureWorks database. Click New Query and execute the following T-SQL. Ensure that you are still using the AdventureWorks database. If you see master in the database name box below, you can pull down and switch to AdventureWorks.
+    ![A screenshot of a cell phone Description automatically generated](../images/dp-300-module-04-lab-12.png)
 
-	```sql
-	CREATE USER containeddemo WITH PASSWORD = 'P@ssw0rd!'
-	```
-    ![A screenshot of a cell phone Description automatically generated](../images/dp-3300-module-33-lab-13.png)
-    
-    Click **Execute** to run this command. This command creates a contained user within the AdventureWorks database. You will login using the username and password in the next step.
-    
-14. Navigate to the Object Explorer. Click on **Connect** and then **Database Engine**.
+1. Execute the following T-SQL query by pasting the text into your query window.
+    1. **Important:** Replace **000.000.000.00** with your client IP address. Click **Execute** or press **F5**.
 
-	![Picture 1960831949](../images/dp-3300-module-33-lab-14.png)
+    ```sql
+    EXECUTE sp_set_database_firewall_rule 
+            @name = N'AWFirewallRule',
+            @start_ip_address = '000.000.000.00', 
+            @end_ip_address = '000.000.000.00'
+    ```
 
-15. Attempt to connect with the credentials you created in step 13. 
-    You will need to use the following information:  
-	-  **Login:** containeddemo   
-	-  **Password:**  P@ssw0rd! 
-	 
+1. Next you will create a contained user in the **AdventureWorksFromBacpac** database. Click **New Query** and execute the following T-SQL.
+
+    ```sql
+    USE [AdventureWorksFromBacpac]
+    GO
+    CREATE USER ContainedDemo WITH PASSWORD = 'P@ssw0rd01'
+    ```
+
+    ![A screenshot of a cell phone Description automatically generated](../images/dp-300-module-04-lab-13.png)
+
+    **Note:** This command creates a contained user within the **AdventureWorksFromBacpac** database. We will test this credential in the next step.
+
+1. Navigate to the **Object Explorer**. Click on **Connect**, and then **Database Engine**.
+
+    ![Picture 1960831949](../images/dp-300-module-04-lab-14.png)
+
+1. Attempt to connect with the credentials you created in the previous step. You will need to use the following information:
+
+    - **Login:** ContainedDemo
+    - **Password:** P@ssw0rd01
+
      Click **Connect**.
-	 
-     You will see the following error.
 
-	![A screenshot of a cell phone Description automatically generated](../images/dp-3300-module-33-lab-15.png)
+     You will receive the following error.
 
-	This error is generated because the connection attempted to login to the master database and not AdventureWorks where the user was created. Change the connection context by clicking **OK** to exit the error message and then clicking on **Options >>** in the Connect to Server dialog box as shown below.
+    ![A screenshot of a cell phone Description automatically generated](../images/dp-300-module-04-lab-15.png)
 
-	![Picture 9](../images/dp-3300-module-33-lab-16.png)
+    **Note:** This error is generated because the connection attempted to login to the *master* database and not **AdventureWorksFromBacpac** where the user was created. Change the connection context by clicking **OK** to exit the error message, and then clicking on **Options >>** in the **Connect to Server** dialog box as shown below.
 
-16. On the connection options tab, type the database name AdventureWorks. Click **Connect**.
+    ![Picture 9](../images/dp-300-module-04-lab-16.png)
 
-	![A screenshot of a social media post Description automatically generated](../images/dp-3300-module-33-lab-17.png)
+1. On the **Connection Properties** tab, type the database name **AdventureWorksFromBacpac**, and then click **Connect**.
 
-17. Another database should appear in the Object Explorer. 
+    ![A screenshot of a social media post Description automatically generated](../images/dp-300-module-04-lab-17.png)
 
-    ![Picture 10](../images/dp-3300-module-33-lab-18.png)
+1. Notice that you were able to successfully authenticate using database firewall.
 
-    Make sure the selection stays on the newly added database. Then click **Connect** from the Object Explorer and **Database Engine**. 
-    Enter the following again: 
-    - **Login:** containeddemo   
-	- **Password:**  P@ssw0rd! 
-
-    Click **Connect**.
+    ![Picture 10](../images/dp-300-module-04-lab-18.png)
 
     This time the connection bypasses the master database and logs you directly into AdventureWorks, which is the only database to which the newly created user has access.
-
