@@ -49,13 +49,13 @@ You have been hired as a Senior Database Administrator to help ensure the securi
     - **Server admin login:** sqladmin
     - **Password:** P@ssw0rd01
 
-	![A screenshot of a cell phone Description automatically generated](../images/dp-300-module-04-lab-6.png)
+    ![A screenshot of a cell phone Description automatically generated](../images/dp-300-module-04-lab-6.png)
 
 1. Click **Connect**.
 
 1. In Object Explorer expand the server node, and right click on **Databases**. Click **Import a Data-tier Application**.
 
-	![A screenshot of a social media post Description automatically generated](../images/dp-300-module-04-lab-7.png)
+    ![A screenshot of a social media post Description automatically generated](../images/dp-300-module-04-lab-7.png)
 
 1. In the **Import Data Tier Application** dialog, click **Next** on the first screen.
 
