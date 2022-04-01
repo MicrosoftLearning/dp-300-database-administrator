@@ -129,8 +129,8 @@ You have been hired as a Senior Database Administrator to help ensure the securi
 
     ![A screenshot of a social media post Description automatically generated](../images/dp-300-module-04-lab-17.png)
 
-1. Notice that you were able to successfully authenticate using database firewall.
+1. Notice that you were able to successfully authenticate using the **ContainedDemo** user. This time you were directly logged into **AdventureWorksFromBacpac**, which is the only database to which the newly created user has access to.
 
     ![Picture 10](../images/dp-300-module-04-lab-18.png)
 
-    This time the connection bypasses the master database and logs you directly into AdventureWorks, which is the only database to which the newly created user has access.
+In this exercise, you've configured server and database firewall rules to access a database hosted on Azure SQL Database. You've also used T-SQL statements to create a contained user, and used SQL Server Management Studio to check the access.
