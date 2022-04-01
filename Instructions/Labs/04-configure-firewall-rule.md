@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Lab 4 – Implement a Secure Environment'
+    title: 'Lab 4 – Configure Azure SQL Database firewall rules'
     module: 'Implement a Secure Environment for a Database Service'
 ---
 
@@ -14,7 +14,7 @@ You have been hired as a Senior Database Administrator to help ensure the securi
 
 **Note:** These exercises ask you to copy and paste T-SQL code. Please verify that the code has been copied correctly, before executing the code.
 
-## Configure an Azure SQL Database firewall
+## Configure Azure SQL Database firewall rules
 
 1. From the lab virtual machine, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/). Connect to the Portal using the Azure **Username** and **Password** provided on the **Resources** tab for this lab virtual machine.
 
