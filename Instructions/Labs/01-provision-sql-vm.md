@@ -34,7 +34,7 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
     At this point you were able to explore the Azure Portal and check some of the properties of your resource group. Next, we will provision a SQL Server on an Azure Virtual Machine.
 
-## Provision a SQL Server on an Azure Virtual Machine
+## Deploy a SQL Server on an Azure Virtual Machine
 
 1. Locate the search bar at the top of the page. Search for **Azure SQL**. Select the search result for **Azure SQL** that appears in the results under **Services**.
 
