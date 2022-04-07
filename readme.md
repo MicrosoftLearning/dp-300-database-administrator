@@ -1,8 +1,6 @@
-# INF99X: Sample Course
+# DP-300: Administering Relational Databases on Microsoft Azure
 
-- **[Download Latest Student Handbook and AllFiles Content](../../releases/latest)**
 - **Are you a MCT?** - Have a look at our [GitHub User Guide for MCTs](https://microsoftlearning.github.io/MCT-User-Guide/)
-- **Need to manually build the lab instructions?** - Instructions are available in the [MicrosoftLearning/Docker-Build](https://github.com/MicrosoftLearning/Docker-Build) repository
 
 ## What are we doing?
 
@@ -26,7 +24,7 @@
 
 - Any MCT can submit a pull request to the code or content in the GitHub repro, Microsoft and the course author will triage and include content and lab code changes as needed.
 
-- You can submit bugs, changes, improvement and ideas.  Find a new Azure feature before we have?  Submit a new demo!
+- You can submit bugs, changes, improvement and ideas. Find a new Azure feature before we have?  Submit a new demo!
 
 ## Notes
 
