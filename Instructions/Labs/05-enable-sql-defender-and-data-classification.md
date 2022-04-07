@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Lab 5 – Enable Microsoft Defender for Cloud and Data classification'
+    title: 'Lab 5 – Enable Microsoft Defender for SQL and Data classification'
     module: 'Implement a Secure Environment for a Database Service'
 ---
 
