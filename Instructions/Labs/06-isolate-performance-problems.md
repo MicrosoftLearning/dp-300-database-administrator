@@ -32,27 +32,27 @@ You have been hired as a database administrator to identify performance related 
 
 1. On the database main page, select **Set server firewall**.
 
-    :::image type="content" source="../images/dp-300-module-06-lab-01.png" alt-text="Screenshot showing selecting Set server firewall":::
+    ![Screenshot showing selecting Set server firewall](../images/dp-300-module-06-lab-01.png)
 
 1. On the **Firewall settings** page, select **+ Add client IP**, then **Save**.
 
-    :::image type="content" source="../images/dp-300-module-06-lab-02.png" alt-text="Screenshot showing selecting Add client IP":::
+    ![Screenshot showing selecting Add client IP](../images/dp-300-module-06-lab-02.png)
 
 1. Select **OK**.
 
 1. In the navigation above **Firewall settings**, select the link that begins with **AdventureWorksLT**.
 
-    :::image type="content" source="../images/dp-300-module-06-lab-03.png" alt-text="Screenshot showing selecting AdventureWorks.":::
+    ![Screenshot showing selecting AdventureWorks](../images/dp-300-module-06-lab-03.png)
 
 1. In the left navigation, select **Query editor (preview)**.
 
-    :::image type="content" source="../images/dp-300-module-06-lab-04.png" alt-text="Screenshot showing selecting the query editor (preview) link.":::
+    ![Screenshot showing selecting the query editor (preview) link](../images/dp-300-module-06-lab-04.png)
 
     **Note:** This feature is in preview.
 
 1. In **Password**, type **P@ssw0rd01** and select **OK**.
 
-    :::image type="content" source="../images/dp-300-module-06-lab-05.png" alt-text="Screenshot showing Query editor connection properties.":::
+    ![Screenshot showing Query editor connection properties](../images/dp-300-module-06-lab-05.png)
 
 1. In **Query 1**, type the following query, and select **Run**:
 
@@ -77,37 +77,37 @@ You have been hired as a database administrator to identify performance related 
     END
     ```
 
-    :::image type="content" source="../images/dp-300-module-06-lab-06.png" alt-text="Screenshot showing the Query.":::
+    ![Screenshot showing the Query](../images/dp-300-module-06-lab-06.png)
 
 1. Wait for the query to complete.
 
 1. On the blade for the **AdventureWorksLT** database, select the **Metrics** icon on the **Monitoring** section.
 
-    :::image type="content" source="../images/dp-300-module-06-lab-07.png" alt-text="Screenshot showing selecting the Metrics icon.":::
+    ![Screenshot showing selecting the Metrics icon](../images/dp-300-module-06-lab-07.png)
 
 1. Change the **Metric** menu option to reflect **CPU Percentage**, then select an **Aggregation** of **Avg**. This will display the average CPU Percentage for the given time frame.
 
-    :::image type="content" source="../images/dp-300-module-06-lab-08.png" alt-text="Screenshot showing CPU Percentage.":::
+    ![Screenshot showing CPU Percentage](../images/dp-300-module-06-lab-08.png)
 
 1. Observe the the CPU average across time. You may slightly different results. Alternatively, you can run the query multiple times to obtain a more substantial results.
 
-    :::image type="content" source="../images/dp-300-module-06-lab-09.png" alt-text="Screenshot showing average aggregation.":::
+    ![Screenshot showing average aggregation](../images/dp-300-module-06-lab-09.png)
 
 ## Identify high CPU queries
 
 1. Locate the **Query Performance Insight** icon on the **Intelligent Performance** section of the blade for the **AdventureWorksLT** database.
 
-    :::image type="content" source="../images/dp-300-module-06-lab-10.png" alt-text="Screenshot showing the Query Performance Insight icon":::
+    ![Screenshot showing the Query Performance Insight icon](../images/dp-300-module-06-lab-10.png)
 
 1. Select **Reset settings**.
 
-    :::image type="content" source="../images/dp-300-module-06-lab-11.png" alt-text="Screenshot showing the Reset settings option.":::
+    ![Screenshot showing the Reset settings option](../images/dp-300-module-06-lab-11.png)
 
 1. Click on the query in the grid below the graph. If you do not see a query, wait for 2 minutes and select **Refresh**.
 
     **Note:** You may have different duration and query ID. If you see more than one query, click on each one to observe the results.
 
-    :::image type="content" source="../images/dp-300-module-06-lab-12.png" alt-text="Screenshot showing average aggregation.":::
+    ![Screenshot showing average aggregation](../images/dp-300-module-06-lab-12.png)
 
 For this query, you can see that the total duration was over a minute and that it ran approximately 10,000 times.
 
