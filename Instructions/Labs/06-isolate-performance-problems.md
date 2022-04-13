@@ -1,7 +1,7 @@
 ---
 lab:
     title: 'Lab 6 – Isolate performance problems through monitoring'
-    module: 'Monitor and Optimize Operational Resources'
+    module: 'Monitor and optimize operational resources in Azure SQL'
 ---
 
 # Isolate performance problems through monitoring
@@ -11,6 +11,8 @@ lab:
 The students will take the information gained in the lessons to scope out the deliverables for a digital transformation project within AdventureWorks. Examining the Azure portal as well as other tools, students will determine how to utilize tools to identify and resolve performance related issues.
 
 You have been hired as a database administrator to identify performance related issues and provide viable solutions to resolve any issues found. You need to use the Azure portal to identify the performance issues and suggest methods to resolve them.
+
+**Note:** These exercises ask you to copy and paste T-SQL code. Please verify that the code has been copied correctly, before executing the code.
 
 ## Review CPU utilization in Azure portal
 
