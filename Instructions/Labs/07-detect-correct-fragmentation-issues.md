@@ -16,19 +16,43 @@ You have been hired as a database administrator to identify performance related 
 
 ## Restore a database
 
+1. Download the database backup file located on **https://github.com/MicrosoftLearning/dp-300-database-administrator/blob/master/Instructions/Templates/AdventureWorks2017.bak** to **C:\LabFiles\Monitor and optimize** path on the lab virtual machine (create the folder structure if it does not exist).
+
+    ![Picture 03](../images/dp-300-module-07-lab-03.png)
+
 1. Select the Windows Start button and type SSMS. Select **Microsoft SQL Server Management Studio 18** from the list.  
 
-    ![Picture 34](../images/dp-300-module-01-lab-34.png)
+    ![Picture 01](../images/dp-300-module-01-lab-34.png)
 
 1. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name. Select **Connect**.
 
-    ![Picture 35](../images/dp-300-module-07-lab-01.png)
+    ![Picture 02](../images/dp-300-module-07-lab-01.png)
 
-1. Download the database backup file located on **https://github.com/MicrosoftLearning/dp-300-database-administrator/blob/master/Instructions/Templates/AdventureWorks.bacpac** to **C:\LabFiles\Secure Environment**  path on the lab VM (create the folder structure if it does not exist).
+1. Select the **Databases** folder, and then **New Query**.
+
+    ![Picture 03](../images/dp-300-module-07-lab-04.png)
+
+1. In the new query window, copy and paste the below T-SQL into it. Execute the query to restore the database.
+
+    ```sql
+    RESTORE DATABASE AdventureWorks2017
+    FROM DISK = 'C:\LabFiles\Monitor and optimize\AdventureWorks2017.bak'
+    WITH RECOVERY,
+          MOVE 'AdventureWorks2017' 
+            TO 'C:\LabFiles\Monitor and optimize\AdventureWorks2017.mdf',
+          MOVE 'AdventureWorks2017_log'
+            TO 'C:\LabFiles\Monitor and optimize\AdventureWorks2017_log.ldf';
+    ```
+
+    **Note:** The database backup file name and path should match with what you've downloaded on step 1, otherwise the command will fail.
+
+1. You should see a successful message after the restore is complete.
+
+    ![Picture 03](../images/dp-300-module-07-lab-05.png)
 
 ## Investigate index fragmentation
 
-1. Select **New Query**. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query. 
+1. Select **New Query**. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
 
     ```sql
     USE AdventureWorks2017
@@ -46,12 +70,9 @@ You have been hired as a database administrator to identify performance related 
     WHERE avg_fragmentation_in_percent > 50 -- find indexes where fragmentation is greater than 50%
     ```
 
-    This query will report any indexes that have a fragmentation over 50%. You should not see any indexes with fragmentation.
+    This query will report any indexes that have a fragmentation over **50%**. The query should not return any result.
 
-    > [!NOTE]
-    > If you'd like to copy and paste the code you can find the code in the **D:\LabFiles\Monitor Resources\Monitor Resources scripts.sql** file.
-
-1. Select **New Query**. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query. 
+1. Select **New Query**. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
 
     ```sql
     USE AdventureWorks2017
@@ -82,9 +103,11 @@ You have been hired as a database administrator to identify performance related 
 
     This query will increase the fragmentation level of the Person.Address table and its indexes by adding a large number of new records.
 
-1. Execute the first query again. This query will report any indexes that have a fragmentation over 50%. You should see four indexes with fragmentation.
+1. Execute the first query again. Now you should be able to see four highly fragmented indexes.
 
-1. Copy and paste the following T-SQL code into the query window. Select Execute to execute this query. 
+    ![Picture 03](../images/dp-300-module-07-lab-06.png)
+
+1. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
 
     ```sql
     SET STATISTICS IO,TIME ON
@@ -104,13 +127,11 @@ You have been hired as a database administrator to identify performance related 
 
     Click on the **Messages** tab in the result pane of SQL Server Management Studio. Make note of the count of logical reads performed by the query.
 
-    :::image type="content" source="../media/results.png" alt-text="Screenshot showing the results of the query.":::
+    ![Picture 03](../images/dp-300-module-07-lab-07.png)
 
-## Rebuild indexes
+## Rebuild fragmented indexes
 
-1. Select **New query**. Copy and paste the following T-SQL code into the query window. Click the execute button to execute this query. 
-
-1. Copy and paste the following T-SQL code into the query window. Click the execute button to execute this query. 
+1. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
 
     ```sql
     USE AdventureWorks2017
@@ -126,13 +147,13 @@ You have been hired as a database administrator to identify performance related 
         ALLOW_PAGE_LOCKS = ON)
     ```
 
-1. Re-execute the query from step 4 in the first task. Confirm that the **AK_Address_StateProvinceID** index no longer has fragmentation greater than 50%.
+1. Execute the query below to confirm that the **IX_Address_StateProvinceID** index no longer has fragmentation greater than 50%.
 
     ```sql
     USE AdventureWorks2017
     GO
         
-    SELECT i.name Index_Name
+    SELECT DISTINCT i.name Index_Name
         , avg_fragmentation_in_percent
         , db_name(database_id)
         , i.object_id
@@ -140,10 +161,12 @@ You have been hired as a database administrator to identify performance related 
         , index_type_desc
     FROM sys.dm_db_index_physical_stats(db_id('AdventureWorks2017'),object_id('person.address'),NULL,NULL,'DETAILED') ps
         INNER JOIN sys.indexes i ON (ps.object_id = i.object_id AND ps.index_id = i.index_id)
-    WHERE avg_fragmentation_in_percent > 50 -- find indexes where fragmentation is greater than 50%
+    WHERE i.name = 'IX_Address_StateProvinceID'
     ```
 
-1. Re-execute the query from step 6 in the first task. Make note of the logical reads in the **Messages** tab of the **Results** pane in Management Studio. Was there a change from the number of logical reads encountered before you rebuilt the index?
+    Comparing the results we can see the fragmentation dropped from 81% to 0.
+
+1. Re-execute the select statement from the previous section. Make note of the logical reads in the **Messages** tab of the **Results** pane in Management Studio. Was there a change from the number of logical reads encountered before you rebuilt the index?
 
     ```sql
     SET STATISTICS IO,TIME ON
@@ -163,4 +186,4 @@ You have been hired as a database administrator to identify performance related 
 
 Because the index has been rebuilt, it will now be as efficient as possible and the logical reads should reduce. You have now seen that index maintenance can have an effect on query performance.
 
-To finish this exercise select **Done** below.
+In this exercise, you've learned how to rebuild index and analyze logical reads to increase query performance.
