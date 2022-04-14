@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Lab 4 – Detect and correct fragmentation issues'
+    title: 'Lab 7 – Detect and correct fragmentation issues'
     module: 'Monitor and optimize operational resources in Azure SQL'
 ---
 
