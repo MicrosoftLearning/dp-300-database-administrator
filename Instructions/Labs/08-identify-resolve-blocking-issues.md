@@ -4,23 +4,57 @@ lab:
     module: 'Optimize query performance in Azure SQL'
 ---
 
-You have been hired as a database administrator to identify performance related issues and provide viable solutions to resolve any issues found. You need to use on-premises tools to identify the performance issues and suggest methods to resolve them.
+# Identify and resolve blocking issues
+
+**Estimated Time: 15 minutes**
+
+The students will take the information gained in the lessons to scope out the deliverables for a digital transformation project within AdventureWorks. Examining the Azure portal as well as other tools, students will determine how to utilize native tools to identify and resolve performance related issues. Finally, students will be able to identify and resolve blocking issues appropriately.
+
+You have been hired as a database administrator to identify performance related issues and provide viable solutions to resolve any issues found. You need to investigate the performance problems and suggest methods to resolve them.
+
+**Note:** These exercises ask you to copy and paste T-SQL code. Please verify that the code has been copied correctly, before executing the code.
+
+## Restore a database
+
+1. Download the database backup file located on **https://github.com/MicrosoftLearning/dp-300-database-administrator/blob/master/Instructions/Templates/AdventureWorks2017.bak** to **C:\LabFiles\Monitor and optimize** path on the lab virtual machine (create the folder structure if it does not exist).
+
+    ![Picture 03](../images/dp-300-module-07-lab-03.png)
+
+1. Select the Windows Start button and type SSMS. Select **Microsoft SQL Server Management Studio 18** from the list.  
+
+    ![Picture 01](../images/dp-300-module-01-lab-34.png)
+
+1. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name. Select **Connect**.
+
+    ![Picture 02](../images/dp-300-module-07-lab-01.png)
+
+1. Select the **Databases** folder, and then **New Query**.
+
+    ![Picture 03](../images/dp-300-module-07-lab-04.png)
+
+1. In the new query window, copy and paste the below T-SQL into it. Execute the query to restore the database.
+
+    ```sql
+    RESTORE DATABASE AdventureWorks2017
+    FROM DISK = 'C:\LabFiles\Monitor and optimize\AdventureWorks2017.bak'
+    WITH RECOVERY,
+          MOVE 'AdventureWorks2017' 
+            TO 'C:\LabFiles\Monitor and optimize\AdventureWorks2017.mdf',
+          MOVE 'AdventureWorks2017_log'
+            TO 'C:\LabFiles\Monitor and optimize\AdventureWorks2017_log.ldf';
+    ```
+
+    **Note:** The database backup file name and path should match with what you've downloaded on step 1, otherwise the command will fail.
+
+1. You should see a successful message after the restore is complete.
+
+    ![Picture 03](../images/dp-300-module-07-lab-05.png)
 
 ## Run blocked queries report
 
-1. When the VM lab environment opens, use the password on the **Resources** tab above for the **Student** account to sign in to Windows.
-1. Start **SQL Server Management Studio**.
-1. You will be prompted to connect to your SQL Server. Enter **LON-SQL1** for the local server name, ensure that **Windows Authentication** is selected, and select **Connect**.
-1. Start a new query by selecting the **New Query** button in Management Studio.
+1. Select **New Query**. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
 
-    :::image type="content" source="../media/new-query-button.png" alt-text="Screenshot showing the New Query button":::
-
-    > [!NOTE]
-    > If you'd like to copy and paste the code you can find the code in the **D:\LabFiles\Monitor Resources\Monitor Resources scripts.sql** file.
-
-1. Copy and paste the code below into your query window.
-
-    ```tsql
+    ```sql
     USE MASTER
 
     GO
@@ -38,27 +72,29 @@ You have been hired as a database administrator to identify performance related 
     GO
     ```
 
-1. Select **Execute** to execute this query.
-
     The above T-SQL code will create an Extended Event session that will capture blocking events. The data will contain the following elements:
 
     - Client application name
-
     - Client host name
-
     - Database ID
-
     - Database name
-
     - NT Username
-
     - Session ID
-
     - T-SQL Text
-
     - Username
 
-1. Select **New Query** from SQL Server Management Studio. Copy and paste the following T-SQL code into the query window. Select the **Execute** button to execute this query.
+1. Select **New Query**. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
+
+    ```sql
+    EXEC sp_configure 'blocked process threshold (s)', 60
+    GO
+    RECONFIGURE WITH OVERRIDE
+    GO
+    ```
+
+    **Note:** The command above specify the threshold, in seconds, at which blocked process reports are generated. As a result, we are not required to wait as long for the *blocked_process_report* to be raised in this lesson.
+
+1. Select **New Query**. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
 
     ```sql
     USE AdventureWorks2017
@@ -71,7 +107,7 @@ You have been hired as a database administrator to identify performance related 
     GO
     ```
 
-1. Open another query window by selecting the **New Query** button. Copy and paste the following T-SQL code into the query window. Click the execute button to execute this query.
+1. Open another query window by selecting the **New Query** button. Copy and paste the following T-SQL code into the new query window. Select **Execute** to execute this query.
 
     ```sql
     USE AdventureWorks2017
@@ -84,31 +120,63 @@ You have been hired as a database administrator to identify performance related 
     WHERE FirstName = 'David'
     ```
 
-    You should notice that this query does not return results immediately and appears to be still running.
+    **Note:** this query does not return any results and appears to run indefinitely.
 
-1. In Object Explorer, navigate to Management, and expand the hive by clicking the plus sign. Expand the Extended Events hive and then expand the Sessions Hive. Expand  Blocking. Right click on package0.ring_buffer and select View Target Data.
+1. In **Object Explorer**, expand  **Management** -> **Extended Events** -> **Sessions**.
 
-    :::image type="content" source="../media/view-target-data.png" alt-text="View target data.":::
+    Notice the extended event named *Blocking* we just created is in the list.
+
+    ![Picture 01](../images/dp-300-module-08-lab-01.png)
+
+1. Right click on **package0.ring_buffer**, and then select **View Target Data**.
+
+    ![Picture 02](../images/dp-300-module-08-lab-02.png)
 
 1. Select the hyperlink.
 
-    :::image type="content" source="../media/hyperlink.png" alt-text="Screenshot showing the Hyperlink.":::
+    ![Picture 03](../images/dp-300-module-08-lab-03.png)
 
-1. The XML will show you which processes are being blocked and which process is causing the blocking. You can see the queries that ran in this process as well as system information. 
+1. The XML will show you which processes are being blocked, and which process is causing the blocking. You can see the queries that ran in this process as well as system information.
 
-    :::image type="content" source="../media/xml.png" alt-text="Screenshot showing the XML.":::
+    ![Picture 04](../images/dp-300-module-08-lab-04.png)
 
-1. Right click **Blocking** and select **Stop Session**.
+1. Alternatively, you can run the query below to identify sessions blocking other sessions, including a list of session IDs blocked per *session_id*.
 
-    :::image type="content" source="../media/stop-session.png" alt-text="Screenshot showing selecting the Stop Session":::
+    ```sql
+    WITH cteBL (session_id, blocking_these) AS 
+    (SELECT s.session_id, blocking_these = x.blocking_these FROM sys.dm_exec_sessions s 
+    CROSS APPLY    (SELECT isnull(convert(varchar(6), er.session_id),'') + ', '  
+                    FROM sys.dm_exec_requests as er
+                    WHERE er.blocking_session_id = isnull(s.session_id ,0)
+                    AND er.blocking_session_id <> 0
+                    FOR XML PATH('') ) AS x (blocking_these)
+    )
+    SELECT s.session_id, blocked_by = r.blocking_session_id, bl.blocking_these
+    , batch_text = t.text, input_buffer = ib.event_info, * 
+    FROM sys.dm_exec_sessions s 
+    LEFT OUTER JOIN sys.dm_exec_requests r on r.session_id = s.session_id
+    INNER JOIN cteBL as bl on s.session_id = bl.session_id
+    OUTER APPLY sys.dm_exec_sql_text (r.sql_handle) t
+    OUTER APPLY sys.dm_exec_input_buffer(s.session_id, NULL) AS ib
+    WHERE blocking_these is not null or r.blocking_session_id > 0
+    ORDER BY len(bl.blocking_these) desc, r.blocking_session_id desc, r.session_id;
+    ```
 
-1. Navigate back to the query tab you opened in step 6, and type **ROLLBACK TRANSACTION** on the line below the query. Highlight **ROLLBACK TRANSACTION** and execute the command by selecting **Execute**.
+    ![Picture 05](../images/dp-300-module-08-lab-05.png)
 
-    :::image type="content" source="../media/rollback-transaction.png" alt-text="Screenshot showing the ROLLBACK TRANSACTION in the query.":::
+1. Right click on extended event named **Blocking**, and then select **Stop Session**.
 
-1. Navigate back to the query tab you opened in Step 7. You will notice that the query has now completed.
+    ![Picture 06](../images/dp-300-module-08-lab-06.png)
 
-## Enable Read Commit Snapshot Isolation
+1. Navigate back to the query session that is causing the blocking, and type `ROLLBACK TRANSACTION` on the line below the query. Highlight `ROLLBACK TRANSACTION`, and select **Execute**.
+
+    ![Picture 07](../images/dp-300-module-08-lab-07.png)
+
+1. Navigate back to the query session that was being blocked. You will notice that the query has now completed.
+
+    ![Picture 08](../images/dp-300-module-08-lab-08.png)
+
+## Enable Read Commit Snapshot isolation level
 
 1. Select **New Query** from SQL Server Management Studio. Copy and paste the following T-SQL code into the query window. Select the **Execute** button to execute this query.
 
@@ -120,7 +188,7 @@ You have been hired as a database administrator to identify performance related 
     GO
     ```
 
-1. Run the query from **Task 1**, **Step 7**.
+1. Rerun the query that caused the blocking in a new query editor.
 
     ```sql
     USE AdventureWorks2017
@@ -132,7 +200,7 @@ You have been hired as a database administrator to identify performance related 
     GO
     ```
 
-1. Run the query from **Task 1**, **Step 8**.
+1. Rerun the query that was being blocked in a new query editor.
 
     ```sql
     USE AdventureWorks2017
@@ -142,12 +210,13 @@ You have been hired as a database administrator to identify performance related 
      ,[FirstName]
      ,[Title]
     FROM Person.Person
-    
-     where firstname = 'David'
+    WHERE firstname = 'David'
     ```
 
-1. Consider why the query in step 3 now completes whereas in the previous task it was blocked by the UPDATE.
+    ![Picture 09](../images/dp-300-module-08-lab-09.png)
 
-Read Commit Snapshot Isolation is an optimistic form of transaction isolation and the last query will show the latest committed version of the data, rather than being blocked.
+    Why the same query completes whereas in the previous task it was blocked by the update statement?
 
-To finish this exercise select **Done** below.
+    Read Commit Snapshot isolation level is an optimistic form of transaction isolation, and the last query will show the latest committed version of the data, rather than being blocked.
+
+In this exercise, you've learned how to identify sessions being blocked, and to mitigate those scenarios.
