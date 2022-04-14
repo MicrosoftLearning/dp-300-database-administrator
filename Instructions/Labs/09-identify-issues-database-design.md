@@ -71,7 +71,7 @@ You have been hired as a database administrator to identify performance related 
 
     ![Picture 02](../images/dp-300-module-09-lab-02.png)
 
-## Identify ways to fix the warning issue
+## Identify ways to fix the warning message
 
 The *[HumanResources].[Employee]* table structure is shown in the follow data definition language (DDL) statement. Review the fields that are used in the previous SQL query against this DDL, paying attention to their types.
 
