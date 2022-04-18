@@ -14,7 +14,7 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
 ## Explore the Azure Portal
 
-1. From the lab virtual machine, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/). Connect to the Portal using the Azure **Username** and **Password** provided on the **Resources** tab for this lab virtual machine.
+1. From the lab virtual machine, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/), and sign in using the Microsoft account associated with your Azure subscription.
 
     ![Picture 1](../images/dp-300-module-01-lab-01.png)
 
