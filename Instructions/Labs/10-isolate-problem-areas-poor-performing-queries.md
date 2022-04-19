@@ -159,92 +159,79 @@ Next you'll run a workload to generate query statistics for query store, examine
 
     Changing the compatibility level is like moving the database back in time. It restricts the features SQL server can use to those that were available in SQL Server 2008.
 
-1. Download the database backup file located on **https://github.com/MicrosoftLearning/dp-300-database-administrator/blob/master/Instructions/Templates/CreateRandomWorkloadGenerator.sql** to **C:\LabFiles\Monitor and optimize** path on the lab virtual machine
+1. Download the T-SQL script located on **https://github.com/MicrosoftLearning/dp-300-database-administrator/blob/master/Instructions/Templates/CreateRandomWorkloadGenerator.sql** to **C:\LabFiles\Monitor and optimize** path on the lab virtual machine
 
 1. Select the **File** > **Open** > **File** menu in SQL Server Management Studio.
 
 1. Navigate to the **C:\LabFiles\Monitor and optimize\CreateRandomWorkloadGenerator.sql** file.
 
-1. Select the file to load it into Management Studio and then select **Execute** or press <kbd>F5</kbd> to execute the query.
+1. Once opened into SQL Server Management Studio, select **Execute** or press <kbd>F5</kbd> to execute the query.
 
-    :::image type="content" source="../media/dp-3300-module-55-lab-09.png" alt-text="Screenshot showing the Open File menu.":::
+1. After the execution completes, run the script a second time to create additional load on the server. Leave the query tab open for this query.
 
-1. Select the **File** > **Open** > **File** menu in SQL Server Management Studio.
+1. Copy and paste the code below into a new query window and execute it by selecting **Execute** or press <kbd>F5</kbd>. 
 
-1. Navigate to the **D:\Labfiles\Query Performance\ExecuteRandomWorkload.sql** script and open it.
-
-1. Select **Execute** or press <kbd>F5</kbd> to run the script.
-
-    After execution completes, run the script a second time to create additional load on the server. Leave the query tab open for this query.
-
-1. Copy and paste the code below into a new query window and execute it by selecting **Execute** or press <kbd>F5</kbd>. This script changes the database compatibility mode using the below script to SQL Server 2019 (**150**). Making all the database features and improvements since SQL Server 2008 available to the server.
+    This script changes the database compatibility mode to SQL Server 2019 (**150**). All the features and improvements since SQL Server 2008 will now be available to the database.
 
     ```sql
-    USE master;
+    USE [master];
     GO
 
-    ALTER DATABASE AdventureWorks2017 SET COMPATIBILITY_LEVEL = 150;
+    ALTER DATABASE [AdventureWorks2017] SET COMPATIBILITY_LEVEL = 150;
     GO
     ```
 
-1. Navigate back to the query tab from step 6, and re-execute.
+1. Navigate back to the query tab from **CreateRandomWorkloadGenerator.sql** file, and re-execute it.
 
-## Examine Top Resource Consuming Queries to identify poor performance
+## Examine Top Resource Consuming Queries report
 
-1. In order to view the Query Store node you will need to refresh the AdventureWorks2017 database in Management Studio. Right click on database name and choose select refresh. You will then see the Query Store node under the database.
+1. In order to view the Query Store node you will need to refresh the AdventureWorks2017 database in SQL Server Management Studio. Right click on database name and choose select **Refresh**. You will then see the Query Store node under the database.
 
-    :::image type="content" source="../media/dp-3300-module-55-lab-10.png" alt-text="Expand Query Store":::
+    ![Expand Query Store](../images/dp-300-module-10-lab-06.png)
 
-1. Expand the **Query Store** node to view all the available reports.
+1. Expand the **Query Store** node to view all the reports available. Select the **Top Resource Consuming Queries** report.
 
-    :::image type="content" source="../media/dp-3300-module-55-lab-11.png" alt-text="Top Resource Consuming Queries Report":::
-
-1. Select **Top Resource Consuming Queries Report**.
+    ![Top Resource Consuming Queries Report from Query Store](../images/dp-300-module-10-lab-07.png)
 
 1. The report will open as shown below. On the right, select the menu dropdown, then select **Configure**.
-    :::image type="content" source="../media/dp-3300-module-55-lab-12.png" alt-text="Select Configure":::
+
+    ![Selecting configure option for Top Resource Consuming Queries Report](../images/dp-300-module-10-lab-08.png)
 
 1. In the configuration screen, change the filter for the minimum number of query plans to 2. Then select **OK**.
 
-    :::image type="content" source="../media/dp-3300-module-55-lab-13.png" alt-text="Set Minimum number of query plans":::
+    ![Set Minimum number of query plans](../images/dp-300-module-10-lab-09.png)
 
 1. Choose the query with the longest duration by selecting the left most bar in the bar chart in the top left portion of the report.
 
-    :::image type="content" source="../media/dp-3300-module-55-lab-14.png" alt-text="Query with longest duration":::
+    ![Query with longest duration](../images/dp-300-module-10-lab-10.png)
 
-‎This will show you the query and plan summary for your longest duration query in your query store.
+    This will show you the query and plan summary for your longest duration query in your query store.
 
 ## Force a better execution plan
 
 1. Navigate to the plan summary portion of the report as shown below. You will note there are two execution plans with widely different durations.
 
-    :::image type="content" source="../media/dp-3300-module-55-lab-15.png" alt-text="Plan summary":::
+    ![Plan summary](../images/dp-300-module-10-lab-11.png)
 
-1. Select the Plan ID with the lowest duration (this is indicated by a lower position on the Y-axis of the chart) in the top right window of the report. In the graphic above, it’s PlanID 43. Select the plan ID next to the Plan Summary chart (it should be highlighted like in the above screenshot).
+1. Select the Plan ID with the lowest duration (this is indicated by a lower position on the Y-axis of the chart) in the top right window of the report. In the graphic above, it’s *PlanID 43*. Select the plan ID next to the Plan Summary chart (it should be highlighted like in the above screenshot).
 
-1. Select **Force Plan** under the summary chart. A confirmation window will popup, choose Yes to force the plan.
+1. Select **Force Plan** under the summary chart. A confirmation window will popup, select **Yes**.
 
-    :::image type="content" source="../media/dp-3300-module-55-lab-16.png" alt-text="Screenshot showing the confirmation.":::
+    ![Screenshot showing the confirmation](../images/dp-300-module-10-lab-12.png)
 
-    Once forced you will see that the Forced Plan is now greyed out and the plan in the plan summary window now has a check mark indicating is it forced.
+    Once the plan is forced you will see that the **Forced Plan** is now greyed out and the plan in the plan summary window now has a check mark indicating is it forced.
 
-    :::image type="content" source="../media/dp-3300-module-55-lab-17.png" alt-text="Screenshot showing the forced check mark.":::
+    There can be times when the query optimizer can make a poor choice on which execution plan to use. When this happens you can force SQL server to use the plan you want when you know it performs better.
 
-There can be times when the query optimizer can make a poor choice on which execution plan to use. When this happens you can force SQL server to use the plan you want when you know it performs better.
+## Use query hints to impact performance
 
-## Use query hints to impact performance in AdventureWorks2017
-
-Next you'll run a workload, change the query to use a parameter, and apply query hint to the query to optimize for a value, and re-execute.
+Next you'll run a workload, change the query to use a parameter, apply a query hint to the query, and re-execute it.
 
 Before continuing with the exercise close all the current query windows by selecting the **Window** menu, then select **Close All Documents**. In the popup select **No**.
 
-## Run a workload
+1. Select **New Query**, then select the **Include Actual Execution Plan** icon before running the query or use <kbd>CTRL</kbd>+<kbd>M</kbd>.
 
-Run the queries below, examine the Actual Execution Plan.
-
-1. Select New Query and select on **Include Actual Execution Plan** icon before running the query or use <kbd>CTRL</kbd>+<kbd>M</kbd>.
-
-    :::image type="content" source="../media/dp-3300-module-55-lab-18.png" alt-text="Include Actual Execution Plan":::
+    ![Include Actual Execution Plan](../images/dp-300-module-10-lab-13.png)
 
 1. Execute the query below. Note that the execution plan shows an index seek operator.
 
@@ -257,11 +244,9 @@ Run the queries below, examine the Actual Execution Plan.
     WHERE SalesPersonID=288;
     ```
 
-    :::image type="content" source="../media/dp-3300-module-55-lab-19.png" alt-text="Screenshot showing the updated execution plan":::
+    ![Screenshot showing the updated execution plan](../images/dp-300-module-10-lab-14.png)
 
-1. Now run the next query.
-
-    The only change this time is that the SalesPersonID value is set to 277. Note the Clustered Index Scan operation in the execution plan.
+1. In a new query window, run the next query. Compare both execution plans.
 
     ```sql
     USE AdventureWorks2017;
@@ -272,15 +257,21 @@ Run the queries below, examine the Actual Execution Plan.
     WHERE SalesPersonID=277;
     ```
 
-    :::image type="content" source="../media/dp-3300-module-55-lab-20.png" alt-text="Screenshot showing the sql statement.":::
+    The only change this time is that the SalesPersonID value is set to 277. Note the Clustered Index Scan operation in the execution plan.
 
-Based on the index statistics the query optimizer has chosen a different execution plan because of the different values in the WHERE clause. Because this query uses a constant in its WHERE clause, the optimizer sees each of these queries as unique and generates a different execution plan each time.
+    ![Screenshot showing the sql statement](../images/dp-300-module-10-lab-15.png)
+
+As we can see, based on the index statistics the query optimizer has chosen a different execution plan because of the different values in the `WHERE` clause.
+
+Why do we have different plans if we only changed the *SalesPersonID* value?
+
+This query uses a constant in its `WHERE` clause, the optimizer sees each of these queries as unique and generates a different execution plan each time.
 
 ## Change the query to use a variable and use a Query Hint
 
 1. Change the query to use a variable value for SalesPersonID.
 
-1. Use the T-SQL **DECLARE** statement to declare <strong>@SalesPersonID</strong> so you can pass in a value instead of hard-code the value in the **WHERE** clause. You should ensure that the data type of your variable matches the data type of the column in the target table.
+1. Use the T-SQL **DECLARE** statement to declare <strong>@SalesPersonID</strong> so you can pass in a value instead of hard-code the value in the **WHERE** clause. You should ensure that the data type of your variable matches the data type of the column in the target table to avoid implicit conversion.
 
     ```sql
     USE AdventureWorks2017;
@@ -297,9 +288,9 @@ Based on the index statistics the query optimizer has chosen a different executi
     WHERE SalesPersonID= @SalesPersonID;
     ```
 
-    If you examine the execution plan, you will note is using an index scan to get the results. This is because SQL Server can't make good optimizations because it can't know the value of the local variable until runtime.
+    If you examine the execution plan, you will note it is using an index scan to get the results. The query optimizer couldn't make good optimizations because it can't know the value of the local variable until runtime.
 
-1. You can help the query optimizer make better choices by providing a query hint. Rerun the above query with an new option:
+1. You can help the query optimizer to make better choices by providing a query hint. Rerun the above query with `OPTION (RECOMPILE)`:
 
     ```sql
     USE AdventureWorks2017
@@ -317,8 +308,8 @@ Based on the index statistics the query optimizer has chosen a different executi
     OPTION (RECOMPILE);
     ```
 
-    Note that the query optimizer has been able to choose a more efficient execution plan. The RECOMPILE option causes the query compiler to replace the variable with its value.
+    Note that the query optimizer has been able to choose a more efficient execution plan. The `RECOMPILE` option causes the query compiler to replace the variable with its value.
 
-You can see in the message tab that the difference between logical reads is 68% (689 versus 409) more for the query without the query hint.
+    Comparing the statistics, you can see in the message tab that the difference between logical reads is **68%** more (689 versus 409) for the query without the query hint.
 
-To finish this exercise select **Done** below.
+In this exercise, you've learned how to identify query problems, and how to fix it to improve the query plan.
