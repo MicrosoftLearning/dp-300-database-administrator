@@ -50,7 +50,7 @@ You'll run queries with suboptimal performance, examine the query plans, and att
 
     ![Picture 03](../images/dp-300-module-07-lab-05.png)
 
-## Run a query to generate actual execution plan
+## Generate actual execution plan
 
 There are several ways to generate an execution plan in SQL Server Management Studio.
 
@@ -74,11 +74,11 @@ There are several ways to generate an execution plan in SQL Server Management St
     GO
     ```
 
-    You'll see a text version of the execution plan, instead of the results of running the **SELECT** statement.
+    You'll see a text version of the execution plan, instead of the actual query results for the **SELECT** statement.
 
-    ![Screenshot showing the text version of a query plan](../images/dp-3300-module-55-lab-06.png)
+    ![Screenshot showing the text version of a query plan](../images/dp-300-module-10-lab-01.png)
 
-1. Examine the text in the second row's StmtText field:
+1. Take a moment to examine the text in the second row of the **StmtText** column:
 
     ```console
     |--Index Seek(OBJECT:([AdventureWorks2017].[HumanResources].[Employee].[AK_Employee_NationalIDNumber]), SEEK:([AdventureWorks2017].[HumanResources].[Employee].[NationalIDNumber]=CONVERT_IMPLICIT(nvarchar(4000),[@1],0)) ORDERED FORWARD)
@@ -86,7 +86,9 @@ There are several ways to generate an execution plan in SQL Server Management St
 
     The above text explains that the execution plan use an **Index Seek** on the **AK_Employee_NationalIDNumber** key. It also shows that the execution plan needed to do a **CONVERT_IMPLICIT** step.
 
-## Resolve a Performance Problem from an Execution Plan
+    The query optimizer was able to locate an appropriate index to fetch the required records.
+
+## Resolve a suboptimal query plan
 
 1. Copy and paste the code below into a new query window.
 
@@ -100,30 +102,26 @@ There are several ways to generate an execution plan in SQL Server Management St
     WHERE [ModifiedDate] > '2012/01/01' AND [ProductID] = 772;
     ```
 
-    :::image type="content" source="../media/dp-3300-module-55-lab-07.png" alt-text="Screenshot showing the execution plan for the query":::
+    ![Screenshot showing the execution plan for the query](../images/dp-300-module-10-lab-02.png)
 
-    When reviewing the execution plan you will note there is a key lookup. If you hover your mouse over the icon, you will see that the properties indicate it is performed for each row retrieved by the query. You can see the execution plan is performing a Key Lookup operation.
+    When reviewing the execution plan, you will note there is a **Key Lookup**. If you hover your mouse over the icon, you will see that the properties indicate it is performed for each row retrieved by the query. You can see the execution plan is performing a **Key Lookup** operation.
 
-    :::image type="content" source="../media/dp-3300-module-55-lab-08.png" alt-text="Screenshot showing the output list of columns.":::
+    ![Screenshot showing the output list of columns](../images/dp-300-module-10-lab-03.png)
 
-    Make a note of the columns in the Output list, as these fields need to be added to a covering index.
+    Make a note of the columns in the **Output List** section. How would you improve this query?
 
     To identify what index needs to be altered in order to remove the key lookup, you need to examine the index seek above it. Hover over the index seek operator with your mouse and the properties of the operator will appear.
 
-    :::image type="content" source="../media/execution-plan-for-index.png" alt-text="Screenshot showing the NonClustered index.":::
+    ![Screenshot showing the NonClustered index](../images/dp-300-module-10-lab-04.png)
 
-1. Fix the Key Lookup and rerun the query to see the new plan.
-
-    Key Lookups can be removed by adding a COVERING index that INCLUDES all fields being returned or searched in the query. In this example the index only uses the ProductID.
+1. **Key Lookups** can be removed by adding a covering index that includes all fields being returned or searched in the query. In this example the index only uses the **ProductID** column. Fix the **Key Lookup** and rerun the query to see the new plan.
 
     ```sql
     CREATE NONCLUSTERED INDEX [IX_SalesOrderDetail_ProductID] ON [Sales].[SalesOrderDetail]
-    (
-    [ProductID] ASC
-    )
+    ([ProductID] ASC)
     ```
 
-    If we add the Output List fields to the index as Included Columns, then the Key Lookup will be removed. Since the index already exists you either have to DROP the index and recreate it or set the **DROP_EXISTING=ON** in order to add the columns. Note **ProductID** is already part of the index and does not need to be added as an included column. There is another performance improvement we can make to the index by adding the **ModifiedDate**.
+    If we add the **Output List** fields to the index as included columns, then the **Key Lookup** will be removed. Since the index already exists you either have to DROP the index and recreate it, or set the **DROP_EXISTING=ON** in order to add the columns. Note that the **ProductID** column is already part of the index and does not need to be added as an included column. There is another performance improvement we can make to the index by adding the **ModifiedDate**.
 
     ```sql
     CREATE NONCLUSTERED INDEX [IX_SalesOrderDetail_ProductID]
@@ -133,37 +131,39 @@ There are several ways to generate an execution plan in SQL Server Management St
     GO
     ```
 
-1. Rerun the query from step 1. Make note of the changes to the logical reads and execution plan changes. The plan now only needs to use the nonclustered index.
+1. Rerun the query from step 1. Make note of the changes to the logical reads and execution plan changes. The plan now only needs to use the nonclustered index we created.
 
-    :::image type="content" source="../media/improved-execution-plan.png" alt-text="Screenshot showing the improved execution plan":::
+    ![Screenshot showing the improved execution plan](../images/dp-300-module-10-lab-05.png)
 
-## Use Query Store (QS) to detect and handle regression in AdventureWorks2017
+## Use Query Store to detect and handle regression
 
-Next you'll run a workload to generate query statistics for QS, examine Top Resource Consuming Queries to identify poor performance, and see how to force a better execution plan.
+Next you'll run a workload to generate query statistics for query store, examine **Top Resource Consuming Queries** report to identify poor performance, and see how to force a better execution plan.
 
-## Run a workload to generate query stats for Query Store
+1. Select **New Query**. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
 
-1. Copy and paste the code below into a new query window and execute it by selecting **Execute**. This script will enable the Query Store for AdventureWorks2017 and sets the database to Compatibility Level 100.
+    This script will enable the Query Store feature for AdventureWorks2017 database and sets the database to Compatibility Level 100.
 
     ```sql
-    USE master;
+    USE [master];
     GO
 
-    ALTER DATABASE AdventureWorks2017 SET QUERY_STORE = ON;
+    ALTER DATABASE [AdventureWorks2017] SET QUERY_STORE = ON;
     GO
 
-    ALTER DATABASE AdventureWorks2017 SET QUERY_STORE (OPERATION_MODE = READ_WRITE);
+    ALTER DATABASE [AdventureWorks2017] SET QUERY_STORE (OPERATION_MODE = READ_WRITE);
     GO
 
-    ALTER DATABASE AdventureWorks2017 SET COMPATIBILITY_LEVEL = 100;
+    ALTER DATABASE [AdventureWorks2017] SET COMPATIBILITY_LEVEL = 100;
     GO
     ```
 
     Changing the compatibility level is like moving the database back in time. It restricts the features SQL server can use to those that were available in SQL Server 2008.
 
+1. Download the database backup file located on **https://github.com/MicrosoftLearning/dp-300-database-administrator/blob/master/Instructions/Templates/CreateRandomWorkloadGenerator.sql** to **C:\LabFiles\Monitor and optimize** path on the lab virtual machine
+
 1. Select the **File** > **Open** > **File** menu in SQL Server Management Studio.
 
-1. Navigate to the **D:\Labfiles\Query Performance\CreateRandomWorkloadGenerator.sql** file.
+1. Navigate to the **C:\LabFiles\Monitor and optimize\CreateRandomWorkloadGenerator.sql** file.
 
 1. Select the file to load it into Management Studio and then select **Execute** or press <kbd>F5</kbd> to execute the query.
 
