@@ -12,29 +12,11 @@ Students will explore the Azure Portal and use it to create an Azure VM with SQL
 
 You are a database administrator for AdventureWorks. You need to create a test environment for use in a proof of concept. The proof of concept will use SQL Server on an Azure Virtual Machine and a backup of the AdventureWorksDW database. You need to set up the Virtual Machine, restore the database, and query it to ensure it is available.
 
-## Explore the Azure Portal
+## Deploy a SQL Server on an Azure Virtual Machine
 
 1. From the lab virtual machine, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/), and sign in using the Microsoft account associated with your Azure subscription.
 
     ![Picture 1](../images/dp-300-module-01-lab-01.png)
-
-1. In the Azure Portal home page, select **Resource groups** icon located in the middle of the page.
-
-    ![Picture 2](../images/dp-300-module-01-lab-02.png)
-
-1. On the **Resource groups** blade, click on the resource group available. Your resource group name should start with **contoso-rg**.
-
-    ![Picture 3](../images/dp-300-module-01-lab-03.png)
-
-    **Note:** The **Resource groups** blade will list all Azure resource groups within your  subscriptions.
-
-1. On the **Resource group** page, review your resource group name, subscription name, and the location assigned. (You may have a different location assigned)
-
-    ![Picture 6](../images/dp-300-module-01-lab-06.png)
-
-    At this point you were able to explore the Azure Portal and check some of the properties of your resource group. Next, we will provision a SQL Server on an Azure Virtual Machine.
-
-## Deploy a SQL Server on an Azure Virtual Machine
 
 1. Locate the search bar at the top of the page. Search for **Azure SQL**. Select the search result for **Azure SQL** that appears in the results under **Services**.
 
@@ -51,7 +33,7 @@ You are a database administrator for AdventureWorks. You need to create a test e
 1. On the **Create a virtual machine** page, enter the following information:
 
     - **Subscription:** &lt;Your subscription&gt;
-    - **Resource group:** starting with *contoso-rg*
+    - **Resource group:** &lt;Your resource group&gt;
     - **Virtual machine name:**  azureSQLServerVM
     - **Region:** &lt;your local region, same as the selected region for your resource group&gt;
     - **Availability Options:** No infrastructure redundancy required
