@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Lab 11 – Create a CPU status alert for a SQL Server'
+    title: 'Lab 12 – Create a CPU status alert for a SQL Server'
     module: 'Automate database tasks for Azure SQL'
 ---
 

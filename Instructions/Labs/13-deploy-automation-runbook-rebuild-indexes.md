@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Lab 11 – Deploy an automation runbook to automatically rebuild indexes'
+    title: 'Lab 13 – Deploy an automation runbook to automatically rebuild indexes'
     module: 'Automate database tasks for Azure SQL'
 ---
 
