@@ -40,7 +40,7 @@ You have been hired as a Senior Data Engineer to help automate day to day operat
 
     ![Screenshot of selecting the Create action group](../images/dp-300-module-12-lab-07.png)
 
-    On the **Action Group** screen, type **emailgroup** in the **Action group name** field, and then select **Next: Notifications**.
+1. On the **Action Group** screen, type **emailgroup** in the **Action group name** field, and then select **Next: Notifications**.
 
     ![Screenshot of entering emailgroup and selecting Next: Notifications](../images/dp-300-module-12-lab-08.png)
 
