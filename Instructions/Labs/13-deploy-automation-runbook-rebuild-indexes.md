@@ -16,7 +16,7 @@ You have been hired as a Senior Database Administrator to help automate day to d
 
     ![Screenshot of Azure portal sign in page](../images/dp-300-module-01-lab-01.png)
 
-1. In the Azure portal in the search bar type *automation* and then select **Automation Accounts** from the search results, and then select **+ Add**.
+1. In the Azure portal in the search bar type *automation* and then select **Automation Accounts** from the search results, and then select **+ Create**.
 
     ![Screenshot of selecting the Automation Accounts.](../images/dp-300-module-13-lab-01.png)
 
