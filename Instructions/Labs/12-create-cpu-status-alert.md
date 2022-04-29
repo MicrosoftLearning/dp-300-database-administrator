@@ -36,7 +36,7 @@ You have been hired as a Senior Data Engineer to help automate day to day operat
 
     ![Screenshot of selecting the Select action group link](../images/dp-300-module-12-lab-06.png)
 
-1. In the fly out for Action Group, select **Create action group**.
+1. In the **Actions** tab, select **Create action group**.
 
     ![Screenshot of selecting the Create action group](../images/dp-300-module-12-lab-07.png)
 
