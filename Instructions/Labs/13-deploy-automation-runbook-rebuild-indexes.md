@@ -20,13 +20,17 @@ You have been hired as a Senior Database Administrator to help automate day to d
 
     ![Screenshot of selecting the Automation Accounts.](../images/dp-300-module-13-lab-01.png)
 
-1. On the **Add Automation Account** page, enter the information below, and then select **Create**.
+1. On the **Create an Automation Account** page, enter the information below, and then select **Review + Create**.
 
-    - **Name:** autoAccount
     - **Resource Group:** starting with *automateLab*
+    - **Name:** autoAccount
     - **Location:** Use the default.
 
     ![Screenshot of the Add Automation Account screen.](../images/dp-300-module-13-lab-02.png)
+
+1. On the review page, select **Create**.
+
+    ![Screenshot of the Add Automation Account screen.](../images/dp-300-module-13-lab-29.png)
 
     > [!NOTE]
     > Your automation account should be created in around three minutes.
