@@ -94,7 +94,8 @@ Now that the Azure SQL Database replica is created, you will perform a failover.
 
     ![Screenshot showing a forced failover warning message.](../images/dp-300-module-14-lab-14.png)
 
-    This process can take a few minutes. When complete, the roles will switch with the secondary becoming the new primary, and the old primary the secondary.
+    > [!NOTE]
+    > This process can take a few minutes. When complete, the roles will switch with the secondary becoming the new primary, and the old primary the secondary.
 
 We've seen the readable secondary database may be in the same Azure region as the primary, or, more commonly, in a different region. This kind of readable secondary databases are also known as geo-secondaries, or geo-replicas.
 
