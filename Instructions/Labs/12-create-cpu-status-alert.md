@@ -66,4 +66,4 @@ You have been hired as a Senior Data Engineer to help automate day to day operat
 
     ![Screenshot of the warning email](../images/dp-300-module-12-lab-12.png)
 
-Alerts can send you an email or call a web hook when some metric (for example database size or CPU usage) reaches a threshold you define. You've just seen how you can easily configure Alerts for Azure SQL Databases.
+Alerts can send you an email or call a web hook when some metric (for example database size or CPU usage) reaches a threshold you define. You've just seen how you can easily configure alerts for Azure SQL Databases.
