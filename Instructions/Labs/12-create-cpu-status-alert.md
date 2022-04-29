@@ -32,7 +32,7 @@ You have been hired as a Senior Data Engineer to help automate day to day operat
 
     ![Screenshot of entering 80 and selecting Done](../images/dp-300-module-12-lab-05.png)
 
-1. Select the **Actions** tab, and then **Select action group** link.
+1. Select the **Actions** tab.
 
     ![Screenshot of selecting the Select action group link](../images/dp-300-module-12-lab-06.png)
 
