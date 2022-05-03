@@ -14,7 +14,7 @@ As a DBA for AdventureWorks, you need to back up a database to a URL in Azure an
 
 1. Download the database backup file located on **https://github.com/MicrosoftLearning/dp-300-database-administrator/blob/master/Instructions/Templates/AdventureWorks2017.bak** to **C:\LabFiles\HADR** path on the lab virtual machine (create the folder structure if it does not exist).
 
-    ![Picture 03](../images/dp-300-module-07-lab-03.png)
+    ![Picture 03](../images/dp-300-module-15-lab-00.png)
 
 1. Select the Windows Start button and type SSMS. Select **Microsoft SQL Server Management Studio 18** from the list.  
 
@@ -60,33 +60,35 @@ As a DBA for AdventureWorks, you need to back up a database to a URL in Azure an
 
     ![Screenshot of welcome page for cloud shell on Azure portal.](../images/dp-300-module-15-lab-02.png)
 
-1. If you have not previously used a Cloud Shell, you must configure a storage. Select **Show advanced settings**.
+1. If you have not previously used a Cloud Shell, you must configure a storage. Select **Show advanced settings** (You may have a different subscription assigned).
 
     ![Screenshot of create storage for cloud shell on Azure portal.](../images/dp-300-module-15-lab-03.png)
 
-1. Use the existing **Resource group** and specify new names for **Storage account** and **File share**, as shown in the dialog below. Make a note of the **Resource group** name. It should start with **DP-300-HADR**. Then select **Create storage**.
+1. Use the existing **Resource group** and specify new names for **Storage account** and **File share**, as shown in the dialog below. Make a note of the **Resource group** name. It should start with *contoso-rg*. Then select **Create storage**.
+
+    **Note:** Your storage account name must be unique and all lower case with no special characters. Please provide a unique name.
 
     ![Screenshot of the create storage account and file share on Azure portal.](../images/dp-300-module-15-lab-04.png)
 
-1. Verify that the upper left corner of the Cloud Shell screen shows **Bash**.
-
-    Once complete, you will see a prompt similar to the one below.
+1. Once complete, you will see a prompt similar to the one below. Verify that the upper left corner of the Cloud Shell screen shows **Bash**.
 
     ![Screenshot of the Cloud Shell prompt on Azure portal.](../images/dp-300-module-15-lab-05.png)
 
-1. Create a new storage account from the CLI using by executing the following command in Cloud Shell. Your storage account name must be unique and all lower case with no special characters. You should change dp300storage in the example to a unique name such as **dp300storagemsl123**. Use the name of the resource group starting with **DP-300-HADR** that you made note of above.
+1. Create a new storage account from the CLI using by executing the following command in Cloud Shell. Use the name of the resource group starting with **contoso-rg** that you made note of above.
 
     > [!NOTE]
-    > Change the **-n** and **-g** parameters as needed.
+    > Change the resource group name (**-g** parameter), and provide a unique storage account name (**-n** parameter).
 
     ```bash
-    az storage account create -n dp300storage -g DP-300-HADR --kind StorageV2 -l eastus2
+    az storage account create -n "dp300backupstorage1234" -g "contoso-rglod23149951" --kind StorageV2 -l eastus2
     ```
 
-1. Next you will get the account keys for your account, which you will use in subsequent steps. Execute the following code in Cloud Shell using the unique name of your storage account and resource group.
+    ![Screenshot of the storage account creation prompt on Azure portal.](../images/dp-300-module-15-lab-16.png)
+
+1. Next you will get the keys for your storage account, which you will use in subsequent steps. Execute the following code in Cloud Shell using the unique name of your storage account and resource group.
 
     ```bash
-    az storage account keys list -g DP-300-HADR -n dp300storage
+    az storage account keys list -g contoso-rglod23149951 -n dp300backupstorage1234
     ```
 
     Your account key will be in the results of the above command. Make sure you use the same name (after the **-n**) and resource group (after the **-g**) that you used in the previous command. Copy the returned value for **key1** (without the double quotes) as shown here:
@@ -96,90 +98,96 @@ As a DBA for AdventureWorks, you need to back up a database to a URL in Azure an
 1. Backing up a database in SQL Server to a URL uses container within a storage account. You will create a container specifically for backup storage in this step. To do this, execute the commands below.
 
     ```bash
-    az storage container create --name "backups" --account-name "dp300storage" --account-key "storage_key" --fail-on-exist
+    az storage container create --name "backups" --account-name "dp300backupstorage1234" --account-key "storage_key" --fail-on-exist
     ```
 
-    where **dp300storage** is the storage account name used when creating the storage account and **storage_key** is the key generated above. The output should return **true**.
+    Where **dp300backupstorage1234** is the unique storage account name used when creating the storage account, and **storage_key** is the key generated above. The output should return **true**.
 
-    ![Test](../images/dp-300-module-15-lab-07.png)
+    ![Screenshot of the output for the container creation.](../images/dp-300-module-15-lab-07.png)
 
-1. To further verify the container backups has been created properly, execute:
+1. To verify if the container backups has been created properly, execute:
 
     ```bash
-    az storage container list --account-name "dp300storage" --account-key "storage_key"
+    az storage container list --account-name "dp300backupstorage1234" --account-key "storage_key"
     ```
 
-    where **dp300storage** is the storage account name used you created and storage_key is the key you generated above. The output should return something similar to below:
+    Where **dp300backupstorage1234** is the unique storage account name used when creating the storage account, and **storage_key** is the key generated. The output should return something similar to below:
 
     ![Screenshot of the container list.](../images/dp-300-module-15-lab-08.png)
 
 1. A shared access signature (SAS) at the container level is required for security. This can be done via Cloud Shell or PowerShell. Execute the following:
 
     ```bash
-    az storage container generate-sas -n "backups" --account-name "dp300storage" --account-key "storage_key" --permissions "rwdl" --expiry "date_in_the_future" -o tsv
+    az storage container generate-sas -n "backups" --account-name "dp300backupstorage1234" --account-key "storage_key" --permissions "rwdl" --expiry "date_in_the_future" -o tsv
     ```
 
-    where **dp300storage** is the storage account name you created above, **storage_key** is the key generated above, and **date_in_the_future** is a time later than now. **date_in_the_future** must be in UTC. An example is **2021-12-31T00:00Z** which translates to expiring at Dec 31, 2020 at midnight.
+    Where **dp300backupstorage1234** is the unique storage account name used when creating the storage account, **storage_key** is the key generated, and **date_in_the_future** is a time later than now. **date_in_the_future** must be in UTC. An example is **2021-12-31T00:00Z** which translates to expiring at Dec 31, 2020 at midnight.
 
-    The output should return something similar to below. Copy the whole shared access signature and paste it in **Notepad**, because it will be used in the next task:
+    The output should return something similar to below. Copy the whole shared access signature and paste it in **Notepad**, it will be used in the next task.
 
     ![Screenshot of the shared access signature key.](../images/dp-300-module-15-lab-09.png)
 
-## Back Up AdventureWorks2017
+## Create credential
 
-Now that the functionality is configured, you can generate a backup file as a blob in Azure.
+Now that the functionality is configured, you can generate a backup file as a blob in Azure Storage Account.
 
 1. Start **SQL Server Management Studio (SSMS)**.
 
-1. You will be prompted to connect to  SQL Server. Ensure that **Windows Authentication** is selected, and click **Connect**.
+1. You will be prompted to connect to  SQL Server. Ensure that **Windows Authentication** is selected, and select **Connect**.
 
-1. Click **New Query**.
+1. Select **New Query**.
 
-1. Create the credential that will be used to access storage in the cloud with the following Transact-SQL. Fill in the appropriate values:
+1. Create the credential that will be used to access storage in the cloud with the following Transact-SQL. Fill in the appropriate values, then select **Execute**.
 
     ```sql
     IF NOT EXISTS  
     (SELECT * 
         FROM sys.credentials  
-        WHERE name = 'https://dp300storage.blob.core.windows.net/backups')  
+        WHERE name = 'https://<storage_account_name>.blob.core.windows.net/backups')  
     BEGIN
-        CREATE CREDENTIAL [https://dp300storage.blob.core.windows.net/backups]
+        CREATE CREDENTIAL [https://<storage_account_name>.blob.core.windows.net/backups]
         WITH IDENTITY = 'SHARED ACCESS SIGNATURE',
-        SECRET = '<SAS token>'
+        SECRET = '<key_value>'
     END;
     GO  
     ```
 
-    Where both occurrences  of **dp300storage** are the storage account name created above and **sas_token** is the value generated at the end of the previous task.
-
-    The **SECRET** for the `CREATE CREDENTIAL` command should be in this format:
+    Where both occurrences of **<storage_account_name>** are the unique storage account name created, and **<key_value>** is the value generated at the end of the previous task in this format:
 
     `'se=2020-12-31T00%3A00Z&sp=rwdl&sv=2018-11-09&sr=csig=rnoGlveGql7ILhziyKYUPBq5ltGc/pzqOCNX5rrLdRQ%3D'`
 
-1. Click **Execute**. This should be successful. If you mistyped and need to recreate the credential, you can drop it with the following command, making sure to change the name of the storage account:
+1. You can check if the credential was created successfully by navigating to **Security -> Credentials** on Object Explore.
+
+    ![Screenshot of the credential on SSMS.](../images/dp-300-module-15-lab-17.png)
+
+1. If you mistyped and need to recreate the credential, you can drop it with the following command, making sure to change the name of the storage account:
 
     ```sql
     -- Only run this command if you need to go back and recreate the credential! 
-    DROP CREDENTIAL [https://dp300storage.blob.core.windows.net/backups]  
+    DROP CREDENTIAL [https://<storage_account_name>.blob.core.windows.net/backups]  
     ```
 
-1. Back up the database AdventureWorks2017 to Azure with the following command in Transact-SQL:
+## Backup to URL
+
+1. Back up the database **AdventureWorks2017** to Azure with the following command in Transact-SQL:
 
     ```sql
     BACKUP DATABASE AdventureWorks2017   
-    TO URL = 'https://dp300storage.blob.core.windows.net/backups/AdventureWorks2017.bak';
+    TO URL = 'https://<storage_account_name>.blob.core.windows.net/backups/AdventureWorks2017.bak';
     GO 
     ```
 
-    where **dp300storage** is the storage account name used in **Task 1**.
+    Where **<storage_account_name>** is the unique storage account name used created. The output should return something similar to below.
 
-    If something is configured incorrectly, you will see an error message similar to the following:
+    ![Screenshot of the backup error.](../images/dp-300-module-15-lab-18.png)
+
+    If something was configured incorrectly, you will see an error message similar to the following:
 
     ![Screenshot of the backup error.](../images/dp-300-module-15-lab-10.png)
 
     If an error occurs, check that you did not mistype anything during the credential creation, and that everything was created successfully.
 
-## Validate the backup
+## Validate the backup through Azure CLI
 
 To see that the file is actually in Azure, you can use Storage Explorer (preview) or Azure Cloud Shell.
 
@@ -188,20 +196,34 @@ To see that the file is actually in Azure, you can use Storage Explorer (preview
 1. Use the Azure Cloud Shell to run this Azure CLI command:
 
     ```bash
-    az storage blob list -c "backups" --account-name "dp300storage" --account-key "storage_key"
+    az storage blob list -c "backups" --account-name "dp300backupstorage1234" --account-key "storage_key" --output table
     ```
 
-    Where **dp300storage** is the storage account name you created above and **storage_key** is the key used there as well.
+    Make sure you use the same unique storage account name (after the **--account-name**) and account key (after the **--account-key**) that you used in the previous commands.
+
+    ![Screenshot of the backup in the container.](../images/dp-300-module-15-lab-19.png)
+
+    We can confirm the backup file was generated successfully.
+
+## Validate the backup through Storage Explorer
 
 1. To use the Storage Explorer (preview), from the home page in the Azure portal select **Storage accounts**.
 
     ![Screenshot showing selecting a storage account.](../images/dp-300-module-15-lab-11.png)
 
-1. Select the storage account starting with **dp300storage**.
+1. Select the unique storage account name you created for the backups.
 
-1. In the left navigation, select **Storage Explorer (preview)**. Expand **BLOB CONTAINERS**, then select **backups**.
+1. In the left navigation, select **Storage browser (preview)**. Expand **Blob containers**.
 
     ![Screenshot showing the backed up file in the storage account.](../images/dp-300-module-15-lab-12.png)
+
+1. Select **backups**.
+
+    ![Screenshot showing the backed up file in the storage account.](../images/dp-300-module-15-lab-13.png)
+
+1. Note that the backup file is stored in the container.
+
+    ![Screenshot showing the backup file on storage browser.](../images/dp-300-module-15-lab-14.png)
 
 ## Restore from URL
 
@@ -212,24 +234,24 @@ This task will show you how to restore a database from an Azure blob storage.
     ```sql
     USE AdventureWorks2017;
     GO
-    SELECT * FROM Sales.Customers WHERE CustomerID = 1;
+    SELECT * FROM Person.Address WHERE AddressId = 1;
     GO
     ```
 
-    ![Screenshot showing the customer name before the update was executed.](../images/dp-300-module-15-lab-13.png)
+    ![Screenshot showing the customer name before the update was executed.](../images/dp-300-module-15-lab-21.png)
 
 1. Run this command to change the name of that customer.
 
     ```sql
-    UPDATE Sales.Customers
-    SET CustomerName = 'This is a human error'
-    WHERE CustomerID = 1;
+    UPDATE Person.Address
+    SET AddressLine1 = 'This is a human error'
+    WHERE AddressId = 1;
     GO
     ```
 
-1. Re-run **Step 1** to verify that the name has been changed. Now imagine if someone had changed thousands or millions of rows without a WHERE clause – or the wrong WHERE clause. One of the solutions involves restoring the database from the last available backup.
+1. Re-run **Step 1** to verify that the address has been changed. Now imagine if someone had changed thousands or millions of rows without a WHERE clause – or the wrong WHERE clause. One of the solutions involves restoring the database from the last available backup.
 
-    ![Screenshot showing the customer name after the update was executed.](../images/dp-300-module-15-lab-14.png)
+    ![Screenshot showing the customer name after the update was executed.](../images/dp-300-module-15-lab-15.png)
 
 1. To restore the database to get it back to where it was before the customer name was mistakenly changed, execute the following.
 
@@ -243,20 +265,22 @@ This task will show you how to restore a database from an Azure blob storage.
     GO
 
     RESTORE DATABASE AdventureWorks2017 
-    FROM URL = 'https://dp300storage.blob.core.windows.net/backups/AdventureWorks2017.bak'
+    FROM URL = 'https://<storage_account_name>.blob.core.windows.net/backups/AdventureWorks2017.bak'
     GO
 
     ALTER DATABASE AdventureWorks2017 SET MULTI_USER
     GO
     ```
 
-    Where **dp300storage** is the storage account name used above.
+    Where **<storage_account_name>** is the unique storage account name you created.
 
     The output should be similar to this:
 
-    ![Screenshot showing the restore database from URL being executed.](../images/dp-300-module-15-lab-15.png)
+    ![Screenshot showing the restore database from URL being executed.](../images/dp-300-module-15-lab-20.png)
 
 1. Re-run **Step 1** to verify that the customer name has been restored.
+
+    ![Screenshot showing the column with the correct value.](../images/dp-300-module-15-lab-21.png)
 
 It is important to understand the components and the interaction to do a backup to or restore from the Azure Blob Storage service.
 
