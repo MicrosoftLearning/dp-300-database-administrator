@@ -255,7 +255,7 @@ This task will show you how to restore a database from an Azure blob storage.
 
 1. To restore the database to get it back to where it was before the customer name was mistakenly changed, execute the following.
 
-    **Note:** `SET SINGLE_USER WITH ROLLBACK IMMEDIATE` syntax the open transactions will all be rolled back. This can prevent the restore failing due to active connections.
+    **Note:** **SET SINGLE_USER WITH ROLLBACK IMMEDIATE** syntax the open transactions will all be rolled back. This can prevent the restore failing due to active connections.
 
     ```sql
     USE [master];
