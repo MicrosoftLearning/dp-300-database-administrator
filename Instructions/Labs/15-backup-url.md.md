@@ -258,7 +258,7 @@ This task will show you how to restore a database from an Azure blob storage.
     **Note:** **SET SINGLE_USER WITH ROLLBACK IMMEDIATE** syntax the open transactions will all be rolled back. This can prevent the restore failing due to active connections.
 
     ```sql
-    USE [master];
+    USE [master]
     GO
 
     ALTER DATABASE AdventureWorks2017 SET SINGLE_USER WITH ROLLBACK IMMEDIATE
