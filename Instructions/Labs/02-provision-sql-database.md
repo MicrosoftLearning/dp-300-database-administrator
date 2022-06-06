@@ -125,15 +125,15 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
 ## Enable access to an Azure SQL Database
 
-1. From the **SQL database** page, click on the link for the server name in the top section:
+1. From the **SQL database** page, select the **Overview** section, and then select the link for the server name in the top section:
 
     ![Picture 13](../images/dp-300-module-02-lab-19.png)
 
-1. On the SQL servers navigation blade, click **Firewalls and virtual networks** under **Security**
+1. On the SQL servers navigation blade, select **Networking** under the **Security** section.
 
     ![Picture 14](../images/dp-300-module-02-lab-20.png)
 
-1. Set **Allow Azure services and resources to access this server** to **Yes**, and then click **Save**.
+1. On the **Public access** tab, check the **Allow Azure services and resources to access this server** property, and then click **Save**.
 
     ![Picture 15](../images/dp-300-module-02-lab-21.png)
 
