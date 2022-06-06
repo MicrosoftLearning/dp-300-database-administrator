@@ -113,7 +113,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
 1. Click **Next: Security**, and then **Next: Additional settings**.  
 
-1. On the **Additional settings** page, select **Sample** on the **Use existing data** option:
+1. On the **Additional settings** page, select **Sample** on the **Use existing data** option. Select **OK** if a pop-up message is displayed for the sample database.
 
     ![Picture 12](../images/dp-300-module-02-lab-18.png)
 
