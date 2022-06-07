@@ -59,9 +59,9 @@ You have been hired as a Senior Database Administrator to help ensure the securi
 
 1. In the **Import Data Tier Application** dialog, click **Next** on the first screen.
 
-1. Download the .bacpac file located on **https://github.com/MicrosoftLearning/dp-300-database-administrator/blob/master/Instructions/Templates/AdventureWorks.bacpac** to **C:\LabFiles\Secure Environment**  path on the lab VM (create the folder structure if it does not exist).
+1. Download the .bacpac file located on **https://github.com/MicrosoftLearning/dp-300-database-administrator/blob/master/Instructions/Templates/AdventureWorksLT.bacpac** to **C:\LabFiles\Secure Environment**  path on the lab VM (create the folder structure if it does not exist).
 
-1. In the **Import Settings** screen, click **Browse** and navigate to **C:\LabFiles\Secure Environment** folder, click on the **AdventureWorks.bacpac** file, and then click **Open**. Back to the **Import Data-tier Application** screen click **Next**.
+1. In the **Import Settings** screen, click **Browse** and navigate to **C:\LabFiles\Secure Environment** folder, click on the **AdventureWorksLT.bacpac** file, and then click **Open**. Back to the **Import Data-tier Application** screen click **Next**.
 
     ![A screenshot of a social media post Description automatically generated](../images/dp-300-module-04-lab-8.png)
 
