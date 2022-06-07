@@ -164,14 +164,18 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 1. In the **Connection** sidebar, fill out the **Connection Details** section with connection information to connect to the SQL database created previously.
 
     - Connection Type: **Microsoft SQL Server**
-    - Server: Enter the name of the SQL Server created previously. For example: **dp300-lab-xxx.database.windows.net**.	[Note that you were asked to create a server name with your initials, instead of ‘xxx’]
+    - Server: Enter the name of the SQL Server created previously. For example: **dp300-lab-xxxxxxxx.database.windows.net** (Where ‘xxxxxxxx’ is a ramdom number)
     - Authentication Type: **SQL Login**
     - User name: **dp300admin**
     - Password: **dp300P@ssword!**
     - Expand the Database drop-down to select **AdventureWorksLT.** 
-	    - **NOTE:** You may be asked to add a firewall rule that allows your client IP access to this server. If you are asked to add a firewall rule, click on **Add account** and login to your Azure account. On **Create new firewall rule** screen, click **OK**.
+        - **NOTE:** You may be asked to add a firewall rule that allows your client IP access to this server. If you are asked to add a firewall rule, click on **Add account** and login to your Azure account. On **Create new firewall rule** screen, click **OK**.
 
         ![Picture 18](../images/dp-300-module-02-lab-26.png)
+
+        Alternatively, you can manually create a firewall rule for your SQL server on Azure portal by navigating to your SQL server, selecting **Networking**, and then selecting **+ Add your client IPv4 address (your IP address)**
+
+        ![Picture 18](../images/dp-300-module-02-lab-47.png)
 
     Back on the Connection sidebar, continue filling out the connection details:  
 
