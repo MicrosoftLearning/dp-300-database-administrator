@@ -40,7 +40,7 @@ You are a database administrator for AdventureWorks. You need to create a test e
     - **Image:** Free SQL Server License: SQL 2019 Developer on Windows Server 2019 - Gen1
     - **Azure spot instance:** No (unchecked)
     - **Size:** Standard *D2s_v2* (2 vCPUs, 8 GiB memory). You may need to select the "See all sizes" link to see this option)
-    - **Administrator account username:** dp300sqlvmlab01admin
+    - **Administrator account username:** sqladmin
     - **Administrator account password:** pwd!DP300lab01 (or your own password that meets the criteria)
     - **Select inbound ports:** RDP (3389)
     - **Would you like to use an existing Windows Server license?:** No (unchecked)
@@ -79,6 +79,8 @@ You are a database administrator for AdventureWorks. You need to create a test e
     ![Picture 18](../images/dp-300-module-01-lab-18.png)
 
 1. On the deployment blade, wait until the deployment is complete. The VM will take approximate 5-10 minutes to deploy. After the deployment is complete, select  **Go to resource**.
+
+    **Note:** Your deployment may take several minutes to complete.
 
     ![Picture 19](../images/dp-300-module-01-lab-19.png)
 
