@@ -32,15 +32,15 @@ You have been hired as a Senior Database Administrator to help ensure the securi
 
     ![Picture 2](../images/dp-300-module-04-lab-3.png)
 
-1. Click on **Show firewall settings**.
+1. Select **Show networking settings**.
 
     ![Picture 2](../images/dp-300-module-04-lab-4.png)
 
-1. On the **Firewalls and virtual networks** page, click on **+ Add client IP**, and then click **Save**.
+1. On the **Networking** page, click on **+ Add your client IPv4 address (your IP address)**, and then click **Save**.
 
     ![Picture 3](../images/dp-300-module-04-lab-5.png)
 
-    **Note:** Notice that your client IP address was automatically entered for you. Adding your client IP address to the list will allow you to connect to your Azure SQL Database using SQL Server Management Studio or any other client tools. **Make note of your client IP address, you will use it later.**
+    **Note:** Your client IP address was automatically entered for you. Adding your client IP address to the list will allow you to connect to your Azure SQL Database using SQL Server Management Studio or any other client tools. **Make note of your client IP address, you will use it later.**
 
 1. Open SQL Server Management Studio. On the Connect to Server dialog box, paste in the name of your Azure SQL Database server, and login with the credentials below:
 
