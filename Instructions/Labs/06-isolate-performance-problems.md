@@ -36,13 +36,11 @@ You have been hired as a database administrator to identify performance related 
 
     ![Screenshot showing selecting Set server firewall](../images/dp-300-module-06-lab-01.png)
 
-1. On the **Firewall settings** page, select **+ Add client IP**, then **Save**.
+1. On the **Networking** page, select **+ Add your client IPv4 address (your IP address)**, then select **Save**.
 
     ![Screenshot showing selecting Add client IP](../images/dp-300-module-06-lab-02.png)
 
-1. Select **OK**.
-
-1. In the navigation above **Firewall settings**, select the link that begins with **AdventureWorksLT**.
+1. In the navigation above **Networking**, select the link that begins with **AdventureWorksLT**.
 
     ![Screenshot showing selecting AdventureWorks](../images/dp-300-module-06-lab-03.png)
 
