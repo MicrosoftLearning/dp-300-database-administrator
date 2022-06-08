@@ -86,9 +86,11 @@ You have been hired as a database administrator to identify performance related 
 1. Select **New Query**. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
 
     ```sql
-    EXEC sp_configure 'blocked process threshold (s)', 60
+    EXEC sys.sp_configure N'show advanced options', 1
+    RECONFIGURE WITH OVERRIDE;
     GO
-    RECONFIGURE WITH OVERRIDE
+    EXEC sp_configure 'blocked process threshold (s)', 60
+    RECONFIGURE WITH OVERRIDE;
     GO
     ```
 
