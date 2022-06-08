@@ -54,7 +54,7 @@ You have been hired as a Senior Database Administrator help ensure the security 
 
     ![Screenshot showing the Data Discovery & Classification](../images/dp-300-module-05-lab-05.png)
 
-1. On the **Data Discovery & Classification** page, you will see an informational message that reads **We have found 15 columns with classification recommendations**. Select that link.
+1. On the **Data Discovery & Classification** page, you will see an informational message that reads: **Currently using SQL Information Protection policy. We have found 15 columns with classification recommendations**. Select this link.
 
     ![Screenshot showing the Classification Recommendations](../images/dp-300-module-05-lab-06.png)
 
