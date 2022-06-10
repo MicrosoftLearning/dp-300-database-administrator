@@ -159,13 +159,17 @@ Next you'll run a workload to generate query statistics for query store, examine
 
     Changing the compatibility level is like moving the database back in time. It restricts the features SQL server can use to those that were available in SQL Server 2008.
 
-1. Download the T-SQL script located on **https://github.com/MicrosoftLearning/dp-300-database-administrator/blob/master/Instructions/Templates/CreateRandomWorkloadGenerator.sql** to **C:\LabFiles\Monitor and optimize** path on the lab virtual machine
+1. Download the T-SQL script located on **https://github.com/MicrosoftLearning/dp-300-database-administrator/blob/master/Instructions/Templates/CreateRandomWorkloadGenerator.sql** to **C:\LabFiles\Monitor and optimize** path on the lab virtual machine.
+
+1. Download the T-SQL script located on **https://github.com/MicrosoftLearning/dp-300-database-administrator/blob/master/Instructions/Templates/ExecuteRandomWorkload.sql** to **C:\LabFiles\Monitor and optimize** path on the lab virtual machine.
 
 1. Select the **File** > **Open** > **File** menu in SQL Server Management Studio.
 
 1. Navigate to the **C:\LabFiles\Monitor and optimize\CreateRandomWorkloadGenerator.sql** file.
 
 1. Once opened into SQL Server Management Studio, select **Execute** or press <kbd>F5</kbd> to execute the query.
+
+1. In a new query editor, open the file **C:\LabFiles\Monitor and optimize\ExecuteRandomWorkload.sql**, and select **Execute** or press <kbd>F5</kbd> to execute the query.
 
 1. After the execution completes, run the script a second time to create additional load on the server. Leave the query tab open for this query.
 
@@ -181,7 +185,7 @@ Next you'll run a workload to generate query statistics for query store, examine
     GO
     ```
 
-1. Navigate back to the query tab from **CreateRandomWorkloadGenerator.sql** file, and re-execute it.
+1. Navigate back to the query tab from **ExecuteRandomWorkload.sql** file, and re-execute it.
 
 ## Examine Top Resource Consuming Queries report
 
