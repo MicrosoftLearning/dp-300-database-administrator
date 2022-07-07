@@ -6,7 +6,7 @@ lab:
 
 # Implement a Secure Environment
 
-**Estimated Time: 60 minutes**
+**Estimated Time: 30 minutes**
 
 The students will take the information gained in the lessons to configure and subsequently implement security in the Azure Portal and within the AdventureWorks database.
 
