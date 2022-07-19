@@ -1,7 +1,7 @@
 ---
 lab:
-    title: 'Setup lab environment'
-    module: 'Setup'
+    title: 'Setup your own environment'
+    module: 'Setup your own environment'
 ---
 
 # Setup local lab environment
