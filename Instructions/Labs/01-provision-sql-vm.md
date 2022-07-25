@@ -26,7 +26,7 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
     ![Picture 10](../images/dp-300-module-01-lab-10.png)
 
-1. On the **Select SQL deployment option** blade, click on the drop-down box under **SQL virtual machines**. Select the option labeled **Free SQL Server License: SQL 2019 Developer on Windows Server 2019**. Then select **Create**.
+1. On the **Select SQL deployment option** blade, click on the drop-down box under **SQL virtual machines**. Select the option labeled **Free SQL Server License: SQL 2019 Developer on Windows Server 2022**. Then select **Create**.
 
     ![Picture 11](../images/dp-300-module-01-lab-11.png)
 
@@ -37,9 +37,9 @@ You are a database administrator for AdventureWorks. You need to create a test e
     - **Virtual machine name:**  azureSQLServerVM
     - **Region:** &lt;your local region, same as the selected region for your resource group&gt;
     - **Availability Options:** No infrastructure redundancy required
-    - **Image:** Free SQL Server License: SQL 2019 Developer on Windows Server 2019 - Gen1
+    - **Image:** Free SQL Server License: SQL 2019 Developer on Windows Server 2022 - Gen1
     - **Azure spot instance:** No (unchecked)
-    - **Size:** Standard *D2s_v2* (2 vCPUs, 8 GiB memory). You may need to select the "See all sizes" link to see this option)
+    - **Size:** Standard *D2s_v3* (2 vCPUs, 8 GiB memory). You may need to select the "See all sizes" link to see this option)
     - **Administrator account username:** sqladmin
     - **Administrator account password:** pwd!DP300lab01 (or your own password that meets the criteria)
     - **Select inbound ports:** RDP (3389)
