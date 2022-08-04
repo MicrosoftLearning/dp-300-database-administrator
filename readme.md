@@ -1,4 +1,4 @@
-# DP-300: Administering Relational Databases on Microsoft Azure
+# DP-300: Administering Microsoft Azure SQL Solutions
 
 - **Are you a MCT?** - Have a look at our [GitHub User Guide for MCTs](https://microsoftlearning.github.io/MCT-User-Guide/)
 
