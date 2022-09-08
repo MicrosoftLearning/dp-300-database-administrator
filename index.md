@@ -4,7 +4,7 @@ permalink: index.html
 layout: home
 ---
 
-# Content Directory
+# Database Administration Exercises
 
 Hyperlinks to each of the lab exercises and demos are listed below.
 
