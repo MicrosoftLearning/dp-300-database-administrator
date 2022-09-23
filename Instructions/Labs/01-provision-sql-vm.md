@@ -61,7 +61,6 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
     ![Picture 15](../images/dp-300-module-01-lab-15.png)
 
-    Make sure that **Boot diagnostics** has the button for **Enable with managed storage account (recommended)** selected.
     Verify that **Enable auto_shutdown** is unchecked.
 
 1. Navigate to the **Advanced** tab and review the configuration.
@@ -97,6 +96,10 @@ You are a database administrator for AdventureWorks. You need to create a test e
 1. On the RDP tab, select the **Download RDP File** button.
 
     ![Picture 22](../images/dp-300-module-01-lab-22.png)
+
+    **Note:** If see the error **Port prerequisite not met**. Make sure to select the link to add an inbound network security group rule with the destination port mentioned in the *Port number* field.
+
+    ![Picture 22_1](../images/dp-300-module-01-lab-22_1.png)
 
 1. Open the RDP file that was just downloaded. When a dialog appears asking if you want to connect, select **Connect**.
 
