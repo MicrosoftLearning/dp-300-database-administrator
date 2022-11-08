@@ -145,7 +145,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
     ![Picture 14](../images/dp-300-module-02-lab-20.png)
 
-1. On the **Public access** tab, check the **Allow Azure services and resources to access this server** property, and then click **Save**.
+1. On the **Public access** tab, select **Selected networks**, and then check the **Allow Azure services and resources to access this server** property. Click **Save**.
 
     ![Picture 15](../images/dp-300-module-02-lab-21.png)
 
