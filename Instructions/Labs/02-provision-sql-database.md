@@ -79,6 +79,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
     - **Server:** click on **Create new** link. The **Create SQL Database Server** page will open. Provide the server details as follow:
         - **Server name:** dp300-lab-&lt;your initials (lower case)&gt; (server name must be globally unique)
         - **Location:** &lt;your local region, same as the selected region for your resource group, otherwise it may fail&gt;
+        - **Authentication method:** Use SQL authentication
         - **Server admin login:** dp300admin
         - **Password:** dp300P@ssword!
         - **Confirm password:** dp300P@ssword!
