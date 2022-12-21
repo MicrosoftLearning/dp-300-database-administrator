@@ -20,7 +20,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
 1. From the Azure portal, search for “resource groups” in the search box at the top, then select **Resource groups** from the list of options.
 
-    ![Picture 1](../images/dp-300-module-02-lab-45.png)
+    ![Picture 1](../images/lab2_2.png)
 
 1. On the **Resource group** page, check the resource group listed (it should start with *contoso-rg*), make note of the **Location** assigned to your resource group, as you will use it in the next exercise.
 
@@ -158,9 +158,9 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
         ![Picture 16](../images/dp-300-module-02-lab-22.png)
 
-1. When Azure Data Studio opens, click the **Connections** button in top left corner, and then **Add Connection**.
+1. When Azure Data Studio opens, click the **Connections (1)** button in top left corner, and then **New Connection (2)**.
 
-    ![Picture 17](../images/dp-300-module-02-lab-25.png)
+    ![Picture 17](../images/lab2_1.png)
 
 1. In the **Connection** sidebar, fill out the **Connection Details** section with connection information to connect to the SQL database created previously.
 
