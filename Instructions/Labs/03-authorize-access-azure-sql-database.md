@@ -122,7 +122,7 @@ In this task you will manage access to the database and its objects. The first t
 
     This will fail with the message:
 
-    ![Screenshot of the error message, The EXECUTE permission was denied on the object DemoProc](../images/dp-300-module-03-lab-09.png)
+    ![Screenshot of the error message, The EXECUTE permission was denied on the object DemoProc](../images/lab3_11.png)
 
 1. Next grant permissions to the role to allow it to execute the store procedure. Execute the below T-SQL.
 
@@ -141,6 +141,6 @@ In this task you will manage access to the database and its objects. The first t
     EXECUTE SalesLT.DemoProc
     ```
 
-    ![Screenshot showing the returned rows of data from the stored procedure](../images/dp-300-module-03-lab-10.png)
+    ![Screenshot showing the returned rows of data from the stored procedure](../images/lab3_12.png)
 
 In this exercise, you've seen how you can use Azure Active Directory to grant Azure credentials  access to a SQL Server hosted in Azure. You've also used T-SQL statement to create new database users and granted them permissions to run stored procedures.
