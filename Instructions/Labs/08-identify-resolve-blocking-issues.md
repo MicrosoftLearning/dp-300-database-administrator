@@ -16,7 +16,7 @@ You have been hired as a database administrator to identify performance related 
 
 ## Restore a database
 
-1. Download the database backup file located on **https://github.com/MicrosoftLearning/dp-300-database-administrator/blob/master/Instructions/Templates/AdventureWorks2017.bak** to **C:\LabFiles\Monitor and optimize** path on the lab virtual machine (create the folder structure if it does not exist).
+1. Download the database backup file located on **https://github.com/MicrosoftLearning/dp-300-database-administrator/blob/master/Instructions/Templates/AdventureWorks2017.bak** to **C:\LabFiles\Monitor and optimize** path on the Azure SQL VM created in Lab1 (create the folder structure if it does not exist).
 
     ![Picture 03](../images/dp-300-module-07-lab-03.png)
 
@@ -26,7 +26,7 @@ You have been hired as a database administrator to identify performance related 
 
 1. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name. Select **Connect**.
 
-    ![Picture 02](../images/dp-300-module-07-lab-01.png)
+    ![Picture 02](../images/lab1_7.png)
 
 1. Select the **Databases** folder, and then **New Query**.
 
