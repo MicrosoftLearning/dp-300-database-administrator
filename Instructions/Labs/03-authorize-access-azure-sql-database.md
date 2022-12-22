@@ -22,48 +22,53 @@ You've been hired as a Senior Database Administrator to help ensure the security
 
 1. On the Azure portal home page select **All resources**.
 
-    ![Screenshot of the Azure portal home page, selecting All resources](../images/dp-300-module-03-lab-01.png)
+    ![Screenshot of the Azure portal home page, selecting All resources](../images/lab3_2.png)
 
-1. Select the Azure SQL Database server **dp300-lab-xxxxxx**, where **xxxxxx** is a random string, and select **Not Configured** next to **Active Directory Admin**.
+1. Search for **dp300 (1)** and select the Azure SQL Database server **dp300-lab-xxxxxx (2)**, where **xxxxxx** is a random string.
 
-    ![Screenshot selecting Not Configured](../images/dp-300-module-03-lab-02.png)
+    ![Screenshot selecting Not Configured](../images/lab3_3_1.png)
+
+1. On the Overview page, select the **Not Configured** next to **Active Directory Admin**.
+
+    ![Screenshot selecting Not Configured](../images/lab3_3.png)
 
 1. On the next screen, select **Set admin**.
 
-    ![Screenshot selecting Set admin](../images/dp-300-module-03-lab-03.png)
+    ![Screenshot selecting Set admin](../images/lab3_5.png)
 
 1. In the **Azure Active Directory** sidebar, search for the Azure username you logged into the Azure portal with, then click on **Select**.
 
 1. Select **Save** to complete the process. This will make your username the Azure Active Directory admin for the server as shown below.
 
-    ![Screenshot of the Active Directory admin page](../images/dp-300-module-03-lab-04.png)
+    ![Screenshot of the Active Directory admin page](../images/lab3_6.png)
 
-1. On the left select **Overview**, then copy the **Server name**.
+1. On the left navigation select **Overview (1)**, then copy the **Server name (2)** from right hand side.
 
-    ![Screenshot showing where to copy the server name from](../images/dp-300-module-03-lab-05.png)
+    ![Screenshot showing where to copy the server name from](../images/lab3_7.png)
 
-1. Open SQL Server Management Studio and select **Connect** > **Database Engine**. In the **Server name** paste the name of your server. Change the authentication type to **Azure Active Directory Universal with MFA**.
+1. Select the Windows Start button and type **SSMS(1)**. Select **Microsoft SQL Server Management Studio 18(2)** from the list.  
 
-    ![Screenshot of the Connect to server dialog](../images/dp-300-module-03-lab-06.png)
+    ![Picture 34](../images/lab1_14.png)
 
-    For the **User name** field, select the Azure **Username** from the **Resources** tab.
+1. In the **Connect to Server** dialog box select **Database Engine** for Server type. In the **Server name** paste the name of your server you copied earlier. Change the authentication type to **Azure Active Directory Universal with MFA**.For the **User name** field, select the Azure **Username** from the **Resources (1)** tab and click on **Connect**
 
-1. Select **Connect**.
+    ![Screenshot of the Connect to server dialog](../images/lab3_8.png)
 
-> [!NOTE]
-> When you first try to sign in to an Azure SQL database your client IP address needs to be added to the firewall. SQL Server Management Studio can do this for you. Use the Azure Portal **password** from the **Resources** tab, then select **Sign in**, choose your Azure credentials and then select **OK**.
-> ![Screenshot of adding the client IP address](../images/dp-300-module-03-lab-07.png)
+    >**NOTE:** When you first try to sign in to an Azure SQL database, your client IP address needs to be added to the firewall. SQL Server Management Studio can do this for you. Use the Azure Portal **password** from the **Resources** tab, then select **Sign in**, choose your Azure credentials and then select **OK**.
+   
+     ![Screenshot of adding the client IP address](../images/lab3_9.png)
 
 ## Manage access to database objects
 
 In this task you will manage access to the database and its objects. The first thing you will do is create two users in the *AdventureWorksLT* database.
 
 1. Use the **Object Explorer** and expand **Databases**.
+
 1. Right-click on **AdventureWorksLT**, and select **New Query**.
 
-    ![Screenshot of the new query menu option](../images/dp-300-module-03-lab-08.png)
+    ![Screenshot of the new query menu option](../images/lab3_10.png)
 
-1. In the new query window, copy and paste the below T-SQL into it. Execute the query to create the two users.
+1. In the new query window, copy and paste the below T-SQL into it. **Execute** the query to create the two users.
 
     ```sql
     CREATE USER [DP300User1] WITH PASSWORD = 'Azur3Pa$$';
@@ -72,7 +77,9 @@ In this task you will manage access to the database and its objects. The first t
     CREATE USER [DP300User2] WITH PASSWORD = 'Azur3Pa$$';
     GO
     ```
-
+    
+    ![](../images/lab3_1.png)
+    
     **Note:** These users are created in the scope of the AdventureWorksLT database. Next you will create a custom role and add the users to it.
 
 1. Execute the following T-SQL in the same query window.
