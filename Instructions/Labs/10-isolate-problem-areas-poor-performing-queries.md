@@ -16,7 +16,7 @@ You'll run queries with suboptimal performance, examine the query plans, and att
 
 ## Restore a database
 
-1. Download the database backup file located on **https://github.com/MicrosoftLearning/dp-300-database-administrator/blob/master/Instructions/Templates/AdventureWorks2017.bak** to **C:\LabFiles\Monitor and optimize** path on the lab virtual machine (create the folder structure if it does not exist).
+1. Download the database backup file located on **https://github.com/MicrosoftLearning/dp-300-database-administrator/blob/master/Instructions/Templates/AdventureWorks2017.bak** to **C:\LabFiles\Monitor and optimize** path on Azure SQL VM created in Lab1 (create the folder structure if it does not exist).
 
     ![Picture 03](../images/dp-300-module-07-lab-03.png)
 
@@ -26,7 +26,7 @@ You'll run queries with suboptimal performance, examine the query plans, and att
 
 1. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name. Select **Connect**.
 
-    ![Picture 02](../images/dp-300-module-07-lab-01.png)
+    ![Picture 02](../images/lab1_7.png)
 
 1. Select the **Databases** folder, and then **New Query**.
 
@@ -159,9 +159,9 @@ Next you'll run a workload to generate query statistics for query store, examine
 
     Changing the compatibility level is like moving the database back in time. It restricts the features SQL server can use to those that were available in SQL Server 2008.
 
-1. Download the T-SQL script located on **https://github.com/MicrosoftLearning/dp-300-database-administrator/blob/master/Instructions/Templates/CreateRandomWorkloadGenerator.sql** to **C:\LabFiles\Monitor and optimize** path on the lab virtual machine.
+1. Download the T-SQL script located on **https://github.com/MicrosoftLearning/dp-300-database-administrator/blob/master/Instructions/Templates/CreateRandomWorkloadGenerator.sql** to **C:\LabFiles\Monitor and optimize** path on Azure SQL VM created in Lab1.
 
-1. Download the T-SQL script located on **https://github.com/MicrosoftLearning/dp-300-database-administrator/blob/master/Instructions/Templates/ExecuteRandomWorkload.sql** to **C:\LabFiles\Monitor and optimize** path on the lab virtual machine.
+1. Download the T-SQL script located on **https://github.com/MicrosoftLearning/dp-300-database-administrator/blob/master/Instructions/Templates/ExecuteRandomWorkload.sql** to **C:\LabFiles\Monitor and optimize** path on Azure SQL VM created in Lab1.
 
 1. Select the **File** > **Open** > **File** menu in SQL Server Management Studio.
 
@@ -193,7 +193,7 @@ Next you'll run a workload to generate query statistics for query store, examine
 
     ![Expand Query Store](../images/dp-300-module-10-lab-06.png)
 
-1. Expand the **Query Store** node to view all the reports available. Select the **Top Resource Consuming Queries** report.
+1. Expand the **Query Store** node to view all the reports available. Select the and double click **Top Resource Consuming Queries** report.
 
     ![Top Resource Consuming Queries Report from Query Store](../images/dp-300-module-10-lab-07.png)
 
