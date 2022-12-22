@@ -20,13 +20,13 @@ You have been hired as a Senior Database Administrator to help ensure the securi
 
     ![Picture 1](../images/dp-300-module-01-lab-01.png)
 
-1. From the Azure Portal, search for “SQL servers” in the search box at the top, then click **SQL servers** from the list of options.
+1. From the Azure Portal, search for **SQL servers (1)** in the search box at the top, then click **SQL servers (2)** from the list of options.
 
-    ![A screenshot of a social media post Description automatically generated](../images/dp-300-module-04-lab-1.png)
+    ![A screenshot of a social media post Description automatically generated](../images/lab4_1.png)
 
 1. Select the server name **dp300-lab-XXXXXXXX** to be taken to the detail page (you may have a different resource group and location assigned for your SQL server).
 
-    ![A screenshot of a social media post Description automatically generated](../images/dp-300-module-04-lab-2.png)
+    ![A screenshot of a social media post Description automatically generated](../images/lab4_2.png)
 
 1. In the detail screen for your SQL server, move your mouse to the right of the server name, and then select **Copy to clipboard** button as shown below.
 
@@ -45,11 +45,11 @@ You have been hired as a Senior Database Administrator to help ensure the securi
 1. Open SQL Server Management Studio. On the Connect to Server dialog box, paste in the name of your Azure SQL Database server, and login with the credentials below:
 
     - **Server name:** &lt;_paste your Azure SQL Database server name here_&gt;
-    - **Authentication:** SQL Server Authentication
-    - **Server admin login:** sqladmin
-    - **Password:** P@ssw0rd01
+    - **Authentication:**SQL Server Authentication**
+    - **Server admin login:**dp300admin**
+    - **Password:**dp300P@ssword!**
 
-    ![A screenshot of a cell phone Description automatically generated](../images/dp-300-module-04-lab-6.png)
+    ![A screenshot of a cell phone Description automatically generated](../images/lab4_3.png)
 
 1. Click **Connect**.
 

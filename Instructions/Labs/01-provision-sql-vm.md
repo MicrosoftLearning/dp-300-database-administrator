@@ -16,19 +16,19 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
 1. From the lab virtual machine, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/), and sign in using the Microsoft account associated with your Azure subscription.
 
-    ![Picture 1](../images/dp-300-module-01-lab-01.png)
+    ![Picture 1](../images/lab1_1.png)
 
 1. Locate the search bar at the top of the page. Search for **Azure SQL**. Select the search result for **Azure SQL** that appears in the results under **Services**.
 
-    ![Picture 9](../images/dp-300-module-01-lab-09.png)
+    ![Picture 9](../images/lab1_2.png)
 
 1. On the **Azure SQL** blade, select **Create**.
 
-    ![Picture 10](../images/dp-300-module-01-lab-10.png)
+    ![Picture 10](../images/lab1_3.png)
 
-1. On the **Select SQL deployment option** blade, click on the drop-down box under **SQL virtual machines**. Select the option labeled **Free SQL Server License: SQL 2019 Developer on Windows Server 2022**. Then select **Create**.
+1. On the **Select SQL deployment option** blade, click on the drop-down box under **SQL virtual machines(1)**. Select the option labeled **Free SQL Server License: SQL 2019 Developer on Windows Server 2022(2)**. Then select **Create**.
 
-    ![Picture 11](../images/dp-300-module-01-lab-11.png)
+    ![Picture 11](../images/lab1_4.png)
 
 1. On the **Create a virtual machine** page, enter the following information:
 
@@ -51,27 +51,25 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
 1. Navigate to the **Disks** tab and review the configuration.
 
-    ![Picture 13](../images/dp-300-module-01-lab-13.png)
+    ![Picture 13](../images/lab1_6.png)
 
 1. Navigate to the **Networking** tab and review the configuration.
 
     ![Picture 14](../images/dp-300-module-01-lab-14.png)
 
-1. Navigate to the **Management** tab and review the configuration.
+1. Navigate to the **Management** tab and review the configuration and Verify that **Enable auto_shutdown** is unchecked.
 
-    ![Picture 15](../images/dp-300-module-01-lab-15.png)
-
-    Verify that **Enable auto_shutdown** is unchecked.
+    ![Picture 15](../images/lab1_8.png)
 
 1. Navigate to the **Advanced** tab and review the configuration.
 
-    ![Picture 16](../images/dp-300-module-01-lab-16.png)
+    ![Picture 16](../images/lab1_9.png)
 
 1. Navigate to the **SQL Server settings** tab and review the configuration.
 
-    ![Picture 17](../images/dp-300-module-01-lab-17.png)
+    ![Picture 17](../images/lab1_10.png)
 
-    **Note —** you can also configure the storage for your SQL Server VM on this screen. By default, the SQL Server Azure VM templates create one premium disk with read caching for data, one premium disk without caching for transaction log, and uses the local SSD (D:\ on Windows) for tempdb.
+    >**Note**: you can also configure the storage for your SQL Server VM on this screen. By default, the SQL Server Azure VM templates create one premium disk with read caching for data, one premium disk without caching for transaction log, and uses the local SSD (D:\ on Windows) for tempdb.
 
 1. Select the **Review + create** button. Then select **Create**.
 
@@ -79,9 +77,9 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
 1. On the deployment blade, wait until the deployment is complete. The VM will take approximate 5-10 minutes to deploy. After the deployment is complete, select  **Go to resource**.
 
-    **Note:** Your deployment may take several minutes to complete.
+    **Note:** Your deployment may take 5-10 minutes to complete.
 
-    ![Picture 19](../images/dp-300-module-01-lab-19.png)
+    ![Picture 19](../images/lab1_5.png)
 
 1. On the **Overview** page for the virtual machine, explore the menu options for this resource to review what is available.
 
@@ -95,11 +93,11 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
 1. On the RDP tab, select the **Download RDP File** button.
 
-    ![Picture 22](../images/dp-300-module-01-lab-22.png)
+    ![Picture 22](../images/lab1_11.png)
 
-    **Note:** If see the error **Port prerequisite not met**. Make sure to select the link to add an inbound network security group rule with the destination port mentioned in the *Port number* field.
+    >**Note**: If you see the error **Port prerequisite not met**. Make sure to select the link to add an inbound network security group rule with the destination port mentioned in the *Port number* field.
 
-    ![Picture 22_1](../images/dp-300-module-01-lab-22_1.png)
+    ![Picture 22_1](../images/lab1_11_1.png)
 
 1. Open the RDP file that was just downloaded. When a dialog appears asking if you want to connect, select **Connect**.
 
@@ -107,18 +105,18 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
 1. Enter the username and password selected during the virtual machine provisioning process. Then select **OK**.
 
-    ![Picture 24](../images/dp-300-module-01-lab-24.png)
+    ![Picture 24](../images/lab1_12.png)
 
 1. When the **Remote Desktop Connection** dialog appears asking if you want to connect, select **Yes**.
 
-    ![Picture 26](../images/dp-300-module-01-lab-26.png)
+    ![Picture 26](../images/lab1_13.png)
 
-1. Select the Windows Start button and type SSMS. Select **Microsoft SQL Server Management Studio 18** from the list.  
+1. Select the Windows Start button and type **SSMS(1)**. Select **Microsoft SQL Server Management Studio 18(2)** from the list.  
 
-    ![Picture 34](../images/dp-300-module-01-lab-34.png)
+    ![Picture 34](../images/lab1_14.png)
 
 1. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name. Select **Connect**.
 
-    ![Picture 35](../images/dp-300-module-01-lab-35.png)
+    ![Picture 35](../images/lab1_7.png)
 
 The Azure portal gives you powerful tools to manage a SQL Server hosted in a virtual machine. These tools include control over automated patching, automated backups, and giving you an easy way to setup high availability.

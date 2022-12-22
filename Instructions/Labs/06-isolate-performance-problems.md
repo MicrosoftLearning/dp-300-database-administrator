@@ -50,9 +50,9 @@ You have been hired as a database administrator to identify performance related 
 
     **Note:** This feature is in preview.
 
-1. In **Password**, type **P@ssw0rd01** and select **OK**.
+1. In **Password**, type **dp300P@ssword!** and select **OK**.
 
-    ![Screenshot showing Query editor connection properties](../images/dp-300-module-06-lab-05.png)
+    ![Screenshot showing Query editor connection properties](../images/lab6_1.png)
 
 1. In **Query 1**, type the following query, and select **Run**:
 
