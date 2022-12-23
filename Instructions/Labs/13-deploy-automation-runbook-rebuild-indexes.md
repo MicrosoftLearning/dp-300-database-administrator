@@ -199,7 +199,7 @@ Next you will schedule the runbook to execute on a regular basis.
 
 1. Specify the start time of **4:00AM** of the following day and in the **Pacific Time** time zone. Configure the reoccurrence for every **1** days. Do not set an expiration.
 
-    ![Screenshot of the New Schedule pop out completed with example information.](../images/dp-300-module-13-lab-27.png)
+    ![Screenshot of the New Schedule pop out completed with example information.](../images/L13T5S5.png)
 
 1. Select **Create**, and then select **OK**.
 
