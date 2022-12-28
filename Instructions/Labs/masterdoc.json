@@ -1,0 +1,66 @@
+[ {
+  "Name": "DP-300: Administering Microsoft Azure SQL Solutions",
+  "Language": "English",
+  "Files": [
+    {
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-300-database-administrator/master/Instructions/Labs/01-provision-sql-vm.md",
+      "Order": 1
+    },
+    {
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-300-database-administrator/master/Instructions/Labs/02-provision-sql-database.md",
+      "Order": 2
+    },
+    {
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-300-database-administrator/master/Instructions/Labs/03-authorize-access-azure-sql-database.md",
+      "Order": 3
+    },
+    {
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-300-database-administrator/master/Instructions/Labs/04-configure-firewall-rule.md",
+      "Order": 4
+    },
+    {
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-300-database-administrator/master/Instructions/Labs/05-enable-sql-defender-and-data-classification.md",
+      "Order": 5
+    },
+        {
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-300-database-administrator/master/Instructions/Labs/06-isolate-performance-problems.md",
+      "Order": 6
+    },
+        {
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-300-database-administrator/master/Instructions/Labs/07-detect-correct-fragmentation-issues.md",
+      "Order": 7
+    },
+            {
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-300-database-administrator/master/Instructions/Labs/08-identify-resolve-blocking-issues.md",
+      "Order": 8
+    },
+                {
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-300-database-administrator/master/Instructions/Labs/09-identify-issues-database-design.md",
+      "Order": 9
+    },
+                {
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-300-database-administrator/master/Instructions/Labs/10-isolate-problem-areas-poor-performing-queries.md",
+      "Order": 10
+    },
+                {
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-300-database-administrator/master/Instructions/Labs/11-deploy-azure-database-using-template.md",
+      "Order": 11
+    },
+        {
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-300-database-administrator/master/Instructions/Labs/12-create-cpu-status-alert.md",
+      "Order": 12
+    },
+    {
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-300-database-administrator/master/Instructions/Labs/13-deploy-automation-runbook-rebuild-indexes.md",
+      "Order": 13
+    },
+    {
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-300-database-administrator/master/Instructions/Labs/14-configure-geo-replication-for-azure-sql-database.md",
+      "Order": 14
+    },
+    {
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-300-database-administrator/master/Instructions/Labs/15-backup-url.md.md",
+      "Order": 15
+    }
+  ]
+} ]
