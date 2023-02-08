@@ -1,9 +1,3 @@
----
-lab:
-    title: 'Lab 14 – Configure geo-replication for Azure SQL Database'
-    module: 'Plan and implement a high availability and disaster recovery solution'
----
-
 # Configure geo replication for Azure SQL Database
 
 **Estimated Time: 30 minutes**
