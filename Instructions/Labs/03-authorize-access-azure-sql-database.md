@@ -28,9 +28,6 @@ In the JumpVM, click on the Azure portal shortcut of the Microsoft Edge browser 
 
 
 5.If a Welcome to Microsoft Azure popup window appears, click Maybe Later to skip the tour.
-
-
-6.Now you will see Azure Portal Dashboard, click on Resource groups from the Navigate panel to see the resource groups.
   
 
 1. On the Azure portal home page select **All resources**.
