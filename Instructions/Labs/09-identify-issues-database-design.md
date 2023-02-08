@@ -1,8 +1,3 @@
----
-lab:
-    title: 'Lab 9 – Identify database design issues'
-    module: 'Optimize query performance in Azure SQL'
----
 
 # Identify database design issues
 
