@@ -1,9 +1,3 @@
----
-lab:
-    title: 'Lab 11 – Deploy Azure SQL Database using Azure Resource Manager template'
-    module: 'Automate database tasks for Azure SQL'
----
-
 # Deploy an Azure SQL Database from a template
 
 **Estimated Time: 15 minutes**
