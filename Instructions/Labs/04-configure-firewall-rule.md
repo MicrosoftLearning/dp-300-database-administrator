@@ -10,7 +10,7 @@ You have been hired as a Senior Database Administrator to help ensure the securi
 
 ## Configure Azure SQL Database firewall rules
 
-1. From the lab virtual machine, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/). Connect to the Portal using the Azure **Username** and **Password** provided on the **Resources** tab for this lab virtual machine.
+1. From the lab virtual machine, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/). Connect to the Portal using the Azure **Username** and **Password** provided on the **Environment details** tab for this lab virtual machine.
 
     ![Picture 1](../images/dp-300-module-01-lab-01.png)
 
@@ -39,15 +39,15 @@ You have been hired as a Senior Database Administrator to help ensure the securi
 1. Open SQL Server Management Studio. On the Connect to Server dialog box, paste in the name of your Azure SQL Database server, and login with the credentials below:
 
     - **Server name:** &lt;_paste your Azure SQL Database server name here_&gt;
-    - **Authentication:**SQL Server Authentication**
-    - **Server admin login:**dp300admin**
-    - **Password:**dp300P@ssword!**
+    - **Authentication:** SQL Server Authentication
+    - **Server admin login:** dp300admin
+    - **Password:** dp300P@ssword!
 
     ![A screenshot of a cell phone Description automatically generated](../images/lab4_3.png)
 
 1. Click **Connect**.
 
-1. In Object Explorer expand the server node, and right click on **Databases**. Click **Import a Data-tier Application**.
+1. In Object Explorer expand the server node, and right click on **Databases**. Click **Import Data-tier Application**.
 
     ![A screenshot of a social media post Description automatically generated](../images/dp-300-module-04-lab-7.png)
 
