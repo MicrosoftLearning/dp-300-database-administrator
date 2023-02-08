@@ -1,8 +1,3 @@
----
-lab:
-    title: 'Lab 10 – Isolate problem areas in poorly performing queries in a SQL Database'
-    module: 'Optimize query performance in Azure SQL'
----
 
 # Isolate problem areas in poorly performing queries in a SQL Database
 
