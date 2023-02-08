@@ -1,9 +1,3 @@
----
-lab:
-    title: 'Lab 1 - Provision SQL Server on an Azure Virtual Machine'
-    module: 'Plan and Implement Data Platform Resources'
----
-
 # Provision a SQL Server on an Azure Virtual Machine
 
 **Estimated Time: 30 minutes**
