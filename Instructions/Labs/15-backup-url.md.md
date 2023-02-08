@@ -1,9 +1,3 @@
----
-lab:
-    title: 'Lab 15 – Backup to URL and Restore from URL'
-    module: 'Plan and implement a high availability and disaster recovery solution'
----
-
 # Backup to URL
 
 **Estimated Time: 30 minutes**
