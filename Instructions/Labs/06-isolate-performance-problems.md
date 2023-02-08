@@ -1,8 +1,3 @@
----
-lab:
-    title: 'Lab 6 – Isolate performance problems through monitoring'
-    module: 'Monitor and optimize operational resources in Azure SQL'
----
 
 # Isolate performance problems through monitoring
 
