@@ -1,0 +1,11 @@
+[ {
+  "Name": "DP-300: Administering Microsoft Azure SQL Solutions",
+  "Language": "English",
+  "Files": [
+    {
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-300-database-administrator/master/Instructions/Labs/08-identify-resolve-blocking-issues.md",
+      "Order": 1
+    }
+    
+  ]
+} ]
