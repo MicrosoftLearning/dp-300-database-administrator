@@ -1,9 +1,3 @@
----
-lab:
-    title: 'Lab 13 – Deploy an automation runbook to automatically rebuild indexes'
-    module: 'Automate database tasks for Azure SQL'
----
-
 # Deploy an automation runbook to automatically rebuild indexes
 
 **Estimated Time: 30 minutes**
