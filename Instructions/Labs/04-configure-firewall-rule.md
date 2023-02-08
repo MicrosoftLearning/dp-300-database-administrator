@@ -1,9 +1,3 @@
----
-lab:
-    title: 'Lab 4 – Configure Azure SQL Database firewall rules'
-    module: 'Implement a Secure Environment for a Database Service'
----
-
 # Implement a Secure Environment
 
 **Estimated Time: 30 minutes**
