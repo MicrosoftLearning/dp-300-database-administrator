@@ -9,8 +9,6 @@ You've been hired as a Senior Database Administrator to help ensure the security
 **Note:** These exercises ask you to copy and paste T-SQL code. Please verify that the code has been copied correctly, before executing the code.
 
 ## Authorize access to Azure SQL Database with Azure Active Directory
-
- # Getting Started with Lab
  
 Once the environment is provisioned, a virtual machine (JumpVM) and lab guide will get loaded in your browser. Use this virtual machine throughout the workshop to perform the lab. You can see the number on the lab guide bottom area to switch on different exercises of the lab guide.
 
