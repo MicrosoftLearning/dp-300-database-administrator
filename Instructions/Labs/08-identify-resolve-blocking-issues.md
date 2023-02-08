@@ -1,8 +1,3 @@
----
-lab:
-    title: 'Lab 8 – Identify and resolve blocking issues'
-    module: 'Optimize query performance in Azure SQL'
----
 
 # Identify and resolve blocking issues
 
