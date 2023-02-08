@@ -1,0 +1,10 @@
+[ {
+  "Name": "DP-300: Administering Microsoft Azure SQL Solutions",
+  "Language": "English",
+  "Files": [
+    {
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-300-database-administrator/Prod/Instructions/Labs/07-detect-correct-fragmentation-issues.md",
+      "Order": 1
+    }
+  ]
+} ]
