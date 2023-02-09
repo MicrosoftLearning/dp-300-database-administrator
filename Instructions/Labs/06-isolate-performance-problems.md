@@ -11,9 +11,23 @@ You have been hired as a database administrator to identify performance related 
 
 ## Review CPU utilization in Azure portal
 
-1. From the lab virtual machine, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/). Connect to the Portal using the Azure **Username** and **Password** provided on the **Resources** tab for this lab virtual machine.
+Once the environment is provisioned, a virtual machine (JumpVM) and lab guide will get loaded in your browser. Use this virtual machine throughout the workshop to perform the lab. You can see the number on the lab guide bottom area to switch on different exercises of the lab guide.
 
-    ![Picture 1](../images/dp-300-module-01-lab-01.png)
+1.Login to Azure Portal
+In the JumpVM, click on the Azure portal shortcut of the Microsoft Edge browser which is created on the desktop.
+
+  ![Picture 2](../images/azureportal1.png)
+  
+2.On the Sign in to Microsoft Azure tab you will see the login screen, in that enter the following email/username, and click on Next.
+
+3.If you see the pop-up Stay Signed in?, click No
+
+
+4.If you see the pop-up You have free Azure Advisor recommendations!, close the window to continue the lab.
+
+
+5.If a Welcome to Microsoft Azure popup window appears, click Maybe Later to skip the tour.
+  
 
 1. From the Azure Portal, search for “SQL servers” in the search box at the top, then click **SQL servers** from the list of options.
 
@@ -45,7 +59,7 @@ You have been hired as a database administrator to identify performance related 
 
     **Note:** This feature is in preview.
 
-1. In **Password**, type **dp300P@ssword!** and select **OK**.
+1. In **Password**, type **P@ssw0rd01** and select **OK**.
 
     ![Screenshot showing Query editor connection properties](../images/lab6_1.png)
 
