@@ -41,7 +41,7 @@ In the JumpVM, click on the Azure portal shortcut of the Microsoft Edge browser 
 
     ![Screenshot showing selecting the AdventureWOrksLT database](../images/dp-300-module-05-lab-04.png)
 
-1. On the database main page, select **Set server firewall**.
+1. On the database **Overview** page, select **Set server firewall**.
 
     ![Screenshot showing selecting Set server firewall](../images/dp-300-module-06-lab-01.png)
 
