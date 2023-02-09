@@ -116,7 +116,7 @@ In the JumpVM, click on the Azure portal shortcut of the Microsoft Edge browser 
 
     **Note:** You may have different duration and query ID. If you see more than one query, click on each one to observe the results.
 
-    ![Screenshot showing average aggregation](../images/dp-300-lab-06-img16.png)
+    ![Screenshot showing average aggregation](../images/dp-300-lab06-img16.png)
 
 For this query, you can see that the total duration was over a minute and that it ran approximately 10,000 times.
 
