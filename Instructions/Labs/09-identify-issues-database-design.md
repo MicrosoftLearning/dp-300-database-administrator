@@ -21,7 +21,7 @@ You have been hired as a database administrator to identify performance related 
 
 1. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name. Select **Connect**.
 
-    ![Picture 02](../images/dp-300-lab-09-img3.png)
+    ![Picture 02](../images/dp-300-lab-9-img3.png)
 
 1. Select the **Databases** folder, and then **New Query**.
 
