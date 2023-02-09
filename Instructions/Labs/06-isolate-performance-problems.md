@@ -20,7 +20,7 @@ In the JumpVM, click on the Azure portal shortcut of the Microsoft Edge browser 
   
 2.On the Sign in to Microsoft Azure tab you will see the login screen, in that enter the following email/username, and click on Next.
 
-3.If you see the pop-up Stay Signed in?, click No
+3.If you see the pop-up Stay Signed in?, click No.
 
 
 4.If you see the pop-up You have free Azure Advisor recommendations!, close the window to continue the lab.
