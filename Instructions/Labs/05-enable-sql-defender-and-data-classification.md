@@ -8,7 +8,7 @@ You have been hired as a Senior Database Administrator help ensure the security 
 
 ## Enable Microsoft Defender for SQL
 
-1. From the lab virtual machine, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/). Connect to the Portal using the Azure **Username** and **Password** provided on the **Resources** tab for this lab virtual machine.
+1. From the lab virtual machine, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/). Connect to the Portal using the Azure **Username** and **Password** provided on the **Environment Details** tab for this lab virtual machine.
 
     ![Picture 1](../images/dp-300-module-01-lab-01.png)
 
