@@ -25,7 +25,7 @@ In the JumpVM, click on the Azure portal shortcut of the Microsoft Edge browser 
 4.If you see the pop-up You have free Azure Advisor recommendations!, close the window to continue the lab.
 
 
-5.If a Welcome to Microsoft Azure popup window appears, click Maybe Later to skip the tour.
+5.If a Welcome to Microsoft Azure popup window appears, click **Maybe Later** to skip the tour.
   
 
 1. On the Azure portal home page select **All resources**.
