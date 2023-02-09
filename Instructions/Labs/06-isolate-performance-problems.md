@@ -106,7 +106,7 @@ In the JumpVM, click on the Azure portal shortcut of the Microsoft Edge browser 
 
 1. Locate the **Query Performance Insight** icon on the **Intelligent Performance** section of the blade for the **AdventureWorksLT** database.
 
-    ![Screenshot showing the Query Performance Insight icon](../dp-300-lab-06-img14.png)
+    ![Screenshot showing the Query Performance Insight icon](../images/dp-300-lab-06-img14.png)
 
 1. Select **Reset settings**.
 
