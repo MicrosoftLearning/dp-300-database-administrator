@@ -10,7 +10,7 @@ You've been hired as a Senior Database Administrator to help ensure the security
 
 ## Authorize access to Azure SQL Database with Azure Active Directory
  
-Once the environment is provisioned, a virtual machine (JumpVM) and lab guide will get loaded in your browser. Use this virtual machine throughout the workshop to perform the lab. You can see the number on the lab guide bottom area to switch on different exercises of the lab guide.
+Once the environment is provisioned, a virtual machine (JumpVM) and lab guide will get loaded in your browser. Use this virtual machine throughout the workshop to perform the lab. 
 
 1.Login to Azure Portal
 In the JumpVM, click on the Azure portal shortcut of the Microsoft Edge browser which is created on the desktop.
