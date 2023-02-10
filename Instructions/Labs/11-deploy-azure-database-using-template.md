@@ -97,9 +97,11 @@ You've been hired as a Senior Data Engineer to help automate day to day operatio
 1. The **Create a SQL Server and Database** quickstart template page will open on Azure portal, with resource details partially filled in from the ARM template. Complete the blank fields with the information below:
 
     - **Resource group:** starting with *contoso-rg*
-    - **Sql Administrator Login:** labadmin
-    - **Sql Administrator Login Password:** &lt;enter a strong password&gt;
-
+    - **Administrator Login:** labadmin
+    - **Administrator Login Password:** &lt;enter a strong password&gt;
+    
+    ![Picture 2](../images/lab11-usernamepass.png)
+    
 1. Select **Review + create**, and then select **Create**. Your deployment will take 5 minutes or so to deploy.
 
     ![Picture 2](../images/dp300-lab11-img02.png)
