@@ -15,7 +15,7 @@ Once the environment is provisioned, a virtual machine (JumpVM) and lab guide wi
 1.Login to Azure Portal
 In the JumpVM, click on the Azure portal shortcut of the Microsoft Edge browser which is created on the desktop.
 
-  ![Picture 2](../images/azureportal1.png)
+  ![Picture 2](../images/dp300-lab3-img1.png)
   
 2.On the Sign in to Microsoft Azure tab you will see the login screen, in that enter the following email/username, and click on Next.
 
@@ -30,41 +30,41 @@ In the JumpVM, click on the Azure portal shortcut of the Microsoft Edge browser 
 
 1. On the Azure portal home page select **All resources**.
 
-    ![Screenshot of the Azure portal home page, selecting All resources](../images/lab3_2.png)
+    ![Screenshot of the Azure portal home page, selecting All resources](../images/dp300-lab3-img2.png)
 
 1. Search for **dp300 (1)** and select the Azure SQL Database server **dp300-lab-xxxxxx (2)**, where **xxxxxx** is a random string.
 
-    ![Screenshot selecting Not Configured](../images/lab3_3_1.png)
+    ![Screenshot selecting Not Configured](../images/dp300-lab3-img3.png)
 
 1. On the Overview page, select the **Not Configured** next to **Active Directory Admin**.
 
-    ![Screenshot selecting Not Configured](../images/lab3_3.png)
+    ![Screenshot selecting Not Configured](../images/dp300-lab3-img4.png)
 
 1. On the next screen, select **Set admin**.
 
-    ![Screenshot selecting Set admin](../images/lab3_5.png)
+    ![Screenshot selecting Set admin](../images/dp300-lab3-img5.png)
 
 1. In the **Azure Active Directory** sidebar, search for the Azure username you logged into the Azure portal with, then click on **Select**.
 
 1. Select **Save** to complete the process. This will make your username the Azure Active Directory admin for the server as shown below.
 
-    ![Screenshot of the Active Directory admin page](../images/lab3_6.png)
+    ![Screenshot of the Active Directory admin page](../images/dp300-lab3-img6.png)
 
 1. On the left navigation select **Overview (1)**, then copy the **Server name (2)** from right hand side.
 
-    ![Screenshot showing where to copy the server name from](../images/lab3_7.png)
+    ![Screenshot showing where to copy the server name from](../images/dp300-lab3-img7.png)
 
 1. Select the Windows Start button and type **SSMS(1)**. Select **Microsoft SQL Server Management Studio 18(2)** from the list.  
 
-    ![Picture 34](../images/lab1_14.png)
+    ![Picture 34](../images/dp300-lab3-img8.png)
 
 1. In the **Connect to Server** dialog box select **Database Engine** for Server type. In the **Server name** paste the name of your server you copied earlier. Change the authentication type to **Azure Active Directory Universal with MFA**.For the **User name** field, select the Azure **Username** from the **Environment Details (1)** tab and click on **Connect**
 
-    ![Screenshot of the Connect to server dialog](../images/lab3_8.png)
+    ![Screenshot of the Connect to server dialog](../images/dp300-lab3-img9.png)
 
     >**NOTE:** When you first try to sign in to an Azure SQL database, your client IP address needs to be added to the firewall. SQL Server Management Studio can do this for you. Use the Azure Portal **password** from the **Environment Details** tab, then select **Sign in**, choose your Azure credentials and then select **OK**.
    
-     ![Screenshot of adding the client IP address](../images/lab3_9.png)
+     ![Screenshot of adding the client IP address](../images/dp300-lab3-img10.png)
 
 ## Manage access to database objects
 
@@ -74,7 +74,7 @@ In this task you will manage access to the database and its objects. The first t
 
 1. Right-click on **AdventureWorksLT**, and select **New Query**.
 
-    ![Screenshot of the new query menu option](../images/lab3_10.png)
+    ![Screenshot of the new query menu option](../images/dp300-lab3-img11.png)
 
 1. In the new query window, copy and paste the below T-SQL into it. **Execute** the query to create the two users.
 
@@ -86,7 +86,7 @@ In this task you will manage access to the database and its objects. The first t
     GO
     ```
     
-    ![](../images/lab3_1.png)
+    ![](../images/dp300-lab3-img12.png)
     
     **Note:** These users are created in the scope of the AdventureWorksLT database. Next you will create a custom role and add the users to it.
 
@@ -130,7 +130,7 @@ In this task you will manage access to the database and its objects. The first t
 
     This will fail with the message:
 
-    ![Screenshot of the error message, The EXECUTE permission was denied on the object DemoProc](../images/lab3_11.png)
+    ![Screenshot of the error message, The EXECUTE permission was denied on the object DemoProc](../images/dp300-lab3-img13.png)
 
 1. Next grant permissions to the role to allow it to execute the store procedure. Execute the below T-SQL.
 
@@ -149,6 +149,6 @@ In this task you will manage access to the database and its objects. The first t
     EXECUTE SalesLT.DemoProc
     ```
 
-    ![Screenshot showing the returned rows of data from the stored procedure](../images/lab3_12.png)
+    ![Screenshot showing the returned rows of data from the stored procedure](../images/dp300-lab3-img14.png)
 
 In this exercise, you've seen how you can use Azure Active Directory to grant Azure credentials  access to a SQL Server hosted in Azure. You've also used T-SQL statement to create new database users and granted them permissions to run stored procedures.
