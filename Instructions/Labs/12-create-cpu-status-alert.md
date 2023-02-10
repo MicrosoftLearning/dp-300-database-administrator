@@ -23,39 +23,39 @@ In the JumpVM, click on the Azure portal shortcut of the Microsoft Edge browser 
 
 5.If a Welcome to Microsoft Azure popup window appears, click **Maybe Later** to skip the tour.
 
-1. In the search bar at the top of the Azure portal, type **SQL**, and select **SQL databases**. Select the **AdventureWorksLT** database name listed.
+6. In the search bar at the top of the Azure portal, type **SQL**, and select **SQL databases**. Select the **AdventureWorksLT** database name listed.
 
     ![Screenshot of selecting a SQL database](../images/dp300-lab12-img1.png)
 
-1. On the main blade for the **AdventureWorksLT** database, navigate down to the monitoring section. Select **Alerts**.
+7. On the main blade for the **AdventureWorksLT** database, navigate down to the monitoring section. Select **Alerts**.
 
     ![Screenshot of selecting Alerts on the SQL database Overview page](../images/dp300-lab12-img2.png)
 
-1. Select **Create alert rule**.
+8. Select **Create alert rule**.
 
     ![Screenshot of selecting New alert rule](../images/dp300-lab12-img3.png)
 
-1. In the **Select a signal** slide out, select **CPU percentage**.
+9. In the **Select a signal** slide out, select **CPU percentage**.
 
     ![Screenshot of selecting CPU percentage](../images/dp300-lab12-img4.png)
 
-1. In the **Configure signal** slide out, select **Static** for the **Threshold** property. Then check that the **Operator** property is **Greater than**, the **Aggregation** type is **Average**. Then in **Threshold value** enter a value of **80**. Select **Done**.
+10. In the **Configure signal** slide out, select **Static** for the **Threshold** property. Then check that the **Operator** property is **Greater than**, the **Aggregation** type is **Average**. Then in **Threshold value** enter a value of **80**. Select **Done**.
 
     ![Screenshot of entering 80 and selecting Done](../images/dp300-lab12-img5.png)
 
-1. Select the **Actions** tab.
+11. Select the **Actions** tab.
 
     ![Screenshot of selecting the Select action group link](../images/dp300-lab12-img6.png)
 
-1. In the **Actions** tab, select **Create action group**.
+12. In the **Actions** tab, select **Create action group**.
 
     ![Screenshot of selecting the Create action group](../images/dp300-lab12-img7.png)
 
-1. On the **Action Group** screen, type **emailgroup** in the **Action group name** field, and then select **Next: Notifications**.
+13. On the **Action Group** screen, type **emailgroup** in the **Action group name** field, and then select **Next: Notifications**.
 
     ![Screenshot of entering emailgroup and selecting Next: Notifications](../images/dp300-lab12-img8.png)
 
-1. On the **Notifications** tab, enter the following information:
+14. On the **Notifications** tab, enter the following information:
 
     - **Notification type:** Email/SMS message/Push/Voice
         - **Note:** When you select this option, a Email/SMS message/Push/Voice flyout will appear. Check the Email property and type the Azure username you signed in with.
@@ -63,17 +63,17 @@ In the JumpVM, click on the Azure portal shortcut of the Microsoft Edge browser 
 
     ![Screenshot of the Create action group page with information added](../images/dp300-lab12-img9.png)
     
-1. On the **Basic** tab, enter Alert rule name as **eamilrule**.
+15. On the **Basic** tab, enter Alert rule name as **eamilrule**.
     
     ![Screenshot of entering emailgroup and selecting Next: Notifications](../images/altertrulename-lab12.png)
 
-1. Select **Review + create**, then select **Create**.
+16. Select **Review + create**, then select **Create**.
 
     ![Screenshot of the Create alert rule page selecting the Create alert rule](../images/dp300-lab12-img10.png)
 
     **Note:** Before you select **Create**, you can also select **Test action group (preview)** to test the Alert.
 
-1. An email like this is sent to the email address that you entered, once the rule is created.
+17. An email like this is sent to the email address that you entered, once the rule is created.
 
     ![Screenshot of the confirmation email](../images/dp300-lab12-img11.png)
 
