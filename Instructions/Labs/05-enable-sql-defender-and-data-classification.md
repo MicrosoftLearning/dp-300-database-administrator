@@ -40,6 +40,10 @@ You have been hired as a Senior Database Administrator help ensure the security 
 
 ## Enable Data Classification
 
+> **Note:** 
+> - Microsoft Defender for Cloud can take upto 24-48 hours to surface post the completion of a scan.
+> - At this point of the workshop, no data visualisations may be populated. (So the result in the screenshot below may vary)
+
 1. From the main blade of your Azure SQL server, navigate to the **Settings** section, and select **SQL databases**, and then select the database name.
 
     ![Screenshot showing selecting the AdventureWOrksLT database](../images/upd-dp-300-module-05-lab-04.png)
@@ -48,15 +52,9 @@ You have been hired as a Senior Database Administrator help ensure the security 
 
     ![Screenshot showing the Data Discovery & Classification](../images/upd-dp-300-module-05-lab-05.png)
 
-1. On the **Data Discovery & Classification** page, you will see an informational message that reads: **Currently using SQL Information Protection policy. We have found 15 columns with classification recommendations**. Select this link.
-
-    ![Screenshot showing the Classification Recommendations](../images/dp-300-module-05-lab-06.png)
-
-1. On the next **Data Discovery & Classification** screen select the check box next to **Select all**, select **Accepted selected recommendations**, and then select **Save** to save the classifications into the database.
-
-    ![Screenshot showing the Accept selected recommendations](../images/dp-300-module-05-lab-07.png)
-
 1. Back to the **Data Discovery & Classification** screen, notice that fifteen columns were successfully classified across five different tables.
+
+   > **Note:** The screenshot and information below, has been provided so that you can conceptualise the type of graphs and output that can be gleaned from a fully populated environment.
 
     ![Screenshot showing the Accept selected recommendations](../images/dp-300-module-05-lab-08.png)
 
