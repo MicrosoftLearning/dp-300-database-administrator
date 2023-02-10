@@ -8,7 +8,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
 ## Navigate on Azure portal
 
-1. From the lab virtual machine, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/). Connect to the Portal using the Azure **Username** and **Password** provided on the **Resources** tab for this lab virtual machine.
+1. From the lab virtual machine, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/). Connect to the Portal using the Azure **Username** and **Password** provided on the **Environment Details** tab for this lab virtual machine.
 
     ![Picture 1](../images/dp-300-module-01-lab-01.png)
 
@@ -20,37 +20,37 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
     **Note:** You may have a different location assigned.
 
-    ![Picture 1](../images/dp-300-module-02-lab-46.png)
+    ![Picture 1](../images/upd-dp-300-module-02-lab-46.png)
 
 ## Create a Virtual Network
 
 1. In the Azure portal home page, select the left hand menu.  
 
-    ![Picture 2](../images/dp-300-module-02-lab-01_1.png)
+    ![Picture 2](../images/upd-dp-300-module-02-lab-01_1.png)
 
 1. In the left navigation pane, click **Virtual Networks**  
 
-    ![Picture 3](../images/dp-300-module-02-lab-04.png)
+    ![Picture 3](../images/upd-dp-300-module-02-lab-04.png)
 
 1. Click **+ Create** to open the **Create Virtual Network** page. On the **Basics** tab, complete the following information:
 
     - **Subscription:** &lt;Your subscription&gt;
-    - **Resource group:** starting with *contoso-rg*
-    - **Name:** lab02-vnet
-    - **Region:** Select the same region where your resource group was created
+    - **Resource group:** starting with *contoso-rg* **(1)**
+    - **Name:** lab02-vnet **(2)**
+    - **Region:** Select the same region where your resource group was created **(3)**
 
-    ![Picture 2](../images/dp-300-module-02-lab-05.png)
+    ![Picture 2](../images/upd-dp-300-module-02-lab-05.png)
 
 1. Click **Next: IP Addresses**.  
 
-    ![Picture 3](../images/dp-300-module-02-lab-06.png)
+    ![Picture 3](../images/upd-dp-300-module-02-lab-06.png)
 
 1. Configure the virtual network’s IP range for the Azure SQL database endpoint as follow:
 
     - On the **IP Addresses** tab, leave the defaults for the IPv4 address.
-    - Click on the **default** subnet link. Note that the Subnet address range you see might be different.
+    - Click on the **default** subnet link. (Note that the Subnet address range you see might be different.)
 
-        ![Picture 4](../images/dp-300-module-02-lab-07.png)
+        ![Picture 4](../images/upd-dp-300-module-02-lab-07.png)
 
     - In the **Edit subnet** pane on the right, expand the **Services** drop-down, and select **Microsoft.Sql**. Select **Save**.
     - Click the **Review + Create** button, review the settings for the new virtual network, and then click **Create**.
@@ -59,28 +59,28 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
 1. From the Azure Portal, search for “SQL databases” in the search box at the top, then click **SQL databases** from the list of options.
 
-    ![Picture 5](../images/dp-300-module-02-lab-10.png)
+    ![Picture 5](../images/upd-dp-300-module-02-lab-10.png)
 
 1. On the **SQL databases** blade, select **+ Create**.
 
-    ![Picture 6](../images/dp-300-module-02-lab-10_1.png)
+    ![Picture 6](../images/upd-dp-300-module-02-lab-10_1.png)
 
 1. On the **Create SQL Database** page, select the following options on the **Basics** tab and then click **Next: Networking**.
 
     - **Subscription:** &lt;Your subscription&gt;
-    - **Resource group:** starting with *contoso-rg*
+    - **Resource group:** starting with *contoso-rg-DID*
     - **Database Name:** AdventureWorksLT
     - **Server:** click on **Create new** link. The **Create SQL Database Server** page will open. Provide the server details as follow:
-        - **Server name:** dp300-lab-&lt;your initials (lower case)&gt; (server name must be globally unique)
-        - **Location:** &lt;your local region, same as the selected region for your resource group, otherwise it may fail&gt;
-        - **Authentication method:** Use SQL authentication
-        - **Server admin login:** dp300admin
-        - **Password:** dp300P@ssword!
-        - **Confirm password:** dp300P@ssword!
+        - **Server name:** dp300-lab-DID **(1)**
+        - **Location:**  same as the selected region for your resource group, otherwise it may fail **(2)**
+        - **Authentication method:** Use SQL authentication **(3)**
+        - **Server admin login:** dp300admin **(4)**
+        - **Password:** dp300P@ssword! **(5)**
+        - **Confirm password:** dp300P@ssword! **(6)**
 
-        Your **Create SQL Database Server** page should look similar to the one below. Then click **OK**.
+        Your **Create SQL Database Server** page should look similar to the one below. Then click **OK (7)**.
 
-        ![Picture 7](../images/dp-300-module-02-lab-11.png)
+        ![Picture 7](../images/upd-dp-300-module-02-lab-11.png)
 
     -  Back to the **Create SQL Database** page, make sure **Want to use Elastic Pool?** is set to **No**.
     -  On the **Compute + Storage** option, click on **Configure database** link. On the **Configure** page, for **Service tier** dropdown, select **Basic**, and then **Apply**.
@@ -93,36 +93,36 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
 1. On the **Networking** tab, for **Network Connectivity** option, click the **Private endpoint** radio button.
 
-    ![Picture 8](../images/dp-300-module-02-lab-14.png)
+    ![Picture 8](../images/upd-dp-300-module-02-lab-14.png)
 
 1. Then click the **+ Add private endpoint** link under the **Private endpoints** option.
 
-	![Picture 9](../images/dp-300-module-02-lab-15.png)
+	![Picture 9](../images/upd-dp-300-module-02-lab-15.png)
 
 1. Complete the **Create private endpoint** right pane as follows:
 
     - **Subscription:** &lt;Your subscription&gt;
-    - **Resource group:** starting with *contoso-rg*
-    - **Location:** &lt;your local region, same as the selected region for your resource group, otherwise it may fail&gt;
-    - **Name:** DP-300-SQL-Endpoint
-    - **Target sub-resource:** SqlServer
-    - **Virtual network:** lab02-vnet
-    - **Subnet:** lab02-vnet/default (10.x.0.0/24)
-    - **Integrate with private DNS zone:** Yes
+    - **Resource group:** starting with *contoso-rg-DID*
+    - **Location:** same as the selected region for your resource group, otherwise it may fail
+    - **Name:** DP-300-SQL-Endpoint **(1)**
+    - **Target sub-resource:** SqlServer **(2)**
+    - **Virtual network:** lab02-vnet **(3)**
+    - **Subnet:** lab02-vnet/default (10.x.0.0/24) **(4)**
+    - **Integrate with private DNS zone:** Yes **(5)**
     - **Private DNS zone:** keep the default value
     - Review settings, and then click **OK**  
 
-    ![Picture 10](../images/dp-300-module-02-lab-16.png)
+    ![Picture 10](../images/upd-dp-300-module-02-lab-16.png)
 
 1. The new endpoint will appear on the **Private endpoints** list.
 
-    ![Picture 11](../images/dp-300-module-02-lab-17.png)
+    ![Picture 11](../images/upd-dp-300-module-02-lab-17.png)
 
 1. Click **Next: Security**, and then **Next: Additional settings**.  
 
 1. On the **Additional settings** page, select **Sample** on the **Use existing data** option. Select **OK** if a pop-up message is displayed for the sample database.
 
-    ![Picture 12](../images/dp-300-module-02-lab-18.png)
+    ![Picture 12](../images/upd-dp-300-module-02-lab-18.png)
 
 1. Click **Review + Create**.
 
