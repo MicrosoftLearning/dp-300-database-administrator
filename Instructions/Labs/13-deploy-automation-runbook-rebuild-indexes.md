@@ -43,7 +43,7 @@ You have been hired as a Senior Database Administrator to help automate day to d
 
 1. Select the SQL database **AdventureWorksLT**.
 
-    ![Screenshot of selecting the AdventureWorks SQL database.](../images/dp-300-module-13-lab-04.png)
+    ![Screenshot of selecting the AdventureWorks SQL database.](../images/dp-300-L13-updated2.png)
 
 1. On the main section for your SQL Database page, select **Query editor (preview)**.
 
