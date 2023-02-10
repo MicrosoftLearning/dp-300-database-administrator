@@ -32,11 +32,11 @@ You have been hired as a Senior Database Administrator help ensure the security 
 
 1. On the **Microsoft Defender for Cloud** page, select the **Configure** link (You may need to refresh the page to see this option)
 
-    ![Screenshot of selecting the Configure option](../images/upd-dp-300-module-05-lab-02.png)
+    ![Screenshot of selecting the Configure option](../images/updt-dp-300-module-05-lab-02.png)
 
-1. On the **Server settings** page, notice that toggle switch under **MICROSOFT DEFENDER FOR SQL** is set to **ON**, and that the **Storage account** name is provided. Enter the Azure account email you used to log into Azure portal in the **Send scan reports to** field, and then select **Save**.
+1. On the **Server settings** page, notice that toggle switch under **MICROSOFT DEFENDER FOR SQL** is set to **ON (1)**, and then select **Save (2)**.
 
-    ![Screenshot of Server settings page](../images/dp-300-module-05-lab-03.png)
+    ![Screenshot of Server settings page](../images/upd-dp-300-module-05-lab-03.png)
 
 ## Enable Data Classification
 
@@ -46,7 +46,7 @@ You have been hired as a Senior Database Administrator help ensure the security 
 
 1. On the main blade for the **AdventureWorksLT** database, navigate to the **Security** section, and then select **Data Discovery & Classification**.
 
-    ![Screenshot showing the Data Discovery & Classification](../images/dp-300-module-05-lab-05.png)
+    ![Screenshot showing the Data Discovery & Classification](../images/upd-dp-300-module-05-lab-05.png)
 
 1. On the **Data Discovery & Classification** page, you will see an informational message that reads: **Currently using SQL Information Protection policy. We have found 15 columns with classification recommendations**. Select this link.
 
