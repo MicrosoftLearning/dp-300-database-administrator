@@ -8,7 +8,7 @@ You've been hired as a Senior Data Engineer to help automate day to day operatio
 
 1.In the JumpVM, click on  the Microsoft Edge browser which is created on the desktop.
 
- ![Deploy to Azure button](../images/dp300-lab11-img01.png)
+ ![Deploy to Azure button](../images/dp300-lab12-img01.png)
 
 2. In Microsoft Edge, open a new tab and navigate to the following path in a GitHub repository, which contains an ARM template to deploy a SQL Database resource
 
