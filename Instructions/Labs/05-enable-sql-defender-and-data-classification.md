@@ -52,10 +52,10 @@ You have been hired as a Senior Database Administrator help ensure the security 
 
     ![Screenshot showing the Data Discovery & Classification](../images/upd-dp-300-module-05-lab-05.png)
 
-1. Back to the **Data Discovery & Classification** screen, notice that fifteen columns were successfully classified across five different tables.
+1. On the **Data Discovery & Classification** screen, notice that fifteen columns were successfully classified across five different tables.
 
    > **Note:** The screenshot and information below, has been provided so that you can conceptualise the type of graphs and output that can be gleaned from a fully populated environment.
 
-    ![Screenshot showing the Accept selected recommendations](../images/dp-300-module-05-lab-08.png)
+    ![Screenshot showing the Accept selected recommendations](../images/upd-dp-300-module-05-lab-08.png)
 
 In this exercise, you've enhanced the security of an Azure SQL Database by enabling Microsoft Defender for SQL. You've also created classified columns based on Azure portal recommendations.
