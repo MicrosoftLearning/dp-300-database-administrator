@@ -47,7 +47,7 @@ You have been hired as a Senior Database Administrator to help automate day to d
 
 1. On the main section for your SQL Database page, select **Query editor (preview)**.
 
-    ![Screenshot of selecting the Query editor (preview).](../images/dp-300-module-13-lab-05.png)
+    ![Screenshot of selecting the Query editor (preview).](../images/dp-300-L13-updated3.png)
 
 1. You will be prompted for credentials to sign in to your database. Use this credential:
 
@@ -56,17 +56,17 @@ You have been hired as a Senior Database Administrator to help automate day to d
 
 1. You should receive the following error message:
 
-    ![Screenshot of the sign in error.](../images/dp-300-module-13-lab-06.png)
+    ![Screenshot of the sign in error.](../images/errorupdated01.png)
 
 1. Select the **Allowlist IP ...** link provided at the end of the error message shown above. This will automatically add your client IP as a firewall rule entry for your SQL Database.
 
-    ![Screenshot of the firewall rule creation.](../images/dp-300-module-13-lab-07.png)
+    ![Screenshot of the firewall rule creation.](../images/dp-300-L13-updated5.png)
 
 1. Return to the Query editor, and select **OK** to sign in to your database.
 
 1. Open a new tab in your browser and navigate to the GitHub page to access the [**AdaptativeIndexDefragmentation**](https://github.com/microsoft/tigertoolbox/blob/master/AdaptiveIndexDefrag/usp_AdaptiveIndexDefrag.sql) script. Then, select **Raw**.
 
-    ![Screenshot of selecting Raw in GitHub.](../images/dp-300-module-13-lab-08.png)
+    ![Screenshot of selecting Raw in GitHub.](../images/dp-300-L13-updated6.png)
 
     This will provide the code in a format where you can copy it. Select all of the text ( <kbd>CTRL</kbd> + <kbd>A</kbd> ) and copy it to your clipboard ( <kbd>CTRL</kbd> + <kbd>C</kbd> ).
 
