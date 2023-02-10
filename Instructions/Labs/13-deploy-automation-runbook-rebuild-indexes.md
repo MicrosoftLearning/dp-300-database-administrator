@@ -22,7 +22,7 @@ You have been hired as a Senior Database Administrator to help automate day to d
 
 1. On the **Create an Automation Account** page, enter the information below, and then select **Review + Create**.
 
-    - **Resource Group:** starting with *automateLab*
+    - **Resource Group:** contoso-rg-(deployment id)
     - **Name:** autoAccount
     - **Location:** Use the default.
 
@@ -103,19 +103,19 @@ The next steps consist of configuring the assets required in preparation for the
 
 1. Search for **sqlserver** within the Gallery.
 
-    ![Screenshot of selecting the SqlServer module.](../images/dp-300-module-13-lab-14.png)
+    ![Screenshot of selecting the SqlServer module.](../images/dp-300-16.png)
 
 1. Select **SqlServer** which will direct to the next screen, and then select **Select**.
 
-    ![Screenshot of selecting Select.](../images/dp-300-module-13-lab-15.png)
+    ![Screenshot of selecting Select.](../images/dp-300-17.png)
 
 1. On the **Add a module** page, select the latest runtime version available, then select **Import**. This will import the PowerShell module into your Automation account.
 
-    ![Screenshot of selecting Import.](../images/dp-300-module-13-lab-16.png)
+    ![Screenshot of selecting Import.](../images/dp-300-18.png)
 
 1. You'll need to create a credential to securely sign in to your database. From the blade for the Automation Account navigate to the **Shared Resources** section and select **Credentials**.
 
-    ![Screenshot of selecting Credentials option.](../images/dp-300-module-13-lab-17.png)
+    ![Screenshot of selecting Credentials option.](../images/dp-300-19.png)
 
 1. Select **+ Add a Credential**, enter the information below, and then select **Create**.
 
@@ -124,40 +124,40 @@ The next steps consist of configuring the assets required in preparation for the
     - Password: **P@ssw0rd01**
     - Confirm password: **P@ssw0rd01**
 
-    ![Screenshot of adding account credentials.](../images/dp-300-module-13-lab-18.png)
+    ![Screenshot of adding account credentials.](../images/dp-300-20.png)
 
 ## Create a PowerShell runbook
 
 1. In the Azure portal, navigate to your database by searching for **sql databases**.
 
-    ![Screenshot of searching for existing SQL databases.](../images/dp-300-module-13-lab-03.png)
+    ![Screenshot of searching for existing SQL databases.](../images/dp-300-21.png)
 
 1. Select the SQL database **AdventureWorksLT**.
 
-    ![Screenshot of selecting the AdventureWorks SQL database.](../images/dp-300-module-13-lab-04.png)
+    ![Screenshot of selecting the AdventureWorks SQL database.](../images/dp-300-22.png)
 
 1. On the **Overview** page copy the **Server name** of your Azure SQL Database as shown below (Your server name should start with *dp300-lab*). You'll paste this in later steps.
 
-    ![Screenshot of copying the server name.](../images/dp-300-module-13-lab-19.png)
+    ![Screenshot of copying the server name.](../images/dp-300-23.png)
 
 1. On the Azure portal, in the top search box, type **automation**.
 
-    ![Screenshot of selecting the Automation Accounts.](../images/dp-300-module-13-lab-11.png)
+    ![Screenshot of selecting the Automation Accounts.](../images/dp-300-24.png)
 
 1. Select the automation account that you created.
 
-    ![Screenshot of selecting the autoAccount automation account.](../images/dp-300-module-13-lab-12.png)
+    ![Screenshot of selecting the autoAccount automation account.](../images/dp-300-25.png)
 
 1. Scroll to the **Process Automation** section of the Automation account blade, select **Runbooks**, and then **+ Create a runbook**.
 
-    ![Screenshot of the Runbooks page, selecting Create a runbook.](../images/dp-300-module-13-lab-20.png)
+    ![Screenshot of the Runbooks page, selecting Create a runbook.](../images/dp-300-26.png)
 
     >[!NOTE]
     > As we've learned, note that there are two existing runbooks created. These were automatically created during the automation account deployment.
 
 1. Enter the runbook name as **IndexMaintenance** and a runbook type of **PowerShell**. Select the latest runtime version available, then select **Create**.
 
-    ![Screenshot of creating a runbook.](../images/dp-300-module-13-lab-21.png)
+    ![Screenshot of creating a runbook.](../images/dp-300-27.png)
 
 1. Once the runbook has been created, copy and paste the Powershell code snippet below into your runbook editor. On the first line of the script paste in the server name you copied in the steps above. Select **Save**, and then select **Publish**.
 
@@ -173,11 +173,11 @@ The next steps consist of configuring the assets required in preparation for the
     Write-Output $SQLOutput
     ```
 
-    ![Screenshot of pasting code snipped.](../images/dp-300-module-13-lab-22.png)
+    ![Screenshot of pasting code snipped.](../images/dp-300-28.png)
 
 1. If everything goes well, you should receive a successful message.
 
-    ![Screenshot of a successful message for the runbook creation.](../images/dp-300-module-13-lab-23.png)
+    ![Screenshot of a successful message for the runbook creation.](../images/dp-300-29.png)
 
 ## Create a schedule for a runbook
 
@@ -185,15 +185,15 @@ Next you will schedule the runbook to execute on a regular basis.
 
 1. Under **Resources** in the left hand navigation of your **IndexMaintenance** runbook, select **Schedules**. Then select **+ Add a schedule**.
 
-    ![Screenshot of the Schedules page, selecting Add a schedule.](../images/dp-300-module-13-lab-24.png)
+    ![Screenshot of the Schedules page, selecting Add a schedule.](../images/dp-300-30.png)
 
 1. Select **Link a schedule to your runbook**.
 
-    ![Screenshot of selecting Link as schedule to your runbook.](../images/dp-300-module-13-lab-25.png)
+    ![Screenshot of selecting Link as schedule to your runbook.](../images/dp-300-31.png)
 
 1. Select **+ Add a schedule**.
 
-    ![Screenshot of the create a schedule link.](../images/dp-300-module-13-lab-26.png)
+    ![Screenshot of the create a schedule link.](../images/dp-300-32.png)
 
 1. Supply a descriptive schedule name and a description if desired.
 
@@ -205,7 +205,7 @@ Next you will schedule the runbook to execute on a regular basis.
 
 1. The schedule is now created and linked to the runbook. Select **OK**.
 
-    ![Screenshot of the created schedule.](../images/dp-300-module-13-lab-28.png)
+    ![Screenshot of the created schedule.](../images/dp-300-33.png)
 
 Azure Automation delivers a cloud-based automation, and configuration service that supports consistent management across your Azure and non-Azure environments.
 
