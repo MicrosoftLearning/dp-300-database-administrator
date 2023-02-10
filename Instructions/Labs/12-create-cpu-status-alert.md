@@ -58,6 +58,6 @@ You have been hired as a Senior Data Engineer to help automate day to day operat
 
     With the alert in place, if the CPU usage on average exceeds 80%, an email like this is sent.
 
-    ![Screenshot of the warning email](../images/dp300-lab12-img12.png)
+    ![Screenshot of the warning email](../images/dp300-lab12-img13.png)
 
 Alerts can send you an email or call a web hook when some metric (for example database size or CPU usage) reaches a threshold you define. You've just seen how you can easily configure alerts for Azure SQL Databases.
