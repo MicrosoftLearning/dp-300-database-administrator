@@ -18,7 +18,7 @@ You have been hired as a Senior Database Administrator to help automate day to d
 
 1. In the Azure portal in the search bar type *automation* and then select **Automation Accounts** from the search results, and then select **+ Create**.
 
-    ![Screenshot of selecting the Automation Accounts.](../images/dp-300-module-13-lab-01.png)
+    ![Screenshot of selecting the Automation Accounts.](../images/dp-300-L13-002.png)
 
 1. On the **Create an Automation Account** page, enter the information below, and then select **Review + Create**.
 
@@ -26,11 +26,11 @@ You have been hired as a Senior Database Administrator to help automate day to d
     - **Name:** autoAccount
     - **Location:** Use the default.
 
-    ![Screenshot of the Add Automation Account screen.](../images/dp-300-module-13-lab-02.png)
+    ![Screenshot of the Add Automation Account screen.](../images/dp-300-L13-003.png)
 
 1. On the review page, select **Create**.
 
-    ![Screenshot of the Add Automation Account screen.](../images/dp-300-module-13-lab-29.png)
+    ![Screenshot of the Add Automation Account screen.](../images/dp-300-L13-004.png)
 
     > [!NOTE]
     > Your automation account should be created in around three minutes.
