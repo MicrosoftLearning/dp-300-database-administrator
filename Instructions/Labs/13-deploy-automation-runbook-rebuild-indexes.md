@@ -83,7 +83,7 @@ You have been hired as a Senior Database Administrator to help automate day to d
 
 1. Expand the **Stored Procedures** folder to see what was created.
 
-    ![Screenshot of the new stored procedures.](../images/dp-300-module-13-lab-10.png)
+    ![Screenshot of the new stored procedures.](../images/dp-300-L13-updated8.png)
 
 ## Configure Automation Account assets
 
@@ -91,15 +91,15 @@ The next steps consist of configuring the assets required in preparation for the
 
 1. On the Azure portal, in the top search box, type **automation**.
 
-    ![Screenshot of selecting the Automation Accounts.](../images/dp-300-module-13-lab-11.png)
+    ![Screenshot of selecting the Automation Accounts.](../images/dp-300-L13-updated9.png)
 
 1. Select the automation account that you created.
 
-    ![Screenshot of selecting the autoAccount automation account.](../images/dp-300-module-13-lab-12.png)
+    ![Screenshot of selecting the autoAccount automation account.](../images/dp-300-L13-updated10.png)
 
 1. Select **Modules** from the **Shared Resources** section of the Automation blade. Then select **Browse gallery**.
 
-    ![Screenshot of selecting the Modules menu.](../images/dp-300-module-13-lab-13.png)
+    ![Screenshot of selecting the Modules menu.](../images/dp-300-15.png)
 
 1. Search for **sqlserver** within the Gallery.
 
