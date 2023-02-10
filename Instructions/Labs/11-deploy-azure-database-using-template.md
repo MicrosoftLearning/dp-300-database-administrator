@@ -88,7 +88,7 @@ You've been hired as a Senior Data Engineer to help automate day to day operatio
 
 1. Close the **azuredeploy.json** tab and return to the tab containing the **sql-database** GitHub folder. Scroll down and select **Deploy to Azure**.
 
-    ![Deploy to Azure button](../images/dp-300-module-11-lab-01.png)
+    ![Deploy to Azure button](../images/dp300-lab11-img1.png)
 
 1. The **Create a SQL Server and Database** quickstart template page will open on Azure portal, with resource details partially filled in from the ARM template. Complete the blank fields with the information below:
 
@@ -98,10 +98,10 @@ You've been hired as a Senior Data Engineer to help automate day to day operatio
 
 1. Select **Review + create**, and then select **Create**. Your deployment will take 5 minutes or so to deploy.
 
-    ![Picture 2](../images/dp-300-module-11-lab-02.png)
+    ![Picture 2](../images/dp300-lab11-img02.png)
 
 1. When deployment has completed, select **Go to resource group**. You'll be taken to your Azure Resource Group, which contains a randomly named **SQL Server** resource created by the deployment.
 
-    ![Picture 3](../images/dp-300-module-11-lab-03.png)
+    ![Picture 3](../images/dp300-lab11-img3.png)
 
 You've just seen how, with a single click on an Azure Resource Manager template link, you can easily create both an Azure SQL server and database.
