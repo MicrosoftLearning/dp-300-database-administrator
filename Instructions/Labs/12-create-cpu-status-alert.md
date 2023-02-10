@@ -6,6 +6,23 @@ You have been hired as a Senior Data Engineer to help automate day to day operat
 
 ## Create an alert when a CPU exceeds an average of 80 percent
 
+Once the environment is provisioned, a virtual machine (JumpVM) and lab guide will get loaded in your browser. Use this virtual machine throughout the workshop to perform the lab. 
+
+1.Login to Azure Portal
+In the JumpVM, click on the Azure portal shortcut of the Microsoft Edge browser which is created on the desktop.
+
+  ![Picture 2](../images/azureportal-lab12.png)
+  
+2.On the Sign in to Microsoft Azure tab you will see the login screen, in that enter the following email/username, and click on Next.
+
+3.If you see the pop-up Stay Signed in?, click No.
+
+
+4.If you see the pop-up You have free Azure Advisor recommendations!, close the window to continue the lab.
+
+
+5.If a Welcome to Microsoft Azure popup window appears, click **Maybe Later** to skip the tour.
+
 1. In the search bar at the top of the Azure portal, type **SQL**, and select **SQL databases**. Select the **AdventureWorksLT** database name listed.
 
     ![Screenshot of selecting a SQL database](../images/dp300-lab12-img1.png)
@@ -45,6 +62,10 @@ You have been hired as a Senior Data Engineer to help automate day to day operat
     - **Name:** DemoLab
 
     ![Screenshot of the Create action group page with information added](../images/dp300-lab12-img9.png)
+    
+1. On the **Basic** tab, enter Alert rule name as **eamilrule**.
+    
+    ![Screenshot of entering emailgroup and selecting Next: Notifications](../images/altertrulename-lab12.png)
 
 1. Select **Review + create**, then select **Create**.
 
