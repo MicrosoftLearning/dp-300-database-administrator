@@ -39,7 +39,7 @@ You have been hired as a Senior Database Administrator to help automate day to d
 
 1. In the Azure portal, navigate to your database by searching for **sql databases**.
 
-    ![Screenshot of searching for existing SQL databases.](../images/dp-300-module-13-lab-03.png)
+    ![Screenshot of searching for existing SQL databases.](../images/dp-300-L13-updated1.png)
 
 1. Select the SQL database **AdventureWorksLT**.
 
