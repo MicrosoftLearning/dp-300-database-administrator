@@ -188,17 +188,17 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
     ![Picture 21](../images/upd-dp-300-module-02-lab-29.png)
 
-1. Click the **+Text** link to add a new text box in the notebook  
+2. Click the **+Text** link to add a new text box in the notebook  
 
     ![Picture 22](../images/upd-dp-300-module-02-lab-30.png)
 
 **Note:** Within the notebook you can embed plain text to explain queries or result sets.
 
-1. Enter the text **Top Ten Customers by Order SubTotal**, making it Bold if desired.
+3. Enter the text **Top Ten Customers by Order SubTotal**, making it Bold if desired.
 
     ![A screenshot of a cell phone Description automatically generated](../images/upd-dp-300-module-02-lab-31.png)
 
-1. Click the **+ Cell** button, then **Code cell** to add a new code cell at the end of the notebook.  
+4. Click the **+ Cell** button, then **Code cell** to add a new code cell at the end of the notebook.  
 
     ![Picture 23](../images/upd-dp-300-module-02-lab-32.png)
 
@@ -215,15 +215,15 @@ GROUP BY cust.[CustomerID], cust.[CompanyName]
 ORDER BY [OverallOrderSubTotal] DESC
    ```
 
-1. Click on the blue circle with the arrow to execute the query. Note how the results are included within the cell with the query.
+6. Click on the blue circle with the arrow to execute the query. Note how the results are included within the cell with the query.
 
-1. Click the **+ Cell** button, then **Text cell** to add a new code cell at the end of the notebook.  
+7. Click the **+ Cell** button, then **Text cell** to add a new code cell at the end of the notebook.  
 
     ![Picture 24](../images/upd-dp-300-module-02-lab-34.png)
 
-1. Enter the text **Top Ten Ordered Product Categories**, making it Bold if desired.
+8. Enter the text **Top Ten Ordered Product Categories**, making it Bold if desired.
 
-1. Click the **+ Code** button again to add a new cell, and paste the following SQL statement into the cell:
+9. Click the **+ Code** button again to add a new cell, and paste the following SQL statement into the cell:
 
 ```sql
 SELECT TOP 10 cat.[Name] AS ProductCategory, 
@@ -237,14 +237,14 @@ GROUP BY cat.[name]
 ORDER BY [OrderedQuantity] DESC
 ```
 
-1. Click on the blue circle with the arrow to execute the query.
+10. Click on the blue circle with the arrow to execute the query.
 
-1. To run all cells in the notebook and present results, click the **Run all** button in the toolbar.
+11. To run all cells in the notebook and present results, click the **Run all** button in the toolbar.
 
 	![Picture 17](../images/upd-dp-300-module-02-lab-33.png)
 
-1. Within Azure Data Studio save the notebook from File menu (either Save or Save As) to the **C:\Labfiles\Deploy Azure SQL Database** path (create the folder structure if it does not exist). Make sure the file extension is **.ipynb**
+12. Within Azure Data Studio save the notebook from File menu (either Save or Save As) to the **C:\Labfiles\Deploy Azure SQL Database** path (create the folder structure if it does not exist). Make sure the file extension is **.ipynb**
 
-1. Close the tab for the Notebook from inside of Azure Data Studio. From the File Menu, select Open File, and open the notebook you just saved. Observe that query results were saved along with the queries in the notebook.
+13. Close the tab for the Notebook from inside of Azure Data Studio. From the File Menu, select Open File, and open the notebook you just saved. Observe that query results were saved along with the queries in the notebook.
 
 In this exercise, you've seen how you deploy a Azure SQL Database with a Virtual Network Endpoint. You were also able to connect to the SQL Database you've created using SQL Server Management Studio.
