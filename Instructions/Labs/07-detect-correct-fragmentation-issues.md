@@ -98,7 +98,7 @@ You have been hired as a database administrator to identify performance related 
 
     This query will increase the fragmentation level of the Person.Address table and its indexes by adding a large number of new records.
 
-1. Execute the first query again. Now you should be able to see four highly fragmented indexes.
+1. Execute the previous query again. Now you should be able to see four highly fragmented indexes.
 
     ![Picture 03](../images/dp-300-module-07-lab-06.png)
 
