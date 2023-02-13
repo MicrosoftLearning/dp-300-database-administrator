@@ -14,6 +14,10 @@ You have been hired as a database administrator to identify performance related 
 1. Download the database backup file located on **https://github.com/MicrosoftLearning/dp-300-database-administrator/blob/master/Instructions/Templates/AdventureWorks2017.bak** to **C:\LabFiles\Monitor and optimize** path on the Azure SQL VM created in Lab1 (create the folder structure if it does not exist).
 
     ![Picture 03](../images/dp-300-lab8-01.png)
+    
+**Note:** If the folders **does not exist** then create **LabFiles\Monitor and optimize** in C drive then change the path in **Downloads Settings** to **C:\LabFiles\Monitor and optimize** and download the file.
+
+![Picture 01](../images/dp300-lab7-img02.png)
 
 1. Select the Windows Start button and type SSMS. Select **Microsoft SQL Server Management Studio 18** from the list.  
 
