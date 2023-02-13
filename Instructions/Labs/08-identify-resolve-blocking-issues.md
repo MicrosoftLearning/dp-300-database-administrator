@@ -119,7 +119,7 @@ You have been hired as a database administrator to identify performance related 
 
     **Note:** this query does not return any results and appears to run indefinitely.
 
-1. In **Object Explorer**, expand  **Management** -> **Extended Events** -> **Sessions**.
+1. In **Object Explorer**, expand  **Management** -> **Extended Events** -> **Sessions** -> **Blocking**.
 
     Notice the extended event named *Blocking* we just created is in the list.
 
