@@ -16,7 +16,7 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
     ![Picture 9](../images/lab1-2-updated.png)
 
-1. On the **Azure SQL** blade, select **Create**fhgff.
+1. On the **Azure SQL** blade, select **Create**.
 
     ![Picture 10](../images/lab1-2-2-updated.png)
 
