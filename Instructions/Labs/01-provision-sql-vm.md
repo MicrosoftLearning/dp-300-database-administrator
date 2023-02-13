@@ -14,15 +14,15 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
 1. Locate the search bar at the top of the page. Search for **Azure SQL**. Select the search result for **Azure SQL** that appears in the results under **Services**.
 
-    ![Picture 9](../images/dp-300-L1-002.png)
+    ![Picture 9](../images/lab1-2-updated.png)
 
 1. On the **Azure SQL** blade, select **Create**.
 
-    ![Picture 10](../images/dp-300-L1-003.png)
+    ![Picture 10](../images/lab1-2-2-updated.png)
 
 1. On the **Select SQL deployment option** blade, click on the drop-down box under **SQL virtual machines(1)**. Select the option labeled **Free SQL Server License: SQL 2019 Developer on Windows Server 2022(2)**. Then select **Create**.
 
-    ![Picture 11](../images/dp-300-L1-004.png)
+    ![Picture 11](../images/lab1-3-updated.png)
 
 1. On the **Create a virtual machine** page, enter the following information:
 
