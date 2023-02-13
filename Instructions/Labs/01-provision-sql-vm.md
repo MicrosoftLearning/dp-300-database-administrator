@@ -47,7 +47,7 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
     Make note of the username and password for later use.
 
-    ![Picture 12](../images/dp-300-module-01-lab-12.png)
+    ![Picture 12](../images/dp-300-lab1-5.png)
 
 1. Navigate to the **Disks** tab and review the configuration.
 
@@ -55,7 +55,7 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
 1. Navigate to the **Networking** tab and review the configuration.
 
-    ![Picture 14](../images/dp-300-module-01-lab-14.png)
+    ![Picture 14](../images/dp-300-lab1-7.png)
 
 1. Navigate to the **Management** tab and review the configuration and Verify that **Enable auto_shutdown** is unchecked.
 
@@ -73,7 +73,7 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
 1. Select the **Review + create** button. Then select **Create**.
 
-    ![Picture 18](../images/dp-300-module-01-lab-18.png)
+    ![Picture 18](../images/dp-300-lab1-11.png)
 
 1. On the deployment blade, wait until the deployment is complete. The VM will take approximate 5-10 minutes to deploy. After the deployment is complete, select  **Go to resource**.
 
@@ -83,13 +83,13 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
 1. On the **Overview** page for the virtual machine, explore the menu options for this resource to review what is available.
 
-    ![Picture 20](../images/dp-300-module-01-lab-20.png)
+    ![Picture 20](../images/dp-300-lab1-13.png)
 
 ## Connect to SQL Server on an Azure Virtual Machine
 
 1. On the **Overview** page for the virtual machine, select the **Connect** button and choose RDP.
 
-    ![Picture 21](../images/dp-300-module-01-lab-21.png)
+    ![Picture 21](../images/dp-300-lab1-t1.png)
 
 1. On the RDP tab, select the **Download RDP File** button.
 
