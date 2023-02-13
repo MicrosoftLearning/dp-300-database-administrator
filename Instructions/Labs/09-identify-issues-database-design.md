@@ -11,23 +11,25 @@ You have been hired as a database administrator to identify performance related 
 
 ## Restore a database
 
-1. Download the database backup file located on **https://github.com/MicrosoftLearning/dp-300-database-administrator/blob/master/Instructions/Templates/AdventureWorks2017.bak** to **C:\LabFiles\Monitor and optimize** path on Azure SQL VM created in Lab1 (create the folder structure if it does not exist).
+1. Download the database backup file located on **https://github.com/MicrosoftLearning/dp-300-database-administrator/blob/master/Instructions/Templates/AdventureWorks2017.bak** to **C:\LabFiles\Monitor and optimize** path on Azure SQL VM. 
+   
+   ![Picture 03](../images/dp-300-lab-09-img1.png)
 
-    ![Picture 03](../images/dp-300-lab-09-img1.png)
+**Note:** If the folders **does not exist** then create **LabFiles\Monitor and optimize** in C drive then change the path in **Downloads Settings** to **C:\LabFiles\Monitor and optimize** and download the file.
 
-1. Select the Windows Start button and type SSMS. Select **Microsoft SQL Server Management Studio 18** from the list.  
+2. Select the Windows Start button and type SSMS. Select **Microsoft SQL Server Management Studio 18** from the list.  
 
     ![Picture 01](../images/dp-300-lab-9-img2.png)
 
-1. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name. Select **Connect**.
+3. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name. Select **Connect**.
 
     ![Picture 02](../images/dp-300-lab-9-img3.png)
 
-1. Select the **Databases** folder, and then **New Query**.
+4. Select the **Databases** folder, and then **New Query**.
 
     ![Picture 03](../images/dp-300-lab-09-img4.png)
 
-1. In the new query window, copy and paste the below T-SQL into it. Execute the query to restore the database.
+5. In the new query window, copy and paste the below T-SQL into it. Execute the query to restore the database.
 
     ```sql
     RESTORE DATABASE AdventureWorks2017
@@ -41,13 +43,13 @@ You have been hired as a database administrator to identify performance related 
 
     **Note:** The database backup file name and path should match with what you've downloaded on step 1, otherwise the command will fail.
 
-1. You should see a successful message after the restore is complete.
+6. You should see a successful message after the restore is complete.
 
     ![Picture 03](../images/dp-300-lab-09-img5.png)
 
 ## Examine the query and identify the problem
 
-1. Select **New Query**. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
+7. Select **New Query**. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
 
     ```sql
     USE AdventureWorks2017
@@ -58,11 +60,11 @@ You have been hired as a database administrator to identify performance related 
     WHERE NationalIDNumber = 14417807;
     ```
 
-1. Select **Include Actual Execution Plan** icon as shown below before running the query or press **CTRL+M**. This will cause the execution plan to be displayed when you execute the query. Select **Execute** to execute this query again.
+8. Select **Include Actual Execution Plan** icon as shown below before running the query or press **CTRL+M**. This will cause the execution plan to be displayed when you execute the query. Select **Execute** to execute this query again.
 
     ![Picture 01](../images/dp-300-lab-09-img6.png)
 
-1. Navigate to the execution plan, by selecting the **Execution plan** tab in the results panel. In the execution plan, mouse over the `SELECT` operator. You will notice a warning message identified by an exclamation point in a yellow triangle as shown below. Identify what the warning message tells you.
+9. Navigate to the execution plan, by selecting the **Execution plan** tab in the results panel. In the execution plan, mouse over the `SELECT` operator. You will notice a warning message identified by an exclamation point in a yellow triangle as shown below. Identify what the warning message tells you.
 
     ![Picture 02](../images/dp-300-lab-09-img7.png)
 
@@ -91,7 +93,7 @@ CREATE TABLE [HumanResources].[Employee](
 ) ON [PRIMARY]
 ```
 
-1. According to the warning message presented in the execution plan, what change would you recommend?
+10. According to the warning message presented in the execution plan, what change would you recommend?
 
     1. Identify what field is causing the implicit conversion and why. 
     1. If you review the query:
@@ -110,7 +112,7 @@ There are two approaches we can implement to fix the implicit conversion warning
 
 ### Change the code
 
-1. How would you change the code to resolve the implicit conversion? Change the code and rerun the query.
+11. How would you change the code to resolve the implicit conversion? Change the code and rerun the query.
 
     Remember to turn on the **Include Actual Execution Plan** (**CTRL+M**) if it is not already on. 
 
@@ -130,7 +132,7 @@ There are two approaches we can implement to fix the implicit conversion warning
 
 ### Change the data type
 
-1. We can also fix the implicit conversion warning by changing the table structure.
+12. We can also fix the implicit conversion warning by changing the table structure.
 
     To attempt to fix the index, copy and paste the query below into a new query window, to change the column's data type. Attempt to execute the query, by selecting **Execute** or pressing <kbd>F5</kbd>.
 
@@ -144,7 +146,7 @@ There are two approaches we can implement to fix the implicit conversion warning
 
     The *NationalIDNumber* column is part of an already existing nonclustered index, the index has to be rebuilt/recreated in order to change the data type. **This could lead to extended downtime in production, which highlights the importance of choosing the right data types in your design.**
 
-1. In order to resolve this issue, copy and paste the code below into your query window and execute it by selecting **Execute**.
+13. In order to resolve this issue, copy and paste the code below into your query window and execute it by selecting **Execute**.
 
     ```sql
     USE AdventureWorks2017
@@ -163,7 +165,7 @@ There are two approaches we can implement to fix the implicit conversion warning
     GO
     ```
 
-1. Alternatively, you can run the query below to confirm that the data type was successfully changed.
+14. Alternatively, you can run the query below to confirm that the data type was successfully changed.
 
     ```sql
     SELECT c.name, t.name
@@ -175,7 +177,7 @@ There are two approaches we can implement to fix the implicit conversion warning
     
     ![Picture 05](../images/dp-300-lab-09-img10.png)
     
-1. Now let's check the execution plan. Rerun the original query without the quotes.
+15. Now let's check the execution plan. Rerun the original query without the quotes.
 
     ```sql
     USE AdventureWorks2017
