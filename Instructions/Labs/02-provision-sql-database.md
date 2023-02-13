@@ -134,7 +134,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
 1. From the **SQL database** page, select the **Overview** section, and then select the link for the server name in the top section:
 
-    ![Picture 13](../images/upd-dp-300-module-02-lab-19.png)
+    ![Picture 13](../images/updt-dp-300-module-02-lab-19.png)
 
 1. On the SQL servers navigation blade, select **Networking** under the **Security** section.
 
@@ -168,7 +168,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
     - Name (optional) can be populated with a friendly name of the database, if desired
     - Review settings and click **Connect (8)**
 
-    ![Picture 19](../images/upd-dp-300-module-02-lab-27.png)
+    ![Picture 19](../images/updt-dp-300-module-02-lab-27.png)
 
       - **NOTE:** You may be asked to add a firewall rule that allows your client IP access to this server. If you are asked to add a firewall rule, click on **Add account** and login to your Azure account. On **Create new firewall rule** screen, click **OK**.
 
