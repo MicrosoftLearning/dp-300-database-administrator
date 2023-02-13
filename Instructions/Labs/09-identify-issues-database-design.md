@@ -17,6 +17,8 @@ You have been hired as a database administrator to identify performance related 
 
 **Note:** If the folders **does not exist** then create **LabFiles\Monitor and optimize** in C drive then change the path in **Downloads Settings** to **C:\LabFiles\Monitor and optimize** and download the file.
 
+ ![Picture 01](../images/dp300-lab7-img02.png)
+
 2. Select the Windows Start button and type SSMS. Select **Microsoft SQL Server Management Studio 18** from the list.  
 
     ![Picture 01](../images/dp-300-lab-9-img2.png)
