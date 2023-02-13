@@ -134,15 +134,15 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
 1. From the **SQL database** page, select the **Overview** section, and then select the link for the server name in the top section:
 
-    ![Picture 13](../images/dp-300-module-02-lab-19.png)
+    ![Picture 13](../images/upd-dp-300-module-02-lab-19.png)
 
 1. On the SQL servers navigation blade, select **Networking** under the **Security** section.
 
-    ![Picture 14](../images/dp-300-module-02-lab-20.png)
+    ![Picture 14](../images/upd-dp-300-module-02-lab-20.png)
 
-1. On the **Public access** tab, select **Selected networks**, and then check the **Allow Azure services and resources to access this server** property. Click **Save**.
+1. On the **Public access** tab, select **Selected networks (1)**, and then check the **Allow Azure services and resources to access this server (2)** property. Click **Save (3)**.
 
-    ![Picture 15](../images/dp-300-module-02-lab-21.png)
+    ![Picture 15](../images/upd-dp-300-module-02-lab-21.png)
 
 ## Connect to an Azure SQL Database in Azure Data Studio
 
@@ -150,7 +150,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
     - You may see this pop-up at initial launch of Azure Data Studio. If you receive it, click **Yes (recommended)**  
 
-        ![Picture 16](../images/dp-300-module-02-lab-22.png)
+        ![Picture 16](../images/upd-dp-300-module-02-lab-22.png)
 
 1. When Azure Data Studio opens, click the **Connections (1)** button in top left corner, and then **New Connection (2)**.
 
@@ -158,51 +158,49 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
 1. In the **Connection** sidebar, fill out the **Connection Details** section with connection information to connect to the SQL database created previously.
 
-    - Connection Type: **Microsoft SQL Server**
-    - Server: Enter the name of the SQL Server created previously. For example: **dp300-lab-xxxxxxxx.database.windows.net** (Where ‘xxxxxxxx’ is a ramdom number)
-    - Authentication Type: **SQL Login**
-    - User name: **dp300admin**
-    - Password: **dp300P@ssword!**
-    - Expand the Database drop-down to select **AdventureWorksLT.** 
-        - **NOTE:** You may be asked to add a firewall rule that allows your client IP access to this server. If you are asked to add a firewall rule, click on **Add account** and login to your Azure account. On **Create new firewall rule** screen, click **OK**.
+    - Connection Type: **Microsoft SQL Server (1)**
+    - Server: Enter the name of the SQL Server created previously. For example: **dp300-lab-xxxxxxxx.database.windows.net (2)** (Where ‘xxxxxxxx’ is a ramdom number)
+    - Authentication Type: **SQL Login (3)**
+    - User name: **dp300admin (4)**
+    - Password: **dp300P@ssword! (5)**
+    - Expand the Database drop-down to select **AdventureWorksLT (6)** 
+    - Server group will remain on **&lt;default&gt; (7)**
+    - Name (optional) can be populated with a friendly name of the database, if desired
+    - Review settings and click **Connect (8)**
 
-        ![Picture 18](../images/dp-300-module-02-lab-26.png)
+    ![Picture 19](../images/upd-dp-300-module-02-lab-27.png)
+
+      - **NOTE:** You may be asked to add a firewall rule that allows your client IP access to this server. If you are asked to add a firewall rule, click on **Add account** and login to your Azure account. On **Create new firewall rule** screen, click **OK**.
+
+        ![Picture 18](../images/upd-dp-300-module-02-lab-26.png)
 
         Alternatively, you can manually create a firewall rule for your SQL server on Azure portal by navigating to your SQL server, selecting **Networking**, and then selecting **+ Add your client IPv4 address (your IP address)**
 
-        ![Picture 18](../images/dp-300-module-02-lab-47.png)
-
-    Back on the Connection sidebar, continue filling out the connection details:  
-
-    - Server group will remain on **&lt;default&gt;**
-    - Name (optional) can be populated with a friendly name of the database, if desired
-    - Review settings and click **Connect**  
-
-    ![Picture 19](../images/dp-300-module-02-lab-27.png)
+        ![Picture 18](../images/upd-dp-300-module-02-lab-47.png)
 
 1. Azure Data Studio will connect to the database, and show some basic information about the database, plus a partial list of objects.
 
-    ![Picture 20](../images/dp-300-module-02-lab-28.png)
+    ![Picture 20](../images/upd-dp-300-module-02-lab-28.png)
 
 ## Query an Azure SQL Database with a SQL Notebook
 
 1. In Azure Data Studio, connected to this lab’s AdventureWorksLT database, click the **New Notebook** button.
 
-    ![Picture 21](../images/dp-300-module-02-lab-29.png)
+    ![Picture 21](../images/upd-dp-300-module-02-lab-29.png)
 
 1. Click the **+Text** link to add a new text box in the notebook  
 
-    ![Picture 22](../images/dp-300-module-02-lab-30.png)
+    ![Picture 22](../images/upd-dp-300-module-02-lab-30.png)
 
 **Note:** Within the notebook you can embed plain text to explain queries or result sets.
 
 1. Enter the text **Top Ten Customers by Order SubTotal**, making it Bold if desired.
 
-    ![A screenshot of a cell phone Description automatically generated](../images/dp-300-module-02-lab-31.png)
+    ![A screenshot of a cell phone Description automatically generated](../images/upd-dp-300-module-02-lab-31.png)
 
 1. Click the **+ Cell** button, then **Code cell** to add a new code cell at the end of the notebook.  
 
-    ![Picture 23](../images/dp-300-module-02-lab-32.png)
+    ![Picture 23](../images/upd-dp-300-module-02-lab-32.png)
 
 5. Paste the following SQL statement into the new cell:
 
@@ -219,7 +217,9 @@ ORDER BY [OverallOrderSubTotal] DESC
 
 1. Click on the blue circle with the arrow to execute the query. Note how the results are included within the cell with the query.
 
-1. Click the **+ Text** button to add a new text cell.
+1. Click the **+ Cell** button, then **Text cell** to add a new code cell at the end of the notebook.  
+
+    ![Picture 24](../images/upd-dp-300-module-02-lab-34.png)
 
 1. Enter the text **Top Ten Ordered Product Categories**, making it Bold if desired.
 
@@ -241,7 +241,7 @@ ORDER BY [OrderedQuantity] DESC
 
 1. To run all cells in the notebook and present results, click the **Run all** button in the toolbar.
 
-	![Picture 17](../images/dp-300-module-02-lab-33.png)
+	![Picture 17](../images/upd-dp-300-module-02-lab-33.png)
 
 1. Within Azure Data Studio save the notebook from File menu (either Save or Save As) to the **C:\Labfiles\Deploy Azure SQL Database** path (create the folder structure if it does not exist). Make sure the file extension is **.ipynb**
 
