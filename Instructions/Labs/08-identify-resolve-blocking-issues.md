@@ -13,11 +13,11 @@ You have been hired as a database administrator to identify performance related 
 
 1. Download the database backup file located on **https://github.com/MicrosoftLearning/dp-300-database-administrator/blob/master/Instructions/Templates/AdventureWorks2017.bak** to **C:\LabFiles\Monitor and optimize** path on the Azure SQL VM created in Lab1 (create the folder structure if it does not exist).
 
-    ![Picture 03](../images/dp-300-module-07-lab-03.png)
+    ![Picture 03](../images/dp-300-lab8-01.png)
 
 1. Select the Windows Start button and type SSMS. Select **Microsoft SQL Server Management Studio 18** from the list.  
 
-    ![Picture 01](../images/dp-300-module-01-lab-34.png)
+    ![Picture 01](../images/dp-300-lab8-02.png)
 
 1. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name. Select **Connect**.
 
@@ -43,7 +43,7 @@ You have been hired as a database administrator to identify performance related 
 
 1. You should see a successful message after the restore is complete.
 
-    ![Picture 03](../images/dp-300-module-07-lab-05.png)
+    ![Picture 03](../images/dp-300-lab8-06.png)
 
 ## Run blocked queries report
 
@@ -123,11 +123,11 @@ You have been hired as a database administrator to identify performance related 
 
     Notice the extended event named *Blocking* we just created is in the list.
 
-    ![Picture 01](../images/dp-300-module-08-lab-01.png)
+    ![Picture 01](../images/dp-300-lab8-02-5.png)
 
 1. Right click on **package0.ring_buffer**, and then select **View Target Data**.
 
-    ![Picture 02](../images/dp-300-module-08-lab-02.png)
+    ![Picture 02](../images/dp-300-lab8-02-06.png)
 
 1. Select the hyperlink.
 
@@ -163,7 +163,7 @@ You have been hired as a database administrator to identify performance related 
 
 1. Right click on extended event named **Blocking**, and then select **Stop Session**.
 
-    ![Picture 06](../images/dp-300-module-08-lab-06.png)
+    ![Picture 06](../images/dp-300-lab8-02-010.png)
 
 1. Navigate back to the query session that is causing the blocking, and type `ROLLBACK TRANSACTION` on the line below the query. Highlight `ROLLBACK TRANSACTION`, and select **Execute**.
 
