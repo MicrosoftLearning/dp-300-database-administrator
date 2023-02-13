@@ -25,7 +25,7 @@ You have been hired as a database administrator to identify performance related 
 
 1. Select the **Databases** folder, and then **New Query**.
 
-    ![Picture 03](../images/dp-300-module-07-lab-04.png)
+    ![Picture 03](../images/dp-300-lab8-04.png)
 
 1. In the new query window, copy and paste the below T-SQL into it. Execute the query to restore the database.
 
@@ -167,7 +167,7 @@ You have been hired as a database administrator to identify performance related 
 
 1. Navigate back to the query session that is causing the blocking, and type `ROLLBACK TRANSACTION` on the line below the query. Highlight `ROLLBACK TRANSACTION`, and select **Execute**.
 
-    ![Picture 07](../images/dp-300-module-08-lab-07.png)
+    ![Picture 07](../images/dp-300-lab8-02-011.png)
 
 1. Navigate back to the query session that was being blocked. You will notice that the query has now completed.
 
