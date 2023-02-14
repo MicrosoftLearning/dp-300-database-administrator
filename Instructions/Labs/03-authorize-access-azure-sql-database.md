@@ -62,7 +62,7 @@ In the JumpVM, click on the Azure portal shortcut of the Microsoft Edge browser 
 
     ![Screenshot of the Connect to server dialog](../images/dp300-lab3-img9.png)
 
-    >**NOTE:** When you first try to sign in to an Azure SQL database, your client IP address needs to be added to the firewall. SQL Server Management Studio can do this for you. Use the Azure Portal **password** from the **Environment Details** tab, then select **Sign in**, choose your Azure credentials and then select **OK**.
+    >**NOTE:** When you first try to sign in to an Azure SQL database, You may be asked to add your client IP address to the firewall. SQL Server Management Studio can do this for you. Use the Azure Portal **password** from the **Environment Details** tab, then select **Sign in**, choose your Azure credentials and then select **OK**.
    
      ![Screenshot of adding the client IP address](../images/dp300-lab3-img10.png)
 
