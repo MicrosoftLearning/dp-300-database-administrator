@@ -168,7 +168,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
     - Name (optional) can be populated with a friendly name of the database, if desired
     - Review settings and click **Connect (8)**
 
-    ![Picture 19](../images/updt-dp-300-module-02-lab-27.png)
+    ![Picture 19](../images/dp300-lab2-img1.png)
 
       - **NOTE:** You may be asked to add a firewall rule that allows your client IP access to this server. If you are asked to add a firewall rule, click on **Add account** and login to your Azure account. On **Create new firewall rule** screen, click **OK**.
 
@@ -223,7 +223,7 @@ ORDER BY [OverallOrderSubTotal] DESC
 
 8. Enter the text **Top Ten Ordered Product Categories**, making it Bold if desired.
 
-9. Click the **+ Code** button again to add a new cell, and paste the following SQL statement into the cell:
+9. Click the **+ Cell** button again, then **Code cell**, and paste the following SQL statement into the cell:
 
 ```sql
 SELECT TOP 10 cat.[Name] AS ProductCategory, 
@@ -243,7 +243,7 @@ ORDER BY [OrderedQuantity] DESC
 
 	![Picture 17](../images/upd-dp-300-module-02-lab-33.png)
 
-12. Within Azure Data Studio save the notebook from File menu (either Save or Save As) to the **C:\Labfiles\Deploy Azure SQL Database** path (create the folder structure if it does not exist). Make sure the file extension is **.ipynb**
+12. Within Azure Data Studio save the notebook from File menu (either Save or Save As) to the **C:\Labfiles\Deploy Azure SQL Database** path (create the folder structure if it does not exist). Make sure the file extension is **.ipynb**(Notebook)
 
 13. Close the tab for the Notebook from inside of Azure Data Studio. From the File Menu, select Open File, and open the notebook you just saved. Observe that query results were saved along with the queries in the notebook.
 
