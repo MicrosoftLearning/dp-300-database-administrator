@@ -13,27 +13,26 @@ You have been hired as a database administrator to identify performance related 
 
 Once the environment is provisioned, a virtual machine (JumpVM) and lab guide will get loaded in your browser. Use this virtual machine throughout the workshop to perform the lab. 
 
-1.Login to Azure Portal
-In the JumpVM, click on the Azure portal shortcut of the Microsoft Edge browser which is created on the desktop.
+1. Login to Azure Portal in the JumpVM, click on the Azure portal shortcut of the Microsoft Edge browser which is created on the desktop.
 
   ![Picture 2](../images/dp-300-lab-06-img1.png)
   
-2.On the Sign in to Microsoft Azure tab you will see the login screen, in that enter the following email/username, and click on Next.
+1. On the Sign in to Microsoft Azure tab you will see the login screen, in that enter the following email/username, and click on Next.
 
-3.If you see the pop-up Stay Signed in?, click No.
-
-
-4.If you see the pop-up You have free Azure Advisor recommendations!, close the window to continue the lab.
+1. If you see the pop-up Stay Signed in?, click No.
 
 
-5.If a Welcome to Microsoft Azure popup window appears, click **Maybe Later** to skip the tour.
+1. If you see the pop-up You have free Azure Advisor recommendations!, close the window to continue the lab.
+
+
+1. If a Welcome to Microsoft Azure popup window appears, click **Maybe Later** to skip the tour.
   
 
 1. From the Azure Portal, search for “SQL servers” in the search box at the top, then click **SQL servers** from the list of options.
 
     ![A screenshot of a social media post Description automatically generated](../images/dp-300-lab-06-img2.png)
 
-1. Select the server name **dp300-lab-XXXXXXXX** to be taken to the detail page (you may have a different resource group and location assigned for your SQL server).
+1. Select the server name **dp300-lab-DID** to be taken to the detail page (where DID is the Deployment ID).
 
     ![A screenshot of a social media post Description automatically generated](../images/dp-300-lab-06-img3.png)
 
@@ -55,13 +54,13 @@ In the JumpVM, click on the Azure portal shortcut of the Microsoft Edge browser 
 
 1. In the left navigation, select **Query editor (preview)**.
 
-    ![Screenshot showing selecting the query editor (preview) link](../dp-300-lab-06-img8.png)
+    ![Screenshot showing selecting AdventureWorks](../images/dp-300-lab-06-img8.png)
 
-    **Note:** This feature is in preview.
+    > **Note:** This feature is in preview.
 
 1. In **Password**, type **P@ssw0rd01** and select **OK**.
 
-    ![Screenshot showing Query editor connection properties](../dp-300-lab-06-img9.png)
+     ![Screenshot showing selecting AdventureWorks](../images/dp-300-lab-06-img9.png)
 
 1. In **Query 1**, type the following query, and select **Run**:
 

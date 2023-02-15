@@ -9,6 +9,8 @@ You have been hired as a database administrator to identify performance related 
 
 **Note:** These exercises ask you to copy and paste T-SQL code. Please verify that the code has been copied correctly, before executing the code.
 
+## Restore a database
+   
 1. Select the Windows Start button and type SSMS. Select **Microsoft SQL Server Management Studio 18** from the list.  
 
     ![Picture 01](../images/dp300-lab7-img2.png)
@@ -25,12 +27,12 @@ You have been hired as a database administrator to identify performance related 
 
     ```sql
     RESTORE DATABASE AdventureWorks2017
-    FROM DISK = 'C:\LabFiles\Monitor and optimize\AdventureWorks2017.bak'
+    FROM DISK = 'C:\LabFiles\Monitorandoptimize\AdventureWorks2017.bak'
     WITH RECOVERY,
           MOVE 'AdventureWorks2017' 
-            TO 'C:\LabFiles\Monitor and optimize\AdventureWorks2017.mdf',
+            TO 'C:\LabFiles\Monitorandoptimize\AdventureWorks2017.mdf',
           MOVE 'AdventureWorks2017_log'
-            TO 'C:\LabFiles\Monitor and optimize\AdventureWorks2017_log.ldf';
+            TO 'C:\LabFiles\Monitorandoptimize\AdventureWorks2017_log.ldf';
     ```
 
     **Note:** The database backup file name and path should match with what you've downloaded on step 1, otherwise the command will fail.

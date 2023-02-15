@@ -90,7 +90,7 @@ You've been hired as a Senior Data Engineer to help automate day to day operatio
 
 1. Review and observe the JSON properties.
 
-1. Close the **azuredeploy.json** tab and return to the tab containing the **sql-database** GitHub folder. Scroll down and select **Deploy to Azure**.
+1. Close the **azuredeploy.json** tab and return to the tab containing the **sql-database** GitHub folder. Scroll down and select **Deploy to Azure**. Enter **Username** and **Password** from the **Environment Details** Tab.
 
     ![Deploy to Azure button](../images/dp300-lab11-img1.png)
 
@@ -100,7 +100,7 @@ You've been hired as a Senior Data Engineer to help automate day to day operatio
     - **Administrator Login:** labadmin
     - **Administrator Login Password:** &lt;enter a strong password&gt;
     
-    ![Picture 2](../images/lab11-usernamepass.png)
+    ![Picture 2](../images/dp300-lab11-usernamepassword.png)
     
 1. Select **Review + create**, and then select **Create**. Your deployment will take 5 minutes or so to deploy.
 
