@@ -86,7 +86,7 @@ As a DBA for AdventureWorks, you need to back up a database to a URL in Azure an
     az storage account keys list -g RESOURCE_GROUP_NAME -n BACKUP_STORAGE_NAME
     ```
 
-    Your account key will be in the results of the above command. Make sure you use the same name (after the **-n**) and resource group (after the **-g**) that you used in the previous command. Copy the returned value for **key1** (without the double quotes) in a notepad as shown here:
+    Your account key will be in the results of the above command. Copy the returned value for **key1** (without the double quotes) in a notepad as shown here:
 
     ![Screenshot of the storage account key on Azure portal.](../images/dp-300-module-15-lab-06.png)
 
@@ -134,11 +134,10 @@ Now that the functionality is configured, you can generate a backup file as a bl
 
    > **NOTE:** Replace <storage_account_name> with **dp300backupstorage<inject key="DeploymentID" enableCopy="false" />** and <key_value> with the value of **SAS** that you have copied in the notepad.
    >  **<key_value>** is the value generated at the end of the previous task in this format:
+       `'se=2023-12-31T00%3A00Z&sp=rwdl&sv=2018-11-09&sr=csig=rnoGlveGql7ILhziyKYUPBq5ltGc/pzqOCNX5rrLdRQ%3D'`
 
-    `'se=2023-12-31T00%3A00Z&sp=rwdl&sv=2018-11-09&sr=csig=rnoGlveGql7ILhziyKYUPBq5ltGc/pzqOCNX5rrLdRQ%3D'`
 
-
-    ```sql
+   ```sql
     IF NOT EXISTS  
     (SELECT * 
         FROM sys.credentials  
@@ -149,18 +148,17 @@ Now that the functionality is configured, you can generate a backup file as a bl
         SECRET = '<key_value>'
     END;
     GO  
-    ```
+   ```
 
 1. You can check if the credential was created successfully by navigating to **Security -> Credentials** on Object Explore.
 
     ![Screenshot of the credential on SSMS.](../images/dp-300-module-15-lab-17.png)
 
-1. If you mistyped and need to recreate the credential, you can drop it with the following command, making sure to change the name of the storage account:
+1. If you mistyped and need to recreate the credential, you can drop it with the following command, making sure to change the name of the storage account. (Only run this command if you need to go back and recreate the credential)
 
    > **Note:** Skip this step if you have already created the credentials correctly.
 
     ```sql
-    -- Only run this command if you need to go back and recreate the credential! 
     DROP CREDENTIAL [https://<storage_account_name>.blob.core.windows.net/backups]  
     ```
 
