@@ -17,11 +17,11 @@ You'll run queries with suboptimal performance, examine the query plans, and att
 
 1. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name. Select **Connect**.
 
-    ![Picture 02](../images/lab1_7.png)
+    ![Picture 02](../images/dp-300-lab10-sql1.png)
 
 1. Select the **Databases (1)** folder, and then **New Query (2)**.
 
-    ![Picture 03](../images/upd-dp-300-module-07-lab-04.png)
+    ![Picture 03](../images/dp-300-lab10-sql2.png)
 
 1. In the new query window, copy and paste the below T-SQL into it. Execute the query to restore the database.
 
