@@ -20,11 +20,11 @@ You have been hired as a Senior Database Administrator to help automate day to d
     - **Name:** autoAccount
     - **Location:** Use the default.
 
-    ![Screenshot of the Add Automation Account screen.](../images/dp-300(2).png)
+    ![Screenshot of the Add Automation Account screen.](../images/dp300-lab13-img1.png)
 
 1. On the review page, select **Create**.
 
-    ![Screenshot of the Add Automation Account screen.](../images/dp-300(3).png)
+    ![Screenshot of the Add Automation Account screen.](../images/dp300-lab13-img2.png)
 
     > [!NOTE]
     > Your automation account should be created in around three minutes.
@@ -41,7 +41,7 @@ You have been hired as a Senior Database Administrator to help automate day to d
 
 1. On the main section for your SQL Database page, select **Query editor (preview)**.
 
-    ![Screenshot of selecting the Query editor (preview).](../images/dp-300-6.png)
+    ![Screenshot of selecting the Query editor (preview).](../images/dp300-lab13-img3.png)
 
 1. You will be prompted for credentials to sign in to your database. Use this credential:
 
@@ -71,7 +71,7 @@ You have been hired as a Senior Database Administrator to help automate day to d
 
 1. Paste the text you copied into the **Query 1** pane.
 
-    ![Screenshot of pasting the code in a new Query window.](../images/dp-300-10.png)
+    ![Screenshot of pasting the code in a new Query window.](../images/dp300-lab13-img4.png)
 
 1. Delete `USE msdb` and `GO` on lines 5 and 6 of the query (that are highlighted in the screenshot) , and then select **Run**.
 
@@ -132,7 +132,7 @@ The next steps consist of configuring the assets required in preparation for the
 
 1. On the **Overview** page copy the **Server name** of your Azure SQL Database as shown below (Your server name should start with *dp300-lab*). You'll paste this in later steps.
 
-    ![Screenshot of copying the server name.](../images/dp-300-23.png)
+    ![Screenshot of copying the server name.](../images/dp300-lab13-img5.png)
 
 1. On the Azure portal, in the top search box, type **automation**.
 
@@ -167,7 +167,7 @@ The next steps consist of configuring the assets required in preparation for the
     Write-Output $SQLOutput
     ```
 
-    ![Screenshot of pasting code snipped.](../images/dp-300-28.png)
+    ![Screenshot of pasting code snipped.](../images/dp300-lab13-img6.png)
 
 1. If everything goes well, you should receive a successful message.
 
