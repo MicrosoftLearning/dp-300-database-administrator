@@ -3,8 +3,13 @@
   "Language": "English",
   "Files": [
     {
-      "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-300-database-administrator/Prod/Instructions/Labs/01-provision-sql-vm.md",
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-300-database-administrator/Prod/Instructions/Labs/LabIntro.md",
       "Order": 1
+    },
+    
+    {
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-300-database-administrator/Prod/Instructions/Labs/01-provision-sql-vm.md",
+      "Order": 2
     }
     
   ]
