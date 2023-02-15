@@ -3,8 +3,12 @@
   "Language": "English",
   "Files": [
     {
-      "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-300-database-administrator/Prod/Instructions/Labs/06-isolate-performance-problems.md",
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-300-database-administrator/Prod/Instructions/Labs/LabIntro.md",
       "Order": 1
+    },
+    {
+      "RawFilePath": "https://raw.githubusercontent.com/CloudLabs-MOC/dp-300-database-administrator/Prod/Instructions/Labs/06-isolate-performance-problems.md",
+      "Order": 2
     }
     
   ]
