@@ -8,72 +8,65 @@ You have been hired as a Senior Data Engineer to help automate day to day operat
 
 Once the environment is provisioned, a virtual machine (JumpVM) and lab guide will get loaded in your browser. Use this virtual machine throughout the workshop to perform the lab. 
 
-1.Login to Azure Portal
-In the JumpVM, click on the Azure portal shortcut of the Microsoft Edge browser which is created on the desktop.
+1. Login to Azure Portal in the JumpVM, click on the Azure portal shortcut of the Microsoft Edge browser which is created on the desktop.
 
-  ![Picture 2](../images/azureportal-lab12.png)
+   ![Picture 2](../images/azureportal-lab12.png)
   
-2.On the Sign in to Microsoft Azure tab you will see the login screen, in that enter the following email/username, and click on Next.
+2. On the Sign in to Microsoft Azure tab you will see the login screen, in that enter the following email/username, and click on Next.
 
-3.If you see the pop-up Stay Signed in?, click No.
+3. If you see the pop-up Stay Signed in?, click No.
 
+4. If you see the pop-up You have free Azure Advisor recommendations!, close the window to continue the lab.
 
-4.If you see the pop-up You have free Azure Advisor recommendations!, close the window to continue the lab.
-
-
-5.If a Welcome to Microsoft Azure popup window appears, click **Maybe Later** to skip the tour.
+5. If a Welcome to Microsoft Azure popup window appears, click **Maybe Later** to skip the tour.
 
 6. In the search bar at the top of the Azure portal, type **SQL**, and select **SQL databases**. Select the **AdventureWorksLT** database name listed.
 
-    ![Screenshot of selecting a SQL database](../images/dp300-lab12-img1.png)
+   ![Screenshot of selecting a SQL database](../images/dp300-lab12-img1.png)
 
 7. On the main blade for the **AdventureWorksLT** database, navigate down to the monitoring section. Select **Alerts**.
 
-    ![Screenshot of selecting Alerts on the SQL database Overview page](../images/dp300-lab12-img2.png)
+   ![Screenshot of selecting Alerts on the SQL database Overview page](../images/dp300-lab12-img2.png)
 
 8. Select **Create alert rule**.
 
-    ![Screenshot of selecting New alert rule](../images/dp300-lab12-img3.png)
+   ![Screenshot of selecting New alert rule](../images/dp300-lab12-img3.png)
 
 9. In the **Select a signal** slide out, select **CPU percentage**.
 
-    ![Screenshot of selecting CPU percentage](../images/dp300-lab12-img4.png)
+   ![Screenshot of selecting CPU percentage](../images/dp300-lab12-img4.png)
 
-10. In the **Configure signal** slide out, select **Static** for the **Threshold** property. Then check that the **Operator** property is **Greater than**, the **Aggregation** type is **Average**. Then in **Threshold value** enter a value of **80**. Select **Done**.
+10. In the **Create an alert rule** slide out, select **Static (1)** for the **Threshold** property. Then check that the **Aggregation ** type is **Average (2)**, the **Operator** property is **Greater than (3)** Then in **Threshold value** enter a value of **80 (4)**. Select **Next:Actions (5)**.
 
-    ![Screenshot of entering 80 and selecting Done](../images/dp300-lab12-img5.png)
+    ![Screenshot of entering 80 and selecting Done](../images/lab12-dp-300-001.png)
 
-11. Select the **Actions** tab.
-
-    ![Screenshot of selecting the Select action group link](../images/dp300-lab12-img6.png)
-
-12. In the **Actions** tab, select **Create action group**.
+11. In the **Actions** tab, select **Create action group**.
 
     ![Screenshot of selecting the Create action group](../images/dp300-lab12-img7.png)
 
-13. On the **Action Group** screen, type **emailgroup** in the **Action group name** field, and then select **Next: Notifications**.
+12. On the **Create action group** screen, type **emailgroup** in the **Action group name** field, and then select **Next: Notifications**.
 
-    ![Screenshot of entering emailgroup and selecting Next: Notifications](../images/dp300-lab12-img8.png)
+    ![Screenshot of entering emailgroup and selecting Next: Notifications](../images/dp-300-lab12-02.png)
 
-14. On the **Notifications** tab, enter the following information:
+13. On the **Notifications** tab, enter the following information:
 
     - **Notification type:** Email/SMS message/Push/Voice
         - **Note:** When you select this option, a Email/SMS message/Push/Voice flyout will appear. Check the Email property and type the Azure username you signed in with.
-    - **Name:** DemoLab
+    - **Name:** DemoLab 
+    - Select **Review + create**, then select **Create**.
+        - **Note:** Wait till action group created successfully then move to next step.
 
     ![Screenshot of the Create action group page with information added](../images/dp300-lab12-img9.png)
     
-15. On the **Basic** tab, enter Alert rule name as **eamilrule**.
+14. On the **Details** tab, enter Alert rule name as **emailrule (1)**, then select **Review + create (2)**.
     
-    ![Screenshot of entering emailgroup and selecting Next: Notifications](../images/altertrulename-lab12.png)
+    ![Screenshot of entering emailgroup and selecting Next: Notifications](../images/lab12-dp-300-0015-step.png)
 
-16. Select **Review + create**, then select **Create**.
+15. On the **Review + create** tab, Select **Create**.
 
-    ![Screenshot of the Create alert rule page selecting the Create alert rule](../images/dp300-lab12-img10.png)
+    ![Screenshot of the Create alert rule page selecting the Create alert rule](../images/lab12-dp-300-02.png)
 
-    **Note:** Before you select **Create**, you can also select **Test action group (preview)** to test the Alert.
-
-17. An email like this is sent to the email address that you entered, once the rule is created.
+16. An email like this is sent to the email address that you entered, once the rule is created.
 
     ![Screenshot of the confirmation email](../images/dp300-lab12-img11.png)
 
