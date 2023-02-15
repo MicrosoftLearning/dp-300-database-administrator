@@ -1,4 +1,4 @@
-# Backup to URL  <inject key="DeploymentID" enableCopy="false" />
+# Backup to URL  
 
 **Estimated Time: 30 minutes**
 
@@ -6,21 +6,21 @@ As a DBA for AdventureWorks, you need to back up a database to a URL in Azure an
 
 ## Restore a database
 
-1. Navigate to the Microsoft Edge browser window and download the database backup file located on **https://github.com/MicrosoftLearning/dp-300-database-administrator/blob/master/Instructions/Templates/AdventureWorks2017.bak** to **C:\LabFiles\HADR** path on the lab virtual machine (create the folder structure if it does not exist).
+1. Open File explorer and verify that the database backup file is present under **C:\LabFiles\HADR** path on the lab virtual machine.
 
-    ![Picture 03](../images/dp-300-module-15-lab-00.png)
+    ![Picture 03](../images/upd-dp-300-module-15-lab-00.png)
 
-1. Select the Windows Start button and type SSMS. Select **Microsoft SQL Server Management Studio 18** from the list.  
+1. Select the Windows Start button and type **SSMS (1)**. Select **Microsoft SQL Server Management Studio 19 (2)** from the list.  
 
-    ![Picture 01](../images/dp-300-module-01-lab-34.png)
+    ![Picture 01](../images/upd-dp-300-module-01-lab-34.png)
 
-1. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name with **sqlvm-<inject key="DeploymentID" enableCopy="false" />**. Select **Connect**.
+1. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name with **sqlvm-<inject key="DeploymentID" enableCopy="false" /> (1)**. Select **Connect (2)**.
 
-    ![Picture 02](../images/dp-300-module-07-lab-01.png)
+    ![Picture 02](../images/upd-dp-300-module-07-lab-01.png)
 
-1. Select the **Databases** folder, and then **New Query**.
+1. Select the **Databases (1)** folder, and then **New Query (2)**.
 
-    ![Picture 03](../images/dp-300-module-07-lab-04.png)
+    ![Picture 03](../images/upd-dp-300-module-07-lab-04.png)
 
 1. In the new query window, copy and paste the below T-SQL into it. Execute the query to restore the database.
 
