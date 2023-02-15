@@ -28,22 +28,22 @@ As a DBA within AdventureWorks, you need to enable geo-replication for Azure SQL
 
 1. On the **Create SQL Database - Geo Replica** page and under **Server**, select the **Create New** link.
 
-    ![Screenshot showing Create New server link.](../images/dp-300-lab14-06.png)
+    ![Screenshot showing Create New server link.](../images/lab14-dp-300-L6.png)
 
     >[!NOTE]
     > As we are creating a new server to host our secondary database, we can ignore the error message above.
 
 1. On the **Create SQL Database Server** page, Enter a unique **server name** of your preference, Select a **location** as the target region, In **Authentication method** select **Use SQL authentication** enter a valid **server admin login**, and a secure **password**, and then select **OK** to create the server.
 
-    ![Screenshot showing the Create SQL Database Server page.](../images/dp-300-lab14-07.png)
+    ![Screenshot showing the Create SQL Database Server page.](../images/lab14-dp-300-L7.png)
 
 1. Back in to the **Create SQL Database - Geo Replica** page, select **Review + Create**.
 
-    ![Screenshot showing the Create SQL Database Server page.](../images/lab14-dp-300-8.png)
+    ![Screenshot showing the Create SQL Database Server page.](../images/lab14-dp-300-L8.png)
 
 1. Select **Create**.
 
-    ![Screenshot showing the review and create page.](../images/lab14-dp-300-9.png)
+    ![Screenshot showing the review and create page.](../images/lab14-dp-300-L9.png)
 
 1. The secondary server and the database will now be created. To check the status, look under the notification icon at the top of the portal. 
 
@@ -59,7 +59,7 @@ Now that the Azure SQL Database replica is created, you will perform a failover.
 
 1. Navigate to the SQL servers page, and notice the new server in the list. Select the secondary server (you may have a different server name).
 
-    ![Screenshot showing SQL servers page.](../images/lab14-dp-300-1-1.png)
+    ![Screenshot showing SQL servers page.](../images/lab14-dp-300-L1-1.png)
 
 1. On the blade for the SQL server, in **Settings** section, select **SQL databases** and then select **AdventureWorksLT**.
 
@@ -71,22 +71,22 @@ Now that the Azure SQL Database replica is created, you will perform a failover.
 
 1. Note that the geo replication link is now established.
 
-    ![Screenshot showing the Replicas option.](../images/dp300-l14-004.png)
+    ![Screenshot showing the Replicas option.](../images/lab14-dp-300-L1-4.png)
 
 1. Select the **...** menu for the secondary server, and select **Forced Failover**.
 
-    ![Screenshot showing the forced failover option.](../images/dp-300-lab14-15.png)
+    ![Screenshot showing the forced failover option.](../images/lab14-dp-300-L1-5.png)
 
     > [!NOTE]
     > Forced failover will switch the secondary database to the primary role. All sessions are disconnected during this operation.
 
 1. When prompted by the warning message, click **Yes**.
 
-    ![Screenshot showing a forced failover warning message.](../images/dp-300-lab14-16.png)
+    ![Screenshot showing a forced failover warning message.](../images/lab14-dp-300-L1-6.png)
 
 1. The status of the primary replica will switch to **Pending** and the secondary to **Failover**. 
 
-    ![Screenshot showing a forced failover warning message.](../images/dp-300-lab14-17.png)
+    ![Screenshot showing a forced failover warning message.](../images/lab14-dp-300-L1-7.png)
 
     > [!NOTE]
     > This process can take a few minutes. When complete, the roles will switch with the secondary becoming the new primary, and the old primary the secondary.
