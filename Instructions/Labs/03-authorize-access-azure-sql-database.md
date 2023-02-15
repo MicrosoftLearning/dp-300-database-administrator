@@ -12,59 +12,58 @@ You've been hired as a Senior Database Administrator to help ensure the security
  
 Once the environment is provisioned, a virtual machine (JumpVM) and lab guide will get loaded in your browser. Use this virtual machine throughout the workshop to perform the lab. 
 
-1.Login to Azure Portal
-In the JumpVM, click on the Azure portal shortcut of the Microsoft Edge browser which is created on the desktop.
+1. Login to Azure Portal in the JumpVM, click on the Azure portal shortcut of the Microsoft Edge browser which is created on the desktop.
 
-  ![Picture 2](../images/dp300-lab3-img1.png)
+   ![Picture 2](../images/dp300-lab3-img1.png)
   
-2.On the Sign in to Microsoft Azure tab you will see the login screen, in that enter the following email/username, and click on Next.
+2. On the Sign in to Microsoft Azure tab you will see the login screen, in that enter the following email/username, and click on Next.
 
-3.If you see the pop-up Stay Signed in?, click No.
-
-
-4.If you see the pop-up You have free Azure Advisor recommendations!, close the window to continue the lab.
+3. If you see the pop-up Stay Signed in?, click No.
 
 
-5.If a Welcome to Microsoft Azure popup window appears, click **Maybe Later** to skip the tour.
+4. If you see the pop-up You have free Azure Advisor recommendations!, close the window to continue the lab.
+
+
+5. If a Welcome to Microsoft Azure popup window appears, click **Maybe Later** to skip the tour.
   
 
 1. On the Azure portal home page select **All resources**.
 
-    ![Screenshot of the Azure portal home page, selecting All resources](../images/dp300-lab3-img2.png)
+   ![Screenshot of the Azure portal home page, selecting All resources](../images/dp300-lab3-img2.png)
 
 1. Search for **dp300 (1)** and select the Azure SQL Database server **dp300-lab-xxxxxx (2)**, where **xxxxxx** is a random string.
 
-    ![Screenshot selecting Not Configured](../images/dp300-lab3-img3.png)
+   ![Screenshot selecting Not Configured](../images/dp300-lab3-img3.png)
 
 1. On the Overview page, select the **Not Configured** next to **Active Directory Admin**.
 
-    ![Screenshot selecting Not Configured](../images/dp300-lab3-img4.png)
+   ![Screenshot selecting Not Configured](../images/dp300-lab3-img4.png)
 
 1. On the next screen, select **Set admin**.
 
-    ![Screenshot selecting Set admin](../images/dp300-lab3-img5.png)
+   ![Screenshot selecting Set admin](../images/dp300-lab3-img5.png)
 
 1. In the **Azure Active Directory** sidebar, search for the Azure username you logged into the Azure portal with, then click on **Select**.
 
 1. Select **Save** to complete the process. This will make your username the Azure Active Directory admin for the server as shown below.
 
-    ![Screenshot of the Active Directory admin page](../images/dp300-lab3-img6.png)
+   ![Screenshot of the Active Directory admin page](../images/dp300-lab3-img6.png)
 
 1. On the left navigation select **Overview (1)**, then copy the **Server name (2)** from right hand side.
 
-    ![Screenshot showing where to copy the server name from](../images/dp300-lab3-img7.png)
+   ![Screenshot showing where to copy the server name from](../images/dp300-lab3-img7.png)
 
 1. Select the Windows Start button and type **SSMS(1)**. Select **Microsoft SQL Server Management Studio 19(2)** from the list.  
 
-    ![Picture 34](../images/ssms-updated-19-lab03.png)
+   ![Picture 34](../images/ssms-updated-19-lab03.png)
 
 1. In the **Connect to Server** dialog box select **Database Engine** for Server type. In the **Server name** paste the name of your server you copied earlier. Change the authentication type to **Azure Active Directory Universal with MFA**.For the **User name** field, select the Azure **Username** from the **Environment Details (1)** tab and click on **Connect**
 
-    ![Screenshot of the Connect to server dialog](../images/dp300-lab3-img9.png)
+   ![Screenshot of the Connect to server dialog](../images/dp300-lab3-img9.png)
 
     >**NOTE:** When you first try to sign in to an Azure SQL database, You may be asked to add your client IP address to the firewall. SQL Server Management Studio can do this for you. Use the Azure Portal **password** from the **Environment Details** tab, then select **Sign in**, choose your Azure credentials and then select **OK**.
    
-     ![Screenshot of adding the client IP address](../images/dp300-lab3-img10.png)
+   ![Screenshot of adding the client IP address](../images/dp300-lab3-img10.png)
 
 ## Manage access to database objects
 
@@ -74,7 +73,7 @@ In this task you will manage access to the database and its objects. The first t
 
 1. Right-click on **AdventureWorksLT**, and select **New Query**.
 
-    ![Screenshot of the new query menu option](../images/dp300-lab3-img11.png)
+   ![Screenshot of the new query menu option](../images/dp300-lab3-img11.png)
 
 1. In the new query window, copy and paste the below T-SQL into it. **Execute** the query to create the two users.
 
@@ -149,6 +148,6 @@ In this task you will manage access to the database and its objects. The first t
     EXECUTE SalesLT.DemoProc
     ```
 
-    ![Screenshot showing the returned rows of data from the stored procedure](../images/dp300-lab3-img14.png)
+   ![Screenshot showing the returned rows of data from the stored procedure](../images/dp300-lab3-img14.png)
 
 In this exercise, you've seen how you can use Azure Active Directory to grant Azure credentials  access to a SQL Server hosted in Azure. You've also used T-SQL statement to create new database users and granted them permissions to run stored procedures.
