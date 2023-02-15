@@ -54,15 +54,15 @@ In the JumpVM, click on the Azure portal shortcut of the Microsoft Edge browser 
 
     ![Screenshot showing where to copy the server name from](../images/dp300-lab3-img7.png)
 
-1. Select the Windows Start button and type **SSMS(1)**. Select **Microsoft SQL Server Management Studio 18(2)** from the list.  
+1. Select the Windows Start button and type **SSMS(1)**. Select **Microsoft SQL Server Management Studio 19(2)** from the list.  
 
-    ![Picture 34](../images/dp300-lab3-img8.png)
+    ![Picture 34](../images/ssms-updated-19-lab03.png)
 
 1. In the **Connect to Server** dialog box select **Database Engine** for Server type. In the **Server name** paste the name of your server you copied earlier. Change the authentication type to **Azure Active Directory Universal with MFA**.For the **User name** field, select the Azure **Username** from the **Environment Details (1)** tab and click on **Connect**
 
     ![Screenshot of the Connect to server dialog](../images/dp300-lab3-img9.png)
 
-    >**NOTE:** When you first try to sign in to an Azure SQL database, your client IP address needs to be added to the firewall. SQL Server Management Studio can do this for you. Use the Azure Portal **password** from the **Environment Details** tab, then select **Sign in**, choose your Azure credentials and then select **OK**.
+    >**NOTE:** When you first try to sign in to an Azure SQL database, You may be asked to add your client IP address to the firewall. SQL Server Management Studio can do this for you. Use the Azure Portal **password** from the **Environment Details** tab, then select **Sign in**, choose your Azure credentials and then select **OK**.
    
      ![Screenshot of adding the client IP address](../images/dp300-lab3-img10.png)
 

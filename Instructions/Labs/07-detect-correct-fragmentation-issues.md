@@ -10,18 +10,18 @@ You have been hired as a database administrator to identify performance related 
 **Note:** These exercises ask you to copy and paste T-SQL code. Please verify that the code has been copied correctly, before executing the code.
 
 ## Restore a database
-    
+   
 1. Select the Windows Start button and type SSMS. Select **Microsoft SQL Server Management Studio 18** from the list.  
 
     ![Picture 01](../images/dp300-lab7-img2.png)
 
 2. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name. Select **Connect**.
 
-    ![Picture 02](../images/dp300-lab7-img3.png)
+    ![Picture 02](../images/dp-300-lab07-sql01.png)
 
 3. Select the **Databases** folder, and then **New Query**.
 
-    ![Picture 03](../images/dp300-lab7-img4.png)
+    ![Picture 03](../images/dp-300-lab07-sql02.png)
 
 4. In the new query window, copy and paste the below T-SQL into it. Execute the query to restore the database.
 
@@ -43,7 +43,7 @@ You have been hired as a database administrator to identify performance related 
 
 ## Investigate index fragmentation
 
-7. Select **New Query**. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
+6. Select **New Query**. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
 
     ```sql
     USE AdventureWorks2017
@@ -63,7 +63,7 @@ You have been hired as a database administrator to identify performance related 
 
     This query will report any indexes that have a fragmentation over **50%**. The query should not return any result.
 
-8. Select **New Query**. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
+7. Select **New Query**. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
 
     ```sql
     USE AdventureWorks2017
@@ -94,11 +94,11 @@ You have been hired as a database administrator to identify performance related 
 
     This query will increase the fragmentation level of the Person.Address table and its indexes by adding a large number of new records.
 
-9. Execute the previous query again. Now you should be able to see four highly fragmented indexes.
+8. Execute the previous query again. Now you should be able to see four highly fragmented indexes.
 
     ![Picture 03](../images/dp300-lab7-img6.png)
 
-10. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
+9. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
 
     ```sql
     SET STATISTICS IO,TIME ON
@@ -122,7 +122,7 @@ You have been hired as a database administrator to identify performance related 
 
 ## Rebuild fragmented indexes
 
-11. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
+10. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
 
     ```sql
     USE AdventureWorks2017
@@ -138,7 +138,7 @@ You have been hired as a database administrator to identify performance related 
         ALLOW_PAGE_LOCKS = ON)
     ```
 
-12. Execute the query below to confirm that the **IX_Address_StateProvinceID** index no longer has fragmentation greater than 50%.
+11. Execute the query below to confirm that the **IX_Address_StateProvinceID** index no longer has fragmentation greater than 50%.
 
     ```sql
     USE AdventureWorks2017
@@ -157,7 +157,7 @@ You have been hired as a database administrator to identify performance related 
 
     Comparing the results we can see the fragmentation dropped from 81% to 0.
 
-13. Re-execute the select statement from the previous section. Make note of the logical reads in the **Messages** tab of the **Results** pane in Management Studio. Was there a change from the number of logical reads encountered before you rebuilt the index?
+12. Re-execute the select statement from the previous section. Make note of the logical reads in the **Messages** tab of the **Results** pane in Management Studio. Was there a change from the number of logical reads encountered before you rebuilt the index?
 
     ```sql
     SET STATISTICS IO,TIME ON
