@@ -11,17 +11,17 @@ You have been hired as a database administrator to identify performance related 
 
 ## Restore a database
 
-1. Select the Windows Start button and type SSMS. Select **Microsoft SQL Server Management Studio 18** from the list.  
+1. Select the Windows Start button and type SSMS. Select **Microsoft SQL Server Management Studio 19** from the list.  
 
-    ![Picture 01](../images/dp-300-lab-9-img2.png)
+    ![Picture 01](../images/dp300-lab9-img2.png)
 
 2. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name. Select **Connect**.
 
-    ![Picture 02](../images/dp-300-lab-9-img3.png)
+    ![Picture 02](../images/dp300-lab9-img3.png)
 
 3. Select the **Databases** folder, and then **New Query**.
 
-    ![Picture 03](../images/dp-300-lab-09-img4.png)
+    ![Picture 03](../images/dp300-lab9-img4.png)
 
 4. In the new query window, copy and paste the below T-SQL into it. Execute the query to restore the database.
 
@@ -55,7 +55,7 @@ You have been hired as a database administrator to identify performance related 
 
 7. Select **Include Actual Execution Plan** icon as shown below before running the query or press **CTRL+M**. This will cause the execution plan to be displayed when you execute the query. Select **Execute** to execute this query again.
 
-    ![Picture 01](../images/dp-300-lab-09-img6.png)
+    ![Picture 01](../images/dp300-lab9-img6.png)
 
 8. Navigate to the execution plan, by selecting the **Execution plan** tab in the results panel. In the execution plan, mouse over the `SELECT` operator. You will notice a warning message identified by an exclamation point in a yellow triangle as shown below. Identify what the warning message tells you.
 
