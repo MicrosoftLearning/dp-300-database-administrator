@@ -48,11 +48,11 @@ You have been hired as a Senior Database Administrator to help automate day to d
     - **Login:** sqladmin
     - **Password:** P@ssw0rd01
 
-1. You should receive the following error message:
+1. If You receive the following error message:
 
     ![Screenshot of the sign in error.](../images/errorupdated01.png)
 
-1. Select the **Allowlist IP ...** link provided at the end of the error message shown above. This will automatically add your client IP as a firewall rule entry for your SQL Database.
+1. Then Select the **Allowlist IP ...** link provided at the end of the error message shown above. This will automatically add your client IP as a firewall rule entry for your SQL Database.
 
     ![Screenshot of the firewall rule creation.](../images/dp-300-8.png)
 
