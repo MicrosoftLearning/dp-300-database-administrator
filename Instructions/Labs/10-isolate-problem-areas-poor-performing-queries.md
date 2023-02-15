@@ -31,12 +31,12 @@ You'll run queries with suboptimal performance, examine the query plans, and att
 
     ```sql
     RESTORE DATABASE AdventureWorks2017
-    FROM DISK = 'C:\LabFiles\Monitor and optimize\AdventureWorks2017.bak'
+    FROM DISK = 'C:\LabFiles\Monitorandoptimize\AdventureWorks2017.bak'
     WITH RECOVERY,
           MOVE 'AdventureWorks2017' 
-            TO 'C:\LabFiles\Monitor and optimize\AdventureWorks2017.mdf',
+            TO 'C:\LabFiles\Monitorandoptimize\AdventureWorks2017.mdf',
           MOVE 'AdventureWorks2017_log'
-            TO 'C:\LabFiles\Monitor and optimize\AdventureWorks2017_log.ldf';
+            TO 'C:\LabFiles\Monitorandoptimize\AdventureWorks2017_log.ldf';
     ```
 
     **Note:** The database backup file name and path should match with what you've downloaded on step 1, otherwise the command will fail.
