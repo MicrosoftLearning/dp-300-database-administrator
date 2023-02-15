@@ -39,19 +39,19 @@ As a DBA within AdventureWorks, you need to enable geo-replication for Azure SQL
 
 1. Back in to the **Create SQL Database - Geo Replica** page, select **Review + Create**.
 
-    ![Screenshot showing the Create SQL Database Server page.](../images/dp-300-lab14-08.png)
+    ![Screenshot showing the Create SQL Database Server page.](../images/lab14-dp-300-8.png)
 
 1. Select **Create**.
 
-    ![Screenshot showing the review and create page.](../images/dp-300-lab14-09.png)
+    ![Screenshot showing the review and create page.](../images/lab14-dp-300-9.png)
 
 1. The secondary server and the database will now be created. To check the status, look under the notification icon at the top of the portal. 
 
-    ![Screenshot showing the review and create page.](../images/dp-300-lab14-10.png)
+    ![Screenshot showing the review and create page.](../images/lab14-dp-300-10.png)
 
 1. If successful, it will progress from **Deployment in progress** to **Deployment succeeded**.
 
-    ![Screenshot showing the review and create page.](../images/dp-300-lab14-011.png)
+    ![Screenshot showing the review and create page.](../images/lab14-dp-300-11.png)
 
 ## Failover SQL Database to a secondary region
 
@@ -59,7 +59,7 @@ Now that the Azure SQL Database replica is created, you will perform a failover.
 
 1. Navigate to the SQL servers page, and notice the new server in the list. Select the secondary server (you may have a different server name).
 
-    ![Screenshot showing SQL servers page.](../images/dp-300-lab14-12.png)
+    ![Screenshot showing SQL servers page.](../images/lab14-dp-300-1-1.png)
 
 1. On the blade for the SQL server, in **Settings** section, select **SQL databases** and then select **AdventureWorksLT**.
 
