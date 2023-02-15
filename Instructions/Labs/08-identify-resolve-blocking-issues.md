@@ -13,15 +13,15 @@ You have been hired as a database administrator to identify performance related 
 
 1. Select the Windows Start button and type SSMS. Select **Microsoft SQL Server Management Studio 18** from the list.  
 
-    ![Picture 01](../images/dp-300-lab8-002.png)
+    ![Picture 01](../images/dp300-lab8-img1.png)
 
 2. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name. Select **Connect**.
 
-    ![Picture 02](../images/dp-300-lab8-003.png)
+    ![Picture 02](../images/dp300-lab8-img2.png)
 
 3. Select the **Databases** folder, and then **New Query**.
 
-    ![Picture 03](../images/dp-300-lab8-004.png)
+    ![Picture 03](../images/dp300-lab8-img3.png)
 
 4. In the new query window, copy and paste the below T-SQL into it. Execute the query to restore the database.
 
@@ -39,7 +39,7 @@ You have been hired as a database administrator to identify performance related 
 
 5. You should see a successful message after the restore is complete.
 
-    ![Picture 03](../images/dp-300-lab8-006.png)
+    ![Picture 03](../images/dp300-lab8-img4.png)
 
 ## Run blocked queries report
 
@@ -119,19 +119,19 @@ You have been hired as a database administrator to identify performance related 
 
     Notice the extended event named *Blocking* we just created is in the list.
 
-    ![Picture 01](../images/dp-300-lab8-001p.png)
+    ![Picture 01](../images/dp300-lab8-img5.png)
 
 1. Right click on **package0.ring_buffer**, and then select **View Target Data**.
 
-    ![Picture 02](../images/dp-300-lab8-002p.png)
+    ![Picture 02](../images/dp300-lab8-img6.png)
 
 1. Select the hyperlink.
 
-    ![Picture 03](../images/dp-300-module-08-lab-03.png)
+    ![Picture 03](../images/dp300-lab8-img7.png)
 
 1. The XML will show you which processes are being blocked, and which process is causing the blocking. You can see the queries that ran in this process as well as system information.
 
-    ![Picture 04](../images/dp-300-module-08-lab-04.png)
+    ![Picture 04](../images/dp300-lab8-img8.png)
 
 1. Alternatively, you can run the query below to identify sessions blocking other sessions, including a list of session IDs blocked per *session_id*.
 
@@ -155,19 +155,19 @@ You have been hired as a database administrator to identify performance related 
     ORDER BY len(bl.blocking_these) desc, r.blocking_session_id desc, r.session_id;
     ```
 
-    ![Picture 05](../images/dp-300-module-08-lab-05.png)
+    ![Picture 05](../images/dp300-lab8-img9.png)
 
 1. Right click on extended event named **Blocking**, and then select **Stop Session**.
 
-    ![Picture 06](../images/dp-300-lab8-003p.png)
+    ![Picture 06](../images/dp300-lab8-img10.png)
 
 1. Navigate back to the query session that is causing the blocking, and type `ROLLBACK TRANSACTION` on the line below the query. Highlight `ROLLBACK TRANSACTION`, and select **Execute**.
 
-    ![Picture 07](../images/dp-300-lab8-004p.png)
+    ![Picture 07](../images/dp300-lab8-img11.png)
 
 1. Navigate back to the query session that was being blocked. You will notice that the query has now completed.
 
-    ![Picture 08](../images/dp-300-module-08-lab-08.png)
+    ![Picture 08](../images/dp300-lab8-img12.png)
 
 ## Enable Read Commit Snapshot isolation level
 
@@ -206,7 +206,7 @@ You have been hired as a database administrator to identify performance related 
     WHERE firstname = 'David'
     ```
 
-    ![Picture 09](../images/dp-300-module-08-lab-09.png)
+    ![Picture 09](../images/dp300-lab8-img13.png)
 
     Why the same query completes whereas in the previous task it was blocked by the update statement?
 
