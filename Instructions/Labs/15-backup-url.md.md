@@ -58,7 +58,7 @@ As a DBA for AdventureWorks, you need to back up a database to a URL in Azure an
 
     ![Screenshot of create storage for cloud shell on Azure portal.](../images/dp-300-module-15-lab-03.png)
 
-1. Use the existing **Resource group** and specify new names for **Storage account** as **dp300storage<inject key="DeploymentID" enableCopy="false" /> **and **File share** as **dp300fileshare**, as shown in the dialog below. Make a note of the **Resource group** name. It should start with *contoso-rg*. Then select **Create storage**.
+1. Use the existing **Resource group** and specify new names for **Storage account** as **dp300storage<inject key="DeploymentID" enableCopy="false" /> ** and **File share** as **dp300fileshare**, as shown in the dialog below. Make a note of the **Resource group** name. It should start with *contoso-rg*. Then select **Create storage**.
 
     **Note:** Your storage account name must be unique and all lower case with no special characters. Please provide a unique name.
 

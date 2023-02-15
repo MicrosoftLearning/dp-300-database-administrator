@@ -195,7 +195,7 @@ Next you will schedule the runbook to execute on a regular basis.
 
     ![Screenshot of the New Schedule pop out completed with example information.](../images/L13T5S5.png)
 
-1. Select **Create**, and then select **OK**.
+1. Select **Create**.
 
 1. The schedule is now created and linked to the runbook. Select **OK**.
 
