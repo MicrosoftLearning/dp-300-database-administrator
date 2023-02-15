@@ -11,10 +11,6 @@ You'll run queries with suboptimal performance, examine the query plans, and att
 
 ## Restore a database
 
-1. Download the database backup file located on **https://github.com/MicrosoftLearning/dp-300-database-administrator/blob/master/Instructions/Templates/AdventureWorks2017.bak** to **C:\LabFiles\Monitor and optimize** path on Azure SQL VM created in Lab1 (create the folder structure if it does not exist).
-
-    ![Picture 03](../images/upd-dp-300-module-07-lab-03.png)
-
 1. Select the Windows Start button and type **SSMS (1)**. Select **Microsoft SQL Server Management Studio 18 (2)** from the list.  
 
     ![Picture 01](../images/upd-dp-300-module-01-lab-34.png)
@@ -153,10 +149,6 @@ Next you'll run a workload to generate query statistics for query store, examine
     ```
 
     Changing the compatibility level is like moving the database back in time. It restricts the features SQL server can use to those that were available in SQL Server 2008.
-
-1. Download the T-SQL script located on **https://github.com/MicrosoftLearning/dp-300-database-administrator/blob/master/Instructions/Templates/CreateRandomWorkloadGenerator.sql** to **C:\LabFiles\Monitor and optimize** path on Azure SQL VM created in Lab1.
-
-1. Download the T-SQL script located on **https://github.com/MicrosoftLearning/dp-300-database-administrator/blob/master/Instructions/Templates/ExecuteRandomWorkload.sql** to **C:\LabFiles\Monitor and optimize** path on Azure SQL VM created in Lab1.
 
 1. Select the **File** > **Open** > **File** menu in SQL Server Management Studio.
 
