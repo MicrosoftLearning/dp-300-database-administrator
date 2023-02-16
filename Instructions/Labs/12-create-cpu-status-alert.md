@@ -26,7 +26,7 @@ Once the environment is provisioned, a virtual machine (JumpVM) and lab guide wi
 
 7. On the main blade for the **AdventureWorksLT** database, navigate down to the monitoring section. Select **Alerts**.
 
-   ![Screenshot of selecting Alerts on the SQL database Overview page](../images/dp300-lab12-img2.png)
+   ![Screenshot of selecting Alerts on the SQL database Overview page](../images/dp300-lab12-img02.png)
 
 8. Select **Create alert rule**.
 
