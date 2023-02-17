@@ -1,7 +1,5 @@
 # Configure geo replication for Azure SQL Database
 
-**Estimated Time: 30 minutes**
-
 As a DBA within AdventureWorks, you need to enable geo-replication for Azure SQL Database, and ensure it is working properly. Additionally, you will manually fail it over to another region using the portal.
 
 ## Enable geo-replication
