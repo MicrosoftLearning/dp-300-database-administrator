@@ -1,8 +1,6 @@
 
 # Isolate problem areas in poorly performing queries in a SQL Database
 
-**Estimated Time: 30 minutes**
-
 You've been hired as a Senior Database Administrator to help with performance issues currently happening when users query the *AdventureWorks2017* database. Your job is to identify issues in query performance and remedy them using techniques learned in this module.
 
 You'll run queries with suboptimal performance, examine the query plans, and attempt to make improvements within the database.
