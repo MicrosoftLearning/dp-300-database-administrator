@@ -1,7 +1,5 @@
 # Create a CPU status alert for a SQL Server on Azure
 
-**Estimated Time: 30 minutes**
-
 You have been hired as a Senior Data Engineer to help automate day to day operations of database administration. This automation is to help ensure that the databases for AdventureWorks continue to operate at peak performance as well as provide methods for alerting based on certain criteria.
 
 ## Create an alert when a CPU exceeds an average of 80 percent
