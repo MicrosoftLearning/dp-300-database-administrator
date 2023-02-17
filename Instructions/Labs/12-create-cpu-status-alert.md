@@ -58,7 +58,7 @@ Once the environment is provisioned, a virtual machine (JumpVM) and lab guide wi
 
     ![Screenshot of the Create action group page with information added](../images/dp300-lab12-img9.png)
     
-14. On the **Details** tab, enter Alert rule name as **emailrule (1)**, then select **Review + create (2)**.
+14. On the **Create an alert rule** screen, select **Details** tab, enter Alert rule name as **emailrule (1)**, then select **Review + create (2)**.
     
     ![Screenshot of entering emailgroup and selecting Next: Notifications](../images/lab12-dp-300-0015-step.png)
 
