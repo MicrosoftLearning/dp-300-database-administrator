@@ -1,7 +1,5 @@
 # Configure database authentication and authorization
 
-**Estimated Time: 20 minutes**
-
 The students will take the information gained in the lessons to configure and subsequently implement security in the Azure Portal and within the *AdventureWorks* database.
 
 You've been hired as a Senior Database Administrator to help ensure the security of the database environment.
