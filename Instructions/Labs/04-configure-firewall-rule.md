@@ -1,7 +1,5 @@
 # Implement a Secure Environment
 
-**Estimated Time: 30 minutes**
-
 The students will take the information gained in the lessons to configure and subsequently implement security in the Azure Portal and within the AdventureWorks database.
 
 You have been hired as a Senior Database Administrator to help ensure the security of the database environment. These tasks will focus on Azure SQL Database.
