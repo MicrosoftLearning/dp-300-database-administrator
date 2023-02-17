@@ -1,7 +1,5 @@
 # Deploy an automation runbook to automatically rebuild indexes
 
-**Estimated Time: 30 minutes**
-
 You have been hired as a Senior Database Administrator to help automate day to day operations of database administration. This automation is to help ensure that the databases for AdventureWorks continue to operate at peak performance as well as provide methods for alerting based on certain criteria. AdventureWorks utilizes SQL Server in both Infrastructure as a Service (IaaS) and Platform as a Service (PaaS) offerings.
 
 ## Create an Automation Account
