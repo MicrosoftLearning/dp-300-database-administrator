@@ -1,7 +1,5 @@
 # Backup to URL  
 
-**Estimated Time: 30 minutes**
-
 As a DBA for AdventureWorks, you need to back up a database to a URL in Azure and restore it from Azure blob storage after a human error has occurred.
 
 ## Restore a database
