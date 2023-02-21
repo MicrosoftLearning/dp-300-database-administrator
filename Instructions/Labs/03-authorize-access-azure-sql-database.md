@@ -8,22 +8,11 @@ You've been hired as a Senior Database Administrator to help ensure the security
 
 ## Authorize access to Azure SQL Database with Azure Active Directory
  
-Once the environment is provisioned, a virtual machine (JumpVM) and lab guide will get loaded in your browser. Use this virtual machine throughout the workshop to perform the lab. 
-
-1. Login to Azure Portal in the JumpVM, click on the Azure portal shortcut of the Microsoft Edge browser which is created on the desktop.
-
-   ![Picture 2](../images/dp300-lab3-img1.png)
-  
-2. On the Sign in to Microsoft Azure tab you will see the login screen, in that enter the following email/username, and click on Next.
-
-3. If you see the pop-up Stay Signed in?, click No.
+1. In the lab virtual machine, double click on the Azure portal shortcut on the desktop [https://portal.azure.com](https://portal.azure.com/), and sign in using the Azure **Username** and **Password** provided on the **Environment Details** tab for this lab virtual machine.
 
 
-4. If you see the pop-up You have free Azure Advisor recommendations!, close the window to continue the lab.
+    ![Picture 1](../images/dp-300-L1-001.png)
 
-
-5. If a Welcome to Microsoft Azure popup window appears, click **Maybe Later** to skip the tour.
-  
 
 1. On the Azure portal home page select **All resources**.
 
