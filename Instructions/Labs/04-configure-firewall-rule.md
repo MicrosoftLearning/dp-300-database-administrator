@@ -73,6 +73,8 @@ You have been hired as a Senior Database Administrator to help ensure the securi
 1. On the **Summary** screen click **Finish**. When your import completes you will see the results below. Then click **Close**.
 
     ![A screenshot of a cell phone Description automatically generated](../images/dp300-lab4-img12.png)
+     
+     **Note:** Please wait untill Operation complete successfully it might take sometime.
 
 1. Back to SQL Server Management Studio, in **Object Explorer**, expand the **Databases** folder. Then right-click on **AdventureWorksFromBacpac** database, and then **New Query**.
 
