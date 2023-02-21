@@ -8,7 +8,7 @@ You have been hired as a Senior Database Administrator to help ensure the securi
 
 ## Configure Azure SQL Database firewall rules
 
-1. From the lab virtual machine, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/). Connect to the Portal using the Azure **Username** and **Password** provided on the **Environment details** tab for this lab virtual machine.
+1. In the lab virtual machine, double click on the Azure portal shortcut on the desktop [https://portal.azure.com](https://portal.azure.com/). Connect to the Portal using the Azure **Username** and **Password** provided on the **Environment details** tab for this lab virtual machine.
 
     ![Picture 1](../images/dp300-lab4-img1.png)
 
@@ -52,7 +52,9 @@ You have been hired as a Senior Database Administrator to help ensure the securi
 1. In the **Import Data Tier Application** dialog, click **Next** on the first screen.
 
 1. Download the .bacpac file located on **https://github.com/MicrosoftLearning/dp-300-database-administrator/blob/master/Instructions/Templates/AdventureWorksLT.bacpac** to **C:\LabFiles\Secure Environment**  path on the lab VM (create the folder structure if it does not exist).
-
+   
+   **Note:** Make sure this file should be downloaded in the **C:\LabFiles\Secure Environment**.
+     
 1. In the **Import Settings** screen, click **Browse** and navigate to **C:\LabFiles\Secure Environment** folder, click on the **AdventureWorksLT.bacpac** file, and then click **Open**. Back to the **Import Data-tier Application** screen click **Next**.
 
     ![A screenshot of a social media post Description automatically generated](../images/dp300-lab4-img9.png)
