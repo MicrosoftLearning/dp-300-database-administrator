@@ -78,14 +78,13 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
         
 **Note:** change the **Deployment-id** from your Deployment-id and you will get it under enviroment detail page.
 
-        Your **Create SQL Database Server** page should look similar to the one below. Then click **OK (7)**.
+Your **Create SQL Database Server** page should look similar to the one below. Then click **OK (7)**.
 
-        ![Picture 7](../images/upd-dp-300-module-02-lab-11.png)
+   ![Picture 7](../images/upd-dp-300-module-02-lab-11.png)
+   -  Back to the **Create SQL Database** page, make sure **Want to use Elastic Pool?** is set to **No**.
+   -  On the **Compute + Storage** option, click on **Configure database** link. On the **Configure** page, for **Service tier** dropdown, select **Basic**, and then **Apply**.
 
-    -  Back to the **Create SQL Database** page, make sure **Want to use Elastic Pool?** is set to **No**.
-    -  On the **Compute + Storage** option, click on **Configure database** link. On the **Configure** page, for **Service tier** dropdown, select **Basic**, and then **Apply**.
-
-    **Note:** Make note of this server name, and your login information. You will use it in subsequent labs.
+   **Note:** Make note of this server name, and your login information. You will use it in subsequent labs.
 
 1. For the **Backup storage redundancy** option, keep the default value: **Geo-redundant backup storage**.
 
