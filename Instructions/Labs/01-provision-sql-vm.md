@@ -43,7 +43,7 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
 1. Navigate to the **Disks** tab and review the configuration.
 
-    ![Picture 13](../images/dp-300-L1-006.png)
+    ![Picture 13](../images/dp-300-lab01-disk1.png)
 
 1. Navigate to the **Networking** tab and review the configuration.
 
@@ -65,7 +65,7 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
 1. Select the **Review + create** button. Then select **Create**.
 
-    ![Picture 18](../images/dp-300-L1-0011.png)
+    ![Picture 18](../images/dp-300-lab01-create.png)
 
 1. On the deployment blade, wait until the deployment is complete. The VM will take approximate 5-10 minutes to deploy. After the deployment is complete, select  **Go to resource**.
 
@@ -75,13 +75,13 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
 1. On the **Overview** page for the virtual machine, explore the menu options for this resource to review what is available.
 
-    ![Picture 20](../images/dp-300-L1-00013.png)
+    ![Picture 20](../images/dp-300-lab01-overview01.png)
 
 ## Connect to SQL Server on an Azure Virtual Machine
 
 1. On the **Overview** page for the virtual machine, select the **Connect** button and choose RDP.
 
-    ![Picture 21](../images/dp-300-L1-01-001.png)
+    ![Picture 21](../images/dp-300-lab01-rdp1.png)
 
 1. On the RDP tab, select the **Download RDP File** button.
 
@@ -103,9 +103,9 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
     ![Picture 26](../images/dp-300-L1-01-005.png)
 
-1. Select the Windows Start button and type **SSMS(1)**. Select **Microsoft SQL Server Management Studio 18(2)** from the list.  
+1. Select the Windows Start button and type **SSMS(1)**. Select **Microsoft SQL Server Management Studio 19(2)** from the list.  
 
-    ![Picture 34](../images/dp-300-L1-01-006.png)
+    ![Picture 34](../images/dp-300-lab01-ssms1.png)
 
 1. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name. Select **Connect**.
 
