@@ -4,19 +4,10 @@ You have been hired as a Senior Data Engineer to help automate day to day operat
 
 ## Create an alert when a CPU exceeds an average of 80 percent
 
-Once the environment is provisioned, a virtual machine (JumpVM) and lab guide will get loaded in your browser. Use this virtual machine throughout the workshop to perform the lab. 
+1. In the lab virtual machine, double click on the Azure portal shortcut on the desktop [https://portal.azure.com](https://portal.azure.com/), and sign in using the Azure **Username** and **Password** provided on the **Environment Details** tab for this lab virtual machine.
 
-1. Login to Azure Portal in the JumpVM, click on the Azure portal shortcut of the Microsoft Edge browser which is created on the desktop.
 
-   ![Picture 2](../images/azureportal-lab12.png)
-  
-2. On the Sign in to Microsoft Azure tab you will see the login screen, in that enter the following email/username, and click on Next.
-
-3. If you see the pop-up Stay Signed in?, click No.
-
-4. If you see the pop-up You have free Azure Advisor recommendations!, close the window to continue the lab.
-
-5. If a Welcome to Microsoft Azure popup window appears, click **Maybe Later** to skip the tour.
+    ![Picture 1](../images/dp-300-L1-001.png)
 
 6. In the search bar at the top of the Azure portal, type **SQL**, and select **SQL databases**. Select the **AdventureWorksLT** database name listed.
 
