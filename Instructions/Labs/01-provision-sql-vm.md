@@ -66,13 +66,13 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
 1. Select the **Review + create** button. Then select **Create**.
 
-    ![Picture 18](../images/dp-300-lab01-create.png)
+    ![Picture 18](../images/dp-300-lab01-create1.png)
 
 1. On the deployment blade, wait until the deployment is complete. The VM will take approximate 5-10 minutes to deploy. After the deployment is complete, select  **Go to resource**.
 
     **Note:** Your deployment may take 5-10 minutes to complete.
 
-    ![Picture 19](../images/dp-300-L1-1-12.png)
+    ![Picture 19](../images/dp-300-lab01-12r.png)
 
 1. On the **Overview** page for the virtual machine, explore the menu options for this resource to review what is available.
 
