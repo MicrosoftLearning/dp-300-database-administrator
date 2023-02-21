@@ -6,7 +6,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
 ## Navigate on Azure portal
 
-1. From the lab virtual machine, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/). Connect to the Portal using the Azure **Username** and **Password** provided on the **Environment Details** tab for this lab virtual machine.
+1. In the LabVM, double click on the Azure portal shortcut [https://portal.azure.com](https://portal.azure.com/) on the desktop. Connect to the Portal using the Azure **Username** and **Password** provided on the **Environment Details** tab for this lab virtual machine.
 
     ![Picture 1](../images/dp-300-module-01-lab-01.png)
 
@@ -33,7 +33,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 1. Click **+ Create** to open the **Create Virtual Network** page. On the **Basics** tab, complete the following information:
 
     - **Subscription:** &lt;Your subscription&gt;
-    - **Resource group:** starting with *contoso-rg* **(1)**
+    - **Resource group:** select the existing resource group starting with **contoso-rg-Deployment-id** **(1)**
     - **Name:** lab02-vnet **(2)**
     - **Region:** Select the same region where your resource group was created **(3)**
 
@@ -69,12 +69,14 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
     - **Resource group:** starting with *contoso-rg-DID*
     - **Database Name:** AdventureWorksLT
     - **Server:** click on **Create new** link. The **Create SQL Database Server** page will open. Provide the server details as follow:
-        - **Server name:** dp300-lab-DID **(1)**
+        - **Server name:** dp300-lab-Deployment-id **(1)**
         - **Location:**  same as the selected region for your resource group, otherwise it may fail **(2)**
         - **Authentication method:** Use SQL authentication **(3)**
         - **Server admin login:** dp300admin **(4)**
         - **Password:** dp300P@ssword! **(5)**
         - **Confirm password:** dp300P@ssword! **(6)**
+        
+**Note:** change the **Deployment-id** from your Deployment-id and you will get it under enviroment detail page.
 
         Your **Create SQL Database Server** page should look similar to the one below. Then click **OK (7)**.
 
@@ -100,7 +102,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 1. Complete the **Create private endpoint** right pane as follows:
 
     - **Subscription:** &lt;Your subscription&gt;
-    - **Resource group:** starting with *contoso-rg-DID*
+    - **Resource group:**  select the existing resource group starting with **contoso-rg-Deployment-id**
     - **Location:** same as the selected region for your resource group, otherwise it may fail
     - **Name:** DP-300-SQL-Endpoint **(1)**
     - **Target sub-resource:** SqlServer **(2)**
@@ -241,7 +243,7 @@ ORDER BY [OrderedQuantity] DESC
 
 	![Picture 17](../images/upd-dp-300-module-02-lab-33.png)
 
-12. Within Azure Data Studio save the notebook from File menu (either Save or Save As) to the **C:\Labfiles\Deploy Azure SQL Database** path (create the folder structure if it does not exist). Make sure the file extension is **.ipynb**(Notebook)
+12. Within Azure Data Studio save the notebook from File menu (either Save or Save As) to the **C:\LabFiles\Deploy Azure SQL Database** path (create the folder structure if it does not exist). Make sure the file extension is **.ipynb**(Notebook)
 
 13. Close the tab for the Notebook from inside of Azure Data Studio. From the File Menu, select Open File, and open the notebook you just saved. Observe that query results were saved along with the queries in the notebook.
 
