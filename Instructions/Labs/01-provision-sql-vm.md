@@ -39,7 +39,7 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
     Make note of the username and password for later use.
 
-    ![Picture 12](../images/dp-300-L1-005.png)
+    ![Picture 12](../images/dp-300-lab01-vm1.png)
 
 1. Navigate to the **Disks** tab and review the configuration.
 
