@@ -56,16 +56,11 @@ You have been hired as a Senior Database Administrator to help automate day to d
 
 1. Return to the Query editor, and select **OK** to sign in to your database.
 
-1. Open a new tab in your browser and navigate to the GitHub page to access the [**AdaptativeIndexDefragmentation**](https://github.com/microsoft/tigertoolbox/blob/master/AdaptiveIndexDefrag/usp_AdaptiveIndexDefrag.sql) script. Then, select **Raw**.
+1.  Go to the C:\LabFiles\Monitorandoptimize\usp_AdaptiveIndexDefrag.sql from your lab computer and select all ( <kbd>CTRL</kbd> + <kbd>A</kbd> ) and copy ( <kbd>CTRL</kbd> + <kbd>C</kbd> ) the content of usp_AdaptiveIndexDefrag.sql.
 
-    ![Screenshot of selecting Raw in GitHub.](../images/dp-300-9.png)
-
-    This will provide the code in a format where you can copy it. Select all of the text ( <kbd>CTRL</kbd> + <kbd>A</kbd> ) and copy it to your clipboard ( <kbd>CTRL</kbd> + <kbd>C</kbd> ).
 
     >[!NOTE]
     > The purpose of this script is to perform an intelligent defragmentation on one or more indexes, as well as required statistics update, for one or more databases.
-
-1. Close the GitHub browser tab and return to the Azure portal.
 
 1. Paste the text you copied into the **Query 1** pane.
 
