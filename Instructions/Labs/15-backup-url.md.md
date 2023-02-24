@@ -130,6 +130,7 @@ Now that the functionality is configured, you can generate a backup file as a bl
 
    > **NOTE:** Replace <storage_account_name> with **dp300backupstorage<inject key="DeploymentID" enableCopy="false" />** and <key_value> with the value of **SAS** that you have copied in the notepad.
    >  **<key_value>** is the value generated at the end of the previous task in this format:
+   
        `'se=2023-12-31T00%3A00Z&sp=rwdl&sv=2018-11-09&sr=csig=rnoGlveGql7ILhziyKYUPBq5ltGc/pzqOCNX5rrLdRQ%3D'`
 
 
@@ -152,7 +153,7 @@ Now that the functionality is configured, you can generate a backup file as a bl
 
     ![Screenshot of the credential on SSMS.](../images/upd-dp-300-module-15-lab-17.png)
 
-1. If you mistyped and need to recreate the credential, you can drop it with the following command, making sure to change the name of the storage account. (Only run this command if you need to go back and recreate the credential)
+1. If you mistyped and need to recreate the credential, you can drop it with the following command, making sure to change the name of the storage account. (Only run this command if you need to go back and recreate the credential).  select **New Query**, then paste and execute the following query.
 
    > **Note:** Skip this step if you have already created the credentials correctly.
 
@@ -162,7 +163,7 @@ Now that the functionality is configured, you can generate a backup file as a bl
 
 ## Backup to URL
 
-1. Back up the database **AdventureWorks2017** to Azure with the following command in Transact-SQL:
+1. Back up the database **AdventureWorks2017** to Azure with the following command in Transact-SQL.  select **New Query**, then paste and execute the following query:
 
     ```sql
     BACKUP DATABASE AdventureWorks2017   
@@ -182,7 +183,7 @@ Now that the functionality is configured, you can generate a backup file as a bl
 
 ## Validate the backup through Azure CLI
 
-To see that the file is actually in Azure, you can use Storage Explorer (preview) or Azure Cloud Shell.
+To see that the file is actually in Azure, you can use Storage Explorer or Azure Cloud Shell.
 
 1. Navigate back to [https://portal.azure.com](https://portal.azure.com/). If not connected then connect to the Portal using the Azure **Username** and **Password** provided on the **Environment Details** tab for this lab virtual machine.
 
@@ -210,7 +211,7 @@ To see that the file is actually in Azure, you can use Storage Explorer (preview
 
 1. In the left navigation, select **Storage browser (preview) (1)**. Expand **Blob containers (2)**.
 
-    ![Screenshot showing the backed up file in the storage account.](../images/upd-dp-300-module-15-lab-12.png)
+    ![Screenshot showing the backed up file in the storage account.](../images/dp300-lab15-backupcontainer.png)
 
 1. Select **backups**.
 
@@ -224,7 +225,7 @@ To see that the file is actually in Azure, you can use Storage Explorer (preview
 
 This task will show you how to restore a database from an Azure blob storage.
 
-1. Navigate back to **SQL Server Management Studio (SSMS)**, select **New Query**, then paste and execute the following query.
+1. Navigate back to **SQL Server Management Studio (SSMS)**,  select **New Query**, then paste and execute the following query.
 
     ```sql
     USE AdventureWorks2017;
@@ -235,7 +236,7 @@ This task will show you how to restore a database from an Azure blob storage.
 
     ![Screenshot showing the customer name before the update was executed.](../images/upd-dp-300-module-15-lab-21.png)
 
-1. Run this command to change the name of that customer.
+1. Run this command to change the name of that customer. select **New Query**, then paste and execute the following query
 
     ```sql
     UPDATE Person.Address
@@ -248,7 +249,7 @@ This task will show you how to restore a database from an Azure blob storage.
 
     ![Screenshot showing the customer name after the update was executed.](../images/upd-dp-300-module-15-lab-15.png)
 
-1. To restore the database to get it back to where it was before the customer name was mistakenly changed, execute the following.
+1. To restore the database to get it back to where it was before the customer name was mistakenly changed, select **New Query**, then paste and execute the following query.
 
     **Note:** **SET SINGLE_USER WITH ROLLBACK IMMEDIATE** syntax the open transactions will all be rolled back. This can prevent the restore failing due to active connections.
 
