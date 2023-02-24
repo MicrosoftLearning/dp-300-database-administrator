@@ -63,7 +63,7 @@ You have been hired as a Senior Database Administrator to help ensure the securi
 
 1. On the **Database Settings** screen, make the changes as below:
 
-    - **Database name:** AdventureWorksFromBacpac
+    - **New Database name:** AdventureWorksFromBacpac
     - **Edition of Microsoft Azure SQL Database**: Basic
 
     ![A screenshot of a cell phone Description automatically generated](../images/dp300-lab4-img11.png)
