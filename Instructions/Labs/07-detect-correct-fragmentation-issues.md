@@ -41,7 +41,7 @@ You have been hired as a database administrator to identify performance related 
 
 ## Investigate index fragmentation
 
-6. Select **New Query**. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
+1. Select **New Query**. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
 
     ```sql
     USE AdventureWorks2017
@@ -61,7 +61,7 @@ You have been hired as a database administrator to identify performance related 
 
     This query will report any indexes that have a fragmentation over **50%**. The query should not return any result.
 
-7. Select **New Query**. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
+2. Select **New Query**. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
 
     ```sql
     USE AdventureWorks2017
@@ -92,11 +92,11 @@ You have been hired as a database administrator to identify performance related 
 
     This query will increase the fragmentation level of the Person.Address table and its indexes by adding a large number of new records.
 
-8. Execute the previous query again. Now you should be able to see four highly fragmented indexes.
+3. Execute the previous query again. Now you should be able to see four highly fragmented indexes.
 
     ![Picture 03](../images/dp300-lab7-img6.png)
 
-9. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
+4. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
 
     ```sql
     SET STATISTICS IO,TIME ON
@@ -114,14 +114,14 @@ You have been hired as a database administrator to identify performance related 
     GO
     ```
 
-   Click on the **Messages** tab in the result pane of SQL Server Management Studio. Make note of the count of logical reads performed by the query.
+  5. Click on the **Messages** tab in the result pane of SQL Server Management Studio. Make note of the count of logical reads performed by the query.
 
-    ![Picture 03](../images/dp300-lab7-img7.png)
+      ![Picture 03](../images/dp300-lab7-img7.png)
     
 
 ## Rebuild fragmented indexes
 
-10. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
+1. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
 
 
     ```sql
@@ -138,7 +138,7 @@ You have been hired as a database administrator to identify performance related 
         ALLOW_PAGE_LOCKS = ON)
     ```
 
-11. Execute the query below to confirm that the **IX_Address_StateProvinceID** index no longer has fragmentation greater than 50%.
+2. Execute the query below to confirm that the **IX_Address_StateProvinceID** index no longer has fragmentation greater than 50%.
 
     ```sql
     USE AdventureWorks2017
@@ -157,7 +157,7 @@ You have been hired as a database administrator to identify performance related 
 
     Comparing the results we can see the fragmentation dropped from 81% to 0.
 
-12. Re-execute the select statement from the previous section. Make note of the logical reads in the **Messages** tab of the **Results** pane in Management Studio. Was there a change from the number of logical reads encountered before you rebuilt the index?
+3. Re-execute the select statement from the previous section. Make note of the logical reads in the **Messages** tab of the **Results** pane in Management Studio. Was there a change from the number of logical reads encountered before you rebuilt the index?
 
     ```sql
     SET STATISTICS IO,TIME ON
