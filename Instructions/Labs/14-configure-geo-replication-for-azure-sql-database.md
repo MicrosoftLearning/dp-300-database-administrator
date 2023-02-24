@@ -4,7 +4,7 @@ As a DBA within AdventureWorks, you need to enable geo-replication for Azure SQL
 
 ## Enable geo-replication
 
-1. From the lab virtual machine, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/). Connect to the Portal using the Azure **Username** and **Password** provided on the **Resources** tab for this lab virtual machine.
+1. From the lab virtual machine, double click on the Azure portal shortcut on the desktop [https://portal.azure.com](https://portal.azure.com/). Connect to the Portal using the Azure **Username** and **Password** provided on the **Resources** tab for this lab virtual machine.
 
     ![Screenshot of Azure portal sign in page](../images/dp-300-lab14-01.png)
 
@@ -82,7 +82,7 @@ Now that the Azure SQL Database replica is created, you will perform a failover.
 
     ![Screenshot showing a forced failover warning message.](../images/lab14-dp-300-L1-6.png)
 
-1. The status of the primary replica will switch to **Pending** and the secondary to **Failover**. 
+1. **Refreash** the page, The status of the primary replica will switch to **Pending** and the secondary to **Failover**. 
 
     ![Screenshot showing a forced failover warning message.](../images/lab14-dp-300-L1-7.png)
 
