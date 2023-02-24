@@ -176,7 +176,7 @@ Next you'll run a workload to generate query statistics for query store, examine
 
 1. In order to view the Query Store node you will need to refresh the AdventureWorks2017 database in SQL Server Management Studio. **Right click (1)** on database name and choose select **Refresh (2)**. You will then see the **Query Store (3)** node under the database.
 
-    ![Expand Query Store](../images/upd-dp-300-module-10-lab-06.png)
+    ![Expand Query Store](../images/dp300-lab10-img1.png)
 
 1. Expand the **Query Store (1)** node to view all the reports available. Select the and double click **Top Resource Consuming Queries (2)** report.
 
@@ -184,7 +184,7 @@ Next you'll run a workload to generate query statistics for query store, examine
 
 1. The report will open as shown below. On the right, select the **menu dropdown (1)**, then select **Configure (2)**.
 
-    ![Selecting configure option for Top Resource Consuming Queries Report](../images/upd-dp-300-module-10-lab-08.png)
+     ![Expand Query Store](../images/dp300-lab10-img2.png)
 
 1. In the configuration screen, change the filter for the **minimum number of query plans to 2 (1)**. Then select **OK (2)**.
 
