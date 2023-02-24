@@ -9,17 +9,17 @@ You have been hired as a database administrator to identify performance related 
 
 ## Restore a database
 
-1. Select the Windows Start button and type SSMS. Select **Microsoft SQL Server Management Studio 18** from the list.  
+1. Select the Windows Start button and type SSMS. Select **Microsoft SQL Server Management Studio 19** from the list.  
 
-    ![Picture 01](../images/dp300-lab8-img1.png)
+    ![Picture 01](../images/Dp-300-lab07-01.png)
 
 2. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name. Select **Connect**.
 
-    ![Picture 02](../images/dp300-lab8-img2.png)
+    ![Picture 02](../images/dp-300-lab08-01.png)
 
 3. Select the **Databases** folder, and then **New Query**.
 
-    ![Picture 03](../images/dp300-lab8-img3.png)
+    ![Picture 03](../images/dp-300-lab08-02.png)
 
 4. In the new query window, copy and paste the below T-SQL into it. Execute the query to restore the database.
 
