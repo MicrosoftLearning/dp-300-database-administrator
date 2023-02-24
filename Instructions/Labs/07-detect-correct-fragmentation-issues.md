@@ -114,7 +114,7 @@ You have been hired as a database administrator to identify performance related 
     GO
     ```
 
-    Click on the **Messages** tab in the result pane of SQL Server Management Studio. Make note of the count of logical reads performed by the query.
+   Click on the **Messages** tab in the result pane of SQL Server Management Studio. Make note of the count of logical reads performed by the query.
 
     ![Picture 03](../images/dp300-lab7-img7.png)
 
@@ -122,7 +122,7 @@ You have been hired as a database administrator to identify performance related 
 
 10. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
 
-     ```sql
+    ```sql
     USE AdventureWorks2017
     GO
     
