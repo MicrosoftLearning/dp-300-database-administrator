@@ -122,7 +122,7 @@ You have been hired as a database administrator to identify performance related 
 
 10. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
 
-    ```sql
+     ```sql
     USE AdventureWorks2017
     GO
     
