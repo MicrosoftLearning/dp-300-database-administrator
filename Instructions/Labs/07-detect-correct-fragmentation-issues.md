@@ -117,6 +117,7 @@ You have been hired as a database administrator to identify performance related 
    Click on the **Messages** tab in the result pane of SQL Server Management Studio. Make note of the count of logical reads performed by the query.
 
     ![Picture 03](../images/dp300-lab7-img7.png)
+    
 
 ## Rebuild fragmented indexes
 
