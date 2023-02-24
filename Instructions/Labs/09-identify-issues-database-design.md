@@ -155,6 +155,7 @@ There are two approaches we can implement to fix the implicit conversion warning
     CREATE UNIQUE NONCLUSTERED INDEX [AK_Employee_NationalIDNumber] ON [HumanResources].[Employee]( [NationalIDNumber] ASC );
     GO
     ```
+**Note** : Kindly run the command for dropping the table first and run the preceeding commands later, else there will be an error stating that the column already exists. 
 
 13. Alternatively, you can run the query below to confirm that the data type was successfully changed.
 
