@@ -9,7 +9,7 @@ You have been hired as a database administrator to identify performance related 
 
 ## Restore a database
    
-1. Select the Windows Start button and type SSMS. Select **Microsoft SQL Server Management Studio 18** from the list.  
+1. Select the Windows Start button and type SSMS. Select **Microsoft SQL Server Management Studio 19** from the list.  
 
     ![Picture 01](../images/Dp-300-lab07-01.png)
 
