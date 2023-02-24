@@ -123,7 +123,6 @@ You have been hired as a database administrator to identify performance related 
 
 1. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
 
-
     ```sql
     USE AdventureWorks2017
     GO
@@ -155,7 +154,7 @@ You have been hired as a database administrator to identify performance related 
     WHERE i.name = 'IX_Address_StateProvinceID'
     ```
 
-    Comparing the results we can see the fragmentation dropped from 81% to 0.
+   Comparing the results we can see the fragmentation dropped from 81% to 0.
 
 3. Re-execute the select statement from the previous section. Make note of the logical reads in the **Messages** tab of the **Results** pane in Management Studio. Was there a change from the number of logical reads encountered before you rebuilt the index?
 
