@@ -130,6 +130,8 @@ You have been hired as a database administrator to identify performance related 
 1. The XML will show you which processes are being blocked, and which process is causing the blocking. You can see the queries that ran in this process as well as system information.
 
     ![Picture 04](../images/dp300-lab8-img8.png)
+    
+    **Note:** This above XML File might take sometime to open please proceed with next step.
 
 1. Alternatively, you can run the query below to identify sessions blocking other sessions, including a list of session IDs blocked per *session_id*.
 
