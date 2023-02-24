@@ -103,14 +103,14 @@ There are several ways to generate an execution plan in SQL Server Management St
 
     ![Screenshot showing the NonClustered index](../images/upd-dp-300-module-10-lab-04.png)
 
-1. **Key Lookups** can be removed by adding a covering index that includes all fields being returned or searched in the query. In this example the index only uses the **ProductID** column. Fix the **Key Lookup** and rerun the query to see the new plan. Copy and paste the code below into the same query window.
+1. **Key Lookups** can be removed by adding a covering index that includes all fields being returned or searched in the query. In this example the index only uses the **ProductID** column. Fix the **Key Lookup** and rerun the query to see the new plan. **Copy and paste the code below into the same query window.**
 
     ```sql
     CREATE NONCLUSTERED INDEX [IX_SalesOrderDetail_ProductID] ON [Sales].[SalesOrderDetail]
     ([ProductID] ASC)
     ```
 
-    > If we add the **Output List** fields to the index as included columns, then the **Key Lookup** will be removed. Since the index already exists you either have to DROP the index and recreate it, or set the **DROP_EXISTING=ON** in order to add the columns. Note that the **ProductID** column is already part of the index and does not need to be added as an included column. There is another performance improvement we can make to the index by adding the **ModifiedDate**.
+    > If we add the **Output List** fields to the index as included columns, then the **Key Lookup** will be removed. Since the index already exists you either have to DROP the index and recreate it, or set the **DROP_EXISTING=ON** in order to add the columns. Note that the **ProductID** column is already part of the index and does not need to be added as an included column. There is another performance improvement we can make to the index by adding the **ModifiedDate**. **Replace the below code with the earlier code  Copy and paste the code below into the same query window.**
 
     ```sql
     CREATE NONCLUSTERED INDEX [IX_SalesOrderDetail_ProductID]
@@ -120,7 +120,7 @@ There are several ways to generate an execution plan in SQL Server Management St
     GO
     ```
 
-1. Rerun the query from step 1. Make note of the changes to the logical reads and execution plan changes. The plan now only needs to use the nonclustered index we created.
+1. Rerun the query from step 1 under **Generate actual execution plan** and then rerun previous step again. Make note of the changes to the logical reads and execution plan changes. The plan now only needs to use the nonclustered index we created.
 
     ![Screenshot showing the improved execution plan](../images/upd-dp-300-module-10-lab-05.png)
 
@@ -195,6 +195,8 @@ Next you'll run a workload to generate query statistics for query store, examine
     ![Query with longest duration](../images/upd-dp-300-module-10-lab-10.png)
 
     This will show you the query and plan summary for your longest duration query in your query store.
+    
+    > **Note:** If you don't see the **Bar chart** then **change the minimum number of query plans to 1 and perform the Next step.**
 
 ## Force a better execution plan
 
