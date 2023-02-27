@@ -120,7 +120,7 @@ There are several ways to generate an execution plan in SQL Server Management St
     GO
     ```
 
-1. Rerun the query from step 1 under **Generate actual execution plan** and then rerun previous step again. Make note of the changes to the logical reads and execution plan changes. The plan now only needs to use the nonclustered index we created.
+1. Rerun the query from step 1 under **Generate actual execution plan** and then **rerun previous step again**. Make note of the changes to the logical reads and execution plan changes. The plan now only needs to use the nonclustered index we created.
 
     ![Screenshot showing the improved execution plan](../images/upd-dp-300-module-10-lab-05.png)
 
