@@ -15,11 +15,11 @@ You have been hired as a database administrator to identify performance related 
 
 2. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name. Select **Connect**.
 
-    ![Picture 02](../images/dp300-lab9-img3.png)
+    ![Picture 02](../images/dp300-lab9-img03.png)
 
 3. Select the **Databases** folder, and then **New Query**.
 
-    ![Picture 03](../images/dp300-lab9-img4.png)
+    ![Picture 03](../images/dp300-lab9-img04.png)
 
 4. In the new query window, copy and paste the below T-SQL into it. Execute the query to restore the database.
 
