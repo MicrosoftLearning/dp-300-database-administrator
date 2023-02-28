@@ -84,7 +84,7 @@ CREATE TABLE [HumanResources].[Employee](
 ) ON [PRIMARY]
 ```
 
-1. According to the warning message presented in the execution plan, what change would you recommend?
+2. According to the warning message presented in the execution plan, what change would you recommend?
 
     1. Identify what field is causing the implicit conversion and why.
     
