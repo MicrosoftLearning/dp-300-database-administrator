@@ -58,9 +58,9 @@ You have been hired as a Senior Database Administrator to help automate day to d
 
 1.  Go to the C:\LabFiles\Monitorandoptimize\usp_AdaptiveIndexDefrag.sql from your lab computer and select all ( <kbd>CTRL</kbd> + <kbd>A</kbd> ) and copy ( <kbd>CTRL</kbd> + <kbd>C</kbd> ) the content of usp_AdaptiveIndexDefrag.sql.
 
-
-    >[!NOTE]
+   > [!NOTE]
     > The purpose of this script is to perform an intelligent defragmentation on one or more indexes, as well as required statistics update, for one or more databases.
+
 
 1. Paste the text you copied into the **Query 1** pane.
 
