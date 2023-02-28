@@ -13,9 +13,9 @@ You'll run queries with suboptimal performance, examine the query plans, and att
 
     ![Picture 01](../images/upd-dp-300-module-01-lab-34.png)
 
-1. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name. Select **Connect**.
+1. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name, give the login(Labvm Admin Username) and password(Labvm Admin Password) credential and  Select **Connect**.
 
-    ![Picture 02](../images/dp-300-lab10-sql1.png)
+    ![Picture 02](../images/databasec.png)
 
 1. Select the **Databases (1)** folder, and then **New Query (2)**.
 
