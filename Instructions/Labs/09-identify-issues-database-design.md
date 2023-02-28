@@ -13,15 +13,15 @@ You have been hired as a database administrator to identify performance related 
 
     ![Picture 01](../images/dp300-lab9-img2.png)
 
-2. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name. Select **Connect**.
+1. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name. Select **Connect**.
 
     ![Picture 02](../images/dp300-lab9-img03.png)
 
-3. Select the **Databases** folder, and then **New Query**.
+1. Select the **Databases** folder, and then **New Query**.
 
     ![Picture 03](../images/dp300-lab9-img04.png)
 
-4. In the new query window, copy and paste the below T-SQL into it. Execute the query to restore the database.
+1. In the new query window, copy and paste the below T-SQL into it. Execute the query to restore the database.
 
     ```sql
     RESTORE DATABASE AdventureWorks2017
@@ -34,13 +34,13 @@ You have been hired as a database administrator to identify performance related 
     ```
 
 
-5. You should see a successful message after the restore is complete.
+1. You should see a successful message after the restore is complete.
 
     ![Picture 03](../images/dp-300-lab-09-img5.png)
 
 ## Examine the query and identify the problem
 
-6. Select **New Query**. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
+1. Select **New Query**. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
 
     ```sql
     USE AdventureWorks2017
@@ -51,17 +51,17 @@ You have been hired as a database administrator to identify performance related 
     WHERE NationalIDNumber = 14417807;
     ```
 
-7. Select **Include Actual Execution Plan** icon as shown below before running the query or press **CTRL+M**. This will cause the execution plan to be displayed when you execute the query. Select **Execute** to execute this query again.
+1. Select **Include Actual Execution Plan** icon as shown below before running the query or press **CTRL+M**. This will cause the execution plan to be displayed when you execute the query. Select **Execute** to execute this query again.
 
     ![Picture 01](../images/dp300-lab9-img6.png)
 
-8. Navigate to the execution plan, by selecting the **Execution plan** tab in the results panel. In the execution plan, mouse over the `SELECT` operator. You will notice a warning message identified by an exclamation point in a yellow triangle as shown below. Identify what the warning message tells you.
+1. Navigate to the execution plan, by selecting the **Execution plan** tab in the results panel. In the execution plan, mouse over the `SELECT` operator. You will notice a warning message identified by an exclamation point in a yellow triangle as shown below. Identify what the warning message tells you.
 
     ![Picture 02](../images/dp-300-lab-09-img7.png)
 
 ## Identify ways to fix the warning message
 
-The *[HumanResources].[Employee]* table structure is shown in the follow data definition language (DDL) statement. Review the fields that are used in the previous SQL query against this DDL, paying attention to their types.
+1. The *[HumanResources].[Employee]* table structure is shown in the follow data definition language (DDL) statement. Review the fields that are used in the previous SQL query against this DDL, paying attention to their types.
 
 ```sql
 CREATE TABLE [HumanResources].[Employee](
@@ -84,9 +84,10 @@ CREATE TABLE [HumanResources].[Employee](
 ) ON [PRIMARY]
 ```
 
-9. According to the warning message presented in the execution plan, what change would you recommend?
+1. According to the warning message presented in the execution plan, what change would you recommend?
 
-    1. Identify what field is causing the implicit conversion and why. 
+    1. Identify what field is causing the implicit conversion and why.
+    
     1. If you review the query:
 
         ```sql
@@ -103,7 +104,7 @@ There are two approaches we can implement to fix the implicit conversion warning
 
 ### Change the code
 
-10. How would you change the code to resolve the implicit conversion? Change the code and rerun the query.
+1. How would you change the code to resolve the implicit conversion? Change the code and rerun the query.
 
     Remember to turn on the **Include Actual Execution Plan** (**CTRL+M**) if it is not already on. 
 
@@ -123,7 +124,7 @@ There are two approaches we can implement to fix the implicit conversion warning
 
 ### Change the data type
 
-11. We can also fix the implicit conversion warning by changing the table structure.
+1. We can also fix the implicit conversion warning by changing the table structure.
 
     To attempt to fix the index, copy and paste the query below into a new query window, to change the column's data type. Attempt to execute the query, by selecting **Execute** or pressing <kbd>F5</kbd>.
 
@@ -135,9 +136,9 @@ There are two approaches we can implement to fix the implicit conversion warning
 
     ![Picture 04](../images/dp-300-lab-09-img9.png)
 
-    The *NationalIDNumber* column is part of an already existing nonclustered index, the index has to be rebuilt/recreated in order to change the data type. **This could lead to extended downtime in production, which highlights the importance of choosing the right data types in your design.**
+     The *NationalIDNumber* column is part of an already existing nonclustered index, the index has to be rebuilt/recreated in order to change the data type. **This could lead to extended downtime in production, which highlights the importance of choosing the right data types in your design.**
 
-12. In order to resolve this issue, copy and paste the code below into your query window and execute it by selecting **Execute**.
+2. In order to resolve this issue, copy and paste the code below into your query window and execute it by selecting **Execute**.
 
     ```sql
     USE AdventureWorks2017
@@ -155,9 +156,9 @@ There are two approaches we can implement to fix the implicit conversion warning
     CREATE UNIQUE NONCLUSTERED INDEX [AK_Employee_NationalIDNumber] ON [HumanResources].[Employee]( [NationalIDNumber] ASC );
     GO
     ```
-**Note** : Kindly run the command for dropping the table first and run the preceeding commands later, else there will be an error stating that the column already exists. 
+  **Note** : Kindly run the command for dropping the table first and run the preceeding commands later, else there will be an error stating that the column already  exists. 
 
-13. Alternatively, you can run the query below to confirm that the data type was successfully changed.
+3. Alternatively, you can run the query below to confirm that the data type was successfully changed.
 
     ```sql
     SELECT c.name, t.name
@@ -169,7 +170,7 @@ There are two approaches we can implement to fix the implicit conversion warning
     
     ![Picture 05](../images/dp-300-lab-09-img10.png)
     
-14. Now let's check the execution plan. Rerun the original query without the quotes.
+4. Now let's check the execution plan. Rerun the original query without the quotes.
 
     ```sql
     USE AdventureWorks2017
