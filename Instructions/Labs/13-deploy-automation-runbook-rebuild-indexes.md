@@ -61,7 +61,7 @@ You have been hired as a Senior Database Administrator to help automate day to d
 
 
 
-   ![Screenshot of pasting the code in a new Query window.](../images/dp300-lab13-img4.png)
+   ![Screenshot of pasting the code in a new Query window.](../images/query-editor1.png)
 
 1. Delete **ï»**,`USE msdb` and `GO` on lines 5 and 6 of the query (that are highlighted in the screenshot) , and then select **Run**.
 
