@@ -14,7 +14,7 @@ You have been hired as a Senior Database Administrator to help automate day to d
 
 1. On the **Create an Automation Account** page, enter the information below, and then select **Review + Create**.
 
-    - **Resource Group:** contoso-rg-<inject key="DeploymentID" enableCopy="false" />**.
+    - **Resource Group:** **contoso-rg-<inject key="DeploymentID" enableCopy="false" />**
     - **Name:** autoAccount
     - **Location:** Use the default.
 
