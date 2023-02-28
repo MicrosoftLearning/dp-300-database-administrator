@@ -13,10 +13,9 @@ You have been hired as a database administrator to identify performance related 
 
     ![Picture 01](../images/dp300-lab9-img2.png)
 
-1. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name. Select **Connect**.
+1. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name, give the login(Labvm Admin Username) and password(Labvm Admin Password) credential and  Select **Connect**.
 
-    ![Picture 02](../images/dp300-lab9-img03.png)
-
+    ![Picture 02](../images/databasec.png)
 1. Select the **Databases** folder, and then **New Query**.
 
     ![Picture 03](../images/dp300-lab9-img04.png)
