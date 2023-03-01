@@ -24,10 +24,10 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
 1. On the **Create a virtual machine** page, enter the following information:
 
-    - **Subscription:** Use existing subscription ;
-    - **Resource group:** contoso-rg-<inject key="Deployment-id" enableCopy="false" />;
+    - **Subscription:** Use existing subscription 
+    - **Resource group:** contoso-rg-<inject key="Deployment-id" enableCopy="false" />
     - **Virtual machine name:**  azureSQLServerVM
-    - **Region:** &lt;your local region, same as the selected region for your resource group&gt;
+    - **Region:** <inject key="location" enableCopy="false" />
     - **Availability Options:** No infrastructure redundancy required
     - **Image:** Free SQL Server License: SQL 2019 Developer on Windows Server 2022 - Gen1
     - **Azure spot instance:** No (unchecked)
