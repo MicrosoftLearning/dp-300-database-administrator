@@ -32,8 +32,8 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
 1. Click **+ Create** to open the **Create Virtual Network** page. On the **Basics** tab, complete the following information:
 
-    - **Subscription:** &lt;Your subscription&gt;
-    - **Resource group:** select the existing resource group starting with **contoso-rg-Deployment-id** **(1)**
+    - **Subscription:** Use existing subscription
+    - **Resource group:** **contoso-rg-<inject key="Deployment-id" enableCopy="false" />**
     - **Name:** lab02-vnet **(2)**
     - **Region:** Select the same region where your resource group was created **(3)**
 
@@ -65,11 +65,11 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
 1. On the **Create SQL Database** page, select the following options on the **Basics** tab and then click **Next: Networking**.
 
-    - **Subscription:** &lt;Your subscription&gt;
-    - **Resource group:** starting with *contoso-rg-DID*
+    - **Subscription:** Use existing subscription
+    - **Resource group:** **contoso-rg-<inject key="Deployment-id" enableCopy="false" />**
     - **Database Name:** AdventureWorksLT
     - **Server:** click on **Create new** link. The **Create SQL Database Server** page will open. Provide the server details as follow:
-        - **Server name:** dp300-lab-Deployment-id **(1)**
+        - **Server name:** dp300-lab-<inject key="Deployment-id" enableCopy="false" /> **(1)**
         - **Location:**  same as the selected region for your resource group, otherwise it may fail **(2)**
         - **Authentication method:** Use SQL authentication **(3)**
         - **Server admin login:** dp300admin **(4)**
@@ -100,8 +100,8 @@ Your **Create SQL Database Server** page should look similar to the one below. T
 
 1. Complete the **Create private endpoint** right pane as follows:
 
-    - **Subscription:** &lt;Your subscription&gt;
-    - **Resource group:**  select the existing resource group starting with **contoso-rg-Deployment-id**
+    - **Subscription:**  Use existing subscription
+    - **Resource group:**  **contoso-rg-<inject key="Deployment-id" enableCopy="false" />**
     - **Location:** same as the selected region for your resource group, otherwise it may fail
     - **Name:** DP-300-SQL-Endpoint **(1)**
     - **Target sub-resource:** SqlServer **(2)**
