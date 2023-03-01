@@ -10,6 +10,7 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
     ![Picture 1](../images/dp-300-L1-001.png)
 
+
 1. Locate the search bar at the top of the page. Search for **Azure SQL**. Select the search result for **Azure SQL** that appears in the results under **Services**.
 
     ![Picture 9](../images/lab1-2-updated.png)
