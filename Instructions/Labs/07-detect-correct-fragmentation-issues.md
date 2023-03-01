@@ -32,9 +32,7 @@ You have been hired as a database administrator to identify performance related 
           MOVE 'AdventureWorks2017_log'
             TO 'C:\LabFiles\Monitorandoptimize\AdventureWorks2017_log.ldf';
     ```
-
-    **Note:** The database backup file name and path should match with what you've downloaded on step 1, otherwise the command will fail.
-
+    
 5. You should see a successful message after the restore is complete.
 
     ![Picture 03](../images/dp300-lab7-img5.png)
