@@ -8,7 +8,6 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
 1. In the lab virtual machine, double click on the Azure portal shortcut on the desktop [https://portal.azure.com](https://portal.azure.com/), and sign in using the Azure **Username** and **Password** provided on the **Environment Details** tab for this lab virtual machine.
 
-
     ![Picture 1](../images/dp-300-L1-001.png)
 
 1. Locate the search bar at the top of the page. Search for **Azure SQL**. Select the search result for **Azure SQL** that appears in the results under **Services**.
