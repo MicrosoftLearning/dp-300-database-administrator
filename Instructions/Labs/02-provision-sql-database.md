@@ -70,7 +70,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
     - **Database Name:** AdventureWorksLT
     - **Server:** click on **Create new** link. The **Create SQL Database Server** page will open. Provide the server details as follow:
         - **Server name:** dp300-lab-<inject key="Deployment-id" enableCopy="false" /> **(1)**
-        - **Location:**  same as the selected region for your resource group, otherwise it may fail **(2)**
+        - **Location:**  <inject key="location" enableCopy="false" /> **(2)**
         - **Authentication method:** Use SQL authentication **(3)**
         - **Server admin login:** dp300admin **(4)**
         - **Password:** dp300P@ssword! **(5)**
@@ -102,7 +102,7 @@ Your **Create SQL Database Server** page should look similar to the one below. T
 
     - **Subscription:**  Use existing subscription
     - **Resource group:**  **contoso-rg-<inject key="Deployment-id" enableCopy="false" />**
-    - **Location:** same as the selected region for your resource group, otherwise it may fail
+    - **Location:** <inject key="location" enableCopy="false" />
     - **Name:** DP-300-SQL-Endpoint **(1)**
     - **Target sub-resource:** SqlServer **(2)**
     - **Virtual network:** lab02-vnet **(3)**
@@ -179,7 +179,7 @@ Your **Create SQL Database Server** page should look similar to the one below. T
 
 1. Azure Data Studio will connect to the database, and show some basic information about the database, plus a partial list of objects.
 
-    ![Picture 20](../images/upd-dp-300-module-02-lab-28.png)
+      ![Picture 20](../images/upd-dp-300-module-02-lab-28.png)
 
 ## Query an Azure SQL Database with a SQL Notebook
 
@@ -240,7 +240,7 @@ ORDER BY [OrderedQuantity] DESC
 
 11. To run all cells in the notebook and present results, click the **Run all** button in the toolbar.
 
-	![Picture 17](../images/upd-dp-300-module-02-lab-33.png)
+    ![Picture 17](../images/upd-dp-300-module-02-lab-33.png)
 
 12. Within Azure Data Studio save the notebook from File menu (either Save or Save As) to the **C:\LabFiles\Deploy Azure SQL Database** path (create the folder structure if it does not exist). Make sure the file extension is **.ipynb**(Notebook)
 
