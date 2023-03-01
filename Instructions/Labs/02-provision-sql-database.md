@@ -76,7 +76,6 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
         - **Password:** dp300P@ssword! **(5)**
         - **Confirm password:** dp300P@ssword! **(6)**
         
-**Note:** change the **Deployment-id** from your Deployment-id and you will get it under enviroment detail page.
 
 Your **Create SQL Database Server** page should look similar to the one below. Then click **OK (7)**.
 
@@ -185,7 +184,7 @@ Your **Create SQL Database Server** page should look similar to the one below. T
 
 1. In Azure Data Studio, connected to this lab’s AdventureWorksLT database, click the **New Notebook** button.
 
-    ![Picture 21](../images/upd-dp-300-module-02-lab-29.png)
+     ![Picture 21](../images/upd-dp-300-module-02-lab-29.png)
 
 2. Click the **+Text** link to add a new text box in the notebook  
 
