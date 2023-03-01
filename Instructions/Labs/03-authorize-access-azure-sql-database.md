@@ -12,7 +12,6 @@ You've been hired as a Senior Database Administrator to help ensure the security
 
     ![Picture 1](../images/dp-300-L1-001.png)
 
-
 1. On the Azure portal home page select **All resources**.
 
    ![Screenshot of the Azure portal home page, selecting All resources](../images/dp300-lab3-img2.png)
