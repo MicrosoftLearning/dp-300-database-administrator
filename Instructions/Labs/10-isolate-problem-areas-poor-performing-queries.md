@@ -33,8 +33,6 @@ You'll run queries with suboptimal performance, examine the query plans, and att
             TO 'C:\LabFiles\Monitorandoptimize\AdventureWorks2017_log.ldf';
     ```
 
-    **Note:** The database backup file name and path should match with what you've downloaded on step 1, otherwise the command will fail.
-
 1. You should see a successful message after the restore is complete.
 
     ![Picture 03](../images/upd-dp-300-module-07-lab-05.png)
