@@ -134,15 +134,15 @@ Now that the functionality is configured, you can generate a backup file as a bl
        
 
 
-    ```sql
+   ```sql
     IF NOT EXISTS  
     (SELECT * 
-        FROM sys.credentials  
-        WHERE name = 'https://<storage_account_name>.blob.core.windows.net/backups')  
+    FROM sys.credentials  
+    WHERE name = 'https://<storage_account_name>.blob.core.windows.net/backups')  
     BEGIN
-        CREATE CREDENTIAL [https://<storage_account_name>.blob.core.windows.net/backups]
-        WITH IDENTITY = 'SHARED ACCESS SIGNATURE',
-        SECRET = '<key_value>'
+    CREATE CREDENTIAL [https://<storage_account_name>.blob.core.windows.net/backups]
+    WITH IDENTITY = 'SHARED ACCESS SIGNATURE',
+    SECRET = '<key_value>'
     END;
     GO  
     ```
