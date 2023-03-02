@@ -131,20 +131,21 @@ Now that the functionality is configured, you can generate a backup file as a bl
     **<key_value>** is the value generated at the end of the previous task in this format:
    
        `'se=2023-12-31T00%3A00Z&sp=rwdl&sv=2018-11-09&sr=csig=rnoGlveGql7ILhziyKYUPBq5ltGc/pzqOCNX5rrLdRQ%3D'`
+       
 
 
-        ```sql
-         IF NOT EXISTS  
-         (SELECT * 
-             FROM sys.credentials  
-             WHERE name = 'https://<storage_account_name>.blob.core.windows.net/backups')  
-         BEGIN
-             CREATE CREDENTIAL [https://<storage_account_name>.blob.core.windows.net/backups]
-             WITH IDENTITY = 'SHARED ACCESS SIGNATURE',
-             SECRET = '<key_value>'
-         END;
-         GO  
-        ```
+    ```sql
+    IF NOT EXISTS  
+    (SELECT * 
+        FROM sys.credentials  
+        WHERE name = 'https://<storage_account_name>.blob.core.windows.net/backups')  
+    BEGIN
+        CREATE CREDENTIAL [https://<storage_account_name>.blob.core.windows.net/backups]
+        WITH IDENTITY = 'SHARED ACCESS SIGNATURE',
+        SECRET = '<key_value>'
+    END;
+    GO  
+    ```
    
    
    ![Screenshot of the credential on SSMS.](../images/upd-dp-300-module-15-lab.png)
