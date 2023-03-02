@@ -32,8 +32,6 @@ As a DBA for AdventureWorks, you need to back up a database to a URL in Azure an
             TO 'C:\LabFiles\HADR\AdventureWorks2017_log.ldf';
     ```
 
-   > **Note:** The database backup file name and path should match with what you've downloaded on step 1, otherwise the command will fail.
-
 1. You should see a successful message after the restore is complete.
 
     ![Picture 03](../images/updt-dp-300-module-07-lab-05.png)
