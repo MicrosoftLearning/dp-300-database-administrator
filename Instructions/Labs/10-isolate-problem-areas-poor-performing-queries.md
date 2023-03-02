@@ -63,7 +63,7 @@ There are several ways to generate an execution plan in SQL Server Management St
 
     You'll see a text version of the execution plan, instead of the actual query results for the **SELECT** statement.
 
-    ![Screenshot showing the text version of a query plan](../images/upd-dp-300-module-10-lab-01.png)
+      ![Screenshot showing the text version of a query plan](../images/upd-dp-300-module-10-lab-01.png)
 
 1. Take a moment to examine the text in the second row of the **StmtText** column:
 
@@ -89,20 +89,20 @@ There are several ways to generate an execution plan in SQL Server Management St
     WHERE [ModifiedDate] > '2012/01/01' AND [ProductID] = 772;
     ```
 
-    ![Screenshot showing the execution plan for the query](../images/upd-dp-300-module-10-lab-02.png)
+      ![Screenshot showing the execution plan for the query](../images/upd-dp-300-module-10-lab-02.png)
 
    
    - When reviewing the execution plan, you will note there is a **Key Lookup**. If you hover your mouse over the icon, you will see that the properties indicate it is performed for each row retrieved by the query. You can see the execution plan is performing a **Key Lookup** operation.
     
 
-    ![Screenshot showing the output list of columns](../images/upd-dp-300-module-10-lab-03.png)
+      ![Screenshot showing the output list of columns](../images/upd-dp-300-module-10-lab-03.png)
     
 
      >  **Note:** the columns in the **Output List** section. How would you improve this query?
 
     - To identify what index needs to be altered in order to remove the key lookup, you need to examine the index seek above it. Hover over the index seek operator with your mouse and the properties of the operator will appear.
 
-     ![Screenshot showing the NonClustered index](../images/upd-dp-300-module-10-lab-04.png)
+        ![Screenshot showing the NonClustered index](../images/upd-dp-300-module-10-lab-04.png)
      
 
 1. **Key Lookups** can be removed by adding a covering index that includes all fields being returned or searched in the query. In this example the index only uses the **ProductID** column. Fix the **Key Lookup** and rerun the query to see the new plan. **Copy and paste the code below into the same query window.**
@@ -124,7 +124,7 @@ There are several ways to generate an execution plan in SQL Server Management St
 
 1. **Rerun** the query from step 1 under **Generate actual execution plan** and then **rerun previous step again**. Make note of the changes to the logical reads and execution plan changes. The plan now only needs to use the nonclustered index we created.
 
-    ![Screenshot showing the improved execution plan](../images/upd-dp-300-module-10-lab-05.png)
+      ![Screenshot showing the improved execution plan](../images/upd-dp-300-module-10-lab-05.png)
 
 ## Use Query Store to detect and handle regression
 
@@ -178,23 +178,23 @@ Next you'll run a workload to generate query statistics for query store, examine
 
 1. In order to view the Query Store node you will need to refresh the AdventureWorks2017 database in SQL Server Management Studio. **Right click (1)** on database name and choose select **Refresh (2)**. You will then see the **Query Store (3)** node under the database.
 
-    ![Expand Query Store](../images/dp300-lab10-img1.png)
+      ![Expand Query Store](../images/dp300-lab10-img1.png)
 
 1. Expand the **Query Store (1)** node to view all the reports available. Select the and double click **Top Resource Consuming Queries (2)** report.
 
-    ![Top Resource Consuming Queries Report from Query Store](../images/upd-dp-300-module-10-lab-07.png)
+      ![Top Resource Consuming Queries Report from Query Store](../images/upd-dp-300-module-10-lab-07.png)
 
 1. The report will open as shown below. On the right, select the **menu dropdown (1)**, then select **Configure (2)**.
 
-     ![Expand Query Store](../images/dp300-lab10-img2.png)
+      ![Expand Query Store](../images/dp300-lab10-img2.png)
 
 1. In the configuration screen, change the filter for the **minimum number of query plans to 2 (1)**. Then select **OK (2)**.
 
-    ![Set Minimum number of query plans](../images/upd-dp-300-module-10-lab-09.png)
+      ![Set Minimum number of query plans](../images/upd-dp-300-module-10-lab-09.png)
 
 1. Choose the query with the longest duration by selecting the left most bar in the bar chart in the top left portion of the report.
 
-    ![Query with longest duration](../images/upd-dp-300-module-10-lab-10.png)
+      ![Query with longest duration](../images/upd-dp-300-module-10-lab-10.png)
 
     This will show you the query and plan summary for your longest duration query in your query store.
     
@@ -204,7 +204,7 @@ Next you'll run a workload to generate query statistics for query store, examine
 
 1. Navigate to the plan summary portion of the report as shown below. You will note there are two execution plans with widely different durations.
 
-    ![Plan summary](../images/upd-dp-300-module-10-lab-11.png)
+      ![Plan summary](../images/upd-dp-300-module-10-lab-11.png)
 
 1. Select the Plan ID with the lowest duration (this is indicated by a lower position on the Y-axis of the chart) in the top right window of the report. For example, in the graphic above, it’s *PlanID 43*. Select the plan ID next to the Plan Summary chart (it should be highlighted like in the above screenshot).
 
@@ -212,7 +212,7 @@ Next you'll run a workload to generate query statistics for query store, examine
 
 1. Select **Force Plan** under the summary chart. A confirmation window will popup, select **Yes**.
 
-    ![Screenshot showing the confirmation](../images/upd-dp-300-module-10-lab-12.png)
+      ![Screenshot showing the confirmation](../images/upd-dp-300-module-10-lab-12.png)
 
     - Once the plan is forced you will see that the **Forced Plan** is now greyed out and the plan in the plan summary window now has a check mark indicating is it forced.
 
@@ -226,7 +226,7 @@ Before continuing with the exercise close all the current query windows by selec
 
 1. Select **New Query (1)**, then select the **Include Actual Execution Plan (2)** icon before running the query or use <kbd>CTRL</kbd>+<kbd>M</kbd>.
 
-    ![Include Actual Execution Plan](../images/upd-dp-300-module-10-lab-13.png)
+      ![Include Actual Execution Plan](../images/upd-dp-300-module-10-lab-13.png)
 
 1. Execute the query below. Note that the execution plan shows an index seek operator.
 
@@ -239,9 +239,9 @@ Before continuing with the exercise close all the current query windows by selec
     WHERE SalesPersonID=288;
     ```
 
-    ![Screenshot showing the updated execution plan](../images/upd-dp-300-module-10-lab-14.png)
+      ![showing the updated execution plan](../images/upd-dp-300-module-10-lab-14.png)
 
-1. In a new query window, run the next query. Compare both execution plans.
+1.  In a new query window, run the next query. Compare both execution plans.
 
     ```sql
     USE AdventureWorks2017;
@@ -252,9 +252,9 @@ Before continuing with the exercise close all the current query windows by selec
     WHERE SalesPersonID=277;
     ```
 
-    The only change this time is that the SalesPersonID value is set to 277. Note the Clustered Index Scan operation in the execution plan.
+       The only change this time is that the SalesPersonID value is set to 277. Note the Clustered Index Scan operation in the execution plan.
 
-    ![Screenshot showing the sql statement](../images/upd-dp-300-module-10-lab-15.png)
+       ![the sql statement](../images/upd-dp-300-module-10-lab-15.png)
 
    - As we can see, based on the index statistics the query optimizer has chosen a different execution plan because of the different values in the `WHERE` clause.
   
