@@ -156,7 +156,7 @@ Next you'll run a workload to generate query statistics for query store, examine
 
 1. Once opened into SQL Server Management Studio, select **Execute** or press <kbd>F5</kbd> to execute the query.
 
-1. In a new query editor, open the file **C:\LabFiles\Monitor and optimize\ExecuteRandomWorkload.sql**, and select **Execute** or press <kbd>F5</kbd> to execute the query.
+1. In a **New query editor**, open the file **C:\LabFiles\Monitor and optimize\ExecuteRandomWorkload.sql**, and select **Execute** or press <kbd>F5</kbd> to execute the query.
 
 1. After the execution completes, run the script a second time to create additional load on the server. Leave the query tab open for this query.
 
@@ -241,7 +241,7 @@ Before continuing with the exercise close all the current query windows by selec
 
       ![showing the updated execution plan](../images/upd-dp-300-module-10-lab-14.png)
 
-1.  In a new query window, run the next query. Compare both execution plans.
+1.  In a **New query window**, run the next query. Compare both execution plans.
 
     ```sql
     USE AdventureWorks2017;
