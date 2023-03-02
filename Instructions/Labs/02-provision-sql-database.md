@@ -6,7 +6,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
 ## Navigate on Azure portal
 
-1. In the LabVM, double click on the Azure portal shortcut [https://portal.azure.com](https://portal.azure.com/) on the desktop. Connect to the Portal using the Azure **Username** and **Password** provided on the **Environment Details** tab for this lab virtual machine.
+1. In the LabVM, double click on the Azure portal shortcut [https://portal.azure.com](https://portal.azure.com/) on the desktop. Connect to the Portal using the Azure **Username** <inject key="AzureAdUserEmail"></inject> and **Password** <inject key="AzureAdUserPassword"></inject>
 
 ![Picture 1](../images/dp-300-module-01-lab-01.png)
 
