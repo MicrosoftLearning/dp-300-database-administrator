@@ -38,7 +38,7 @@ As a DBA for AdventureWorks, you need to back up a database to a URL in Azure an
 
 ## Configure Backup to URL
 
-1. From the lab virtual machine, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/). Connect to the Portal using the Azure **Username** <inject key="AzureAdUserEmail"></inject> and **Password** <inject key="AzureAdUserPassword"></inject>
+1. From the lab virtual machine, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/). Connect to the Portal using the Azure **Username** <inject key="AzureAdUserEmail"></inject> and **Password**  <inject key="AzureAdUserPassword"></inject>
 
     ![Screenshot of Azure portal sign in page](../images/upd-dp-300-module-01-lab-01.png)
 
@@ -54,7 +54,7 @@ As a DBA for AdventureWorks, you need to back up a database to a URL in Azure an
 
     ![Screenshot of create storage for cloud shell on Azure portal.](../images/upd-dp-300-module-15-lab-03.png)
 
-1. Use the existing **Resource group** as **contoso-rg-<inject key="DeploymentID" enableCopy="false" />(1)** and specify new names for **Storage account** as **dp300storage<inject key="DeploymentID" enableCopy="false" /> (2)** and **File share** as **dp300fileshare (3)**, as shown in the dialog below. Then select **Create storage (4)**.
+1. Use the existing **Resource group** as **contoso-rg-<inject key="DeploymentID"></inject>(1)** and specify new names for **Storage account** as **dp300storage<inject key="DeploymentID"></inject> (2)** and **File share** as **dp300fileshare (3)**, as shown in the dialog below. Then select **Create storage (4)**.
 
     ![Screenshot of the create storage account and file share on Azure portal.](../images/upd-dp-300-module-15-lab-04.png)
 
