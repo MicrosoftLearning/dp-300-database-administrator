@@ -28,8 +28,8 @@ As a DBA within AdventureWorks, you need to enable geo-replication for Azure SQL
 
     ![Screenshot showing Create New server link.](../images/lab14-dp-300-L6.png)
 
-    >[!NOTE]
-    > As we are creating a new server to host our secondary database, we can ignore the error message above.
+    
+    >**Note:**  As we are creating a new server to host our secondary database, we can ignore the error message above.
 
 1. On the **Create SQL Database Server** page, Enter a unique **server name** of your preference, Select a **location** as the target region, In **Authentication method** select **Use SQL authentication** enter a valid **server admin login**, and a secure **password**, and then select **OK** to create the server.
 
@@ -67,7 +67,7 @@ Now that the Azure SQL Database replica is created, you will perform a failover.
 
     ![Screenshot showing selecting Geo-Replication.](../images/dp-300-lab14-14.png)
 
-1. Note that the geo replication link is now established.
+1. **Note** that the geo replication link is now established.
 
     ![Screenshot showing the Replicas option.](../images/lab14-dp-300-L1-4.png)
 
@@ -75,8 +75,8 @@ Now that the Azure SQL Database replica is created, you will perform a failover.
 
     ![Screenshot showing the forced failover option.](../images/lab14-dp-300-L1-5.png)
 
-    > [!NOTE]
-    > Forced failover will switch the secondary database to the primary role. All sessions are disconnected during this operation.
+    
+    > **Note:** Forced failover will switch the secondary database to the primary role. All sessions are disconnected during this operation.
 
 1. When prompted by the warning message, click **Yes**.
 
@@ -86,8 +86,8 @@ Now that the Azure SQL Database replica is created, you will perform a failover.
 
     ![Screenshot showing a forced failover warning message.](../images/lab14-dp-300-L1-7.png)
 
-    > [!NOTE]
-    > This process can take a few minutes. When complete, the roles will switch with the secondary becoming the new primary, and the old primary the secondary.
+    
+    > **Note:** This process can take a few minutes. When complete, the roles will switch with the secondary becoming the new primary, and the old primary the secondary.
 
 We've seen the readable secondary database may be in the same Azure region as the primary, or, more commonly, in a different region. This kind of readable secondary databases are also known as geo-secondaries, or geo-replicas.
 
