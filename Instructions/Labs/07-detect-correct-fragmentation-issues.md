@@ -21,7 +21,7 @@ You have been hired as a database administrator to identify performance related 
 
     ![Picture 02](../images/Dp-300-lab07-03.png)
 
-4. In the new query window, copy and paste the below T-SQL into it. Execute the query to restore the database.
+4. In the **New query window**, copy and paste the below T-SQL into it. Execute the query to restore the database.
 
     ```sql
     RESTORE DATABASE AdventureWorks2017
