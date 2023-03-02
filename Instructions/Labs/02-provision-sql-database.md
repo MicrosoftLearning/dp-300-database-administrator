@@ -47,8 +47,8 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
 - On the **IP Addresses** tab, leave the defaults for the IPv4 address.
 - Click on the **default** subnet link. (Note that the Subnet address range you see might be different.)
-
-    ![Picture 4](../images/upd-dp-300-module-02-lab-07.png)
+   
+   ![Picture 4](../images/upd-dp-300-module-02-lab-07.png)
 
 - In the **Edit subnet** pane on the right, expand the **Services** drop-down, and select **Microsoft.Sql**. Select **Save**.
 - Click the **Review + Create** button, review the settings for the new virtual network, and then click **Create**.
