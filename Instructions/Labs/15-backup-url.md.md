@@ -126,7 +126,7 @@ Now that the functionality is configured, you can generate a backup file as a bl
 
 1. Create the credential that will be used to access storage in the cloud with the following Transact-SQL. Repalce the following values, then select **Execute**.
 
-   > **NOTE:** Replace **<storage_account_name>** with **dp300backupstorage<inject key="DeploymentID" enableCopy="false" />** and **<key_value>** with the value of **SAS** that you have copied in the notepad.
+   >**Note:** Replace **<storage_account_name>** with **dp300backupstorage<inject key="DeploymentID" enableCopy="false" />** and The **<key_value>** with the **SAS** that you have copied in the notepad.
    
     **<key_value>** is the value generated at the end of the previous task in this format:
    
@@ -134,7 +134,7 @@ Now that the functionality is configured, you can generate a backup file as a bl
        
        
        
- ```sql
+      ```sql
     IF NOT EXISTS  
     (SELECT * 
         FROM sys.credentials  
@@ -145,11 +145,11 @@ Now that the functionality is configured, you can generate a backup file as a bl
         SECRET = '<key_value>'
     END;
     GO  
- ```
+    ```
   
     
-  ![Screenshot of the credential on SSMS.](../images/upd-dp-300-module-15-lab.png)
-
+      ![Screenshot of the credential on SSMS.](../images/upd-dp-300-module-15-lab.png)
+   
 1. You can check if the credential was created successfully by navigating to **Security -> Credentials** on Object Explore.
 
     ![Screenshot of the credential on SSMS.](../images/upd-dp-300-module-15-lab-17.png)
