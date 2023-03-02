@@ -12,7 +12,7 @@ You have been hired as a Senior Database Administrator help ensure the security 
 
 1. From the Azure Portal, search for “SQL servers” in the search box at the top, then click on **SQL servers** from the list of options.
 
-    ![A screenshot of a social media post Description automatically generated](../images/upd-dp-300-module-04-lab-1.png)
+    ![Picture 1](../images/upd-dp-300-module-04-lab-1.png)
 
 1. Select the server name **dp300-lab- <inject key="Deployment-id"></inject>
 ** to be taken to the detail page (you may have a different location assigned for your SQL server).
