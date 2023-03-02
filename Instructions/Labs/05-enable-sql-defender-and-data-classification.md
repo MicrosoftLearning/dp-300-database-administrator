@@ -6,7 +6,7 @@ You have been hired as a Senior Database Administrator help ensure the security 
 
 ## Enable Microsoft Defender for SQL
 
-1. From the lab virtual machine, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/). Connect to the Portal using the Azure **Username** and **Password** provided on the **Environment Details** tab for this lab virtual machine.
+1. From the lab virtual machine, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/). Connect to the Portal using the Azure **Username** and **Password**  <inject key="AzureAdUserEmail"></inject> and **Password** <inject key="AzureAdUserPassword"></inject>
 
     ![Picture 1](../images/dp-300-module-01-lab-01.png)
 
@@ -14,7 +14,8 @@ You have been hired as a Senior Database Administrator help ensure the security 
 
     ![A screenshot of a social media post Description automatically generated](../images/upd-dp-300-module-04-lab-1.png)
 
-1. Select the server name **dp300-lab-XXXXXX** to be taken to the detail page (you may have a different location assigned for your SQL server).
+1. Select the server name **dp300-lab- <inject key="Deployment-id"></inject>
+** to be taken to the detail page (you may have a different location assigned for your SQL server).
 
     ![A screenshot of a social media post Description automatically generated](../images/upd-dp-300-module-04-lab-2.png)
 
