@@ -5,7 +5,7 @@ The students will take the information gained in the lessons to scope out the de
 
 You have been hired as a database administrator to identify performance related issues and provide viable solutions to resolve any issues found. You need to use the Azure portal to identify the performance issues and suggest methods to resolve them.
 
-**Note:** These exercises ask you to copy and paste T-SQL code. Please verify that the code has been copied correctly, before executing the code.
+>**Note:** These exercises ask you to copy and paste T-SQL code. Please verify that the code has been copied correctly, before executing the code.
 
 ## Review CPU utilization in Azure portal
 
