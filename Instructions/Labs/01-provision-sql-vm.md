@@ -33,7 +33,7 @@ You are a database administrator for AdventureWorks. You need to create a test e
     - **Azure spot instance:** No (unchecked)
     - **Size:** Standard *D2s_v3* (2 vCPUs, 8 GiB memory). You may need to select the "See all sizes" link to see this option)
     - **Administrator account username:** sqladmin
-    - **Administrator account password:** pwd!DP300lab01 (or your own password that meets the criteria)
+    - **Administrator account password:** pwd!DP300lab01
     - **Select inbound ports:** RDP (3389)
     - **Would you like to use an existing Windows Server license?:** No (unchecked)
 
