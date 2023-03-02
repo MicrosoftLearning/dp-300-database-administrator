@@ -5,7 +5,7 @@ The students will take the information gained in the lessons to scope out the de
 
 You have been hired as a database administrator to identify performance related issues and provide viable solutions to resolve any issues found. AdventureWorks has been selling bicycles and bicycle parts directly to consumers and distributors for over a decade. Your job is to identify issues in query performance and remedy them using techniques learned in this module.
 
-**Note:** These exercises ask you to copy and paste T-SQL code. Please verify that the code has been copied correctly, before executing the code.
+>**Note:** These exercises ask you to copy and paste T-SQL code. Please verify that the code has been copied correctly, before executing the code.
 
 ## Restore a database
 
@@ -120,7 +120,7 @@ There are two approaches we can implement to fix the implicit conversion warning
 
     ![Picture 03](../images/dp-300-lab-09-img8.png)
 
-    **Note:** the warning message is now gone, and the query plan has improved. Changing the `WHERE` clause so that the value compared to the *NationalIDNumber* column matches the column's data type in the table, the optimizer was able to get rid of the implicit conversion.
+    >**Note:** the warning message is now gone, and the query plan has improved. Changing the `WHERE` clause so that the value compared to the *NationalIDNumber* column matches the column's data type in the table, the optimizer was able to get rid of the implicit conversion.
 
 ### Change the data type
 
@@ -156,7 +156,7 @@ There are two approaches we can implement to fix the implicit conversion warning
     CREATE UNIQUE NONCLUSTERED INDEX [AK_Employee_NationalIDNumber] ON [HumanResources].[Employee]( [NationalIDNumber] ASC );
     GO
     ```
-  **Note** : Kindly run the command for dropping the table first and run the preceeding commands later, else there will be an error stating that the column already  exists. 
+  >**Note** : Kindly run the command for dropping the table first and run the preceeding commands later, else there will be an error stating that the column already  exists. 
 
 3. Alternatively, you can run the query below to confirm that the data type was successfully changed.
 
