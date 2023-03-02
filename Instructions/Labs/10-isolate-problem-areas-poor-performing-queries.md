@@ -252,6 +252,7 @@ Before continuing with the exercise close all the current query windows by selec
     WHERE SalesPersonID=277;
     ```
     - The only change this time is that the SalesPersonID value is set to 277. Note the Clustered Index Scan operation in the execution plan.
+    
 
     ![the sql statement](../images/upd-dp-300-module-10-lab-15.png)
 
