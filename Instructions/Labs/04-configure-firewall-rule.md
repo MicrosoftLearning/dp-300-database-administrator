@@ -8,15 +8,14 @@ You have been hired as a Senior Database Administrator to help ensure the securi
 
 ## Configure Azure SQL Database firewall rules
 
-1. In the lab virtual machine, double click on the Azure portal shortcut on the desktop [https://portal.azure.com](https://portal.azure.com/). Connect to the Portal using the Azure **Username** and **Password** provided on the **Environment details** tab for this lab virtual machine.
-
+1. In the lab virtual machine, double click on the Azure portal shortcut on the desktop [https://portal.azure.com](https://portal.azure.com/). Connect to the Portal using the Azure **Username** <inject key="AzureAdUserEmail"></inject> and **Password** <inject key="AzureAdUserPassword"></inject>.
     ![Picture 1](../images/dp300-lab4-img1.png)
 
 1. From the Azure Portal, search for **SQL servers (1)** in the search box at the top, then click **SQL servers (2)** from the list of options.
 
     ![A screenshot of a social media post Description automatically generated](../images/dp300-lab4-img2.png)
 
-1. Select the server name **dp300-lab-XXXXXXXX** to be taken to the detail page (you may have a different resource group and location assigned for your SQL server).
+1. Select the server name **dp300-lab-<inject key="Deployment-id" enableCopy="false" />** to be taken to the detail page (you may have a different resource group and location assigned for your SQL server).
 
     ![A screenshot of a social media post Description automatically generated](../images/dp300-lab4-img3.png)
 
@@ -36,7 +35,7 @@ You have been hired as a Senior Database Administrator to help ensure the securi
 
 1. Open SQL Server Management Studio in the labvm. On the Connect to Server dialog box, paste in the name of your Azure SQL Database server, and login with the credentials below:
 
-    - **Server name:** &lt;_paste your Azure SQL Database server name here_&gt;
+    - **Server name:** dp300-lab-<inject key="ServerName" enableCopy="false" />
     - **Authentication:** SQL Server Authentication
     - **Server admin login:** sqladmin
     - **Password:** P@ssw0rd01
