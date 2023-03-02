@@ -24,7 +24,7 @@ You have been hired as a Senior Data Engineer to help automate day to day operat
 
    ![Screenshot of selecting CPU percentage](../images/dp300-lab12-img4.png)
 
-6. In the **Create an alert rule** slide out, select **Static (1)** for the **Threshold** property. Then check that the **Aggregation ** type is **Average (2)**, the **Operator** property is **Greater than (3)** Then in **Threshold value** enter a value of **80 (4)**. Select **Next:Actions (5)**.
+6. In the **Create an alert rule** slide out, select **Static (1)** for the **Threshold** property. Then check that the **Aggregation** type is **Average (2)**, the **Operator** property is **Greater than (3)** Then in **Threshold value** enter a value of **80 (4)**. Select **Next:Actions (5)**.
 
     ![Screenshot of entering 80 and selecting Done](../images/lab12-dp-300-001.png)
 
