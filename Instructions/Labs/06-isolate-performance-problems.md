@@ -9,7 +9,7 @@ You have been hired as a database administrator to identify performance related 
 
 ## Review CPU utilization in Azure portal
 
-1. In the lab virtual machine, double click on the Azure portal shortcut on the desktop [https://portal.azure.com](https://portal.azure.com/), and sign in using the Azure **Username** and **Password** provided on the **Environment Details** tab for this lab virtual machine.
+1. In the lab virtual machine, double click on the Azure portal shortcut on the desktop [https://portal.azure.com](https://portal.azure.com/), and sign in using the Azure **Username** and **Password**  <inject key="AzureAdUserEmail"></inject> and **Password** <inject key="AzureAdUserPassword"></inject>
 
      ![Picture 1](../images/dp-300-L1-001.png)
   
@@ -98,7 +98,7 @@ You have been hired as a database administrator to identify performance related 
 
 1. Click on the query in the grid below the graph. If you do not see a query, wait for 2 minutes and select **Refresh**.
 
-    **Note:** You may have different duration and query ID. If you see more than one query, click on each one to observe the results.
+   > **Note:** You may have different duration and query ID. If you see more than one query, click on each one to observe the results.
 
     ![Screenshot showing average aggregation](../images/dp-300-lab06-img16.png)
 
