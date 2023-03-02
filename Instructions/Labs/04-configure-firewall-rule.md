@@ -4,7 +4,7 @@ The students will take the information gained in the lessons to configure and su
 
 You have been hired as a Senior Database Administrator to help ensure the security of the database environment. These tasks will focus on Azure SQL Database.
 
-**Note:** These exercises ask you to copy and paste T-SQL code. Please verify that the code has been copied correctly, before executing the code.
+>**Note:** These exercises ask you to copy and paste T-SQL code. Please verify that the code has been copied correctly, before executing the code.
 
 ## Configure Azure SQL Database firewall rules
 
@@ -31,7 +31,7 @@ You have been hired as a Senior Database Administrator to help ensure the securi
 
     ![Picture 3](../images/dp300-lab4-img6.png)
 
-    **Note:** Your client IP address was automatically entered for you. Adding your client IP address to the list will allow you to connect to your Azure SQL Database using SQL Server Management Studio or any other client tools. **Make note of your client IP address, you will use it later.**
+    >**Note:** Your client IP address was automatically entered for you. Adding your client IP address to the list will allow you to connect to your Azure SQL Database using SQL Server Management Studio or any other client tools. **Make note of your client IP address, you will use it later.**
 
 1. Open SQL Server Management Studio in the labvm. On the Connect to Server dialog box, paste in the name of your Azure SQL Database server, and login with the credentials below:
 
@@ -52,7 +52,7 @@ You have been hired as a Senior Database Administrator to help ensure the securi
 
 1. Download the .bacpac file located on **https://github.com/MicrosoftLearning/dp-300-database-administrator/blob/master/Instructions/Templates/AdventureWorksLT.bacpac** to **C:\LabFiles\Secure Environment**  path on the lab VM (create the folder structure if it does not exist).
    
-   **Note:** Make sure this file should be downloaded in the **C:\LabFiles\Secure Environment**.
+   >**Note:** Make sure this file should be downloaded in the **C:\LabFiles\Secure Environment**.
      
 1. In the **Import Settings** screen, click **Browse** and navigate to **C:\LabFiles\Secure Environment** folder, click on the **AdventureWorksLT.bacpac** file, and then click **Open**. Back to the **Import Data-tier Application** screen click **Next**.
 
@@ -73,7 +73,7 @@ You have been hired as a Senior Database Administrator to help ensure the securi
 
     ![A screenshot of a cell phone Description automatically generated](../images/dp300-lab4-img12.png)
      
-     **Note:** Please wait untill Operation complete successfully it might take sometime.
+     >**Note:** Please wait untill Operation complete successfully it might take sometime.
 
 1. Back to SQL Server Management Studio, in **Object Explorer**, expand the **Databases** folder. Then right-click on **AdventureWorksFromBacpac** database, and then **New Query**.
 
@@ -99,7 +99,7 @@ You have been hired as a Senior Database Administrator to help ensure the securi
 
     ![A screenshot of a cell phone Description automatically generated](../images/dp300-lab4-img14.png)
 
-    **Note:** This command creates a contained user within the **AdventureWorksFromBacpac** database. We will test this credential in the next step.
+    >**Note:** This command creates a contained user within the **AdventureWorksFromBacpac** database. We will test this credential in the next step.
 
 1. Navigate to the **Object Explorer**. Click on **Connect**, and then **Database Engine**.
 
@@ -116,7 +116,7 @@ You have been hired as a Senior Database Administrator to help ensure the securi
 
     ![A screenshot of a cell phone Description automatically generated](../images/dp300-lab4-img16.png)
 
-    **Note:** This error is generated because the connection attempted to login to the *master* database and not **AdventureWorksFromBacpac** where the user was created. Change the connection context by clicking **OK** to exit the error message, and then clicking on **Options >>** in the **Connect to Server** dialog box as shown below.
+    >**Note:** This error is generated because the connection attempted to login to the *master* database and not **AdventureWorksFromBacpac** where the user was created. Change the connection context by clicking **OK** to exit the error message, and then clicking on **Options >>** in the **Connect to Server** dialog box as shown below.
 
     ![Picture 9](../images/dp300-lab4-img17.png)
 
