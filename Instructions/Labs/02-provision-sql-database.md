@@ -16,9 +16,9 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
 3. On the **Resource group** page, check the resource group listed (it should start with *contoso-rg*), make note of the **Location** assigned to your resource group, as you will use it in the next exercise.
 
->**Note:** You may have a different location assigned.
+> **Note:** You may have a different location assigned.
 
-    ![Picture 1](../images/upd-dp-300-module-02-lab-46.png)
+   ![Picture 1](../images/upd-dp-300-module-02-lab-46.png)
 
 ## Create a Virtual Network
 
