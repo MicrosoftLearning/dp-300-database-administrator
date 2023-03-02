@@ -21,7 +21,7 @@ You have been hired as a database administrator to identify performance related 
 
     ![Picture 03](../images/dp300-lab9-img04.png)
 
-1. In the new query window, copy and paste the below T-SQL into it. Execute the query to restore the database.
+1. In the **New query** window, copy and paste the below T-SQL into it. Execute the query to restore the database.
 
     ```sql
     RESTORE DATABASE AdventureWorks2017
@@ -156,7 +156,7 @@ There are two approaches we can implement to fix the implicit conversion warning
     CREATE UNIQUE NONCLUSTERED INDEX [AK_Employee_NationalIDNumber] ON [HumanResources].[Employee]( [NationalIDNumber] ASC );
     GO
     ```
-  >**Note** : Kindly run the command for dropping the table first and run the preceeding commands later, else there will be an error stating that the column already  exists. 
+  >**Note:**  Kindly run the command for dropping the table first and run the preceeding commands later, else there will be an error stating that the column already  exists. 
 
 3. Alternatively, you can run the query below to confirm that the data type was successfully changed.
 
