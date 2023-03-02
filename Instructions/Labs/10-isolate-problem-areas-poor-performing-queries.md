@@ -77,7 +77,7 @@ There are several ways to generate an execution plan in SQL Server Management St
 
 ## Resolve a suboptimal query plan
 
-1. Copy and paste the code below into a new query window.
+1. Copy and paste the code below into a **New query window.**
 
     Select the **Include Actual Execution Plan (1)** icon as shown below before running the query, or press <kbd>CTRL</kbd>+<kbd>M</kbd>. Execute the query by selecting **Execute (2)** or press <kbd>F5</kbd>. Make note of the execution plan **(3)** and the logical reads in the messages tab.
 
