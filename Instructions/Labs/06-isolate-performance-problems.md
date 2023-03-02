@@ -17,7 +17,7 @@ You have been hired as a database administrator to identify performance related 
 
     ![A screenshot of a social media post Description automatically generated](../images/dp-300-lab-06-img2.png)
 
-1. Select the server name **dp300-lab-DID** to be taken to the detail page (where DID is the Deployment ID).
+1. Select the server name **dp300-lab-<inject key="Deployment-id" enableCopy="false" />** to be taken to the detail page (where DID is the Deployment ID).
 
     ![A screenshot of a social media post Description automatically generated](../images/dp-300-lab-06-img3.png)
 
