@@ -241,7 +241,7 @@ Before continuing with the exercise close all the current query windows by selec
 
       ![showing the updated execution plan](../images/upd-dp-300-module-10-lab-14.png)
 
-1.  In a **New query window**, run the next query. Compare both execution plans.
+1. In a **New query window**, run the next query. Compare both execution plans.
 
     ```sql
     USE AdventureWorks2017;
@@ -252,9 +252,9 @@ Before continuing with the exercise close all the current query windows by selec
     WHERE SalesPersonID=277;
     ```
 
-      The only change this time is that the SalesPersonID value is set to 277. Note the Clustered Index Scan operation in the execution plan.
+    The only change this time is that the SalesPersonID value is set to 277. Note the Clustered Index Scan operation in the execution plan.
 
-     ![the sql statement](../images/upd-dp-300-module-10-lab-15.png)
+    ![the sql statement](../images/upd-dp-300-module-10-lab-15.png)
 
    - As we can see, based on the index statistics the query optimizer has chosen a different execution plan because of the different values in the `WHERE` clause.
   
