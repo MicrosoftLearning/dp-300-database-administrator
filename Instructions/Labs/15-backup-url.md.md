@@ -38,7 +38,7 @@ As a DBA for AdventureWorks, you need to back up a database to a URL in Azure an
 
 ## Configure Backup to URL
 
-1. From the lab virtual machine, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/). Connect to the Portal using the Azure **Username** and **Password** provided on the **Environment Details** tab for this lab virtual machine.
+1. From the lab virtual machine, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/). Connect to the Portal using the Azure **Username** <inject key="AzureAdUserEmail"></inject> and **Password** <inject key="AzureAdUserPassword"></inject>
 
     ![Screenshot of Azure portal sign in page](../images/upd-dp-300-module-01-lab-01.png)
 
