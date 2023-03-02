@@ -19,7 +19,7 @@ You have been hired as a database administrator to identify performance related 
 
 3. Select the **Databases** folder, and then **New Query**.
 
-    ![Picture 03](../images/Dp-300-lab07-03.png)
+    ![Picture 02](../images/Dp-300-lab07-03.png)
 
 4. In the new query window, copy and paste the below T-SQL into it. Execute the query to restore the database.
 
