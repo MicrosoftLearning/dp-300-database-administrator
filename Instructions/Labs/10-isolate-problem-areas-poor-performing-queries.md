@@ -108,15 +108,15 @@ There are several ways to generate an execution plan in SQL Server Management St
     ([ProductID] ASC)
     ```
 
-   - If we add the **Output List** fields to the index as included columns, then the **Key Lookup** will be removed. Since the index already exists you either have to DROP the index and recreate it, or set the **DROP_EXISTING=ON** in order to add the columns. Note that the **ProductID** column is already part of the index and does not need to be added as an included column. There is another performance improvement we can make to the index by adding the **ModifiedDate**. **Replace the below code with the earlier code  Copy and paste the code below into the same query window.**
+      - If we add the **Output List** fields to the index as included columns, then the **Key Lookup** will be removed. Since the index already exists you either have to DROP the index and recreate it, or set the **DROP_EXISTING=ON** in order to add the columns. Note that the **ProductID** column is already part of the index and does not need to be added as an included column. There is another performance improvement we can make to the index by adding the **ModifiedDate**. **Replace the below code with the earlier code  Copy and paste the code below into the same query window.**
 
-    ```sql
-    CREATE NONCLUSTERED INDEX [IX_SalesOrderDetail_ProductID]
-    ON [Sales].[SalesOrderDetail] ([ProductID],[ModifiedDate])
-    INCLUDE ([CarrierTrackingNumber],[OrderQty],[UnitPrice])
-    WITH (DROP_EXISTING = on);
-    GO
-    ```
+        ```sql
+        CREATE NONCLUSTERED INDEX [IX_SalesOrderDetail_ProductID]
+        ON [Sales].[SalesOrderDetail] ([ProductID],[ModifiedDate])
+        INCLUDE ([CarrierTrackingNumber],[OrderQty],[UnitPrice])
+        WITH (DROP_EXISTING = on);
+        GO
+        ```
 
 1. Rerun the query from step 1 under **Generate actual execution plan** and then **rerun previous step again**. Make note of the changes to the logical reads and execution plan changes. The plan now only needs to use the nonclustered index we created.
 
@@ -279,7 +279,7 @@ Before continuing with the exercise close all the current query windows by selec
     WHERE SalesPersonID= @SalesPersonID;
     ```
 
-   - If you examine the execution plan, you will **note** it is using an index scan to get the results. The query optimizer couldn't make good optimizations because it can't know the value of the local variable until runtime.
+     - If you examine the execution plan, you will **note** it is using an index scan to get the results. The query optimizer couldn't make good optimizations because it can't know the value of the local variable until runtime.
 
 1. You can help the query optimizer to make better choices by providing a query hint. Rerun the above query with `OPTION (RECOMPILE)`:
 
