@@ -23,7 +23,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 3. Click **+ Create** to open the **Create Virtual Network** page. On the **Basics** tab, complete the following information:
 
 - **Subscription:** Use existing subscription
-- **Resource group:** **contoso-rg-<inject key="Deployment-id" enableCopy="false" />**
+- **Resource group:** **contoso-rg-<inject key="Deployment-id" enableCopy="false" />** **(1)**
 - **Name:** lab02-vnet **(2)**
 - **Region:** <inject key="location" enableCopy="false" /> **(3)**
 
@@ -40,7 +40,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
    
    ![Picture 4](../images/upd-dp-300-module-02-lab-07.png)
 
-- In the **Edit subnet** pane on the right, expand the **Services** drop-down, and select **Microsoft.Sql**. Select **Save**.
+- In the **Edit subnet** Select **Save**.
 - Click the **Review + Create** button, review the settings for the new virtual network, and then click **Create**.
 
 ## Provision an Azure SQL Database
