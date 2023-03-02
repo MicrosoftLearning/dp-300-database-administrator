@@ -4,7 +4,7 @@ You have been hired as a Senior Data Engineer to help automate day to day operat
 
 ## Create an alert when a CPU exceeds an average of 80 percent
 
-1. In the lab virtual machine, double click on the Azure portal shortcut on the desktop [https://portal.azure.com](https://portal.azure.com/), and sign in using the Azure **Username** and **Password** provided on the **Environment Details** tab for this lab virtual machine.
+1. In the lab virtual machine, double click on the Azure portal shortcut on the desktop [https://portal.azure.com](https://portal.azure.com/), and sign in using the Azure **Username** <inject key="AzureAdUserEmail"></inject> and **Password** <inject key="AzureAdUserPassword"></inject>
 
    ![Picture 1](../images/dp-300-L1-001.png)
 
