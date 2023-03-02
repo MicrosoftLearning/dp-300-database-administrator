@@ -95,11 +95,11 @@ There are several ways to generate an execution plan in SQL Server Management St
 
     ![Screenshot showing the output list of columns](../images/upd-dp-300-module-10-lab-03.png)
 
-    >  **note:** the columns in the **Output List** section. How would you improve this query?
+     >  **Note:** the columns in the **Output List** section. How would you improve this query?
 
-   - To identify what index needs to be altered in order to remove the key lookup, you need to examine the index seek above it. Hover over the index seek operator with your mouse and the properties of the operator will appear.
+    - To identify what index needs to be altered in order to remove the key lookup, you need to examine the index seek above it. Hover over the index seek operator with your mouse and the properties of the operator will appear.
 
-    ![Screenshot showing the NonClustered index](../images/upd-dp-300-module-10-lab-04.png)
+     ![Screenshot showing the NonClustered index](../images/upd-dp-300-module-10-lab-04.png)
 
 1. **Key Lookups** can be removed by adding a covering index that includes all fields being returned or searched in the query. In this example the index only uses the **ProductID** column. Fix the **Key Lookup** and rerun the query to see the new plan. **Copy and paste the code below into the same query window.**
 
