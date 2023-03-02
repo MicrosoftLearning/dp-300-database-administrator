@@ -17,7 +17,7 @@ You have been hired as a database administrator to identify performance related 
 
     ![A screenshot of a social media post Description automatically generated](../images/dp-300-lab-06-img2.png)
 
-1. Select the server name **dp300-lab-<inject key="Deployment-id" enableCopy="false" />
+1. Select the server name **dp300-lab-<inject key="Deployment-id" enableCopy="false" />**
 
     ![A screenshot of a social media post Description automatically generated](../images/dp-300-lab-06-img3.png)
 
@@ -41,7 +41,6 @@ You have been hired as a database administrator to identify performance related 
 
     ![Screenshot showing selecting AdventureWorks](../images/dp-300-lab-06-img8.png)
 
-    > **Note:** This feature is in preview.
 
 1. In **Password**, type **P@ssw0rd01** and select **OK**.
 
