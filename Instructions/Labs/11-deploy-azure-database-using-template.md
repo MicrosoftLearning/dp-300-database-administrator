@@ -4,7 +4,7 @@ You've been hired as a Senior Data Engineer to help automate day to day operatio
 
 ## Explore Azure Resource Manager template
 
-1. In the lab virtual machine, double click on the Azure portal shortcut on the desktop [https://portal.azure.com](https://portal.azure.com/), and sign in using the Azure **Username** and **Password** provided on the **Environment Details** tab for this lab virtual machine.
+1. In the lab virtual machine, double click on the Azure portal shortcut on the desktop [https://portal.azure.com](https://portal.azure.com/), and sign in using the Azure **Username** and **Password**  <inject key="AzureAdUserEmail"></inject> and **Password** <inject key="AzureAdUserPassword"></inject>
   
    ![Picture 1](../images/dp-300-L1-001.png)
   
@@ -94,7 +94,7 @@ You've been hired as a Senior Data Engineer to help automate day to day operatio
 
 1. The **Create a SQL Server and Database** quickstart template page will open on Azure portal, with resource details partially filled in from the ARM template. Complete the blank fields with the information below:
 
-    - **Resource group:** starting with *contoso-rg*
+    - **Resource group:** contoso-rg-<inject key="Deployment-id" enableCopy="false" />
     - **Administrator Login:** labadmin
     - **Administrator Login Password:** &lt;enter a strong password&gt;
     
