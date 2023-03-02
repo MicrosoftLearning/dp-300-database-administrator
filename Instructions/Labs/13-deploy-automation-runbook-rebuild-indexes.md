@@ -4,7 +4,7 @@ You have been hired as a Senior Database Administrator to help automate day to d
 
 ## Create an Automation Account
 
-1. From the lab virtual machine, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/). Connect to the Portal using the Azure **Username** and **Password** provided on the **Environment Details** tab for this lab virtual machine.
+1. From the lab virtual machine, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/). Connect to the Portal using the Azure **Username** <inject key="AzureAdUserEmail"></inject> and **Password** <inject key="AzureAdUserPassword"></inject>
 
     ![Screenshot of Azure portal sign in page](../images/dp-300-L1301.png)
 
@@ -24,7 +24,7 @@ You have been hired as a Senior Database Administrator to help automate day to d
 
     ![Screenshot of the Add Automation Account screen.](../images/dp300-lab13-img2.png)
 
-     **Note:** Your automation account should be created in around three minutes.
+    >**Note:** Your automation account should be created in around three minutes.
     
 ## Connect to an existing Azure SQL Database
 
@@ -57,7 +57,7 @@ You have been hired as a Senior Database Administrator to help automate day to d
 
 1.  Click on **Open query**, On the  **Open sql query**  select the file location C:\LabFiles\Monitorandoptimize and select **usp_AdaptiveIndexDefrag.sql** and click on Open.
 
-   **Note:** The purpose of this script is to perform an intelligent defragmentation on one or more indexes, as well as required statistics update, for one or more databases.
+   >**Note:** The purpose of this script is to perform an intelligent defragmentation on one or more indexes, as well as required statistics update, for one or more databases.
 
 
 
@@ -136,7 +136,7 @@ The next steps consist of configuring the assets required in preparation for the
 
     ![Screenshot of the Runbooks page, selecting Create a runbook.](../images/dp-300-26.png)
 
-    **Note:** As we've learned, note that there are two existing runbooks created. These were automatically created during the automation account deployment.
+    >**Note:** As we've learned, note that there are two existing runbooks created. These were automatically created during the automation account deployment.
 
 1. Enter the runbook name as **IndexMaintenance** and a runbook type of **PowerShell**. Select the latest runtime version available, then select **Create**.
 
@@ -144,7 +144,7 @@ The next steps consist of configuring the assets required in preparation for the
 
 1. Once the runbook has been created, copy and paste the Powershell code snippet below into your runbook editor. On the first line of the script paste in the server name you copied in the steps above. Select **Save**, and then select **Publish**.
 
-    **Note:** Please verify that the code has been copied correctly, before saving the runbook.
+    >**Note:** Please verify that the code has been copied correctly, before saving the runbook.
 
     ```powershell
     $AzureSQLServerName = ''
