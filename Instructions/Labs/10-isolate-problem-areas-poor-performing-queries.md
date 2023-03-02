@@ -184,9 +184,9 @@ Next you'll run a workload to generate query statistics for query store, examine
 
       ![Top Resource Consuming Queries Report from Query Store](../images/upd-dp-300-module-10-lab-07.png)
 
-1. The report will open as shown below. On the right, select the **menu dropdown (1)**, then select **Configure (2)**.
+1. The report will open as shown below. On the right, select **Configure**.
 
-      ![Expand Query Store](../images/dp300-lab10-img2.png)
+      ![Expand Query Store](../images/lab10-configure.png)
 
 1. In the configuration screen, change the filter for the **minimum number of query plans to 2 (1)**. Then select **OK (2)**.
 
