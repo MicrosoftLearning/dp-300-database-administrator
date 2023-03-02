@@ -16,7 +16,7 @@ You've been hired as a Senior Database Administrator to help ensure the security
 
    ![Screenshot of the Azure portal home page, selecting All resources](../images/dp300-lab3-img2.png)
 
-1. Search for **dp300 (1)** and select the Azure SQL Database server **dp300-lab-<inject key="Deployment-id" enableCopy="false" /> (2)**.
+1. Search for **dp300 (1)** and select the Azure SQL Database server **dp300-lab-<inject key="Deployment-id" enableCopy="false" />(2)**
 
    ![Screenshot selecting Not Configured](../images/dp300-lab3-img3.png)
 
