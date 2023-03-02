@@ -8,17 +8,17 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
 1. In the lab virtual machine, double click on the Azure portal shortcut on the desktop [https://portal.azure.com](https://portal.azure.com/), and sign in using the Azure **Username** and **Password** <inject key="AzureAdUserEmail"></inject> and **Password** <inject key="AzureAdUserPassword"></inject>
 
-   ![Picture 1](../images/dp-300-L1-001.png)
+  ![Picture 1](../images/dp-300-L1-001.png)
 
 2. From the Azure portal, search for “resource groups” in the search box at the top, then select **Resource groups** from the list of options.
 
-   ![Picture 1](../images/lab2_2.png)
+  ![Picture 1](../images/lab2_2.png)
 
 3. On the **Resource group** page, check the resource group listed (it should start with *contoso-rg*), make note of the **Location** assigned to your resource group, as you will use it in the next exercise.
 
- > **Note:** You may have a different location assigned.
+  > **Note:** You may have a different location assigned.
 
-   ![Picture 1](../images/upd-dp-300-module-02-lab-46.png)
+  ![Picture 1](../images/upd-dp-300-module-02-lab-46.png)
 
 ## Create a Virtual Network
 
