@@ -6,7 +6,7 @@ You've been hired as a Senior Data Engineer to help automate day to day operatio
 
 1. In the lab virtual machine, double click on the Azure portal shortcut on the desktop [https://portal.azure.com](https://portal.azure.com/), and sign in using the Azure **Username** <inject key="AzureAdUserEmail"></inject> and **Password** <inject key="AzureAdUserPassword"></inject>
   
-   ![Picture 1](../images/dp-300-L1-001.png)
+  ![Picture 1](../images/dp-300-L1-001.png)
   
 2. In Microsoft Edge, open a new tab and navigate to the following path in a GitHub repository, which contains an ARM template to deploy a SQL Database resource
 
