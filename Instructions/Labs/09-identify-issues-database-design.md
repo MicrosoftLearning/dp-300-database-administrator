@@ -65,23 +65,25 @@ You have been hired as a database administrator to identify performance related 
 
 ```sql
 CREATE TABLE [HumanResources].[Employee](
-     [BusinessEntityID] [int] NOT NULL,
-     [NationalIDNumber] [nvarchar](15) NOT NULL,
-     [LoginID] [nvarchar](256) NOT NULL,
-     [OrganizationNode] [hierarchyid] NULL,
-     [OrganizationLevel] AS ([OrganizationNode].[GetLevel]()),
-     [JobTitle] [nvarchar](50) NOT NULL,
-     [BirthDate] [date] NOT NULL,
-     [MaritalStatus] [nchar](1) NOT NULL,
-     [Gender] [nchar](1) NOT NULL,
-     [HireDate] [date] NOT NULL,
-     [SalariedFlag] [dbo].[Flag] NOT NULL,
-     [VacationHours] [smallint] NOT NULL,
-     [SickLeaveHours] [smallint] NOT NULL,
-     [CurrentFlag] [dbo].[Flag] NOT NULL,
-     [rowguid] [uniqueidentifier] ROWGUIDCOL NOT NULL,
-     [ModifiedDate] [datetime] NOT NULL
+[BusinessEntityID] [int] NOT NULL,
+[NationalIDNumber] [nvarchar](15) NOT NULL,
+[LoginID] [nvarchar](256) NOT NULL,
+[OrganizationNode] [hierarchyid] NULL,
+[OrganizationLevel] AS ([OrganizationNode].[GetLevel]()),
+[JobTitle] [nvarchar](50) NOT NULL,
+[BirthDate] [date] NOT NULL,
+[MaritalStatus] [nchar](1) NOT NULL,
+[Gender] [nchar](1) NOT NULL,
+[HireDate] [date] NOT NULL,
+[SalariedFlag] [dbo].[Flag] NOT NULL,
+[VacationHours] [smallint] NOT NULL,
+[SickLeaveHours] [smallint] NOT NULL,
+[CurrentFlag] [dbo].[Flag] NOT NULL,
+[rowguid] [uniqueidentifier] ROWGUIDCOL NOT NULL,
+[ModifiedDate] [datetime] NOT NULL
 ) ON [PRIMARY]
+
+
 ```
 
 2. According to the warning message presented in the execution plan, what change would you recommend?
@@ -126,7 +128,7 @@ There are two approaches we can implement to fix the implicit conversion warning
 
 1. We can also fix the implicit conversion warning by changing the table structure.
 
-    To attempt to fix the index, copy and paste the query below into a new query window, to change the column's data type. Attempt to execute the query, by selecting **Execute** or pressing <kbd>F5</kbd>.
+    To attempt to fix the index, copy and paste the query below into a **New query window**, to change the column's data type. Attempt to execute the query, by selecting **Execute** or pressing <kbd>F5</kbd>.
 
     ```sql
     ALTER TABLE [HumanResources].[Employee] ALTER COLUMN [NationalIDNumber] INT NOT NULL;
