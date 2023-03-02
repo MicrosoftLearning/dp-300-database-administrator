@@ -50,7 +50,7 @@ As a DBA for AdventureWorks, you need to back up a database to a URL in Azure an
 
     ![Screenshot of welcome page for cloud shell on Azure portal.](../images/upd-dp-300-module-15-lab-02.png)
 
-1. If you have not previously used a Cloud Shell, you must configure a storage. Select **Show advanced settings** (You may have a different subscription assigned).
+1. If you have not previously used a Cloud Shell, you must configure a storage. Select **Show advanced settings** (Use existing subscription).
 
     ![Screenshot of create storage for cloud shell on Azure portal.](../images/upd-dp-300-module-15-lab-03.png)
 
