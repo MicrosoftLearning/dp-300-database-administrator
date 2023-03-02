@@ -16,9 +16,9 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
 3. On the **Resource group** page, check the resource group listed (it should start with *contoso-rg*), make note of the **Location** assigned to your resource group, as you will use it in the next exercise.
 
-  > **Note:** You may have a different location assigned.
+   > **Note:** You may have a different location assigned.
 
-   ![Picture 1](../images/upd-dp-300-module-02-lab-46.png)
+    ![Picture 1](../images/upd-dp-300-module-02-lab-46.png)
 
 ## Create a Virtual Network
 
@@ -77,9 +77,9 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 - **Confirm password:** dp300P@ssword! **(6)**
 
 
-Your **Create SQL Database Server** page should look similar to the one below. Then click **OK (7)**.
+   Your **Create SQL Database Server** page should look similar to the one below. Then click **OK (7)**.
 
-   ![Picture 7](../images/upd-dp-300-module-02-lab-11.png)
+    ![Picture 7](../images/upd-dp-300-module-02-lab-11.png)
 
  -  Back to the **Create SQL Database** page, make sure **Want to use Elastic Pool?** is set to **No**.
  -  On the **Compute + Storage** option, click on **Configure database** link. On the **Configure** page, for **Service tier** dropdown, select **Basic**, and then **Apply**.
@@ -169,13 +169,13 @@ Your **Create SQL Database Server** page should look similar to the one below. T
 
     ![Picture 19](../images/dp300-lab2-img1.png)
 
->**NOTE:** You may be asked to add a firewall rule that allows your client IP access to this server. If you are asked to add a firewall rule, click on **Add account** and login to your Azure account. On **Create new firewall rule** screen, click **OK**.
+  >**NOTE:** You may be asked to add a firewall rule that allows your client IP access to this server. If you are asked to add a firewall rule, click on **Add account** and login to your Azure account. On **Create new firewall rule** screen, click **OK**.
 
-   ![Picture 18](../images/upd-dp-300-module-02-lab-26.png)
+    ![Picture 18](../images/upd-dp-300-module-02-lab-26.png)
 
-Alternatively, you can manually create a firewall rule for your SQL server on Azure portal by navigating to your SQL server, selecting **Networking**, and then selecting **+ Add your client IPv4 address (your IP address)**
+   - Alternatively, you can manually create a firewall rule for your SQL server on Azure portal by navigating to your SQL server, selecting **Networking**, and then selecting **+ Add your client IPv4 address (your IP address)**
 
-    ![Picture 18](../images/upd-dp-300-module-02-lab-47.png)
+   ![Picture 18](../images/upd-dp-300-module-02-lab-47.png)
 
 4. Azure Data Studio will connect to the database, and show some basic information about the database, plus a partial list of objects.
 
