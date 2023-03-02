@@ -10,16 +10,6 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
    ![Picture 1](../images/dp-300-L1-001.png)
 
-2. From the Azure portal, search for “resource groups” in the search box at the top, then select **Resource groups** from the list of options.
-
-   ![Picture 1](../images/lab2_2.png)
-
-3. On the **Resource group** page, check the resource group listed (it should start with *contoso-rg*), make note of the **Location** assigned to your resource group, as you will use it in the next exercise.
-
-   > **Note:** You may have a different location assigned.
-
-    ![Picture 1](../images/upd-dp-300-module-02-lab-46.png)
-
 ## Create a Virtual Network
 
 1. In the Azure portal home page, select the left hand menu.
@@ -202,16 +192,16 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
 5. Paste the following SQL statement into the new cell:
 
-```sql
-SELECT TOP 10 cust.[CustomerID],
-cust.[CompanyName],
-SUM(sohead.[SubTotal]) as OverallOrderSubTotal
-FROM [SalesLT].[Customer] cust
-INNER JOIN [SalesLT].[SalesOrderHeader] sohead
-ON sohead.[CustomerID] = cust.[CustomerID]
-GROUP BY cust.[CustomerID], cust.[CompanyName]
-ORDER BY [OverallOrderSubTotal] DESC
-```
+   ```sql
+   SELECT TOP 10 cust.[CustomerID],
+   cust.[CompanyName],
+   SUM(sohead.[SubTotal]) as OverallOrderSubTotal
+   FROM [SalesLT].[Customer] cust
+   INNER JOIN [SalesLT].[SalesOrderHeader] sohead
+   ON sohead.[CustomerID] = cust.[CustomerID]
+   GROUP BY cust.[CustomerID], cust.[CompanyName]
+   ORDER BY [OverallOrderSubTotal] DESC
+   ```
 
 6. Click on the blue circle with the arrow to execute the query. Note how the results are included within the cell with the query.
 
@@ -223,17 +213,17 @@ ORDER BY [OverallOrderSubTotal] DESC
 
 9. Click the **+ Cell** button again, then **Code cell**, and paste the following SQL statement into the cell:
 
-```sql
-SELECT TOP 10 cat.[Name] AS ProductCategory,
-SUM(detail.[OrderQty]) AS OrderedQuantity
-FROM salesLT.[ProductCategory] cat
-INNER JOIN [SalesLT].[Product] prod
-ON prod.[ProductCategoryID] = cat.[ProductCategoryID]
-INNER JOIN [SalesLT].[SalesOrderDetail] detail
-ON detail.[ProductID] = prod.[ProductID]
-GROUP BY cat.[name]
-ORDER BY [OrderedQuantity] DESC
-```
+   ```sql
+   SELECT TOP 10 cat.[Name] AS ProductCategory,
+   SUM(detail.[OrderQty]) AS OrderedQuantity
+   FROM salesLT.[ProductCategory] cat
+   INNER JOIN [SalesLT].[Product] prod
+   ON prod.[ProductCategoryID] = cat.[ProductCategoryID]
+   INNER JOIN [SalesLT].[SalesOrderDetail] detail
+   ON detail.[ProductID] = prod.[ProductID]
+   GROUP BY cat.[name]
+   ORDER BY [OrderedQuantity] DESC
+   ```
 
 10. Click on the blue circle with the arrow to execute the query.
 
