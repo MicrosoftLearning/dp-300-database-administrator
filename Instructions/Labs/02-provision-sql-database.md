@@ -76,8 +76,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 - **Password:** dp300P@ssword! **(5)**
 - **Confirm password:** dp300P@ssword! **(6)**
 
-
-   Your **Create SQL Database Server** page should look similar to the one below. Then click **OK (7)**.
+  Your **Create SQL Database Server** page should look similar to the one below. Then click **OK (7)**.
 
     ![Picture 7](../images/upd-dp-300-module-02-lab-11.png)
 
