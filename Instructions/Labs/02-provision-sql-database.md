@@ -191,7 +191,7 @@ Alternatively, you can manually create a firewall rule for your SQL server on Az
 
 ![Picture 22](../images/upd-dp-300-module-02-lab-30.png)
 
-**Note:** Within the notebook you can embed plain text to explain queries or result sets.
+>**Note:** Within the notebook you can embed plain text to explain queries or result sets.
 
 3. Enter the text **Top Ten Customers by Order SubTotal**, making it Bold if desired.
 
