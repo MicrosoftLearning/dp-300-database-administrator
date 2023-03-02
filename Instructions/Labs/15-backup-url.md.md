@@ -20,7 +20,7 @@ As a DBA for AdventureWorks, you need to back up a database to a URL in Azure an
 
     ![Picture 03](../images/upd-dp-300-module-07-lab-04.png)
 
-1. In the new query window, copy and paste the below T-SQL into it. Execute the query to restore the database.
+1. In the **New query window**, copy and paste the below T-SQL into it. Execute the query to restore the database.
 
     ```sql
     RESTORE DATABASE AdventureWorks2017
