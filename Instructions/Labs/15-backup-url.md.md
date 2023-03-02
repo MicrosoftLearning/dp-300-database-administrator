@@ -32,7 +32,7 @@ As a DBA for AdventureWorks, you need to back up a database to a URL in Azure an
             TO 'C:\LabFiles\HADR\AdventureWorks2017_log.ldf';
     ```
 
-    **Note:** The database backup file name and path should match with what you've downloaded on step 1, otherwise the command will fail.
+   > **Note:** The database backup file name and path should match with what you've downloaded on step 1, otherwise the command will fail.
 
 1. You should see a successful message after the restore is complete.
 
@@ -116,7 +116,7 @@ As a DBA for AdventureWorks, you need to back up a database to a URL in Azure an
 
    > **NOTE:** Replace BACKUP_STORAGE_NAME with **dp300backupstorage<inject key="DeploymentID" enableCopy="false" />** and STORAGE_KEY with the value of **key1** that you have copied in the notepad.
 
-   >  The output should return something similar to below. Copy the whole shared access signature and paste it in **Notepad**, it will be used in the next task.
+    The output should return something similar to below. Copy the whole shared access signature and paste it in **Notepad**, it will be used in the next task.
 
     ![Screenshot of the shared access signature key.](../images/upd-dp-300-module-15-lab-09.png)
 
@@ -129,7 +129,8 @@ Now that the functionality is configured, you can generate a backup file as a bl
 1. Create the credential that will be used to access storage in the cloud with the following Transact-SQL. Repalce the following values, then select **Execute**.
 
    > **NOTE:** Replace <storage_account_name> with **dp300backupstorage<inject key="DeploymentID" enableCopy="false" />** and <key_value> with the value of **SAS** that you have copied in the notepad.
-   >  **<key_value>** is the value generated at the end of the previous task in this format:
+   
+    **<key_value>** is the value generated at the end of the previous task in this format:
    
        `'se=2023-12-31T00%3A00Z&sp=rwdl&sv=2018-11-09&sr=csig=rnoGlveGql7ILhziyKYUPBq5ltGc/pzqOCNX5rrLdRQ%3D'`
 
@@ -251,7 +252,7 @@ This task will show you how to restore a database from an Azure blob storage.
 
 1. To restore the database to get it back to where it was before the customer name was mistakenly changed, select **New Query**, then paste and execute the following query.
 
-    **Note:** **SET SINGLE_USER WITH ROLLBACK IMMEDIATE** syntax the open transactions will all be rolled back. This can prevent the restore failing due to active connections.
+   > **Note:** **SET SINGLE_USER WITH ROLLBACK IMMEDIATE** syntax the open transactions will all be rolled back. This can prevent the restore failing due to active connections.
 
     ```sql
     USE [master]
@@ -270,7 +271,7 @@ This task will show you how to restore a database from an Azure blob storage.
 
     > **NOTE:** Replace <storage_account_name> with **dp300backupstorage<inject key="DeploymentID" enableCopy="false" />**.
 
-    > The output should be similar to this:
+     The output should be similar to this:
 
     ![Screenshot showing the restore database from URL being executed.](../images/upd-dp-300-module-15-lab-20.png)
 
