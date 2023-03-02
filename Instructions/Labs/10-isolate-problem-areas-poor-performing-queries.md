@@ -208,7 +208,7 @@ Next you'll run a workload to generate query statistics for query store, examine
 
 1. Select the Plan ID with the lowest duration (this is indicated by a lower position on the Y-axis of the chart) in the top right window of the report. For example, in the graphic above, it’s *PlanID 43*. Select the plan ID next to the Plan Summary chart (it should be highlighted like in the above screenshot).
 
-   > **Note:** The Plan ID may be different in your lab environment so just select the Plan ID with the lowest duration.
+     > **Note:** The Plan ID may be different in your lab environment so just select the Plan ID with the lowest duration.
 
 1. Select **Force Plan** under the summary chart. A confirmation window will popup, select **Yes**.
 
