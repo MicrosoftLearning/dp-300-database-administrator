@@ -146,7 +146,8 @@ Now that the functionality is configured, you can generate a backup file as a bl
          GO  
         ```
    
-    ![Screenshot of the credential on SSMS.](../images/upd-dp-300-module-15-lab.png)
+   
+   ![Screenshot of the credential on SSMS.](../images/upd-dp-300-module-15-lab.png)
 
 1. You can check if the credential was created successfully by navigating to **Security -> Credentials** on Object Explore.
 
