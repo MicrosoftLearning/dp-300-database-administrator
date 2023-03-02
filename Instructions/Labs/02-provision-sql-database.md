@@ -78,7 +78,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
   Your **Create SQL Database Server** page should look similar to the one below. Then click **OK (7)**.
 
-    ![Picture 7](../images/upd-dp-300-module-02-lab-11.png)
+     ![Picture 7](../images/upd-dp-300-module-02-lab-11.png)
 
  -  Back to the **Create SQL Database** page, make sure **Want to use Elastic Pool?** is set to **No**.
  -  On the **Compute + Storage** option, click on **Configure database** link. On the **Configure** page, for **Service tier** dropdown, select **Basic**, and then **Apply**.
