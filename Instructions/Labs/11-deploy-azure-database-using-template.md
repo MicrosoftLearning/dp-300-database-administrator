@@ -4,7 +4,7 @@ You've been hired as a Senior Data Engineer to help automate day to day operatio
 
 ## Explore Azure Resource Manager template
 
-1. In the lab virtual machine, double click on the Azure portal shortcut on the desktop [https://portal.azure.com](https://portal.azure.com/), and sign in using the Azure **Username** and **Password**  <inject key="AzureAdUserEmail"></inject> and **Password** <inject key="AzureAdUserPassword"></inject>
+1. In the lab virtual machine, double click on the Azure portal shortcut on the desktop [https://portal.azure.com](https://portal.azure.com/), and sign in using the Azure **Username** <inject key="AzureAdUserEmail"></inject> and **Password** <inject key="AzureAdUserPassword"></inject>
   
    ![Picture 1](../images/dp-300-L1-001.png)
   
