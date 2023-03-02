@@ -43,7 +43,7 @@ There are several ways to generate an execution plan in SQL Server Management St
 
 1. Select **New Query**. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
 
-    **Note:** Use **SHOWPLAN_ALL** to see a text version of a query's execution plan in the results pane instead of graphically in a separate tab.
+    > **Note:** Use **SHOWPLAN_ALL** to see a text version of a query's execution plan in the results pane instead of graphically in a separate tab.
 
     ```sql
     USE AdventureWorks2017;
@@ -91,13 +91,13 @@ There are several ways to generate an execution plan in SQL Server Management St
 
     ![Screenshot showing the execution plan for the query](../images/upd-dp-300-module-10-lab-02.png)
 
-    > When reviewing the execution plan, you will note there is a **Key Lookup**. If you hover your mouse over the icon, you will see that the properties indicate it is performed for each row retrieved by the query. You can see the execution plan is performing a **Key Lookup** operation.
+    - When reviewing the execution plan, you will note there is a **Key Lookup**. If you hover your mouse over the icon, you will see that the properties indicate it is performed for each row retrieved by the query. You can see the execution plan is performing a **Key Lookup** operation.
 
     ![Screenshot showing the output list of columns](../images/upd-dp-300-module-10-lab-03.png)
 
-    >  Make a note of the columns in the **Output List** section. How would you improve this query?
+    >  **note:** the columns in the **Output List** section. How would you improve this query?
 
-    > To identify what index needs to be altered in order to remove the key lookup, you need to examine the index seek above it. Hover over the index seek operator with your mouse and the properties of the operator will appear.
+   - To identify what index needs to be altered in order to remove the key lookup, you need to examine the index seek above it. Hover over the index seek operator with your mouse and the properties of the operator will appear.
 
     ![Screenshot showing the NonClustered index](../images/upd-dp-300-module-10-lab-04.png)
 
@@ -108,7 +108,7 @@ There are several ways to generate an execution plan in SQL Server Management St
     ([ProductID] ASC)
     ```
 
-    > If we add the **Output List** fields to the index as included columns, then the **Key Lookup** will be removed. Since the index already exists you either have to DROP the index and recreate it, or set the **DROP_EXISTING=ON** in order to add the columns. Note that the **ProductID** column is already part of the index and does not need to be added as an included column. There is another performance improvement we can make to the index by adding the **ModifiedDate**. **Replace the below code with the earlier code  Copy and paste the code below into the same query window.**
+   - If we add the **Output List** fields to the index as included columns, then the **Key Lookup** will be removed. Since the index already exists you either have to DROP the index and recreate it, or set the **DROP_EXISTING=ON** in order to add the columns. Note that the **ProductID** column is already part of the index and does not need to be added as an included column. There is another performance improvement we can make to the index by adding the **ModifiedDate**. **Replace the below code with the earlier code  Copy and paste the code below into the same query window.**
 
     ```sql
     CREATE NONCLUSTERED INDEX [IX_SalesOrderDetail_ProductID]
@@ -210,9 +210,9 @@ Next you'll run a workload to generate query statistics for query store, examine
 
     ![Screenshot showing the confirmation](../images/upd-dp-300-module-10-lab-12.png)
 
-   >  Once the plan is forced you will see that the **Forced Plan** is now greyed out and the plan in the plan summary window now has a check mark indicating is it forced.
+    - Once the plan is forced you will see that the **Forced Plan** is now greyed out and the plan in the plan summary window now has a check mark indicating is it forced.
 
-   > There can be times when the query optimizer can make a poor choice on which execution plan to use. When this happens you can force SQL server to use the plan you want when you know it performs better.
+    - There can be times when the query optimizer can make a poor choice on which execution plan to use. When this happens you can force SQL server to use the plan you want when you know it performs better.
 
 ## Use query hints to impact performance
 
@@ -252,11 +252,11 @@ Before continuing with the exercise close all the current query windows by selec
 
     ![Screenshot showing the sql statement](../images/upd-dp-300-module-10-lab-15.png)
 
-   > As we can see, based on the index statistics the query optimizer has chosen a different execution plan because of the different values in the `WHERE` clause.
+   - As we can see, based on the index statistics the query optimizer has chosen a different execution plan because of the different values in the `WHERE` clause.
   
-   > Why do we have different plans if we only changed the *SalesPersonID* value?
+   - Why do we have different plans if we only changed the *SalesPersonID* value?
 
-   > This query uses a constant in its `WHERE` clause, the optimizer sees each of these queries as unique and generates a different execution plan each time.
+   - This query uses a constant in its `WHERE` clause, the optimizer sees each of these queries as unique and generates a different execution plan each time.
 
 ## Change the query to use a variable and use a Query Hint
 
@@ -279,7 +279,7 @@ Before continuing with the exercise close all the current query windows by selec
     WHERE SalesPersonID= @SalesPersonID;
     ```
 
-   > If you examine the execution plan, you will note it is using an index scan to get the results. The query optimizer couldn't make good optimizations because it can't know the value of the local variable until runtime.
+   - If you examine the execution plan, you will **note** it is using an index scan to get the results. The query optimizer couldn't make good optimizations because it can't know the value of the local variable until runtime.
 
 1. You can help the query optimizer to make better choices by providing a query hint. Rerun the above query with `OPTION (RECOMPILE)`:
 
@@ -301,6 +301,6 @@ Before continuing with the exercise close all the current query windows by selec
 
    > **Note:** the query optimizer has been able to choose a more efficient execution plan. The `RECOMPILE` option causes the query compiler to replace the variable with its value.
 
-   > Comparing the statistics, you can see in the message tab that the difference between logical reads is **68%** more (689 versus 409) for the query without the query hint.
+    Comparing the statistics, you can see in the message tab that the difference between logical reads is **68%** more (689 versus 409) for the query without the query hint.
 
 In this exercise, you've learned how to identify query problems, and how to fix it to improve the query plan.
