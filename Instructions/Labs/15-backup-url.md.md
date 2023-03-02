@@ -126,9 +126,7 @@ Now that the functionality is configured, you can generate a backup file as a bl
 
 1. Create the credential that will be used to access storage in the cloud with the following Transact-SQL. Repalce the following values, then select **Execute**.
 
-   >**NOTE:** Replace **<storage_account_name>** with **dp300backupstorage<inject key="DeploymentID" enableCopy="false" />** .
-   
-    >**Replace** the **<key_value>** with the **SAS** that you have copied in the notepad. the value generated at the end of the previous task in this format:
+   >**NOTE:** Replace **<storage_account_name>** with **dp300backupstorage<inject key="DeploymentID" enableCopy="false" />**. Replace the **<key_value>** with the **SAS** that you have copied in the notepad. the value generated at the end of the previous task in this format:
    
        `'se=2023-12-31T00%3A00Z&sp=rwdl&sv=2018-11-09&sr=csig=rnoGlveGql7ILhziyKYUPBq5ltGc/pzqOCNX5rrLdRQ%3D'`
        
