@@ -5,7 +5,7 @@ The students will take the information gained in the lessons to scope out the de
 
 You have been hired as a database administrator to identify performance related issues and provide viable solutions to resolve any issues found. You need to investigate the performance problems and suggest methods to resolve them.
 
-**Note:** These exercises ask you to copy and paste T-SQL code. Please verify that the code has been copied correctly, before executing the code.
+>**Note:** These exercises ask you to copy and paste T-SQL code. Please verify that the code has been copied correctly, before executing the code.
 
 ## Restore a database
 
@@ -81,7 +81,7 @@ You have been hired as a database administrator to identify performance related 
     GO
     ```
 
-    **Note:** The command above specify the threshold, in seconds, at which blocked process reports are generated. As a result, we are not required to wait as long for the *blocked_process_report* to be raised in this lesson.
+    >**Note:** The command above specify the threshold, in seconds, at which blocked process reports are generated. As a result, we are not required to wait as long for the *blocked_process_report* to be raised in this lesson.
 
 1. Select **New Query**. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
 
@@ -109,7 +109,7 @@ You have been hired as a database administrator to identify performance related 
     WHERE FirstName = 'David'
     ```
 
-    **Note:** this query does not return any results and appears to run indefinitely.
+    >**Note:** this query does not return any results and appears to run indefinitely.
 
 1. In **Object Explorer**, expand  **Management** -> **Extended Events** -> **Sessions** -> **Blocking**.
 
@@ -129,7 +129,7 @@ You have been hired as a database administrator to identify performance related 
 
     ![Picture 04](../images/dp300-lab8-img8.png)
     
-    **Note:** This above XML File might take sometime to open please proceed with next step.
+    >**Note:** This above XML File might take sometime to open please proceed with next step.
 
 1. Alternatively, you can run the query below to identify sessions blocking other sessions, including a list of session IDs blocked per *session_id*.
 
