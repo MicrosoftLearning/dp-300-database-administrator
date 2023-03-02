@@ -251,11 +251,12 @@ Before continuing with the exercise close all the current query windows by selec
     FROM Sales.SalesOrderHeader
     WHERE SalesPersonID=277;
     ```
-   
-   > **Note:** The only change this time is that the SalesPersonID value is set to 277, the Clustered Index Scan operation in the execution plan.
     
-      ![the sql statement](../images/upd-dp-300-module-10-lab-15.png)
+      >**Note:** The Plan ID may be different in your lab environment so just select the Plan ID with the lowest duration.
 
+      ![the sql statement](../images/upd-dp-300-module-10-lab-15.png)
+   
+    
    - As we can see, based on the index statistics the query optimizer has chosen a different execution plan because of the different values in the `WHERE` clause.
   
    - Why do we have different plans if we only changed the *SalesPersonID* value?
