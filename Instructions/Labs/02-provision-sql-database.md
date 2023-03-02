@@ -8,15 +8,15 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
 1. In the lab virtual machine, double click on the Azure portal shortcut on the desktop [https://portal.azure.com](https://portal.azure.com/), and sign in using the Azure **Username** and **Password** <inject key="AzureAdUserEmail"></inject> and **Password** <inject key="AzureAdUserPassword"></inject>
 
-    ![Picture 1](../images/dp-300-L1-001.png)
+   ![Picture 1](../images/dp-300-L1-001.png)
 
 2. From the Azure portal, search for “resource groups” in the search box at the top, then select **Resource groups** from the list of options.
 
-    ![Picture 1](../images/lab2_2.png)
+   ![Picture 1](../images/lab2_2.png)
 
 3. On the **Resource group** page, check the resource group listed (it should start with *contoso-rg*), make note of the **Location** assigned to your resource group, as you will use it in the next exercise.
 
-> **Note:** You may have a different location assigned.
+ > **Note:** You may have a different location assigned.
 
    ![Picture 1](../images/upd-dp-300-module-02-lab-46.png)
 
@@ -79,7 +79,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
 Your **Create SQL Database Server** page should look similar to the one below. Then click **OK (7)**.
 
-    ![Picture 7](../images/upd-dp-300-module-02-lab-11.png)
+   ![Picture 7](../images/upd-dp-300-module-02-lab-11.png)
 
 -  Back to the **Create SQL Database** page, make sure **Want to use Elastic Pool?** is set to **No**.
 -  On the **Compute + Storage** option, click on **Configure database** link. On the **Configure** page, for **Service tier** dropdown, select **Basic**, and then **Apply**.
@@ -171,7 +171,7 @@ Your **Create SQL Database Server** page should look similar to the one below. T
 
 >**NOTE:** You may be asked to add a firewall rule that allows your client IP access to this server. If you are asked to add a firewall rule, click on **Add account** and login to your Azure account. On **Create new firewall rule** screen, click **OK**.
 
-    ![Picture 18](../images/upd-dp-300-module-02-lab-26.png)
+   ![Picture 18](../images/upd-dp-300-module-02-lab-26.png)
 
 Alternatively, you can manually create a firewall rule for your SQL server on Azure portal by navigating to your SQL server, selecting **Networking**, and then selecting **+ Add your client IPv4 address (your IP address)**
 
