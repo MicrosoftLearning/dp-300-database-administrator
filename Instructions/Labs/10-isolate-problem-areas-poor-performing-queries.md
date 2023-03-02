@@ -202,7 +202,7 @@ Next you'll run a workload to generate query statistics for query store, examine
 
 ## Force a better execution plan
 
-1. Navigate to the plan summary portion of the report as shown below. You will note there are two execution plans with widely different durations.
+1. Navigate to the plan summary portion of the report as shown below. You will note there are one or two execution plans with widely different durations.
 
       ![Plan summary](../images/upd-dp-300-module-10-lab-11.png)
 
