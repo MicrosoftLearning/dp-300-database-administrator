@@ -5,7 +5,7 @@ You've been hired as a Senior Database Administrator to help with performance is
 
 You'll run queries with suboptimal performance, examine the query plans, and attempt to make improvements within the database.
 
-**Note:** These exercises ask you to copy and paste T-SQL code. Please verify that the code has been copied correctly, before executing the code.
+>**Note:** These exercises ask you to copy and paste T-SQL code. Please verify that the code has been copied correctly, before executing the code.
 
 ## Restore a database
 
@@ -299,7 +299,7 @@ Before continuing with the exercise close all the current query windows by selec
     OPTION (RECOMPILE);
     ```
 
-   > Note that the query optimizer has been able to choose a more efficient execution plan. The `RECOMPILE` option causes the query compiler to replace the variable with its value.
+   > **Note:** the query optimizer has been able to choose a more efficient execution plan. The `RECOMPILE` option causes the query compiler to replace the variable with its value.
 
    > Comparing the statistics, you can see in the message tab that the difference between logical reads is **68%** more (689 versus 409) for the query without the query hint.
 
