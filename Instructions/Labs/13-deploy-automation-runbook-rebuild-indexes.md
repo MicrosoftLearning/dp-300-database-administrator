@@ -57,9 +57,7 @@ You have been hired as a Senior Database Administrator to help automate day to d
 
 1.  Click on **Open query**, On the  **Open sql query**  select the file location C:\LabFiles\Monitorandoptimize and select **usp_AdaptiveIndexDefrag.sql** and click on Open.
 
-   >**Note:** The purpose of this script is to perform an intelligent defragmentation on one or more indexes, as well as required statistics update, for one or more databases.
-
-
+    > **Note:** The purpose of this script is to perform an intelligent defragmentation on one or more indexes, as well as required statistics update, for one or more databases.
 
    ![Screenshot of pasting the code in a new Query window.](../images/query-editor1.png)
 
