@@ -6,29 +6,29 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
 ## Navigate on Azure portal
 
-1. In the LabVM, double click on the Azure portal shortcut [https://portal.azure.com](https://portal.azure.com/) on the desktop. Connect to the Portal using the Azure **Username** <inject key="AzureAdUserEmail"></inject> and **Password** <inject key="AzureAdUserPassword"></inject>
+1. In the lab virtual machine, double click on the Azure portal shortcut on the desktop [https://portal.azure.com](https://portal.azure.com/), and sign in using the Azure **Username** and **Password** <inject key="AzureAdUserEmail"></inject> and **Password** <inject key="AzureAdUserPassword"></inject>
 
- ![Picture 1](../images/dp-300-module-01-lab-01.png)
+    ![Picture 1](../images/dp-300-L1-001.png)
 
 2. From the Azure portal, search for “resource groups” in the search box at the top, then select **Resource groups** from the list of options.
 
- ![Picture 1](../images/lab2_2.png)
+    ![Picture 1](../images/lab2_2.png)
 
 3. On the **Resource group** page, check the resource group listed (it should start with *contoso-rg*), make note of the **Location** assigned to your resource group, as you will use it in the next exercise.
 
 >**Note:** You may have a different location assigned.
 
- ![Picture 1](../images/upd-dp-300-module-02-lab-46.png)
+    ![Picture 1](../images/upd-dp-300-module-02-lab-46.png)
 
 ## Create a Virtual Network
 
 1. In the Azure portal home page, select the left hand menu.
 
- ![Picture 2](../images/upd-dp-300-module-02-lab-01_1.png)
+     ![Picture 2](../images/upd-dp-300-module-02-lab-01_1.png)
 
 2. In the left navigation pane, click **Virtual Networks**
 
- ![Picture 3](../images/upd-dp-300-module-02-lab-04.png)
+    ![Picture 3](../images/upd-dp-300-module-02-lab-04.png)
 
 3. Click **+ Create** to open the **Create Virtual Network** page. On the **Basics** tab, complete the following information:
 
@@ -37,18 +37,18 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 - **Name:** lab02-vnet **(2)**
 - **Region:** <inject key="location" enableCopy="false" /> **(3)**
 
- ![Picture 2](../images/upd-dp-300-module-02-lab-05.png)
+    ![Picture 2](../images/upd-dp-300-module-02-lab-05.png)
 
 4. Click **Next: IP Addresses**.
 
- ![Picture 3](../images/upd-dp-300-module-02-lab-06.png)
+    ![Picture 3](../images/upd-dp-300-module-02-lab-06.png)
 
 5. Configure the virtual network’s IP range for the Azure SQL database endpoint as follow:
 
 - On the **IP Addresses** tab, leave the defaults for the IPv4 address.
 - Click on the **default** subnet link. (Note that the Subnet address range you see might be different.)
 
- ![Picture 4](../images/upd-dp-300-module-02-lab-07.png)
+    ![Picture 4](../images/upd-dp-300-module-02-lab-07.png)
 
 - In the **Edit subnet** pane on the right, expand the **Services** drop-down, and select **Microsoft.Sql**. Select **Save**.
 - Click the **Review + Create** button, review the settings for the new virtual network, and then click **Create**.
@@ -57,11 +57,11 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
 1. From the Azure Portal, search for “SQL databases” in the search box at the top, then click **SQL databases** from the list of options.
 
- ![Picture 5](../images/upd-dp-300-module-02-lab-10.png)
+    ![Picture 5](../images/upd-dp-300-module-02-lab-10.png)
 
 2. On the **SQL databases** blade, select **+ Create**.
 
- ![Picture 6](../images/upd-dp-300-module-02-lab-10_1.png)
+    ![Picture 6](../images/upd-dp-300-module-02-lab-10_1.png)
 
 3. On the **Create SQL Database** page, select the following options on the **Basics** tab and then click **Next: Networking**.
 
@@ -79,7 +79,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
 Your **Create SQL Database Server** page should look similar to the one below. Then click **OK (7)**.
 
- ![Picture 7](../images/upd-dp-300-module-02-lab-11.png)
+    ![Picture 7](../images/upd-dp-300-module-02-lab-11.png)
 
 -  Back to the **Create SQL Database** page, make sure **Want to use Elastic Pool?** is set to **No**.
 -  On the **Compute + Storage** option, click on **Configure database** link. On the **Configure** page, for **Service tier** dropdown, select **Basic**, and then **Apply**.
@@ -92,11 +92,11 @@ Your **Create SQL Database Server** page should look similar to the one below. T
 
 6. On the **Networking** tab, for **Network Connectivity** option, click the **Private endpoint** radio button.
 
- ![Picture 8](../images/upd-dp-300-module-02-lab-14.png)
+    ![Picture 8](../images/upd-dp-300-module-02-lab-14.png)
 
 7. Then click the **+ Add private endpoint** link under the **Private endpoints** option.
 
- ![Picture 9](../images/upd-dp-300-module-02-lab-15.png)
+    ![Picture 9](../images/upd-dp-300-module-02-lab-15.png)
 
 8. Complete the **Create private endpoint** right pane as follows:
 
@@ -111,17 +111,17 @@ Your **Create SQL Database Server** page should look similar to the one below. T
 - **Private DNS zone:** keep the default value
 - Review settings, and then click **OK**
 
- ![Picture 10](../images/upd-dp-300-module-02-lab-16.png)
+    ![Picture 10](../images/upd-dp-300-module-02-lab-16.png)
 
 9. The new endpoint will appear on the **Private endpoints** list.
 
- ![Picture 11](../images/upd-dp-300-module-02-lab-17.png)
+    ![Picture 11](../images/upd-dp-300-module-02-lab-17.png)
 
 10. Click **Next: Security**, and then **Next: Additional settings**.
 
 11. On the **Additional settings** page, select **Sample** on the **Use existing data** option. Select **OK** if a pop-up message is displayed for the sample database.
 
- ![Picture 12](../images/upd-dp-300-module-02-lab-18.png)
+    ![Picture 12](../images/upd-dp-300-module-02-lab-18.png)
 
 12. Click **Review + Create**.
 
@@ -133,15 +133,15 @@ Your **Create SQL Database Server** page should look similar to the one below. T
 
 1. From the **SQL database** page, select the **Overview** section, and then select the link for the server name in the top section:
 
- ![Picture 13](../images/updt-dp-300-module-02-lab-19.png)
+    ![Picture 13](../images/updt-dp-300-module-02-lab-19.png)
 
 2. On the SQL servers navigation blade, select **Networking** under the **Security** section.
 
- ![Picture 14](../images/upd-dp-300-module-02-lab-20.png)
+    ![Picture 14](../images/upd-dp-300-module-02-lab-20.png)
 
 3. On the **Public access** tab, select **Selected networks (1)**, and then check the **Allow Azure services and resources to access this server (2)** property. Click **Save (3)**.
 
- ![Picture 15](../images/upd-dp-300-module-02-lab-21.png)
+    ![Picture 15](../images/upd-dp-300-module-02-lab-21.png)
 
 ## Connect to an Azure SQL Database in Azure Data Studio
 
@@ -149,11 +149,11 @@ Your **Create SQL Database Server** page should look similar to the one below. T
 
 - You may see this pop-up at initial launch of Azure Data Studio. If you receive it, click **Yes (recommended)**
 
- ![Picture 16](../images/upd-dp-300-module-02-lab-22.png)
+    ![Picture 16](../images/upd-dp-300-module-02-lab-22.png)
 
 2. When Azure Data Studio opens, click the **Connections (1)** button in top left corner, and then **New Connection (2)**.
 
- ![Picture 17](../images/lab2_1.png)
+    ![Picture 17](../images/lab2_1.png)
 
 3. In the **Connection** sidebar, fill out the **Connection Details** section with connection information to connect to the SQL database created previously.
 
@@ -167,39 +167,39 @@ Your **Create SQL Database Server** page should look similar to the one below. T
 - Name (optional) can be populated with a friendly name of the database, if desired
 - Review settings and click **Connect (8)**
 
- ![Picture 19](../images/dp300-lab2-img1.png)
+    ![Picture 19](../images/dp300-lab2-img1.png)
 
 >**NOTE:** You may be asked to add a firewall rule that allows your client IP access to this server. If you are asked to add a firewall rule, click on **Add account** and login to your Azure account. On **Create new firewall rule** screen, click **OK**.
 
- ![Picture 18](../images/upd-dp-300-module-02-lab-26.png)
+    ![Picture 18](../images/upd-dp-300-module-02-lab-26.png)
 
 Alternatively, you can manually create a firewall rule for your SQL server on Azure portal by navigating to your SQL server, selecting **Networking**, and then selecting **+ Add your client IPv4 address (your IP address)**
 
- ![Picture 18](../images/upd-dp-300-module-02-lab-47.png)
+    ![Picture 18](../images/upd-dp-300-module-02-lab-47.png)
 
 4. Azure Data Studio will connect to the database, and show some basic information about the database, plus a partial list of objects.
 
- ![Picture 20](../images/upd-dp-300-module-02-lab-28.png)
+    ![Picture 20](../images/upd-dp-300-module-02-lab-28.png)
 
 ## Query an Azure SQL Database with a SQL Notebook
 
 1. In Azure Data Studio, connected to this lab’s AdventureWorksLT database, click the **New Notebook** button.
 
- ![Picture 21](../images/upd-dp-300-module-02-lab-29.png)
+    ![Picture 21](../images/upd-dp-300-module-02-lab-29.png)
 
 2. Click the **+Text** link to add a new text box in the notebook
 
- ![Picture 22](../images/upd-dp-300-module-02-lab-30.png)
+    ![Picture 22](../images/upd-dp-300-module-02-lab-30.png)
 
 >**Note:** Within the notebook you can embed plain text to explain queries or result sets.
 
 3. Enter the text **Top Ten Customers by Order SubTotal**, making it Bold if desired.
 
- ![A screenshot of a cell phone Description automatically generated](../images/upd-dp-300-module-02-lab-31.png)
+    ![A screenshot of a cell phone Description automatically generated](../images/upd-dp-300-module-02-lab-31.png)
 
 4. Click the **+ Cell** button, then **Code cell** to add a new code cell at the end of the notebook.
 
- ![Picture 23](../images/upd-dp-300-module-02-lab-32.png)
+    ![Picture 23](../images/upd-dp-300-module-02-lab-32.png)
 
 5. Paste the following SQL statement into the new cell:
 
@@ -218,7 +218,7 @@ ORDER BY [OverallOrderSubTotal] DESC
 
 7. Click the **+ Cell** button, then **Text cell** to add a new code cell at the end of the notebook.
 
- ![Picture 24](../images/upd-dp-300-module-02-lab-34.png)
+    ![Picture 24](../images/upd-dp-300-module-02-lab-34.png)
 
 8. Enter the text **Top Ten Ordered Product Categories**, making it Bold if desired.
 
@@ -240,7 +240,7 @@ ORDER BY [OrderedQuantity] DESC
 
 11. To run all cells in the notebook and present results, click the **Run all** button in the toolbar.
 
- ![Picture 17](../images/upd-dp-300-module-02-lab-33.png)
+    ![Picture 17](../images/upd-dp-300-module-02-lab-33.png)
 
 12. Within Azure Data Studio save the notebook from File menu (either Save or Save As) to the **C:\LabFiles\Deploy Azure SQL Database** path (create the folder structure if it does not exist). Make sure the file extension is **.ipynb**(Notebook)
 
