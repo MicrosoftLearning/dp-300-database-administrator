@@ -4,11 +4,11 @@ The students will take the information gained in the lessons to configure and su
 
 You've been hired as a Senior Database Administrator to help ensure the security of the database environment.
 
-**Note:** These exercises ask you to copy and paste T-SQL code. Please verify that the code has been copied correctly, before executing the code.
+>**Note:** These exercises ask you to copy and paste T-SQL code. Please verify that the code has been copied correctly, before executing the code.
 
 ## Authorize access to Azure SQL Database with Azure Active Directory
  
-1. In the lab virtual machine, double click on the Azure portal shortcut on the desktop [https://portal.azure.com](https://portal.azure.com/), and sign in using the Azure **Username** and **Password** provided on the **Environment Details** tab for this lab virtual machine.
+1. In the lab virtual machine, double click on the Azure portal shortcut on the desktop [https://portal.azure.com](https://portal.azure.com/), and sign in using the Azure **Username** and **Password** <inject key="AzureAdUserEmail"></inject> and **Password** <inject key="AzureAdUserPassword"></inject>
 
     ![Picture 1](../images/dp-300-L1-001.png)
 
