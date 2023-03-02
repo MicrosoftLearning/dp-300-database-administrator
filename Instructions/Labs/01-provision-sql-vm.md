@@ -69,7 +69,7 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
 1. On the deployment blade, wait until the deployment is complete. The VM will take approximate 5-10 minutes to deploy. After the deployment is complete, select  **Go to resource**.
 
-    **Note:** Your deployment may take 5-10 minutes to complete.
+    >**Note:** Your deployment may take 5-10 minutes to complete.
 
     ![Picture 19](../images/dp-300-lab01-12r.png)
 
