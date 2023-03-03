@@ -152,7 +152,7 @@ You have been hired as a database administrator to identify performance related 
     WHERE i.name = 'IX_Address_StateProvinceID'
     ```
 
-   Comparing the results we can see the fragmentation dropped from 81% to 0.
+      >**Note:** Comparing the results we can see the fragmentation dropped from 81% to 0.
 
 3. Re-execute the select statement from the previous section. Make note of the logical reads in the **Messages** tab of the **Results** pane in Management Studio. Was there a change from the number of logical reads encountered before you rebuilt the index?
 
