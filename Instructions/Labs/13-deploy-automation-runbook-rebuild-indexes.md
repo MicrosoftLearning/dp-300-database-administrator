@@ -106,8 +106,6 @@ The next steps consist of configuring the assets required in preparation for the
     - Password: **P@ssw0rd01**
     - Confirm password: **P@ssw0rd01**
 
-
-
     ![Screenshot of adding account credentials.](../images/dp-300-20.png)
 
 ## Create a PowerShell runbook
@@ -142,7 +140,7 @@ The next steps consist of configuring the assets required in preparation for the
 
     ![Screenshot of creating a runbook.](../images/dp-300-27.png)
 
-1. Once the runbook has been created, copy and paste the Powershell code snippet below into your runbook editor. On the first line of the script paste in the server name you copied in the steps above. Select **Save**, and then select **Publish**.
+1. Once the runbook has been created, copy and paste the Powershell code snippet below into your runbook editor. On the first line of the script paste in the **server name** <inject key="sqlServerFqdn"></inject> . Select **Save**, and then select **Publish**.
 
     >**Note:** Please verify that the code has been copied correctly, before saving the runbook.
 
