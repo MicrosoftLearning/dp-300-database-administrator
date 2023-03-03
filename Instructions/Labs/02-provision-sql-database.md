@@ -131,6 +131,12 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 3. On the **Public access** tab, select **Selected networks (1)**, and then check the **Allow Azure services and resources to access this server (2)** property. Click **Save (3)**.
 
     ![Picture 15](../images/upd-dp-300-module-02-lab-21.png)
+    
+    >**Note:** If you receive the failed Notification as shown in the below image please perform the previous three steps again.
+   
+    ![Picture 15](../images/dp300-l2-failed.png)
+    
+    
 
 ## Connect to an Azure SQL Database in Azure Data Studio
 
