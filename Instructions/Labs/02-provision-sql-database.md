@@ -12,7 +12,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
 ## Create a Virtual Network
 
-1. In the Azure portal home page, select the left hand menu.
+1. In the Azure portal home page, select the **left hand menu.**
 
      ![Picture 2](../images/upd-dp-300-module-02-lab-01_1.png)
 
@@ -73,7 +73,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
  -  Back to the **Create SQL Database** page, make sure **Want to use Elastic Pool?** is set to **No**.
  -  On the **Compute + Storage** option, click on **Configure database** link. On the **Configure** page, for **Service tier** dropdown, select **Basic**, and then **Apply**.
 
->**Note:**  Make note of this server name, and your login information. You will use it in subsequent labs.
+      >**Note:**  Make note of this server name, and your login information. You will use it in subsequent labs.
 
 4. For the **Backup storage redundancy** option, keep the default value: **Geo-redundant backup storage**.
 
