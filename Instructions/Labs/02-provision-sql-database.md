@@ -209,7 +209,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
    ORDER BY [OverallOrderSubTotal] DESC
    ```
 
-6. Click on the blue circle with the arrow to execute the query. Note how the results are included within the cell with the query.
+6. Click on the **blue circle with the arrow to execute** the query. Note how the results are included within the cell with the query.
 
 7. Click the **+ Cell** button, then **Text cell** to add a new code cell at the end of the notebook.
 
@@ -231,7 +231,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
    ORDER BY [OrderedQuantity] DESC
    ```
 
-10. Click on the blue circle with the arrow to execute the query.
+10. Click on the **blue circle with the arrow to execute** the query.
 
 11. To run all cells in the notebook and present results, click the **Run all** button in the toolbar.
 
