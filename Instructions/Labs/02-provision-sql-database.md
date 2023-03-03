@@ -168,7 +168,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
     ![Picture 18](../images/upd-dp-300-module-02-lab-26.png)
 
-   - Alternatively, you can manually create a firewall rule for your SQL server on Azure portal by navigating to your SQL server, selecting **Networking**, and then selecting **+ Add your client IPv4 address (your IP address)**
+ - Alternatively, you can manually create a firewall rule for your SQL server on Azure portal by navigating to your SQL server, selecting **Networking**, and then selecting **+ Add your client IPv4 address (your IP address)**
 
    ![Picture 18](../images/upd-dp-300-module-02-lab-47.png)
 
