@@ -106,6 +106,8 @@ The next steps consist of configuring the assets required in preparation for the
     - Password: **P@ssw0rd01**
     - Confirm password: **P@ssw0rd01**
 
+
+
     ![Screenshot of adding account credentials.](../images/dp-300-20.png)
 
 ## Create a PowerShell runbook
