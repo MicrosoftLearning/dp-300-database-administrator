@@ -186,7 +186,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
     ![Picture 22](../images/upd-dp-300-module-02-lab-30.png)
 
->**Note:** Within the notebook you can embed plain text to explain queries or result sets.
+    >**Note:** Within the notebook you can embed plain text to explain queries or result sets.
 
 3. Enter the text **Top Ten Customers by Order SubTotal**, making it Bold if desired.
 
