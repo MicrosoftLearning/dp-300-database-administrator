@@ -39,7 +39,10 @@ You have been hired as a Senior Data Engineer to help automate day to day operat
 9. On the **Notifications** tab, enter the following information:
 
     - **Notification type:** Email/SMS message/Push/Voice
-        > **Note:** When you select this option, a Email/SMS message/Push/Voice flyout will appear. Check the Email property and type the Azure username you signed in with.
+       
+       > **Note:** When you select this option, a Email/SMS message/Push/Voice flyout will appear. Check the Email property and type the proper email address, you can also use your personal email so that you can receive the notifications as shown in the last steps.
+    
+    - Click on **OK**
     - **Name:** DemoLab 
     - Select **Review + create**, then select **Create**.
         >**Note:** Wait till action group created successfully then move to next step.
