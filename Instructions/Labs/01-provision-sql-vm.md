@@ -31,7 +31,7 @@ You are a database administrator for AdventureWorks. You need to create a test e
     - **Availability Options:** No infrastructure redundancy required
     - **Image:** Free SQL Server License: SQL 2019 Developer on Windows Server 2022 - Gen1
     - **Azure spot instance:** No (unchecked)
-    - **Size:** Standard *D2s_v3* (2 vCPUs, 8 GiB memory). You may need to select the "See all sizes" link to see this option)
+    - **Size:** Standard *D2s_v3* (2 vCPUs, 8 GiB memory). You may need to select the **"See all sizes"** link to see this option)
     - **Administrator account username:** sqladmin
     - **Administrator account password:** pwd!DP300lab01
     - **Select inbound ports:** RDP (3389)
@@ -103,9 +103,9 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
     ![Picture 26](../images/dp-300-L1-01-005.png)
 
-1. Select the Windows Start button and type **SSMS(1)**. Select **Microsoft SQL Server Management Studio 19(2)** from the list.  
+1. Inside the Virtual Machine, Select the Windows Start button and type **SSMS(1)**. Select **Microsoft SQL Server Management Studio 19(2)** from the list.  
 
-    ![Picture 34](../images/dp-300-lab01-ssms1.png)
+   ![Picture 34](../images/dp-300-lab01-ssms1.png)
 
 1. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name. Select **Connect**.
 
