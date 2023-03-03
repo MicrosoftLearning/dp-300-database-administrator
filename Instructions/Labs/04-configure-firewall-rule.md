@@ -32,7 +32,7 @@ You have been hired as a Senior Database Administrator to help ensure the securi
 
 1. Open SQL Server Management Studio in the labvm. On the Connect to Server dialog box, paste in the name of your Azure SQL Database server, and login with the credentials below:
 
-    - **Server name:** <inject key="sqlServerFqdn" enableCopy="false" />
+    - **Server name:** <inject key="sqlServerFqdn"></inject> 
     - **Authentication:** SQL Server Authentication
     - **Server admin login:** sqladmin
     - **Password:** P@ssw0rd01
