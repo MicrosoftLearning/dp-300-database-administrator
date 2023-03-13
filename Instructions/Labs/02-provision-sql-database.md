@@ -36,8 +36,6 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
 1. In the left navigation pane, click **Virtual Networks**  
 
-    ![Picture 3](../images/dp-300-module-02-lab-04.png)
-
 1. Click **+ Create** to open the **Create Virtual Network** page. On the **Basics** tab, complete the following information:
 
     - **Subscription:** &lt;Your subscription&gt;
@@ -45,21 +43,13 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
     - **Name:** lab02-vnet
     - **Region:** Select the same region where your resource group was created
 
-    ![Picture 2](../images/dp-300-module-02-lab-05.png)
+1. Click **Review + Create**, review the settings for the new virtual network, and then click **Create**.
 
-1. Click **Next: IP Addresses**.  
+1. Configure the virtual network’s IP range for the Azure SQL database endpoint by navigating to the virtual network created, and on the **Settings** pane, click **Subnets**.
 
-    ![Picture 3](../images/dp-300-module-02-lab-06.png)
+1. Click on the **default** subnet link. Note that the **Subnet address range** you see might be different.
 
-1. Configure the virtual network’s IP range for the Azure SQL database endpoint as follow:
-
-    - On the **IP Addresses** tab, leave the defaults for the IPv4 address.
-    - Click on the **default** subnet link. Note that the Subnet address range you see might be different.
-
-        ![Picture 4](../images/dp-300-module-02-lab-07.png)
-
-    - In the **Edit subnet** pane on the right, expand the **Services** drop-down, and select **Microsoft.Sql**. Select **Save**.
-    - Click the **Review + Create** button, review the settings for the new virtual network, and then click **Create**.
+1. In the **Edit subnet** pane on the right, expand the **Services** drop-down, and select **Microsoft.Sql**. Select **Save**.
 
 ## Provision an Azure SQL Database
 
