@@ -40,9 +40,7 @@ You have been hired as a Senior Database Administrator help ensure the security 
 
     ![Screenshot of selecting the Configure option](../images/dp-300-module-05-lab-02.png)
 
-1. On the **Server settings** page, notice that toggle switch under **MICROSOFT DEFENDER FOR SQL** is set to **ON**, and that the **Storage account** name is provided. Enter the Azure account email you used to log into Azure portal in the **Send scan reports to** field, and then select **Save**.
-
-    ![Screenshot of Server settings page](../images/dp-300-module-05-lab-03.png)
+1. On the **Server settings** page, notice that toggle switch under **MICROSOFT DEFENDER FOR SQL** is set to **ON**.
 
 ## Enable Data Classification
 
