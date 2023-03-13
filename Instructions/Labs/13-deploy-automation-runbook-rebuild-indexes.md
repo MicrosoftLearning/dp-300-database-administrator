@@ -22,7 +22,7 @@ You have been hired as a Senior Database Administrator to help automate day to d
 
 1. On the **Create an Automation Account** page, enter the information below, and then select **Review + Create**.
 
-    - **Resource Group:** starting with *automateLab*
+    - **Resource Group:** &lt;Your resource group&gt;
     - **Name:** autoAccount
     - **Location:** Use the default.
 
