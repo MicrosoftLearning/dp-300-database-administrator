@@ -4,39 +4,35 @@ You have been hired as a Senior Data Engineer to help automate day to day operat
 
 ## Create an alert when a CPU exceeds an average of 80 percent
 
-1. In the lab virtual machine, double click on the Azure portal shortcut on the desktop [https://portal.azure.com](https://portal.azure.com/), and sign in using the Azure **Username** <inject key="AzureAdUserEmail"></inject> and **Password** <inject key="AzureAdUserPassword"></inject>
-
-   ![Picture 1](../images/dp-300-L1-001.png)
-
-2. In the search bar at the top of the Azure portal, type **SQL**, and select **SQL databases**. Select the **AdventureWorksLT** database name listed.
+1. In the search bar at the top of the Azure portal, type **SQL**, and select **SQL databases**. Select the **AdventureWorksLT** database name listed.
 
    ![Screenshot of selecting a SQL database](../images/dp300-lab12-img1.png)
 
-3. On the main blade for the **AdventureWorksLT** database, navigate down to the monitoring section. Select **Alerts**.
+2. On the main blade for the **AdventureWorksLT** database, navigate down to the monitoring section. Select **Alerts**.
 
    ![Screenshot of selecting Alerts on the SQL database Overview page](../images/dp300-lab12-img02.png)
 
-4. Select **Create alert rule**.
+3. Select **Create alert rule**.
 
    ![Screenshot of selecting New alert rule](../images/dp300-lab12-img3.png)
 
-5. In the **Select a signal** slide out, select **CPU percentage**.
+4. In the **Select a signal** slide out, select **CPU percentage**.
 
    ![Screenshot of selecting CPU percentage](../images/dp300-lab12-img4.png)
 
-6. In the **Create an alert rule** slide out, select **Static (1)** for the **Threshold** property. Then check that the **Aggregation** type is **Average (2)**, the **Operator** property is **Greater than (3)** Then in **Threshold value** enter a value of **80 (4)**. Select **Next:Actions (5)**.
+5. In the **Create an alert rule** slide out, select **Static (1)** for the **Threshold** property. Then check that the **Aggregation** type is **Average (2)**, the **Operator** property is **Greater than (3)** Then in **Threshold value** enter a value of **80 (4)**. Select **Next:Actions (5)**.
 
     ![Screenshot of entering 80 and selecting Done](../images/lab12-dp-300-001.png)
 
-7. In the **Actions** tab, select **Create action group**.
+6. In the **Actions** tab, select **Create action group**.
 
     ![Screenshot of selecting the Create action group](../images/dp300-lab12-img7.png)
 
-8. On the **Create action group** screen, type **emailgroup** in the **Action group name** field, and then select **Next: Notifications**.
+7. On the **Create action group** screen, type **emailgroup** in the **Action group name** field, and then select **Next: Notifications**.
 
     ![Screenshot of entering emailgroup and selecting Next: Notifications](../images/dp-300-lab12-02.png)
 
-9. On the **Notifications** tab, enter the following information:
+8. On the **Notifications** tab, enter the following information:
 
     - **Notification type:** Email/SMS message/Push/Voice
        > **Note:** When you select this option, a Email/SMS message/Push/Voice flyout will appear. Check the Email property and type the proper email address, you can also use your personal email so that you can receive the notifications as shown in the last steps.
@@ -47,15 +43,15 @@ You have been hired as a Senior Data Engineer to help automate day to day operat
 
     ![Screenshot of the Create action group page with information added](../images/dp300-lab12-img9.png)
     
-10. On the **Create an alert rule** screen, select **Details** tab, enter Alert rule name as **emailrule (1)**, then select **Review + create (2)**.
+9. On the **Create an alert rule** screen, select **Details** tab, enter Alert rule name as **emailrule (1)**, then select **Review + create (2)**.
     
     ![Screenshot of entering emailgroup and selecting Next: Notifications](../images/lab12-dp-300-0015-step.png)
 
-11. On the **Review + create** tab, Select **Create**.
+10. On the **Review + create** tab, Select **Create**.
 
     ![Screenshot of the Create alert rule page selecting the Create alert rule](../images/lab12-dp-300-02.png)
 
-12. An email like this is sent to the email address that you entered, once the rule is created.
+11. An email like this is sent to the email address that you entered, once the rule is created.
 
     ![Screenshot of the confirmation email](../images/dp300-lab12-img11.png)
 
