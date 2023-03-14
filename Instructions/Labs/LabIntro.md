@@ -27,7 +27,7 @@
      
    > If you are presented with **Help us protect your account** dialog box, then select **Skip for now** option.
 
-     ![](../images/MFA.png "Enter Password")
+      ![](../images/MFA.png "Enter Password")
   
 1. If you see the pop-up **Stay Signed in?**, click No
 
