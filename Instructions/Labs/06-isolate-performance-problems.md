@@ -8,10 +8,6 @@ You have been hired as a database administrator to identify performance related 
 >**Note:** These exercises ask you to copy and paste T-SQL code. Please verify that the code has been copied correctly, before executing the code.
 
 ## Review CPU utilization in Azure portal
-
-1. In the lab virtual machine, double click on the Azure portal shortcut on the desktop [https://portal.azure.com](https://portal.azure.com/), and sign in using the Azure **Username** <inject key="AzureAdUserEmail"></inject> and **Password** <inject key="AzureAdUserPassword"></inject>
-
-     ![Picture 1](../images/dp-300-L1-001.png)
   
 1. From the Azure Portal, search for “SQL servers” in the search box at the top, then click **SQL servers** from the list of options.
 
