@@ -4,10 +4,6 @@ You have been hired as a Senior Database Administrator to help automate day to d
 
 ## Create an Automation Account
 
-1. From the lab virtual machine, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/). Connect to the Portal using the Azure **Username** <inject key="AzureAdUserEmail"></inject> and **Password** <inject key="AzureAdUserPassword"></inject>
-
-    ![Screenshot of Azure portal sign in page](../images/dp-300-L1301.png)
-
 1. In the Azure portal in the search bar type *automation* and then select **Automation Accounts** from the search results, and then select **+ Create**.
 
     ![Screenshot of selecting the Automation Accounts.](../images/dp-300-L1302.png)
