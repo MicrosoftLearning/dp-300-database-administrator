@@ -4,12 +4,6 @@ Students will configure basic resources needed to deploy an Azure SQL Database w
 
 As a database administrator for AdventureWorks, you will set up a new SQL Database, including a Virtual Network Endpoint to increase and simplify the security of the deployment. Azure Data Studio will be used to evaluate the use of a SQL Notebook for data querying and results retention.
 
-## Navigate on Azure portal
-
-1. In the lab virtual machine, double click on the Azure portal shortcut on the desktop [https://portal.azure.com](https://portal.azure.com/), and sign in using the Azure **Username** <inject key="AzureAdUserEmail"></inject> and **Password** <inject key="AzureAdUserPassword"></inject>
-
-   ![Picture 1](../images/dp-300-L1-001.png)
-
 ## Create a Virtual Network
 
 1. In the Azure portal home page, select the **left hand menu.**
