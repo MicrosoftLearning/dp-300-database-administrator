@@ -11,23 +11,23 @@
 ## Login to Azure Portal
 1. In the JumpVM, click on Azure portal shortcut of Microsoft Edge browser which is created on desktop.
 
-   ![](../media/az720-1-1.png "Lab Environment")
+   ![](../images/dp300-1-1.png "Lab Environment")
    >**Note**:On the Welcome to Microsoft Edge page, select **Start without your data** and on the help for importing Google browsing data page, select the **Continue without this data** button. Then, proceed to select **Confirm and start browsing** on the next page
 
    
 1. On **Sign into Microsoft Azure** tab you will see login screen, in that enter following email/username and then click on **Next**. 
    * Email/Username: <inject key="AzureAdUserEmail"></inject>
    
-     ![](../media/image7.png "Enter Email")
+     ![](../images/image7.png "Enter Email")
      
 1. Now enter the following password and click on **Sign in**.
    * Password: <inject key="AzureAdUserPassword"></inject>
    
-     ![](../media/image8.png "Enter Password")
+     ![](../images/image8.png "Enter Password")
      
    > If you are presented with **Help us protect your account** dialog box, then select **Skip for now** option.
 
-     ![](../media/MFA.png "Enter Password")
+     ![](../images/MFA.png "Enter Password")
   
 1. If you see the pop-up **Stay Signed in?**, click No
 
@@ -37,6 +37,6 @@
    
 1. Use **Next** button from lower right corner to move on to the next page.
 
-   ![](../media/next.png "Resource groups")
+   ![](../images/next.png "Resource groups")
 
 
