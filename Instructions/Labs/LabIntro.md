@@ -25,6 +25,8 @@
    
      ![](../images/image8.png "Enter Password")
      
+    > If you are getting **save password** popup, then select **Never** option.
+     
    > If you are presented with **Help us protect your account** dialog box, then select **Skip for now** option.
 
       ![](../images/MFA.png "Enter Password")
