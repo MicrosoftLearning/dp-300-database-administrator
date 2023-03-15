@@ -65,28 +65,28 @@ You have been hired as a database administrator to identify performance related 
 
 1. The *[HumanResources].[Employee]* table structure is shown in the follow data definition language (DDL) statement. **Review the fields that are used in the previous SQL query against this DDL, paying attention to their types.**
 
-```sql
-CREATE TABLE [HumanResources].[Employee](
-[BusinessEntityID] [int] NOT NULL,
-[NationalIDNumber] [nvarchar](15) NOT NULL,
-[LoginID] [nvarchar](256) NOT NULL,
-[OrganizationNode] [hierarchyid] NULL,
-[OrganizationLevel] AS ([OrganizationNode].[GetLevel]()),
-[JobTitle] [nvarchar](50) NOT NULL,
-[BirthDate] [date] NOT NULL,
-[MaritalStatus] [nchar](1) NOT NULL,
-[Gender] [nchar](1) NOT NULL,
-[HireDate] [date] NOT NULL,
-[SalariedFlag] [dbo].[Flag] NOT NULL,
-[VacationHours] [smallint] NOT NULL,
-[SickLeaveHours] [smallint] NOT NULL,
-[CurrentFlag] [dbo].[Flag] NOT NULL,
-[rowguid] [uniqueidentifier] ROWGUIDCOL NOT NULL,
-[ModifiedDate] [datetime] NOT NULL
-) ON [PRIMARY]
+    ```sql
+    CREATE TABLE [HumanResources].[Employee](
+    [BusinessEntityID] [int] NOT NULL,
+    [NationalIDNumber] [nvarchar](15) NOT NULL,
+    [LoginID] [nvarchar](256) NOT NULL,
+    [OrganizationNode] [hierarchyid] NULL,
+    [OrganizationLevel] AS ([OrganizationNode].[GetLevel]()),
+    [JobTitle] [nvarchar](50) NOT NULL,
+    [BirthDate] [date] NOT NULL,
+    [MaritalStatus] [nchar](1) NOT NULL,
+    [Gender] [nchar](1) NOT NULL,
+    [HireDate] [date] NOT NULL,
+    [SalariedFlag] [dbo].[Flag] NOT NULL,
+    [VacationHours] [smallint] NOT NULL,
+    [SickLeaveHours] [smallint] NOT NULL,
+    [CurrentFlag] [dbo].[Flag] NOT NULL,
+    [rowguid] [uniqueidentifier] ROWGUIDCOL NOT NULL,
+    [ModifiedDate] [datetime] NOT NULL
+    ) ON [PRIMARY]
 
 
-```
+    ```
 
 2. According to the warning message presented in the execution plan, what change would you recommend?
 
