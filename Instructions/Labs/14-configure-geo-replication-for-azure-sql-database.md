@@ -46,6 +46,8 @@ As a DBA within AdventureWorks, you need to enable geo-replication for Azure SQL
 1. If successful, it will progress from **Deployment in progress** to **Deployment succeeded**.
 
     ![Screenshot showing the review and create page.](../images/lab14-dp-300-11.png)
+    
+   > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
 
 ## Failover SQL Database to a secondary region
 
