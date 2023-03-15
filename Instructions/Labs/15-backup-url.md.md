@@ -219,6 +219,9 @@ To see that the file is actually in Azure, you can use Storage Explorer or Azure
 1. Note that the backup file is stored in the container.
 
     ![Screenshot showing the backup file on storage browser.](../images/upd-dp-300-module-15-lab-14.png)
+    
+   > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
+
 
 ## Restore from URL
 
