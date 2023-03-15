@@ -37,8 +37,7 @@ You have been hired as a database administrator to identify performance related 
 
     ![Picture 03](../images/dp300-lab7-img5.png)
     
-    > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
-
+   > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
 
 ## Investigate index fragmentation
 
@@ -119,9 +118,7 @@ You have been hired as a database administrator to identify performance related 
 
       ![Picture 03](../images/dp300-lab7-img7.png)
     
-    > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
-
-      ![Picture 03](../images/dp300-lab7-img7.png)
+     > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
     
 ## Rebuild fragmented indexes
 
