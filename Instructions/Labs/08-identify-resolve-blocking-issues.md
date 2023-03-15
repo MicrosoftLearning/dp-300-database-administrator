@@ -36,6 +36,8 @@ You have been hired as a database administrator to identify performance related 
 5. You should see a successful message after the restore is complete.
 
     ![Picture 03](../images/dp300-lab8-img4.png)
+    
+    > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
 
 ## Run blocked queries report
 
@@ -209,5 +211,7 @@ You have been hired as a database administrator to identify performance related 
     Why the same query completes whereas in the previous task it was blocked by the update statement?
 
     Read Commit Snapshot isolation level is an optimistic form of transaction isolation, and the last query will show the latest committed version of the data, rather than being blocked.
+    
+    > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
 
 In this exercise, you've learned how to identify sessions being blocked, and to mitigate those scenarios.
