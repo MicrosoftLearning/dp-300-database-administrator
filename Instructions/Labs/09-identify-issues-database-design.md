@@ -60,6 +60,8 @@ You have been hired as a database administrator to identify performance related 
 1. Navigate to the execution plan, by selecting the **Execution plan** tab in the results panel. In the execution plan, mouse over the `SELECT` operator. You will notice a warning message identified by an exclamation point in a yellow triangle as shown below. Identify what the warning message tells you.
 
     ![Picture 02](../images/dp-300-lab-09-img7.png)
+    
+   > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
 
 ## Identify ways to fix the warning message
 
@@ -188,7 +190,5 @@ There are two approaches we can implement to fix the implicit conversion warning
     ![Picture 06](../images/dp-300-lab-09-img11.png)
 
     Examine the query plan, and note that you can now use an integer to filter by *NationalIDNumber* without the implicit conversion warning. The SQL query optimizer can now generate and execute the most optimal plan.
-
-    > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
 
 In this exercise, you've learned how to identify query problems caused by implicit data type conversions, and how to fix it to improve the query plan.
