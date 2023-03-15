@@ -37,7 +37,7 @@ You'll run queries with suboptimal performance, examine the query plans, and att
 
     ![Picture 03](../images/upd-dp-300-module-07-lab-05.png)
     
-   > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
+    > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
 
 
 ## Generate actual execution plan
