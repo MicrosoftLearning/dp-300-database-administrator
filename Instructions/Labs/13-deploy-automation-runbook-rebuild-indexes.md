@@ -183,6 +183,8 @@ Next you will schedule the runbook to execute on a regular basis.
 1. The schedule is now created and linked to the runbook. Select **OK**.
 
     ![Screenshot of the created schedule.](../images/dp-300-333.png)
+    
+   > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
 
 Azure Automation delivers a cloud-based automation, and configuration service that supports consistent management across your Azure and non-Azure environments.
 
