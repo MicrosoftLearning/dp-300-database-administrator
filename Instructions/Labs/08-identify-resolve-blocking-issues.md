@@ -5,23 +5,23 @@ The students will take the information gained in the lessons to scope out the de
 
 You have been hired as a database administrator to identify performance related issues and provide viable solutions to resolve any issues found. You need to investigate the performance problems and suggest methods to resolve them.
 
-**Note:** These exercises ask you to copy and paste T-SQL code. Please verify that the code has been copied correctly, before executing the code.
+>**Note:** These exercises ask you to copy and paste T-SQL code. Please verify that the code has been copied correctly, before executing the code.
 
 ## Restore a database
 
-1. Select the Windows Start button and type SSMS. Select **Microsoft SQL Server Management Studio 18** from the list.  
+1. Select the Windows Start button and type SSMS. Select **Microsoft SQL Server Management Studio 19** from the list.  
 
-    ![Picture 01](../images/dp300-lab8-img1.png)
+    ![Picture 01](../images/Dp-300-lab07-01.png)
 
-2. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name. Select **Connect**.
+1. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name with **sqlvm-<inject key="DeploymentID" enableCopy="false" /> (1)**. Select **Connect (2)**.
 
-    ![Picture 02](../images/dp300-lab8-img2.png)
+    ![Picture 02](../images/upd-dp-300-module-07-lab-01.png)
 
 3. Select the **Databases** folder, and then **New Query**.
 
-    ![Picture 03](../images/dp300-lab8-img3.png)
+    ![Picture 03](../images/dp-300-lab08-02.png)
 
-4. In the new query window, copy and paste the below T-SQL into it. Execute the query to restore the database.
+4. In the **New query** window, copy and paste the below T-SQL into it. Execute the query to restore the database.
 
     ```sql
     RESTORE DATABASE AdventureWorks2017
@@ -33,11 +33,11 @@ You have been hired as a database administrator to identify performance related 
             TO 'C:\LabFiles\Monitorandoptimize\AdventureWorks2017_log.ldf';
     ```
 
-    **Note:** The database backup file name and path should match with what you've downloaded on step 1, otherwise the command will fail.
-
 5. You should see a successful message after the restore is complete.
 
     ![Picture 03](../images/dp300-lab8-img4.png)
+    
+    > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
 
 ## Run blocked queries report
 
@@ -83,7 +83,7 @@ You have been hired as a database administrator to identify performance related 
     GO
     ```
 
-    **Note:** The command above specify the threshold, in seconds, at which blocked process reports are generated. As a result, we are not required to wait as long for the *blocked_process_report* to be raised in this lesson.
+    >**Note:** The command above specify the threshold, in seconds, at which blocked process reports are generated. As a result, we are not required to wait as long for the *blocked_process_report* to be raised in this lesson.
 
 1. Select **New Query**. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
 
@@ -111,7 +111,7 @@ You have been hired as a database administrator to identify performance related 
     WHERE FirstName = 'David'
     ```
 
-    **Note:** this query does not return any results and appears to run indefinitely.
+    >**Note:** this query does not return any results and appears to run indefinitely.
 
 1. In **Object Explorer**, expand  **Management** -> **Extended Events** -> **Sessions** -> **Blocking**.
 
@@ -130,6 +130,8 @@ You have been hired as a database administrator to identify performance related 
 1. The XML will show you which processes are being blocked, and which process is causing the blocking. You can see the queries that ran in this process as well as system information.
 
     ![Picture 04](../images/dp300-lab8-img8.png)
+    
+    >**Note:** This above XML File might take sometime to open please proceed with next step.
 
 1. Alternatively, you can run the query below to identify sessions blocking other sessions, including a list of session IDs blocked per *session_id*.
 
@@ -209,5 +211,7 @@ You have been hired as a database administrator to identify performance related 
     Why the same query completes whereas in the previous task it was blocked by the update statement?
 
     Read Commit Snapshot isolation level is an optimistic form of transaction isolation, and the last query will show the latest committed version of the data, rather than being blocked.
+    
+    > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
 
 In this exercise, you've learned how to identify sessions being blocked, and to mitigate those scenarios.

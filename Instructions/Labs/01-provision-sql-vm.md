@@ -6,12 +6,7 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
 ## Deploy a SQL Server on an Azure Virtual Machine
 
-1. In the lab virtual machine, double click on the Azure portal shortcut on the desktop [https://portal.azure.com](https://portal.azure.com/), and sign in using the Azure **Username** and **Password** provided on the **Environment Details** tab for this lab virtual machine.
-
-
-    ![Picture 1](../images/dp-300-L1-001.png)
-
-1. Locate the search bar at the top of the page. Search for **Azure SQL**. Select the search result for **Azure SQL** that appears in the results under **Services**.
+1. On the Azure portal locate the search bar at the top of the page. Search for **Azure SQL**. Select the search result for **Azure SQL** that appears in the results under **Services**.
 
     ![Picture 9](../images/lab1-2-updated.png)
 
@@ -25,16 +20,16 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
 1. On the **Create a virtual machine** page, enter the following information:
 
-    - **Subscription:** &lt;Your subscription&gt;
-    - **Resource group:** &lt;Your resource group&gt;
+    - **Subscription:** Use existing subscription 
+    - **Resource group:** contoso-rg-<inject key="Deployment-id" enableCopy="false" />
     - **Virtual machine name:**  azureSQLServerVM
-    - **Region:** &lt;your local region, same as the selected region for your resource group&gt;
+    - **Region:** <inject key="location" enableCopy="false" />
     - **Availability Options:** No infrastructure redundancy required
     - **Image:** Free SQL Server License: SQL 2019 Developer on Windows Server 2022 - Gen1
     - **Azure spot instance:** No (unchecked)
-    - **Size:** Standard *D2s_v3* (2 vCPUs, 8 GiB memory). You may need to select the "See all sizes" link to see this option)
+    - **Size:** Standard *D2s_v3* (2 vCPUs, 8 GiB memory). You may need to select the **"See all sizes"** link to see this option)
     - **Administrator account username:** sqladmin
-    - **Administrator account password:** pwd!DP300lab01 (or your own password that meets the criteria)
+    - **Administrator account password:** pwd!DP300lab01
     - **Select inbound ports:** RDP (3389)
     - **Would you like to use an existing Windows Server license?:** No (unchecked)
 
@@ -70,7 +65,7 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
 1. On the deployment blade, wait until the deployment is complete. The VM will take approximate 5-10 minutes to deploy. After the deployment is complete, select  **Go to resource**.
 
-    **Note:** Your deployment may take 5-10 minutes to complete.
+    >**Note:** Your deployment may take 5-10 minutes to complete.
 
     ![Picture 19](../images/dp-300-lab01-12r.png)
     
@@ -107,9 +102,9 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
     ![Picture 26](../images/dp-300-L1-01-005.png)
 
-1. Select the Windows Start button and type **SSMS(1)**. Select **Microsoft SQL Server Management Studio 19(2)** from the list.  
+1. Inside the Virtual Machine, Select the Windows Start button and type **SSMS(1)**. Select **Microsoft SQL Server Management Studio 19(2)** from the list.  
 
-    ![Picture 34](../images/dp-300-lab01-ssms1.png)
+   ![Picture 34](../images/dp-300-lab01-ssms1.png)
 
 1. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name. Select **Connect**.
 

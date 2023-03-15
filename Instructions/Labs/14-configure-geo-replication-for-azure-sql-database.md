@@ -4,10 +4,6 @@ As a DBA within AdventureWorks, you need to enable geo-replication for Azure SQL
 
 ## Enable geo-replication
 
-1. From the lab virtual machine, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/). Connect to the Portal using the Azure **Username** and **Password** provided on the **Resources** tab for this lab virtual machine.
-
-    ![Screenshot of Azure portal sign in page](../images/dp-300-lab14-01.png)
-
 1. In the Azure portal, navigate to your database by searching for **sql databases**.
 
     ![Screenshot of searching for existing SQL databases.](../images/dp-300-lab14-02.png)
@@ -28,8 +24,8 @@ As a DBA within AdventureWorks, you need to enable geo-replication for Azure SQL
 
     ![Screenshot showing Create New server link.](../images/lab14-dp-300-L6.png)
 
-    >[!NOTE]
-    > As we are creating a new server to host our secondary database, we can ignore the error message above.
+    
+    >**Note:**  As we are creating a new server to host our secondary database, we can ignore the error message above.
 
 1. On the **Create SQL Database Server** page, Enter a unique **server name** of your preference, Select a **location** as the target region, In **Authentication method** select **Use SQL authentication** enter a valid **server admin login**, and a secure **password**, and then select **OK** to create the server.
 
@@ -50,6 +46,8 @@ As a DBA within AdventureWorks, you need to enable geo-replication for Azure SQL
 1. If successful, it will progress from **Deployment in progress** to **Deployment succeeded**.
 
     ![Screenshot showing the review and create page.](../images/lab14-dp-300-11.png)
+    
+   > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
 
 ## Failover SQL Database to a secondary region
 
@@ -67,7 +65,7 @@ Now that the Azure SQL Database replica is created, you will perform a failover.
 
     ![Screenshot showing selecting Geo-Replication.](../images/dp-300-lab14-14.png)
 
-1. Note that the geo replication link is now established.
+   > **Note** that the geo replication link is now established.
 
     ![Screenshot showing the Replicas option.](../images/lab14-dp-300-L1-4.png)
 
@@ -75,19 +73,19 @@ Now that the Azure SQL Database replica is created, you will perform a failover.
 
     ![Screenshot showing the forced failover option.](../images/lab14-dp-300-L1-5.png)
 
-    > [!NOTE]
-    > Forced failover will switch the secondary database to the primary role. All sessions are disconnected during this operation.
+    
+    > **Note:** Forced failover will switch the secondary database to the primary role. All sessions are disconnected during this operation.
 
 1. When prompted by the warning message, click **Yes**.
 
     ![Screenshot showing a forced failover warning message.](../images/lab14-dp-300-L1-6.png)
 
-1. The status of the primary replica will switch to **Pending** and the secondary to **Failover**. 
+1. **Refreash** the page, The status of the primary replica will switch to **Pending** and the secondary to **Failover**. 
 
     ![Screenshot showing a forced failover warning message.](../images/lab14-dp-300-L1-7.png)
 
-    > [!NOTE]
-    > This process can take a few minutes. When complete, the roles will switch with the secondary becoming the new primary, and the old primary the secondary.
+    
+    > **Note:** This process can take a few minutes. When complete, the roles will switch with the secondary becoming the new primary, and the old primary the secondary.
 
 We've seen the readable secondary database may be in the same Azure region as the primary, or, more commonly, in a different region. This kind of readable secondary databases are also known as geo-secondaries, or geo-replicas.
 

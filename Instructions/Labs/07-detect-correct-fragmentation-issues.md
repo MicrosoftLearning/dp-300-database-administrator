@@ -5,23 +5,23 @@ The students will take the information gained in the lessons to scope out the de
 
 You have been hired as a database administrator to identify performance related issues and provide viable solutions to resolve any issues found. AdventureWorks has been selling bicycles and bicycle parts directly to consumers and distributors for over a decade. Recently the company has noticed performance degradation in their products that are used to service customer requests. You need to use SQL tools to identify the performance issues and suggest methods to resolve them.
 
-**Note:** These exercises ask you to copy and paste T-SQL code. Please verify that the code has been copied correctly, before executing the code.
+>**Note:** These exercises ask you to copy and paste T-SQL code. Please verify that the code has been copied correctly, before executing the code.
 
 ## Restore a database
    
-1. Select the Windows Start button and type SSMS. Select **Microsoft SQL Server Management Studio 18** from the list.  
+1. Select the Windows Start button and type SSMS. Select **Microsoft SQL Server Management Studio 19** from the list.  
 
-    ![Picture 01](../images/dp300-lab7-img2.png)
+    ![Picture 01](../images/Dp-300-lab07-01.png)
 
-2. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name. Select **Connect**.
+1. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name with **sqlvm-<inject key="DeploymentID" enableCopy="false" /> (1)**. Select **Connect (2)**.
 
-    ![Picture 02](../images/dp-300-lab07-sql01.png)
+    ![Picture 02](../images/upd-dp-300-module-07-lab-01.png)
 
 3. Select the **Databases** folder, and then **New Query**.
 
-    ![Picture 03](../images/dp-300-lab07-sql02.png)
+    ![Picture 02](../images/Dp-300-lab07-03.png)
 
-4. In the new query window, copy and paste the below T-SQL into it. Execute the query to restore the database.
+4. In the **New query window**, copy and paste the below T-SQL into it. Execute the query to restore the database.
 
     ```sql
     RESTORE DATABASE AdventureWorks2017
@@ -32,9 +32,7 @@ You have been hired as a database administrator to identify performance related 
           MOVE 'AdventureWorks2017_log'
             TO 'C:\LabFiles\Monitorandoptimize\AdventureWorks2017_log.ldf';
     ```
-
-    **Note:** The database backup file name and path should match with what you've downloaded on step 1, otherwise the command will fail.
-
+    
 5. You should see a successful message after the restore is complete.
 
     ![Picture 03](../images/dp300-lab7-img5.png)
@@ -44,7 +42,7 @@ You have been hired as a database administrator to identify performance related 
 
 ## Investigate index fragmentation
 
-6. Select **New Query**. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
+1. Select **New Query**. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
 
     ```sql
     USE AdventureWorks2017
@@ -64,7 +62,7 @@ You have been hired as a database administrator to identify performance related 
 
     This query will report any indexes that have a fragmentation over **50%**. The query should not return any result.
 
-7. Select **New Query**. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
+2. Select **New Query**. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
 
     ```sql
     USE AdventureWorks2017
@@ -95,11 +93,11 @@ You have been hired as a database administrator to identify performance related 
 
     This query will increase the fragmentation level of the Person.Address table and its indexes by adding a large number of new records.
 
-8. Execute the previous query again. Now you should be able to see four highly fragmented indexes.
+3. Execute the previous query again. Now you should be able to see four highly fragmented indexes.
 
     ![Picture 03](../images/dp300-lab7-img6.png)
 
-9. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
+4. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
 
     ```sql
     SET STATISTICS IO,TIME ON
@@ -117,15 +115,17 @@ You have been hired as a database administrator to identify performance related 
     GO
     ```
 
-    Click on the **Messages** tab in the result pane of SQL Server Management Studio. Make note of the count of logical reads performed by the query.
+  5. Click on the **Messages** tab in the result pane of SQL Server Management Studio. Make note of the count of logical reads performed by the query.
 
-    ![Picture 03](../images/dp300-lab7-img7.png)
+      ![Picture 03](../images/dp300-lab7-img7.png)
     
     > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
 
+      ![Picture 03](../images/dp300-lab7-img7.png)
+    
 ## Rebuild fragmented indexes
 
-10. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
+1. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
 
     ```sql
     USE AdventureWorks2017
@@ -141,7 +141,7 @@ You have been hired as a database administrator to identify performance related 
         ALLOW_PAGE_LOCKS = ON)
     ```
 
-11. Execute the query below to confirm that the **IX_Address_StateProvinceID** index no longer has fragmentation greater than 50%.
+2. Execute the query below to confirm that the **IX_Address_StateProvinceID** index no longer has fragmentation greater than 50%.
 
     ```sql
     USE AdventureWorks2017
@@ -158,9 +158,9 @@ You have been hired as a database administrator to identify performance related 
     WHERE i.name = 'IX_Address_StateProvinceID'
     ```
 
-    Comparing the results we can see the fragmentation dropped from 81% to 0.
+      >**Note:** Comparing the results we can see the fragmentation dropped from 81% to 0.
 
-12. Re-execute the select statement from the previous section. Make note of the logical reads in the **Messages** tab of the **Results** pane in Management Studio. Was there a change from the number of logical reads encountered before you rebuilt the index?
+3. Re-execute the select statement from the previous section. Make note of the logical reads in the **Messages** tab of the **Results** pane in Management Studio. Was there a change from the number of logical reads encountered before you rebuilt the index?
 
     ```sql
     SET STATISTICS IO,TIME ON

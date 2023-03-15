@@ -5,21 +5,15 @@ The students will take the information gained in the lessons to scope out the de
 
 You have been hired as a database administrator to identify performance related issues and provide viable solutions to resolve any issues found. You need to use the Azure portal to identify the performance issues and suggest methods to resolve them.
 
-**Note:** These exercises ask you to copy and paste T-SQL code. Please verify that the code has been copied correctly, before executing the code.
+>**Note:** These exercises ask you to copy and paste T-SQL code. Please verify that the code has been copied correctly, before executing the code.
 
 ## Review CPU utilization in Azure portal
-
-1. In the lab virtual machine, double click on the Azure portal shortcut on the desktop [https://portal.azure.com](https://portal.azure.com/), and sign in using the Azure **Username** and **Password** provided on the **Environment Details** tab for this lab virtual machine.
-
-
-    ![Picture 1](../images/dp-300-L1-001.png)
   
-
 1. From the Azure Portal, search for “SQL servers” in the search box at the top, then click **SQL servers** from the list of options.
 
     ![A screenshot of a social media post Description automatically generated](../images/dp-300-lab-06-img2.png)
 
-1. Select the server name **dp300-lab-DID** to be taken to the detail page (where DID is the Deployment ID).
+1. Select the server name **dp300-lab-<inject key="Deployment-id" enableCopy="false" />**
 
     ![A screenshot of a social media post Description automatically generated](../images/dp-300-lab-06-img3.png)
 
@@ -43,7 +37,6 @@ You have been hired as a database administrator to identify performance related 
 
     ![Screenshot showing selecting AdventureWorks](../images/dp-300-lab-06-img8.png)
 
-    > **Note:** This feature is in preview.
 
 1. In **Password**, type **P@ssw0rd01** and select **OK**.
 
@@ -100,7 +93,7 @@ You have been hired as a database administrator to identify performance related 
 
 1. Click on the query in the grid below the graph. If you do not see a query, wait for 2 minutes and select **Refresh**.
 
-    **Note:** You may have different duration and query ID. If you see more than one query, click on each one to observe the results.
+   > **Note:** You may have different duration and query ID. If you see more than one query, click on each one to observe the results.
 
     ![Screenshot showing average aggregation](../images/dp-300-lab06-img16.png)
 

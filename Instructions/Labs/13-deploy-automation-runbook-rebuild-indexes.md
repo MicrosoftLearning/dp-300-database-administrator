@@ -4,17 +4,13 @@ You have been hired as a Senior Database Administrator to help automate day to d
 
 ## Create an Automation Account
 
-1. From the lab virtual machine, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/). Connect to the Portal using the Azure **Username** and **Password** provided on the **Environment Details** tab for this lab virtual machine.
-
-    ![Screenshot of Azure portal sign in page](../images/dp-300-L1301.png)
-
 1. In the Azure portal in the search bar type *automation* and then select **Automation Accounts** from the search results, and then select **+ Create**.
 
     ![Screenshot of selecting the Automation Accounts.](../images/dp-300-L1302.png)
 
 1. On the **Create an Automation Account** page, enter the information below, and then select **Review + Create**.
 
-    - **Resource Group:** contoso-rg-(deplyoment id)
+    - **Resource Group:** **contoso-rg-<inject key="Deployment-id" enableCopy="false" />**
     - **Name:** autoAccount
     - **Location:** Use the default.
 
@@ -24,9 +20,8 @@ You have been hired as a Senior Database Administrator to help automate day to d
 
     ![Screenshot of the Add Automation Account screen.](../images/dp300-lab13-img2.png)
 
-    > [!NOTE]
-    > Your automation account should be created in around three minutes.
-
+    >**Note:** Your automation account should be created in around three minutes.
+    
 ## Connect to an existing Azure SQL Database
 
 1. In the Azure portal, navigate to your database by searching for **sql databases**.
@@ -56,17 +51,13 @@ You have been hired as a Senior Database Administrator to help automate day to d
 
 1. Return to the Query editor, and select **OK** to sign in to your database.
 
-1.  Go to the C:\LabFiles\Monitorandoptimize\usp_AdaptiveIndexDefrag.sql from your lab computer and select all ( <kbd>CTRL</kbd> + <kbd>A</kbd> ) and copy ( <kbd>CTRL</kbd> + <kbd>C</kbd> ) the content of usp_AdaptiveIndexDefrag.sql.
+1.  Click on **Open query**, On the  **Open sql query**  select the file location C:\LabFiles\Monitorandoptimize and select **usp_AdaptiveIndexDefrag.sql** and click on Open.
 
+    > **Note:** The purpose of this script is to perform an intelligent defragmentation on one or more indexes, as well as required statistics update, for one or more databases.
 
-    >[!NOTE]
-    > The purpose of this script is to perform an intelligent defragmentation on one or more indexes, as well as required statistics update, for one or more databases.
+     ![Screenshot of pasting the code in a new Query window.](../images/query-editor1.png)
 
-1. Paste the text you copied into the **Query 1** pane.
-
-    ![Screenshot of pasting the code in a new Query window.](../images/dp300-lab13-img4.png)
-
-1. Delete `USE msdb` and `GO` on lines 5 and 6 of the query (that are highlighted in the screenshot) , and then select **Run**.
+1. Delete **ï»**,`USE msdb` and `GO` on lines 5 and 6 of the query (that are highlighted in the screenshot) , and then select **Run**.
 
 1. Expand the **Stored Procedures** folder to see what was created.
 
@@ -139,16 +130,15 @@ The next steps consist of configuring the assets required in preparation for the
 
     ![Screenshot of the Runbooks page, selecting Create a runbook.](../images/dp-300-26.png)
 
-    >[!NOTE]
-    > As we've learned, note that there are two existing runbooks created. These were automatically created during the automation account deployment.
+    >**Note:** As we've learned, note that there are two existing runbooks created. These were automatically created during the automation account deployment.
 
 1. Enter the runbook name as **IndexMaintenance** and a runbook type of **PowerShell**. Select the latest runtime version available, then select **Create**.
 
     ![Screenshot of creating a runbook.](../images/dp-300-27.png)
 
-1. Once the runbook has been created, copy and paste the Powershell code snippet below into your runbook editor. On the first line of the script paste in the server name you copied in the steps above. Select **Save**, and then select **Publish**.
+1. Once the runbook has been created, copy and paste the Powershell code snippet below into your runbook editor. On the first line of the script paste in the **server name** <inject key="sqlServerFqdn"></inject> . Select **Save**, and then select **Publish**.
 
-    **Note:** Please verify that the code has been copied correctly, before saving the runbook.
+    >**Note:** Please verify that the code has been copied correctly, before saving the runbook.
 
     ```powershell
     $AzureSQLServerName = ''
@@ -182,7 +172,7 @@ Next you will schedule the runbook to execute on a regular basis.
 
     ![Screenshot of the create a schedule link.](../images/dp-300-32.png)
 
-1. Supply a descriptive schedule name and a description if desired.
+1. Give the name **IndexMaintenanceSchedule**. 
 
 1. Specify the start time of **4:00AM** of the following day and in the **Pacific Time** time zone. Configure the reoccurrence for every **1** days. Do not set an expiration.
 
@@ -193,6 +183,8 @@ Next you will schedule the runbook to execute on a regular basis.
 1. The schedule is now created and linked to the runbook. Select **OK**.
 
     ![Screenshot of the created schedule.](../images/dp-300-333.png)
+    
+   > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
 
 Azure Automation delivers a cloud-based automation, and configuration service that supports consistent management across your Azure and non-Azure environments.
 

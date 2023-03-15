@@ -6,15 +6,11 @@ You have been hired as a Senior Database Administrator help ensure the security 
 
 ## Enable Microsoft Defender for SQL
 
-1. From the lab virtual machine, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/). Connect to the Portal using the Azure **Username** and **Password** provided on the **Environment Details** tab for this lab virtual machine.
-
-    ![Picture 1](../images/dp-300-module-01-lab-01.png)
-
 1. From the Azure Portal, search for “SQL servers” in the search box at the top, then click on **SQL servers** from the list of options.
 
-    ![A screenshot of a social media post Description automatically generated](../images/upd-dp-300-module-04-lab-1.png)
+    ![Picture 1](../images/upd-dp-300-module-04-lab-1.png)
 
-1. Select the server name **dp300-lab-XXXXXX** to be taken to the detail page (you may have a different location assigned for your SQL server).
+1. Select the server name **dp300-lab- <inject key="Deployment-id"></inject>** to be taken to the detail page (you may have a different location assigned for your SQL server).
 
     ![A screenshot of a social media post Description automatically generated](../images/upd-dp-300-module-04-lab-2.png)
 
@@ -30,7 +26,7 @@ You have been hired as a Senior Database Administrator help ensure the security 
 
 1. On the **Microsoft Defender for Cloud** page, select the **Configure** link (You may need to refresh the page to see this option)
 
-    ![Screenshot of selecting the Configure option](../images/updt-dp-300-module-05-lab-02.png)
+    ![Screenshot of selecting the Configure option](../images/defenderconfigure.png)
 
 1. On the **Server settings** page, notice that toggle switch under **MICROSOFT DEFENDER FOR SQL** is set to **ON (1)**, and then select **Save (2)**.
 

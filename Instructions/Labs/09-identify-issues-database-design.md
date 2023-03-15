@@ -5,7 +5,7 @@ The students will take the information gained in the lessons to scope out the de
 
 You have been hired as a database administrator to identify performance related issues and provide viable solutions to resolve any issues found. AdventureWorks has been selling bicycles and bicycle parts directly to consumers and distributors for over a decade. Your job is to identify issues in query performance and remedy them using techniques learned in this module.
 
-**Note:** These exercises ask you to copy and paste T-SQL code. Please verify that the code has been copied correctly, before executing the code.
+>**Note:** These exercises ask you to copy and paste T-SQL code. Please verify that the code has been copied correctly, before executing the code.
 
 ## Restore a database
 
@@ -13,15 +13,15 @@ You have been hired as a database administrator to identify performance related 
 
     ![Picture 01](../images/dp300-lab9-img2.png)
 
-2. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name. Select **Connect**.
+1. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name with **sqlvm-<inject key="DeploymentID" enableCopy="false" /> (1)**. Select **Connect (2)**.
 
-    ![Picture 02](../images/dp300-lab9-img3.png)
+    ![Picture 02](../images/upd-dp-300-module-07-lab-01.png)
+    
+1. Select the **Databases** folder, and then **New Query**.
 
-3. Select the **Databases** folder, and then **New Query**.
+    ![Picture 03](../images/dp300-lab9-img04.png)
 
-    ![Picture 03](../images/dp300-lab9-img4.png)
-
-4. In the new query window, copy and paste the below T-SQL into it. Execute the query to restore the database.
+1. In the **New query** window, copy and paste the below T-SQL into it. Execute the query to restore the database.
 
     ```sql
     RESTORE DATABASE AdventureWorks2017
@@ -34,13 +34,15 @@ You have been hired as a database administrator to identify performance related 
     ```
 
 
-5. You should see a successful message after the restore is complete.
+1. You should see a successful message after the restore is complete.
 
     ![Picture 03](../images/dp-300-lab-09-img5.png)
+    
+   > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
 
 ## Examine the query and identify the problem
 
-6. Select **New Query**. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
+1. Select **New Query**. Copy and paste the following T-SQL code into the query window. Select **Execute** to execute this query.
 
     ```sql
     USE AdventureWorks2017
@@ -51,42 +53,45 @@ You have been hired as a database administrator to identify performance related 
     WHERE NationalIDNumber = 14417807;
     ```
 
-7. Select **Include Actual Execution Plan** icon as shown below before running the query or press **CTRL+M**. This will cause the execution plan to be displayed when you execute the query. Select **Execute** to execute this query again.
+1. Select **Include Actual Execution Plan** icon as shown below before running the query or press **CTRL+M**. This will cause the execution plan to be displayed when you execute the query. Select **Execute** to execute this query again.
 
     ![Picture 01](../images/dp300-lab9-img6.png)
 
-8. Navigate to the execution plan, by selecting the **Execution plan** tab in the results panel. In the execution plan, mouse over the `SELECT` operator. You will notice a warning message identified by an exclamation point in a yellow triangle as shown below. Identify what the warning message tells you.
+1. Navigate to the execution plan, by selecting the **Execution plan** tab in the results panel. In the execution plan, mouse over the `SELECT` operator. You will notice a warning message identified by an exclamation point in a yellow triangle as shown below. Identify what the warning message tells you.
 
     ![Picture 02](../images/dp-300-lab-09-img7.png)
-
+    
 ## Identify ways to fix the warning message
 
-The *[HumanResources].[Employee]* table structure is shown in the follow data definition language (DDL) statement. Review the fields that are used in the previous SQL query against this DDL, paying attention to their types.
+1. The *[HumanResources].[Employee]* table structure is shown in the follow data definition language (DDL) statement. **Review the fields that are used in the previous SQL query against this DDL, paying attention to their types.**
 
-```sql
-CREATE TABLE [HumanResources].[Employee](
-     [BusinessEntityID] [int] NOT NULL,
-     [NationalIDNumber] [nvarchar](15) NOT NULL,
-     [LoginID] [nvarchar](256) NOT NULL,
-     [OrganizationNode] [hierarchyid] NULL,
-     [OrganizationLevel] AS ([OrganizationNode].[GetLevel]()),
-     [JobTitle] [nvarchar](50) NOT NULL,
-     [BirthDate] [date] NOT NULL,
-     [MaritalStatus] [nchar](1) NOT NULL,
-     [Gender] [nchar](1) NOT NULL,
-     [HireDate] [date] NOT NULL,
-     [SalariedFlag] [dbo].[Flag] NOT NULL,
-     [VacationHours] [smallint] NOT NULL,
-     [SickLeaveHours] [smallint] NOT NULL,
-     [CurrentFlag] [dbo].[Flag] NOT NULL,
-     [rowguid] [uniqueidentifier] ROWGUIDCOL NOT NULL,
-     [ModifiedDate] [datetime] NOT NULL
-) ON [PRIMARY]
-```
+    ```sql
+    CREATE TABLE [HumanResources].[Employee](
+    [BusinessEntityID] [int] NOT NULL,
+    [NationalIDNumber] [nvarchar](15) NOT NULL,
+    [LoginID] [nvarchar](256) NOT NULL,
+    [OrganizationNode] [hierarchyid] NULL,
+    [OrganizationLevel] AS ([OrganizationNode].[GetLevel]()),
+    [JobTitle] [nvarchar](50) NOT NULL,
+    [BirthDate] [date] NOT NULL,
+    [MaritalStatus] [nchar](1) NOT NULL,
+    [Gender] [nchar](1) NOT NULL,
+    [HireDate] [date] NOT NULL,
+    [SalariedFlag] [dbo].[Flag] NOT NULL,
+    [VacationHours] [smallint] NOT NULL,
+    [SickLeaveHours] [smallint] NOT NULL,
+    [CurrentFlag] [dbo].[Flag] NOT NULL,
+    [rowguid] [uniqueidentifier] ROWGUIDCOL NOT NULL,
+    [ModifiedDate] [datetime] NOT NULL
+    ) ON [PRIMARY]
 
-9. According to the warning message presented in the execution plan, what change would you recommend?
 
-    1. Identify what field is causing the implicit conversion and why. 
+    ```
+
+2. According to the warning message presented in the execution plan, what change would you recommend?
+
+    1. Identify what field is causing the implicit conversion and why.
+    
     1. If you review the query:
 
         ```sql
@@ -95,7 +100,7 @@ CREATE TABLE [HumanResources].[Employee](
         WHERE NationalIDNumber = 14417807;
         ```
 
-        You'll note that the value compared to the *NationalIDNumber* column in the `WHERE` clause is compared as a number, since **14417807** isn't in a quoted string. 
+        >**Note:** the value compared to the *NationalIDNumber* column in the `WHERE` clause is compared as a number, since **14417807** isn't in a quoted string. 
 
         After examining the table structure you will find the *NationalIDNumber* column is using the `NVARCHAR` data type and not an `INT` data type. This inconsistency causes the database optimizer to implicitly convert the number to a `NVARCHAR` value, causing additional overhead to the query performance by creating a suboptimal plan.
 
@@ -103,7 +108,7 @@ There are two approaches we can implement to fix the implicit conversion warning
 
 ### Change the code
 
-10. How would you change the code to resolve the implicit conversion? Change the code and rerun the query.
+1. How would you change the code to resolve the implicit conversion? Change the code and rerun the query.
 
     Remember to turn on the **Include Actual Execution Plan** (**CTRL+M**) if it is not already on. 
 
@@ -119,13 +124,13 @@ There are two approaches we can implement to fix the implicit conversion warning
 
     ![Picture 03](../images/dp-300-lab-09-img8.png)
 
-    **Note:** the warning message is now gone, and the query plan has improved. Changing the `WHERE` clause so that the value compared to the *NationalIDNumber* column matches the column's data type in the table, the optimizer was able to get rid of the implicit conversion.
+    >**Note:** the warning message is now gone, and the query plan has improved. Changing the `WHERE` clause so that the value compared to the *NationalIDNumber* column matches the column's data type in the table, the optimizer was able to get rid of the implicit conversion.
 
 ### Change the data type
 
-11. We can also fix the implicit conversion warning by changing the table structure.
+1. We can also fix the implicit conversion warning by changing the table structure.
 
-    To attempt to fix the index, copy and paste the query below into a new query window, to change the column's data type. Attempt to execute the query, by selecting **Execute** or pressing <kbd>F5</kbd>.
+    To attempt to fix the index, copy and paste the query below into a **New query window**, to change the column's data type. Attempt to execute the query, by selecting **Execute** or pressing <kbd>F5</kbd>.
 
     ```sql
     ALTER TABLE [HumanResources].[Employee] ALTER COLUMN [NationalIDNumber] INT NOT NULL;
@@ -135,9 +140,9 @@ There are two approaches we can implement to fix the implicit conversion warning
 
     ![Picture 04](../images/dp-300-lab-09-img9.png)
 
-    The *NationalIDNumber* column is part of an already existing nonclustered index, the index has to be rebuilt/recreated in order to change the data type. **This could lead to extended downtime in production, which highlights the importance of choosing the right data types in your design.**
+     The *NationalIDNumber* column is part of an already existing nonclustered index, the index has to be rebuilt/recreated in order to change the data type. **This could lead to extended downtime in production, which highlights the importance of choosing the right data types in your design.**
 
-12. In order to resolve this issue, copy and paste the code below into your query window and execute it by selecting **Execute**.
+2. In order to resolve this issue, copy and paste the code below into your query window and execute it by selecting **Execute**.
 
     ```sql
     USE AdventureWorks2017
@@ -155,9 +160,9 @@ There are two approaches we can implement to fix the implicit conversion warning
     CREATE UNIQUE NONCLUSTERED INDEX [AK_Employee_NationalIDNumber] ON [HumanResources].[Employee]( [NationalIDNumber] ASC );
     GO
     ```
-**Note** : Kindly run the command for dropping the table first and run the preceeding commands later, else there will be an error stating that the column already exists. 
+    >**Note:**  Kindly run the command for dropping the table first and run the preceeding commands later, else there will be an error stating that the column already  exists. 
 
-13. Alternatively, you can run the query below to confirm that the data type was successfully changed.
+3. Alternatively, you can run the query below to confirm that the data type was successfully changed.
 
     ```sql
     SELECT c.name, t.name
@@ -169,7 +174,7 @@ There are two approaches we can implement to fix the implicit conversion warning
     
     ![Picture 05](../images/dp-300-lab-09-img10.png)
     
-14. Now let's check the execution plan. Rerun the original query without the quotes.
+4. Now let's check the execution plan. Rerun the original query without the quotes.
 
     ```sql
     USE AdventureWorks2017
@@ -183,5 +188,7 @@ There are two approaches we can implement to fix the implicit conversion warning
     ![Picture 06](../images/dp-300-lab-09-img11.png)
 
     Examine the query plan, and note that you can now use an integer to filter by *NationalIDNumber* without the implicit conversion warning. The SQL query optimizer can now generate and execute the most optimal plan.
+    
+     > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
 
 In this exercise, you've learned how to identify query problems caused by implicit data type conversions, and how to fix it to improve the query plan.

@@ -20,7 +20,7 @@ As a DBA for AdventureWorks, you need to back up a database to a URL in Azure an
 
     ![Picture 03](../images/upd-dp-300-module-07-lab-04.png)
 
-1. In the new query window, copy and paste the below T-SQL into it. Execute the query to restore the database.
+1. In the **New query window**, copy and paste the below T-SQL into it. Execute the query to restore the database.
 
     ```sql
     RESTORE DATABASE AdventureWorks2017
@@ -32,15 +32,13 @@ As a DBA for AdventureWorks, you need to back up a database to a URL in Azure an
             TO 'C:\LabFiles\HADR\AdventureWorks2017_log.ldf';
     ```
 
-    **Note:** The database backup file name and path should match with what you've downloaded on step 1, otherwise the command will fail.
-
 1. You should see a successful message after the restore is complete.
 
     ![Picture 03](../images/updt-dp-300-module-07-lab-05.png)
 
 ## Configure Backup to URL
 
-1. From the lab virtual machine, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/). Connect to the Portal using the Azure **Username** and **Password** provided on the **Environment Details** tab for this lab virtual machine.
+1. From the lab virtual machine, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/). Connect to the Portal using the Azure **Username** <inject key="AzureAdUserEmail"></inject> and **Password**  <inject key="AzureAdUserPassword"></inject>
 
     ![Screenshot of Azure portal sign in page](../images/upd-dp-300-module-01-lab-01.png)
 
@@ -52,11 +50,11 @@ As a DBA for AdventureWorks, you need to back up a database to a URL in Azure an
 
     ![Screenshot of welcome page for cloud shell on Azure portal.](../images/upd-dp-300-module-15-lab-02.png)
 
-1. If you have not previously used a Cloud Shell, you must configure a storage. Select **Show advanced settings** (You may have a different subscription assigned).
+1. If you have not previously used a Cloud Shell, you must configure a storage. Select **Show advanced settings** (Use existing subscription).
 
     ![Screenshot of create storage for cloud shell on Azure portal.](../images/upd-dp-300-module-15-lab-03.png)
 
-1. Use the existing **Resource group (1)** and specify new names for **Storage account** as **dp300storage<inject key="DeploymentID" enableCopy="false" /> (2)** and **File share** as **dp300fileshare (3)**, as shown in the dialog below. Make a note of the **Resource group** name. It should start with *contoso-rg*. Then select **Create storage (4)**.
+1. Use the existing **Resource group** as **contoso-rg-<inject key="DeploymentID" enableCopy="false" />(1)** and specify new names for **Storage account** as **dp300storage<inject key="DeploymentID" enableCopy="false" />(2)** and **File share** as **dp300fileshare (3)**, as shown in the dialog below. Then select **Create storage (4)**.
 
     ![Screenshot of the create storage account and file share on Azure portal.](../images/upd-dp-300-module-15-lab-04.png)
 
@@ -116,7 +114,7 @@ As a DBA for AdventureWorks, you need to back up a database to a URL in Azure an
 
    > **NOTE:** Replace BACKUP_STORAGE_NAME with **dp300backupstorage<inject key="DeploymentID" enableCopy="false" />** and STORAGE_KEY with the value of **key1** that you have copied in the notepad.
 
-   >  The output should return something similar to below. Copy the whole shared access signature and paste it in **Notepad**, it will be used in the next task.
+    The output should return something similar to below. Copy the whole shared access signature and paste it in **Notepad**, it will be used in the next task.
 
     ![Screenshot of the shared access signature key.](../images/upd-dp-300-module-15-lab-09.png)
 
@@ -128,12 +126,13 @@ Now that the functionality is configured, you can generate a backup file as a bl
 
 1. Create the credential that will be used to access storage in the cloud with the following Transact-SQL. Repalce the following values, then select **Execute**.
 
-   > **NOTE:** Replace <storage_account_name> with **dp300backupstorage<inject key="DeploymentID" enableCopy="false" />** and <key_value> with the value of **SAS** that you have copied in the notepad.
-   >  **<key_value>** is the value generated at the end of the previous task in this format:
+   >**NOTE:** Replace **<storage_account_name>** with **dp300backupstorage<inject key="DeploymentID" enableCopy="false" />**. Replace the **key_value** with the **SAS** that you have copied in the notepad. the value generated at the end of the previous task in this format:
+   
        `'se=2023-12-31T00%3A00Z&sp=rwdl&sv=2018-11-09&sr=csig=rnoGlveGql7ILhziyKYUPBq5ltGc/pzqOCNX5rrLdRQ%3D'`
-
-
-   ```sql
+       
+       
+       
+      ```sql
     IF NOT EXISTS  
     (SELECT * 
         FROM sys.credentials  
@@ -144,15 +143,16 @@ Now that the functionality is configured, you can generate a backup file as a bl
         SECRET = '<key_value>'
     END;
     GO  
-   ```
+    ```
+  
+    
+      ![Screenshot of the credential on SSMS.](../images/upd-dp-300-module-15-lab.png)
    
-   ![Screenshot of the credential on SSMS.](../images/upd-dp-300-module-15-lab.png)
-
 1. You can check if the credential was created successfully by navigating to **Security -> Credentials** on Object Explore.
 
     ![Screenshot of the credential on SSMS.](../images/upd-dp-300-module-15-lab-17.png)
 
-1. If you mistyped and need to recreate the credential, you can drop it with the following command, making sure to change the name of the storage account. (Only run this command if you need to go back and recreate the credential)
+1. If you mistyped and need to recreate the credential, you can drop it with the following command, making sure to change the name of the storage account. (Only run this command if you need to go back and recreate the credential).  select **New Query**, then paste and execute the following query.
 
    > **Note:** Skip this step if you have already created the credentials correctly.
 
@@ -162,7 +162,7 @@ Now that the functionality is configured, you can generate a backup file as a bl
 
 ## Backup to URL
 
-1. Back up the database **AdventureWorks2017** to Azure with the following command in Transact-SQL:
+1. Back up the database **AdventureWorks2017** to Azure with the following command in Transact-SQL.  select **New Query**, then paste and execute the following query:
 
     ```sql
     BACKUP DATABASE AdventureWorks2017   
@@ -182,7 +182,7 @@ Now that the functionality is configured, you can generate a backup file as a bl
 
 ## Validate the backup through Azure CLI
 
-To see that the file is actually in Azure, you can use Storage Explorer (preview) or Azure Cloud Shell.
+To see that the file is actually in Azure, you can use Storage Explorer or Azure Cloud Shell.
 
 1. Navigate back to [https://portal.azure.com](https://portal.azure.com/). If not connected then connect to the Portal using the Azure **Username** and **Password** provided on the **Environment Details** tab for this lab virtual machine.
 
@@ -210,7 +210,7 @@ To see that the file is actually in Azure, you can use Storage Explorer (preview
 
 1. In the left navigation, select **Storage browser (preview) (1)**. Expand **Blob containers (2)**.
 
-    ![Screenshot showing the backed up file in the storage account.](../images/upd-dp-300-module-15-lab-12.png)
+    ![Screenshot showing the backed up file in the storage account.](../images/dp300-lab15-backupcontainer.png)
 
 1. Select **backups**.
 
@@ -219,12 +219,15 @@ To see that the file is actually in Azure, you can use Storage Explorer (preview
 1. Note that the backup file is stored in the container.
 
     ![Screenshot showing the backup file on storage browser.](../images/upd-dp-300-module-15-lab-14.png)
+    
+   > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
+
 
 ## Restore from URL
 
 This task will show you how to restore a database from an Azure blob storage.
 
-1. Navigate back to **SQL Server Management Studio (SSMS)**, select **New Query**, then paste and execute the following query.
+1. Navigate back to **SQL Server Management Studio (SSMS)**,  select **New Query**, then paste and execute the following query.
 
     ```sql
     USE AdventureWorks2017;
@@ -235,7 +238,7 @@ This task will show you how to restore a database from an Azure blob storage.
 
     ![Screenshot showing the customer name before the update was executed.](../images/upd-dp-300-module-15-lab-21.png)
 
-1. Run this command to change the name of that customer.
+1. Run this command to change the name of that customer. select **New Query**, then paste and execute the following query
 
     ```sql
     UPDATE Person.Address
@@ -248,9 +251,9 @@ This task will show you how to restore a database from an Azure blob storage.
 
     ![Screenshot showing the customer name after the update was executed.](../images/upd-dp-300-module-15-lab-15.png)
 
-1. To restore the database to get it back to where it was before the customer name was mistakenly changed, execute the following.
+1. To restore the database to get it back to where it was before the customer name was mistakenly changed, select **New Query**, then paste and execute the following query.
 
-    **Note:** **SET SINGLE_USER WITH ROLLBACK IMMEDIATE** syntax the open transactions will all be rolled back. This can prevent the restore failing due to active connections.
+   > **Note:** **SET SINGLE_USER WITH ROLLBACK IMMEDIATE** syntax the open transactions will all be rolled back. This can prevent the restore failing due to active connections.
 
     ```sql
     USE [master]
@@ -269,7 +272,7 @@ This task will show you how to restore a database from an Azure blob storage.
 
     > **NOTE:** Replace <storage_account_name> with **dp300backupstorage<inject key="DeploymentID" enableCopy="false" />**.
 
-    > The output should be similar to this:
+     The output should be similar to this:
 
     ![Screenshot showing the restore database from URL being executed.](../images/upd-dp-300-module-15-lab-20.png)
 
