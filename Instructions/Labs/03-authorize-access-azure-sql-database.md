@@ -46,7 +46,12 @@ You've been hired as a Senior Database Administrator to help ensure the security
    
    ![Screenshot of adding the client IP address](../images/dp300-lab3-img10.png)
    
-   > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
+   > **Congratulations!**  on completing the task! Now, it's time to validate it. Here are the steps:
+    1. Click the (...) icon located at the upper right corner of the lab guide section and navigate to the Lab Validation Page.
+    2. Hit the Validate button for the corresponding task.
+    3. If you receive a success message, you can proceed to the next task. If not, carefully read the error message and retry the step, following the instructions in          the lab guide.
+    4. If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out. 
+
 
 ## Manage access to database objects
 
