@@ -35,6 +35,8 @@ You have been hired as a Senior Database Administrator help ensure the security 
 1. On the **Server settings** page, notice that toggle switch under **MICROSOFT DEFENDER FOR SQL** is set to **ON (1)**, and then select **Save (2)**.
 
     ![Screenshot of Server settings page](../images/upd-dp-300-module-05-lab-03.png)
+    
+    > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
 
 ## Enable Data Classification
 
