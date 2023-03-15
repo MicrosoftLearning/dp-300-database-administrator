@@ -38,7 +38,7 @@ You have been hired as a database administrator to identify performance related 
 
     ![Picture 03](../images/dp-300-lab-09-img5.png)
     
-   > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
+    > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
 
 ## Examine the query and identify the problem
 
@@ -84,7 +84,6 @@ You have been hired as a database administrator to identify performance related 
     [rowguid] [uniqueidentifier] ROWGUIDCOL NOT NULL,
     [ModifiedDate] [datetime] NOT NULL
     ) ON [PRIMARY]
-
 
     ```
 2. According to the warning message presented in the execution plan, what change would you recommend?
@@ -188,6 +187,6 @@ There are two approaches we can implement to fix the implicit conversion warning
 
     Examine the query plan, and note that you can now use an integer to filter by *NationalIDNumber* without the implicit conversion warning. The SQL query optimizer can now generate and execute the most optimal plan.
     
-     > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
+    > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
 
 In this exercise, you've learned how to identify query problems caused by implicit data type conversions, and how to fix it to improve the query plan.
