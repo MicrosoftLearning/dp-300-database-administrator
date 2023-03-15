@@ -104,7 +104,7 @@ You've been hired as a Senior Data Engineer to help automate day to day operatio
 
     ![Picture 3](../images/dp300-lab11-img3.png)
     
-    > **Congratulations!** on completing the task! Now, it's time to validate it. Here are the steps:
+    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
     1. Click the (...) icon located at the upper right corner of the lab guide section and navigate to the Lab Validation Page.
     2. Hit the Validate button for the corresponding task.If you receive a success message, you can proceed to the next task. 
     3. If not, carefully read the error message and retry the step, following the instructions in the lab guide.
