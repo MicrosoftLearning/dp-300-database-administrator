@@ -73,6 +73,8 @@ You are a database administrator for AdventureWorks. You need to create a test e
     **Note:** Your deployment may take 5-10 minutes to complete.
 
     ![Picture 19](../images/dp-300-lab01-12r.png)
+    
+    > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide  section and switch to Lab Validation tab and then click on Validate button for the respective task.
 
 1. On the **Overview** page for the virtual machine, explore the menu options for this resource to review what is available.
 
