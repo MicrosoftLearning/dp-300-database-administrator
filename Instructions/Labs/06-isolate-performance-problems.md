@@ -98,5 +98,6 @@ You have been hired as a database administrator to identify performance related 
     ![Screenshot showing average aggregation](../images/dp-300-lab06-img16.png)
 
 For this query, you can see that the total duration was over a minute and that it ran approximately 10,000 times.
+   > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
 
 In this exercise, you've learned how to explore server resources for an Azure SQL Database and identify potential query performance issues through Query Performance Insight.

@@ -112,6 +112,8 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
 14. Once the deployment is complete, click **Go to resource**.
 
+> **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
+
 ## Enable access to an Azure SQL Database
 
 1. From the **SQL database** page, select the **Overview** section, and then select the link for the server name in the top section:
