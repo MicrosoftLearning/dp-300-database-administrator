@@ -37,8 +37,11 @@ You'll run queries with suboptimal performance, examine the query plans, and att
 
     ![Picture 03](../images/upd-dp-300-module-07-lab-05.png)
     
-    > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
-
+    > **Congratulations!** on completing the task! Now, it's time to validate it. Here are the steps:
+    1. Click the (...) icon located at the upper right corner of the lab guide section and navigate to the Lab Validation Page.
+    2. Hit the Validate button for the corresponding task.If you receive a success message, you can proceed to the next task. 
+    3. If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+    4. If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
 ## Generate actual execution plan
 
@@ -129,8 +132,12 @@ There are several ways to generate an execution plan in SQL Server Management St
 
       ![Screenshot showing the improved execution plan](../images/upd-dp-300-module-10-lab-05.png)
       
-      > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
-   
+      > **Congratulations!** on completing the task! Now, it's time to validate it. Here are the steps:
+      1. Click the (...) icon located at the upper right corner of the lab guide section and navigate to the Lab Validation Page.
+      2. Hit the Validate button for the corresponding task.If you receive a success message, you can proceed to the next task. 
+      3. If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+      4. If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+  
 ## Use Query Store to detect and handle regression
 
 Next you'll run a workload to generate query statistics for query store, examine **Top Resource Consuming Queries** report to identify poor performance, and see how to force a better execution plan.
