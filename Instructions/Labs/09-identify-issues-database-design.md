@@ -87,7 +87,6 @@ You have been hired as a database administrator to identify performance related 
 
 
     ```
-
 2. According to the warning message presented in the execution plan, what change would you recommend?
 
     1. Identify what field is causing the implicit conversion and why.
