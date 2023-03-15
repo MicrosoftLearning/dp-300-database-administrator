@@ -36,6 +36,9 @@ You'll run queries with suboptimal performance, examine the query plans, and att
 1. You should see a successful message after the restore is complete.
 
     ![Picture 03](../images/upd-dp-300-module-07-lab-05.png)
+    
+   > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
+
 
 ## Generate actual execution plan
 
@@ -125,7 +128,9 @@ There are several ways to generate an execution plan in SQL Server Management St
 1. **Rerun** the query from step 1 under **Generate actual execution plan** and then **rerun previous step again**. Make note of the changes to the logical reads and execution plan changes. The plan now only needs to use the nonclustered index we created.
 
       ![Screenshot showing the improved execution plan](../images/upd-dp-300-module-10-lab-05.png)
-
+      
+   > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
+   
 ## Use Query Store to detect and handle regression
 
 Next you'll run a workload to generate query statistics for query store, examine **Top Resource Consuming Queries** report to identify poor performance, and see how to force a better execution plan.
