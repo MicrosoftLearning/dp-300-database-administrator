@@ -37,7 +37,7 @@ You have been hired as a database administrator to identify performance related 
 
     ![Picture 03](../images/dp300-lab8-img4.png)
     
-    > **Congratulations!** on completing the task! Now, it's time to validate it. Here are the steps:
+    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
     1. Click the (...) icon located at the upper right corner of the lab guide section and navigate to the Lab Validation Page.
     2. Hit the Validate button for the corresponding task.If you receive a success message, you can proceed to the next task. 
     3. If not, carefully read the error message and retry the step, following the instructions in the lab guide.
@@ -216,7 +216,7 @@ You have been hired as a database administrator to identify performance related 
 
     Read Commit Snapshot isolation level is an optimistic form of transaction isolation, and the last query will show the latest committed version of the data, rather than being blocked.
     
-    > **Congratulations!** on completing the task! Now, it's time to validate it. Here are the steps:
+    > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
     1. Click the (...) icon located at the upper right corner of the lab guide section and navigate to the Lab Validation Page.
     2. Hit the Validate button for the corresponding task.If you receive a success message, you can proceed to the next task. 
     3. If not, carefully read the error message and retry the step, following the instructions in the lab guide.
