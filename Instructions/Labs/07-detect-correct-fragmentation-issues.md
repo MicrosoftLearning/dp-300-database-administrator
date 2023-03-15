@@ -38,6 +38,9 @@ You have been hired as a database administrator to identify performance related 
 5. You should see a successful message after the restore is complete.
 
     ![Picture 03](../images/dp300-lab7-img5.png)
+    
+    > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
+
 
 ## Investigate index fragmentation
 
@@ -117,6 +120,8 @@ You have been hired as a database administrator to identify performance related 
     Click on the **Messages** tab in the result pane of SQL Server Management Studio. Make note of the count of logical reads performed by the query.
 
     ![Picture 03](../images/dp300-lab7-img7.png)
+    
+    > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
 
 ## Rebuild fragmented indexes
 
