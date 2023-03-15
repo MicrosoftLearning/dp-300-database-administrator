@@ -50,6 +50,8 @@ You have been hired as a Senior Data Engineer to help automate day to day operat
 10. On the **Review + create** tab, Select **Create**.
 
     ![Screenshot of the Create alert rule page selecting the Create alert rule](../images/lab12-dp-300-02.png)
+    
+    > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
 
 11. An email like this is sent to the email address that you entered, once the rule is created.
 
