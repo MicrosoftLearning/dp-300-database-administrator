@@ -61,8 +61,8 @@ You have been hired as a Senior Data Engineer to help automate day to day operat
     
     > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
     1. Click the (...) icon located at the upper right corner of the lab guide section and navigate to the Lab Validation Page.
-    2. Hit the Validate button for the corresponding task.If you receive a success message, you can proceed to the next task. 
-    3. If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+    2. Hit the Validate button for the corresponding task.
+    3. If you receive a success message, you can proceed to the next task. If not, carefully read the error message and retry the step, following the instructions in the lab guide.
     4. If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
 Alerts can send you an email or call a web hook when some metric (for example database size or CPU usage) reaches a threshold you define. You've just seen how you can easily configure alerts for Azure SQL Databases.
