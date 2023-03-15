@@ -37,6 +37,8 @@ You have been hired as a database administrator to identify performance related 
 1. You should see a successful message after the restore is complete.
 
     ![Picture 03](../images/dp-300-lab-09-img5.png)
+    
+   > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
 
 ## Examine the query and identify the problem
 
@@ -158,7 +160,7 @@ There are two approaches we can implement to fix the implicit conversion warning
     CREATE UNIQUE NONCLUSTERED INDEX [AK_Employee_NationalIDNumber] ON [HumanResources].[Employee]( [NationalIDNumber] ASC );
     GO
     ```
-  >**Note:**  Kindly run the command for dropping the table first and run the preceeding commands later, else there will be an error stating that the column already  exists. 
+    >**Note:**  Kindly run the command for dropping the table first and run the preceeding commands later, else there will be an error stating that the column already  exists. 
 
 3. Alternatively, you can run the query below to confirm that the data type was successfully changed.
 
@@ -186,5 +188,7 @@ There are two approaches we can implement to fix the implicit conversion warning
     ![Picture 06](../images/dp-300-lab-09-img11.png)
 
     Examine the query plan, and note that you can now use an integer to filter by *NationalIDNumber* without the implicit conversion warning. The SQL query optimizer can now generate and execute the most optimal plan.
+
+    > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
 
 In this exercise, you've learned how to identify query problems caused by implicit data type conversions, and how to fix it to improve the query plan.
