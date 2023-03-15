@@ -51,8 +51,6 @@ You have been hired as a Senior Data Engineer to help automate day to day operat
 
     ![Screenshot of the Create alert rule page selecting the Create alert rule](../images/lab12-dp-300-02.png)
     
-    > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
-
 11. An email like this is sent to the email address that you entered, once the rule is created.
 
     ![Screenshot of the confirmation email](../images/dp300-lab12-img11.png)
@@ -60,5 +58,7 @@ You have been hired as a Senior Data Engineer to help automate day to day operat
     With the alert in place, if the CPU usage on average exceeds 80%, an email like this is sent.
 
     ![Screenshot of the warning email](../images/dp300-lab12-img13.png)
+    
+    > **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
 
 Alerts can send you an email or call a web hook when some metric (for example database size or CPU usage) reaches a threshold you define. You've just seen how you can easily configure alerts for Azure SQL Databases.
