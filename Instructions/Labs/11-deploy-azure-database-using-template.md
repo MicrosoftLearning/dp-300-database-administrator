@@ -105,3 +105,6 @@ You've been hired as a Senior Data Engineer to help automate day to day operatio
     ![Picture 3](../images/dp300-lab11-img3.png)
 
 You've just seen how, with a single click on an Azure Resource Manager template link, you can easily create both an Azure SQL server and database.
+
+> **Congratulations!** You have successfully completed this task. Please validate your progress by clicking on (...) icon from upper right corner of lab guide section and switch to Lab Validation tab and then click on Validate button for the respective task.
+
