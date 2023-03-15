@@ -93,14 +93,14 @@ You have been hired as a database administrator to identify performance related 
 
 1. Click on the query in the grid below the graph. If you do not see a query, wait for 2 minutes and select **Refresh**.
 
-   > **Note:** You may have different duration and query ID. If you see more than one query, click on each one to observe the results.
+    > **Note:** You may have different duration and query ID. If you see more than one query, click on each one to observe the results.
 
     ![Screenshot showing average aggregation](../images/dp-300-lab06-img16.png)
 
     For this query, you can see that the total duration was over a minute and that it ran approximately 10,000 times.
     
     > **Congratulations**  on completing the task! Now, it's time to validate it. Here are the steps:
-   1. Click the (...) icon located at the upper right corner of the lab guide section and navigate to the Lab Validation Page.
+    1. Click the (...) icon located at the upper right corner of the lab guide section and navigate to the Lab Validation Page.
     2. Hit the Validate button for the corresponding task.
     3. If you receive a success message, you can proceed to the next task. If not, carefully read the error message and retry the step, following the instructions in the lab guide.
     4. If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out. 
