@@ -12,7 +12,7 @@ The students will take the information gained in the lessons to configure and su
 
 You've been hired as a Senior Database Administrator to help ensure the security of the database environment.
 
-**Note:** These exercises ask you to copy and paste T-SQL code. Please verify that the code has been copied correctly, before executing the code.
+**Note:** These exercises ask you to copy and paste T-SQL code and makes use of existing SQL resources. Please verify that the code has been copied correctly, before executing the code.
 
 ## Authorize access to Azure SQL Database with Azure Active Directory
 
