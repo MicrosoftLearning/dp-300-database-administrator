@@ -113,9 +113,7 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
     ![Picture 26](../images/dp-300-module-01-lab-26.png)
 
-1. Select the Windows Start button and type SSMS. Select **Microsoft SQL Server Management Studio 18** from the list.  
-
-    ![Picture 34](../images/dp-300-module-01-lab-34.png)
+1. Select the Windows Start button and type SSMS. Select **Microsoft SQL Server Management Studio** from the list.  
 
 1. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name. Select **Connect**.
 
