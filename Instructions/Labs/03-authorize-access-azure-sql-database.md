@@ -24,7 +24,7 @@ You've been hired as a Senior Database Administrator to help ensure the security
 
     ![Screenshot of the Azure portal home page, selecting All resources](../images/dp-300-module-03-lab-01.png)
 
-1. Select the Azure SQL Database server **dp300-lab-xxxxxx**, where **xxxxxx** is a random string, and select **Not Configured** next to **Active Directory Admin**.
+1. Select the SQL server **dp300-lab-xxxxxx**, where **xxxxxx** is a random string, and select **Not Configured** next to **Active Directory Admin**.
 
     ![Screenshot selecting Not Configured](../images/dp-300-module-03-lab-02.png)
 
