@@ -89,11 +89,9 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
 ## Connect to SQL Server on an Azure Virtual Machine
 
-1. On the **Overview** page for the virtual machine, select the **Connect** button and choose RDP.
+1. On the **Overview** page for the virtual machine, select **Connect**.
 
-    ![Picture 21](../images/dp-300-module-01-lab-21.png)
-
-1. On the RDP tab, select the **Download RDP File** button.
+1. On the Connect pane, select the **Download RDP File** button.
 
     ![Picture 22](../images/dp-300-module-01-lab-22.png)
 
@@ -115,7 +113,7 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
 1. Select the Windows Start button and type SSMS. Select **Microsoft SQL Server Management Studio** from the list.  
 
-1. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name. Select **Connect**.
+1. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name. Check the option **Trust server certificate** and then select **Connect**.
 
     ![Picture 35](../images/dp-300-module-01-lab-35.png)
 
