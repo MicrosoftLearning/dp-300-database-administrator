@@ -1,5 +1,5 @@
 param (
-    [string]$rgName = "dp300",  # Can be a full name or a prefix
+    [string]$rgName = "contoso-rg",  # Can be a full name or a prefix
     [string]$location = "westus2",
     [string]$sqlAdminPw = $null # Optional, if not provided, a secure one will be generated
 )
@@ -94,10 +94,8 @@ function Get-ExistingResourceGroups {
 
 # Secure Unique Suffix Generator (12 Characters, No Spaces)
 function Get-SecureUniqueSuffix {
-    $hash = (Get-FileHash -InputStream ([System.IO.MemoryStream]::new([System.Text.Encoding]::UTF8.GetBytes($rgName))) -Algorithm MD5).Hash.Substring(0, 8)
-    $hash = $hash.ToLower()
-    $randomNumber = Get-Random -Minimum 1000 -Maximum 9999
-    $uniqueSuffix = "$hash-$randomNumber"
+    $randomNumber = Get-Random -Minimum 10000000 -Maximum 99999999
+    $uniqueSuffix = "$randomNumber"
 
     return $uniqueSuffix
 }

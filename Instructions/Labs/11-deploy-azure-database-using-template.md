@@ -14,7 +14,7 @@ You've been hired as a Senior Data Engineer to help automate day to day operatio
 
 1. In Microsoft Edge, open a new tab and navigate to the following path in a GitHub repository, which contains an ARM template to deploy a SQL Database resource
 
-    ```
+    ```url
     https://github.com/Azure/azure-quickstart-templates/tree/master/quickstarts/microsoft.sql/sql-database
     ```
 
@@ -109,5 +109,51 @@ You've been hired as a Senior Data Engineer to help automate day to day operatio
 1. When deployment has completed, select **Go to resource group**. You'll be taken to your Azure Resource Group, which contains a randomly named **SQL Server** resource created by the deployment.
 
     ![Picture 3](../images/dp-300-module-11-lab-03.png)
+
+---
+
+## Cleanup Resources
+
+If you are not using the Azure SQL Server for any other purpose, you can clean up the resources you created in this lab.
+
+### Delete the Resource Group
+
+If you created a new resource group for this lab, you can delete the resource group to remove all resources created in this lab.
+
+1. In the Azure portal, select **Resource groups** from the left navigation pane or search for **Resource groups** in the search bar and select it from the results.
+
+1. Go into the resource group that you created for this lab. The resource group will contain the Azure SQL Server and other resources created in this lab.
+
+1. Select **Delete resource group** from the top menu.
+
+1. In the **Delete resource group** dialog, type the name of the resource group to confirm and select **Delete**.
+
+1. Wait for the resource group to be deleted.
+
+1. Close the Azure portal.
+
+### Delete the Lab resources only
+
+If you didn't create a new resource group for this lab, and want to leave the resource group and its previous resources intact, you can still delete the resources created in this lab.
+
+1. In the Azure portal, select **Resource groups** from the left navigation pane or search for **Resource groups** in the search bar and select it from the results.
+
+1. Go into the resource group that you created for this lab. The resource group will contain the Azure SQL Server and other resources created in this lab.
+
+1. Select all the resources prefixed with the SQL Server name you previously specified in the lab.
+
+1. Select **Delete** from the top menu.
+
+1. In the **Delete resources** dialog, type **delete** and select **Delete**.
+
+1. Select **Delete** again to confirm the deletion of the resources.
+
+1. Wait for the resources to be deleted.
+
+1. Close the Azure portal.
+
+---
+
+You have successfully completed this lab.
 
 You've just seen how, with a single click on an Azure Resource Manager template link, you can easily create both an Azure SQL server and database.

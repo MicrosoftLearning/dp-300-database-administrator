@@ -5,10 +5,10 @@ param sqlAdminUsername string = 'dp300admin'
 param uniqueSuffix string
 param adminIpAddress string
 
-var sqlServerName = 'dp300-${uniqueSuffix}-lab'
+var sqlServerName = 'dp300-lab-${uniqueSuffix}'
 
 resource vnet 'Microsoft.Network/virtualNetworks@2022-05-01' = {
-  name: 'dp300-${uniqueSuffix}-vnet'
+  name: 'dp300-lab-${uniqueSuffix}-vnet'
   location: location
   properties: {
     addressSpace: {

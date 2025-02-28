@@ -32,7 +32,7 @@ Download the lab files from GitHub.
 
 ## Setup your SQL Server in Azure
 
-Skip this section if you already have a SQL Server instance running in Azure.
+Log in to Azure and check if you have an existing Azure SQL Server instance running in Azure. Skip this section if you already have a SQL Server instance running in Azure.
 
 1. From the lab virtual machine or your local machine if one wasn't provided, start a Visual Studio Code session and navigate to the cloned repository from the previous section.
 
@@ -53,7 +53,7 @@ Skip this section if you already have a SQL Server instance running in Azure.
     ./deploy-sql-database.ps1
     ```
 
-    > &#128221; Note that by default this script will create or a resource group called **dp300**, or use a resource whose name start with *dp300* if it exists. By default it will also create all resources on the **West US 2** region (westus2). Finally it will generate a random 12 character password for the **SQL admin password**. You can change these values by using one or more of the parameters **-rgName**, **-location** and **-sqlAdminPw** with your own values. The password will have to meet the Azure SQL password complexity requirements, at least 12 characters long, and contain at least 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.
+    > &#128221; Note that by default this script will create or a resource group called **contoso-rg**, or use a resource whose name start with *dp300* if it exists. By default it will also create all resources on the **West US 2** region (westus2). Finally it will generate a random 12 character password for the **SQL admin password**. You can change these values by using one or more of the parameters **-rgName**, **-location** and **-sqlAdminPw** with your own values. The password will have to meet the Azure SQL password complexity requirements, at least 12 characters long, and contain at least 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.
 
     > &#128221; Note that the script will add your current Public IP address to the SQL server firewall rules.
 
@@ -67,7 +67,7 @@ Skip this section if you already have a SQL Server instance running in Azure.
 
 1. From the Azure Portal, search for *SQL servers*”* in the search box at the top, then select **SQL servers** from the list of options.
 
-1. Select the SQL server **dp300-xxxxxx-xxxx-lab**, where **xxxxxxx-xxxx** is a random string.
+1. Select the SQL server **dp300-lab-xxxxxxxx**, where *xxxxxxxx* is a random numeric string.
 
     > &#128221; Note, if you are using your own Azure SQL server not created by this lab, select the name of that SQL server.
 
