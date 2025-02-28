@@ -8,97 +8,101 @@ lab:
 
 **Estimated Time: 40 minutes**
 
-Students will configure basic resources needed to deploy an Azure SQL Database with a Virtual Network Endpoint. Connectivity to the SQL Database will be validated using Azure Data Studio from the lab VM.
+Students will configure basic resources needed to deploy an Azure SQL Database with a Virtual Network Endpoint. Connectivity to the SQL Database will be validated using SQL Server Management Studio from the lab VM if available or from your local machine setup.
 
-As a database administrator for AdventureWorks, you will set up a new SQL Database, including a Virtual Network Endpoint to increase and simplify the security of the deployment. Azure Data Studio will be used to evaluate the use of a SQL Notebook for data querying and results retention.
+As a database administrator for AdventureWorks, you will set up a new SQL Database, including a Virtual Network Endpoint to increase and simplify the security of the deployment. SQL Server Management Studio will be used to evaluate the use of a SQL Notebook for data querying and results retention.
+
+## Setup environment
+
+Download the lab files from GitHub.
+
+1. From the lab virtual machine or your local machine if one wasn't provided, start a Visual Studio Code session.
+
+1. Open the command palette (Ctrl+Shift+P) and type **Git: Clone**. Select the **Git: Clone** option.
+
+1. Paste the following URL into the **Repository URL** field and select **Enter**.
+
+    ```url
+    https://github.com/MicrosoftLearning/dp-300-database-administrator.git
+    ```
+
+1. Save the repository to the **C:\LabFiles** folder on the lab virtual machine or your local machine if one wasn't provided (create the folder if it does not exist).
+
+---
 
 ## Navigate on Azure portal
 
-1. From the lab virtual machine, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/). Connect to the Portal using the Azure **Username** and **Password** provided on the **Resources** tab for this lab virtual machine.
+1. On the lab virtual machine if provided, otherwise on your local machine, open a browser window.
 
-    ![Picture 1](../images/dp-300-module-01-lab-01.png)
+1. Navigate to the Azure portal at [https://portal.azure.com](https://portal.azure.com/). Log in to the Azure portal using your Azure account or provided credentials if available.
 
-1. From the Azure portal, search for “resource groups” in the search box at the top, then select **Resource groups** from the list of options.
+1. From the Azure portal, search for *resource groups* in the search box at the top, then select **Resource groups** from the list of options.
 
-    ![Picture 1](../images/dp-300-module-02-lab-45.png)
-
-1. On the **Resource group** page, check the resource group listed (it should start with *contoso-rg*), make note of the **Location** assigned to your resource group, as you will use it in the next exercise.
-
-    **Note:** You may have a different location assigned.
-
-    ![Picture 1](../images/dp-300-module-02-lab-46.png)
+1. On the **Resource group** page, if provided, select the resource group starting with *DP300*. If this resource group doesn't exist, either create a new resource group named with *DP300* in your local region, or use an existing resource group and take note of the region its in.
 
 ## Create a Virtual Network
 
 1. In the Azure portal home page, select the left hand menu.  
 
-    ![Picture 2](../images/dp-300-module-02-lab-01_1.png)
+1. In the left navigation pane, select **Virtual Networks**  
 
-1. In the left navigation pane, click **Virtual Networks**  
-
-1. Click **+ Create** to open the **Create Virtual Network** page. On the **Basics** tab, complete the following information:
+1. select **+ Create** to open the **Create Virtual Network** page. On the **Basics** tab, complete the following information:
 
     - **Subscription:** &lt;Your subscription&gt;
-    - **Resource group:** starting with *contoso-rg*
+    - **Resource group:** starting with *DP300* or the resource group you previously selected
     - **Name:** lab02-vnet
     - **Region:** Select the same region where your resource group was created
 
-1. Click **Review + Create**, review the settings for the new virtual network, and then click **Create**.
+1. select **Review + Create**, review the settings for the new virtual network, and then select **Create**.
 
-1. Configure the virtual network’s IP range for the Azure SQL database endpoint by navigating to the virtual network created, and on the **Settings** pane, click **Subnets**.
+1. Once the deployment is complete, select **Go to resource**.
 
-1. Click on the **default** subnet link. Note that the **Subnet address range** you see might be different.
+1. Configure the virtual network’s IP range for the Azure SQL database endpoint by navigating to the virtual network created, and on the **Settings** pane, select **Subnets**.
+
+1. select on the **default** subnet link.
 
 1. In the **Edit subnet** pane on the right, expand the **Services** drop-down, and select **Microsoft.Sql**. Select **Save**.
 
-## Provision an Azure SQL Database
+    1. If **Microsoft.Sql** is not available, on the left pane, under **Settings** select **Service endpoints**.
+    1. Select **+ Add service endpoint**.
+    1. Select **Microsoft.Sql** from the list, and select **default** from the **Subnet** drop-down.
+    1. Select **Add**.
 
-1. From the Azure Portal, search for “SQL databases” in the search box at the top, then click **SQL databases** from the list of options.
+## Provision an Azure SQL Database in the Azure portal
 
-    ![Picture 5](../images/dp-300-module-02-lab-10.png)
+1. From the Azure Portal, search for *SQL databases* in the search box at the top, then select **SQL databases** from the list of options.
 
 1. On the **SQL databases** blade, select **+ Create**.
 
-    ![Picture 6](../images/dp-300-module-02-lab-10_1.png)
-
-1. On the **Create SQL Database** page, select the following options on the **Basics** tab and then click **Next: Networking**.
+1. On the **Create SQL Database** page, select the following options on the **Basics** tab and then select **Next: Networking**.
 
     - **Subscription:** &lt;Your subscription&gt;
-    - **Resource group:** starting with *contoso-rg*
+    - **Resource group:** starting with *DP300* or the resource group you previously selected
     - **Database Name:** AdventureWorksLT
-    - **Server:** click on **Create new** link. The **Create SQL Database Server** page will open. Provide the server details as follow:
-        - **Server name:** dp300-lab-&lt;your initials (lower case)&gt; (server name must be globally unique)
+    - **Server:** select on **Create new** link. The **Create SQL Database Server** page will open. Provide the server details as follow:
+        - **Server name:** dp300-lab-&lt;your initials (lower case)&gt; and if needed a random 5 digit number (server name must be globally unique)
         - **Location:** &lt;your local region, same as the selected region for your resource group, otherwise it may fail&gt;
         - **Authentication method:** Use SQL authentication
         - **Server admin login:** dp300admin
-        - **Password:** dp300P@ssword!
-        - **Confirm password:** dp300P@ssword!
+        - **Password:** select a complex password and take note of it
+        - **Confirm password:** select the same previously selected password
+    - Select **OK** to to return to the **Create SQL Database** page.
+    - **Want to use Elastic Pool?** set to **No**.
+    - **Workload environment:** Development
+    - On the **Compute + Storage** option, select on **Configure database** link. On the **Configure** page, for **Service tier** dropdown, select **Basic**, and then **Apply**.
 
-        Your **Create SQL Database Server** page should look similar to the one below. Then click **OK**.
+1. For the **Backup storage redundancy** option, keep the default value: **Local-redundant backup storage**.
 
-        ![Picture 7](../images/dp-300-module-02-lab-11.png)
+1. Then select **Next: Networking**.
 
-    -  Back to the **Create SQL Database** page, make sure **Want to use Elastic Pool?** is set to **No**.
-    -  On the **Compute + Storage** option, click on **Configure database** link. On the **Configure** page, for **Service tier** dropdown, select **Basic**, and then **Apply**.
+1. On the **Networking** tab, for **Network Connectivity** option, select the **Private endpoint** radio button.
 
-    **Note:** Make note of this server name, and your login information. You will use it in subsequent labs.
-
-1. For the **Backup storage redundancy** option, keep the default value: **Geo-redundant backup storage**.
-
-1. Then click **Next: Networking**.
-
-1. On the **Networking** tab, for **Network Connectivity** option, click the **Private endpoint** radio button.
-
-    ![Picture 8](../images/dp-300-module-02-lab-14.png)
-
-1. Then click the **+ Add private endpoint** link under the **Private endpoints** option.
-
-	![Picture 9](../images/dp-300-module-02-lab-15.png)
+1. Then select the **+ Add private endpoint** link under the **Private endpoints** option.
 
 1. Complete the **Create private endpoint** right pane as follows:
 
     - **Subscription:** &lt;Your subscription&gt;
-    - **Resource group:** starting with *contoso-rg*
+    - **Resource group:** starting with *DP300* or the resource group you previously selected
     - **Location:** &lt;your local region, same as the selected region for your resource group, otherwise it may fail&gt;
     - **Name:** DP-300-SQL-Endpoint
     - **Target sub-resource:** SqlServer
@@ -106,141 +110,143 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
     - **Subnet:** lab02-vnet/default (10.x.0.0/24)
     - **Integrate with private DNS zone:** Yes
     - **Private DNS zone:** keep the default value
-    - Review settings, and then click **OK**  
-
-    ![Picture 10](../images/dp-300-module-02-lab-16.png)
+    - Review settings, and then select **OK**  
 
 1. The new endpoint will appear on the **Private endpoints** list.
 
-    ![Picture 11](../images/dp-300-module-02-lab-17.png)
-
-1. Click **Next: Security**, and then **Next: Additional settings**.  
+1. select **Next: Security**, and then **Next: Additional settings**.  
 
 1. On the **Additional settings** page, select **Sample** on the **Use existing data** option. Select **OK** if a pop-up message is displayed for the sample database.
 
-    ![Picture 12](../images/dp-300-module-02-lab-18.png)
+1. select **Review + Create**.
 
-1. Click **Review + Create**.
+1. Review the settings before selecting **Create**.
 
-1. Review the settings before clicking **Create**.
-
-1. Once the deployment is complete, click **Go to resource**.
+1. Once the deployment is complete, select **Go to resource**.
 
 ## Enable access to an Azure SQL Database
 
-1. From the **SQL database** page, select the **Overview** section, and then select the link for the server name in the top section:
-
-    ![Picture 13](../images/dp-300-module-02-lab-19.png)
+1. From the **SQL database** page, select the **Overview** section, and then select the link for the server name in the top section.
 
 1. On the SQL servers navigation blade, select **Networking** under the **Security** section.
 
-    ![Picture 14](../images/dp-300-module-02-lab-20.png)
+1. On the **Public access** tab, select **Selected networks**, 
 
-1. On the **Public access** tab, select **Selected networks**, and then check the **Allow Azure services and resources to access this server** property. Click **Save**.
+1. Select **+ Add your client IPv4 address**. This will add a firewall rule to allow your current IP address to access the SQL server.
 
-    ![Picture 15](../images/dp-300-module-02-lab-21.png)
+1. Check the **Allow Azure services and resources to access this server** property.
 
-## Connect to an Azure SQL Database in Azure Data Studio
+1. select **Save**.
 
-1. Launch Azure Data Studio from the lab virtual machine.
+---
 
-    - You may see this pop-up at initial launch of Azure Data Studio. If you receive it, click **Yes (recommended)**  
+## Connect to an Azure SQL Database in SQL Server Management Studio
 
-        ![Picture 16](../images/dp-300-module-02-lab-22.png)
+1. On the Azure portal, select the **SQL databases** in the left navigation pane. And then select the **AdventureWorksLT** database.
 
-1. When Azure Data Studio opens, click the **Connections** button in top left corner, and then **Add Connection**.
+1. Copy the **Server name** value from the **Overview** page.
 
-    ![Picture 17](../images/dp-300-module-02-lab-25.png)
+1. Launch SQL Server Management Studio from the lab virtual machine if provided or your local machine if not.
 
-1. In the **Connection** sidebar, fill out the **Connection Details** section with connection information to connect to the SQL database created previously.
+1. In the **Connect to Server** dialog, paste the **Server name** value copied from the Azure portal.
 
-    - Connection Type: **Microsoft SQL Server**
-    - Server: Enter the name of the SQL Server created previously. For example: **dp300-lab-xxxxxxxx.database.windows.net** (Where ‘xxxxxxxx’ is a ramdom number)
-    - Authentication Type: **SQL Login**
-    - User name: **dp300admin**
-    - Password: **dp300P@ssword!**
-    - Expand the Database drop-down to select **AdventureWorksLT.** 
-        - **NOTE:** You may be asked to add a firewall rule that allows your client IP access to this server. If you are asked to add a firewall rule, click on **Add account** and login to your Azure account. On **Create new firewall rule** screen, click **OK**.
+1. In the **Authentication** dropdown, select **SQL Server Authentication**.
 
-        ![Picture 18](../images/dp-300-module-02-lab-26.png)
+1. In the **Login** field, enter **dp300admin**.
 
-        Alternatively, you can manually create a firewall rule for your SQL server on Azure portal by navigating to your SQL server, selecting **Networking**, and then selecting **+ Add your client IPv4 address (your IP address)**
+1. In the **Password** field, enter the password selected during the SQL server creation.
 
-        ![Picture 18](../images/dp-300-module-02-lab-47.png)
+1. select **Connect**.
 
-    Back on the Connection sidebar, continue filling out the connection details:  
+1. SQL Server Management Studio will connect to your Azure SQL Database server. You can expand the server and then the **Databases** node to see the *AdventureWorksLT* database.
 
-    - Server group will remain on **&lt;default&gt;**
-    - Name (optional) can be populated with a friendly name of the database, if desired
-    - Review settings and click **Connect**  
+## Query an Azure SQL Database with SQL Server Management Studio
 
-    ![Picture 19](../images/dp-300-module-02-lab-27.png)
+1. In SQL Server Management Studio, right-click on the *AdventureWorksLT* database and select **New Query**.
 
-1. Azure Data Studio will connect to the database, and show some basic information about the database, plus a partial list of objects.
+1. Paste the following SQL statement into the query window:
 
-    ![Picture 20](../images/dp-300-module-02-lab-28.png)
+    ```sql
+    SELECT TOP 10 cust.[CustomerID], 
+        cust.[CompanyName], 
+        SUM(sohead.[SubTotal]) as OverallOrderSubTotal
+    FROM [SalesLT].[Customer] cust
+        INNER JOIN [SalesLT].[SalesOrderHeader] sohead
+             ON sohead.[CustomerID] = cust.[CustomerID]
+    GROUP BY cust.[CustomerID], cust.[CompanyName]
+    ORDER BY [OverallOrderSubTotal] DESC
+    ```
 
-## Query an Azure SQL Database with a SQL Notebook
+1. select on the **Execute** button in the toolbar to execute the query.
 
-1. In Azure Data Studio, connected to this lab’s AdventureWorksLT database, click the **New Notebook** button.
+1. In the **Results** pane, review the results of the query.
 
-    ![Picture 21](../images/dp-300-module-02-lab-29.png)
+1. Right-click on the *AdventureWorksLT* database and select **New Query**.
 
-1. Click the **+Text** link to add a new text box in the notebook  
+1. Paste the following SQL statement into the query window:
 
-    ![Picture 22](../images/dp-300-module-02-lab-30.png)
+    ```sql
+    SELECT TOP 10 cat.[Name] AS ProductCategory, 
+        SUM(detail.[OrderQty]) AS OrderedQuantity
+    FROM salesLT.[ProductCategory] cat
+       INNER JOIN [SalesLT].[Product] prod
+          ON prod.[ProductCategoryID] = cat.[ProductCategoryID]
+       INNER JOIN [SalesLT].[SalesOrderDetail] detail
+          ON detail.[ProductID] = prod.[ProductID]
+    GROUP BY cat.[name]
+    ORDER BY [OrderedQuantity] DESC
+    ```
 
-**Note:** Within the notebook you can embed plain text to explain queries or result sets.
+1. select on the **Execute** button in the toolbar to execute the query.
 
-1. Enter the text **Top Ten Customers by Order SubTotal**, making it Bold if desired.
+1. In the **Results** pane, review the results of the query.
 
-    ![A screenshot of a cell phone Description automatically generated](../images/dp-300-module-02-lab-31.png)
+1. Close SQL Server Management Studio. Select **No** when prompted to save changes.
 
-1. Click the **+ Cell** button, then **Code cell** to add a new code cell at the end of the notebook.  
+---
 
-    ![Picture 23](../images/dp-300-module-02-lab-32.png)
+## Cleanup Resources
 
-5. Paste the following SQL statement into the new cell:
+If you are not using the virtual machine for any other purpose, you can clean up the resources you created in this lab.
 
-```sql
-SELECT TOP 10 cust.[CustomerID], 
-    cust.[CompanyName], 
-    SUM(sohead.[SubTotal]) as OverallOrderSubTotal
-FROM [SalesLT].[Customer] cust
-    INNER JOIN [SalesLT].[SalesOrderHeader] sohead
-         ON sohead.[CustomerID] = cust.[CustomerID]
-GROUP BY cust.[CustomerID], cust.[CompanyName]
-ORDER BY [OverallOrderSubTotal] DESC
-   ```
+### Delete the Resource Group
 
-1. Click on the blue circle with the arrow to execute the query. Note how the results are included within the cell with the query.
+If you created a new resource group for this lab, you can delete the resource group to remove all resources created in this lab.
 
-1. Click the **+ Text** button to add a new text cell.
+1. In the Azure portal, select **Resource groups** from the left navigation pane or search for **Resource groups** in the search bar and select it from the results.
 
-1. Enter the text **Top Ten Ordered Product Categories**, making it Bold if desired.
+1. Go into the resource group that you created for this lab. The resource group will contain the virtual machine and other resources created in this lab.
 
-1. Click the **+ Code** button again to add a new cell, and paste the following SQL statement into the cell:
+1. Select **Delete resource group** from the top menu.
 
-```sql
-SELECT TOP 10 cat.[Name] AS ProductCategory, 
-    SUM(detail.[OrderQty]) AS OrderedQuantity
-FROM salesLT.[ProductCategory] cat
-   INNER JOIN [SalesLT].[Product] prod
-      ON prod.[ProductCategoryID] = cat.[ProductCategoryID]
-   INNER JOIN [SalesLT].[SalesOrderDetail] detail
-      ON detail.[ProductID] = prod.[ProductID]
-GROUP BY cat.[name]
-ORDER BY [OrderedQuantity] DESC
-```
+1. In the **Delete resource group** dialog, type the name of the resource group to confirm and select **Delete**.
 
-1. Click on the blue circle with the arrow to execute the query.
+1. Wait for the resource group to be deleted.
 
-1. To run all cells in the notebook and present results, click the **Run all** button in the toolbar.
+1. Close the Azure portal.
 
-	![Picture 17](../images/dp-300-module-02-lab-33.png)
+### Delete the Lab resources only
 
-1. Within Azure Data Studio save the notebook from File menu (either Save or Save As) to the **C:\Labfiles\Deploy Azure SQL Database** path (create the folder structure if it does not exist). Make sure the file extension is **.ipynb**
+If you didn't create a new resource group for this lab, and want to leave the resource group and its previous resources intact, you can still delete the resources created in this lab.
 
-1. Close the tab for the Notebook from inside of Azure Data Studio. From the File Menu, select Open File, and open the notebook you just saved. Observe that query results were saved along with the queries in the notebook.
+1. In the Azure portal, select **Resource groups** from the left navigation pane or search for **Resource groups** in the search bar and select it from the results.
+
+1. Go into the resource group that you created for this lab. The resource group will contain the virtual machine and other resources created in this lab.
+
+1. Select all the resources prefixed with the SQL Server name you previously specified in the lab. Additionally, select the virtual network and the private DNS zone you created.
+
+1. Select **Delete** from the top menu.
+
+1. In the **Delete resources** dialog, type **delete** and select **Delete**.
+
+1. Select **Delete** again to confirm the deletion of the resources.
+
+1. Wait for the resources to be deleted.
+
+1. Close the Azure portal.
+
+---
+
+You have successfully completed this lab.
 
 In this exercise, you've seen how you deploy a Azure SQL Database with a Virtual Network Endpoint. You were also able to connect to the SQL Database you've created using SQL Server Management Studio.
