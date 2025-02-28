@@ -28,7 +28,7 @@ Ideally, you should complete these labs in a hosted lab environment. If you want
 
     - Use the default options in the installer.
 
-## Azure CLI
+### Azure CLI
 
 1. Download and install from [https://aka.ms/installazurecliwindows].
 
