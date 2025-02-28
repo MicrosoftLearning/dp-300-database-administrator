@@ -46,7 +46,7 @@ Ideally, you should complete these labs in a hosted lab environment. If you want
 
     - Use the default options in the installer.
 
-## SQL Server 2022 Developer Edition
+### SQL Server 2022 Developer Edition
 
 1. Download and install from [https://www.microsoft.com/en-us/sql-server/sql-server-downloads].
 
