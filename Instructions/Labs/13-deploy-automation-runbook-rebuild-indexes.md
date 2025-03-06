@@ -88,10 +88,13 @@ Log in to Azure and check if you have an existing Azure SQL Server instance runn
     This will open a new tab in your browser. Select **Add client IP** and then select **Save**. Once saved, return to the previous tab and select **OK** again.
 
     > &#128221; You might receive the error message *Cannot open server 'your-sql-server-name' requested by the login. Client with IP address 'xxx.xxx.xxx.xxx' is not allowed to access the server.* If so, you will need to add your current Public IP address to the SQL server firewall rules. To do this:
-       1. select **Set server firewall** from the top menu bar of the database's **Overview** page.
-       1. Select **Add your current IPv4 address (xxx.xxx.xxx.xxx)** and then select **Save**.
-       1. Once saved, return to the **AdventureWorksLT** database page and select **Query editor (preview)** again.
-       1. You will be prompted for credentials to sign in to your database using the database admin account and select **OK**.
+
+    To setup the firewall rules:
+
+    1. select **Set server firewall** from the top menu bar of the database's **Overview** page.
+    1. Select **Add your current IPv4 address (xxx.xxx.xxx.xxx)** and then select **Save**.
+    1. Once saved, return to the **AdventureWorksLT** database page and select **Query editor (preview)** again.
+    1. You will be prompted for credentials to sign in to your database using the database admin account and select **OK**.
 
 1. In the **Query editor (preview)**, select **Open query**.
 
