@@ -16,7 +16,7 @@ You'll run queries with suboptimal performance, examine the query plans, and att
 
 ## Setup environment
 
-Download the lab files from GitHub.
+If your lab virtual machine has been provided and pre-configured, you should find the lab files ready in the **C:\LabFiles** folder. *Take a moment to check, if the files are already there, skip this section*. However, if you're using your own machine or the lab files are missing, you'll need to clone them from *GitHub* to proceed.
 
 1. From the lab virtual machine or your local machine if one wasn't provided, start a Visual Studio Code session.
 

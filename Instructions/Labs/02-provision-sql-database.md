@@ -12,24 +12,6 @@ Students will configure basic resources needed to deploy an Azure SQL Database w
 
 As a database administrator for AdventureWorks, you will set up a new SQL Database, including a Virtual Network Endpoint to increase and simplify the security of the deployment. SQL Server Management Studio will be used to evaluate the use of a SQL Notebook for data querying and results retention.
 
-## Setup environment
-
-Download the lab files from GitHub.
-
-1. From the lab virtual machine or your local machine if one wasn't provided, start a Visual Studio Code session.
-
-1. Open the command palette (Ctrl+Shift+P) and type **Git: Clone**. Select the **Git: Clone** option.
-
-1. Paste the following URL into the **Repository URL** field and select **Enter**.
-
-    ```url
-    https://github.com/MicrosoftLearning/dp-300-database-administrator.git
-    ```
-
-1. Save the repository to the **C:\LabFiles** folder on the lab virtual machine or your local machine if one wasn't provided (create the folder if it does not exist).
-
----
-
 ## Navigate on Azure portal
 
 1. On the lab virtual machine if provided, otherwise on your local machine, open a browser window.
@@ -38,7 +20,7 @@ Download the lab files from GitHub.
 
 1. From the Azure portal, search for *resource groups* in the search box at the top, then select **Resource groups** from the list of options.
 
-1. On the **Resource group** page, if provided, select the resource group starting with *DP300*. If this resource group doesn't exist, either create a new resource group named with *DP300* in your local region, or use an existing resource group and take note of the region its in.
+1. On the **Resource group** page, if provided, select the resource group starting with *contoso-rg*. If this resource group doesn't exist, either create a new resource group named with *contoso-rg* in your local region, or use an existing resource group and take note of the region its in.
 
 ## Create a Virtual Network
 
@@ -130,7 +112,7 @@ Download the lab files from GitHub.
 
 1. On the SQL servers navigation blade, select **Networking** under the **Security** section.
 
-1. On the **Public access** tab, select **Selected networks**, 
+1. On the **Public access** tab, select **Selected networks**.
 
 1. Select **+ Add your client IPv4 address**. This will add a firewall rule to allow your current IP address to access the SQL server.
 

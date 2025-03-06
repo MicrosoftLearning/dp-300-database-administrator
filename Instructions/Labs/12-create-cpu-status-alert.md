@@ -14,7 +14,7 @@ You have been hired as a Senior Data Engineer to help automate day to day operat
 
 ## Setup environment
 
-Download the lab files from GitHub.
+If your lab virtual machine has been provided and pre-configured, you should find the lab files ready in the **C:\LabFiles** folder. *Take a moment to check, if the files are already there, skip this section*. However, if you're using your own machine or the lab files are missing, you'll need to clone them from *GitHub* to proceed.
 
 1. From the lab virtual machine or your local machine if one wasn't provided, start a Visual Studio Code session.
 
@@ -30,7 +30,7 @@ Download the lab files from GitHub.
 
 ## Setup your SQL Server in Azure
 
-Log in to Azure and check if you have an existing Azure SQL Server instance running in Azure. Skip this section if you already have a SQL Server instance running in Azure.
+Log in to Azure and check if you have an existing Azure SQL Server instance running in Azure. *Skip this section if you already have a SQL Server instance running in Azure*.
 
 1. From the lab virtual machine or your local machine if one wasn't provided, start a Visual Studio Code session and navigate to the cloned repository from the previous section.
 
@@ -51,7 +51,7 @@ Log in to Azure and check if you have an existing Azure SQL Server instance runn
     ./deploy-sql-database.ps1
     ```
 
-    > &#128221; Note that by default this script will create or a resource group called **contoso-rg**, or use a resource whose name start with *dp300* if it exists. By default it will also create all resources on the **West US 2** region (westus2). Finally it will generate a random 12 character password for the **SQL admin password**. You can change these values by using one or more of the parameters **-rgName**, **-location** and **-sqlAdminPw** with your own values. The password will have to meet the Azure SQL password complexity requirements, at least 12 characters long, and contain at least 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.
+    > &#128221; Note that by default this script will create or a resource group called **contoso-rg**, or use a resource whose name start with *contoso-rg* if it exists. By default it will also create all resources on the **West US 2** region (westus2). Finally it will generate a random 12 character password for the **SQL admin password**. You can change these values by using one or more of the parameters **-rgName**, **-location** and **-sqlAdminPw** with your own values. The password will have to meet the Azure SQL password complexity requirements, at least 12 characters long, and contain at least 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.
 
     > &#128221; Note that the script will add your current Public IP address to the SQL server firewall rules.
 
