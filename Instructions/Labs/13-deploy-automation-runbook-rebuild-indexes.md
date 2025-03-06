@@ -87,9 +87,9 @@ Log in to Azure and check if you have an existing Azure SQL Server instance runn
 
     This will open a new tab in your browser. Select **Add client IP** and then select **Save**. Once saved, return to the previous tab and select **OK** again.
 
-    > &#128221; You might receive the error message *Cannot open server 'your-sql-server-name' requested by the login. Client with IP address 'xxx.xxx.xxx.xxx' is not allowed to access the server.* If so, you will need to add your current Public IP address to the SQL server firewall rules. To do this:
+    > &#128221; You might receive the error message *Cannot open server 'your-sql-server-name' requested by the login. Client with IP address 'xxx.xxx.xxx.xxx' is not allowed to access the server.* If so, you will need to add your current Public IP address to the SQL server firewall rules.
 
-    To setup the firewall rules:
+    If you need to setup the firewall rules, follow these steps:
 
     1. select **Set server firewall** from the top menu bar of the database's **Overview** page.
     1. Select **Add your current IPv4 address (xxx.xxx.xxx.xxx)** and then select **Save**.
