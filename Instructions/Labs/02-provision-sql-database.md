@@ -28,20 +28,20 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
 1. In the left navigation pane, select **Virtual Networks**  
 
-1. select **+ Create** to open the **Create Virtual Network** page. On the **Basics** tab, complete the following information:
+1. Select **+ Create** to open the **Create Virtual Network** page. On the **Basics** tab, complete the following information:
 
     - **Subscription:** &lt;Your subscription&gt;
     - **Resource group:** starting with *DP300* or the resource group you previously selected
     - **Name:** lab02-vnet
     - **Region:** Select the same region where your resource group was created
 
-1. select **Review + Create**, review the settings for the new virtual network, and then select **Create**.
+1. Select **Review + Create**, review the settings for the new virtual network, and then select **Create**.
 
 1. Once the deployment is complete, select **Go to resource**.
 
 1. Configure the virtual network’s IP range for the Azure SQL database endpoint by navigating to the virtual network created, and on the **Settings** pane, select **Subnets**.
 
-1. select on the **default** subnet link.
+1. Select on the **default** subnet link.
 
 1. In the **Edit subnet** pane on the right, expand the **Services** drop-down, and select **Microsoft.Sql**. Select **Save**.
 
@@ -96,11 +96,11 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
 1. The new endpoint will appear on the **Private endpoints** list.
 
-1. select **Next: Security**, and then **Next: Additional settings**.  
+1. Select **Next: Security**, and then **Next: Additional settings**.  
 
 1. On the **Additional settings** page, select **Sample** on the **Use existing data** option. Select **OK** if a pop-up message is displayed for the sample database.
 
-1. select **Review + Create**.
+1. Select **Review + Create**.
 
 1. Review the settings before selecting **Create**.
 
@@ -118,7 +118,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
 1. Check the **Allow Azure services and resources to access this server** property.
 
-1. select **Save**.
+1. Select **Save**.
 
 ---
 
@@ -138,7 +138,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
 1. In the **Password** field, enter the password selected during the SQL server creation.
 
-1. select **Connect**.
+1. Select **Connect**.
 
 1. SQL Server Management Studio will connect to your Azure SQL Database server. You can expand the server and then the **Databases** node to see the *AdventureWorksLT* database.
 
@@ -159,7 +159,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
     ORDER BY [OverallOrderSubTotal] DESC
     ```
 
-1. select on the **Execute** button in the toolbar to execute the query.
+1. Select on the **Execute** button in the toolbar to execute the query.
 
 1. In the **Results** pane, review the results of the query.
 
@@ -171,15 +171,15 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
     SELECT TOP 10 cat.[Name] AS ProductCategory, 
         SUM(detail.[OrderQty]) AS OrderedQuantity
     FROM salesLT.[ProductCategory] cat
-       INNER JOIN [SalesLT].[Product] prod
-          ON prod.[ProductCategoryID] = cat.[ProductCategoryID]
-       INNER JOIN [SalesLT].[SalesOrderDetail] detail
-          ON detail.[ProductID] = prod.[ProductID]
+        INNER JOIN [SalesLT].[Product] prod
+            ON prod.[ProductCategoryID] = cat.[ProductCategoryID]
+        INNER JOIN [SalesLT].[SalesOrderDetail] detail
+            ON detail.[ProductID] = prod.[ProductID]
     GROUP BY cat.[name]
     ORDER BY [OrderedQuantity] DESC
     ```
 
-1. select on the **Execute** button in the toolbar to execute the query.
+1. Select on the **Execute** button in the toolbar to execute the query.
 
 1. In the **Results** pane, review the results of the query.
 
