@@ -8,7 +8,7 @@ lab:
 
 **Estimated Time: 30 minutes**
 
-Students will explore the Azure Portal and use it to create an Azure VM with SQL Server 2019 installed. Then they will connect to the virtual machine through Remote Desktop Protocol.
+Students will explore the Azure Portal and use it to create an Azure VM with SQL Server 2022 installed. Then they will connect to the virtual machine through Remote Desktop Protocol.
 
 You are a database administrator for AdventureWorks. You need to create a test environment for use in a proof of concept. The proof of concept will use SQL Server on an Azure Virtual Machine and a backup of the AdventureWorksDW database. You need to set up the Virtual Machine, restore the database, and query it to ensure it is available.
 
@@ -20,7 +20,7 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
 1. On the **Azure SQL** blade, select **Create**.
 
-1. On the **Select SQL deployment option** blade, click on the drop-down box under **SQL virtual machines**. Select the option labeled **Free SQL Server License: SQL 2022 Developer on Windows Server 2022**. Then select **Create**.
+1. On the **Select SQL deployment option** blade, click on the drop-down box under **SQL virtual machines**. Select the option labeled **Free SQL Server License: SQL Server 2022 Developer on Windows Server 2022**. Then select **Create**.
 
 1. On the **Create a virtual machine** page, enter the following information, *leave all other options as the default values*:
 
@@ -29,9 +29,9 @@ You are a database administrator for AdventureWorks. You need to create a test e
     - **Virtual machine name:**  AzureSQLServerVM
     - **Region:** &lt;Choose your local region, same as the selected region for your resource group.&gt;
     - **Availability Options:** No infrastructure redundancy required
-    - **Image:** Free SQL Server License: SQL 2022 Developer on Windows Server 2022 - Gen1
+    - **Image:** Free SQL Server License: SQL Server 2022 Developer on Windows Server 2022 - Gen2
     - **Run with Azure spot discount:** No (unchecked)
-    - **Size:** Standard *D2s_v3* (2 vCPUs, 8 GiB memory). *You may need to select the "See all sizes" link to see this option.*
+    - **Size:** Standard *D2s_v5* (2 vCPUs, 8 GiB memory). *You may need to select the "See all sizes" link to see this option.*
     - **Administrator account username:** &lt;Choose a name for your administrator account.&gt;
     - **Administrator account password:** &lt;Choose a strong password.&gt;
     - **Select inbound ports:** RDP (3389)
@@ -60,7 +60,7 @@ You are a database administrator for AdventureWorks. You need to create a test e
     > &#128221; Note that your deployment may take several minutes to complete.
 
 1. On the **Overview** page for the virtual machine, explore the menu options for this resource to review what is available.
-1. 
+
 ---
 
 ## Connect to SQL Server on an Azure Virtual Machine
