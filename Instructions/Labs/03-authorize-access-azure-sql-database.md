@@ -1,6 +1,6 @@
 ---
 lab:
-    title: 'Lab 3 – Authorize access to Azure SQL Database with Azure Active Directory'
+    title: 'Lab 3 – Authorize access to Azure SQL Database with Microsoft Entra ID'
     module: 'Implement a Secure Environment for a Database Service'
 ---
 
@@ -81,23 +81,21 @@ Additionally, you can use the Azure portal only to create administrators, and Az
 
 1. On the next screen, select **Set admin**.
 
-1. In the **Azure Active Directory** sidebar, search for the Azure username you logged into the Azure portal with, then click on **Select**.
+1. In the **Microsoft Entra ID** sidebar, search for the Azure username you logged into the Azure portal with, then click on **Select**.
 
-1. Select **Save** to complete the process. This will make your username the Azure Active Directory admin for the server.
+1. Select **Save** to complete the process. This will make your username the Microsoft Entra admin for the server.
 
 1. On the left select **Overview**, then copy the **Server name**.
 
-1. Open SQL Server Management Studio (SSMS) and select **Connect** > **Database Engine**. In the **Server name** paste the name of your server. Change the authentication type to **Azure Active Directory Universal with MFA**.
+1. Open SQL Server Management Studio (SSMS) and select **Connect** > **Database Engine**. In the **Server name** paste the name of your server. Change the authentication type to **Microsoft Entra MFA**.
 
 1. Select **Connect**.
-
-> &#128221; When you first try to sign in to an Azure SQL database your client IP address needs to be added to the firewall rules. SQL Server Management Studio can do this for you. Use your Azure portal credentials and select **Connect**. You will be prompted to add your current Public IP address to the SQL server firewall rules.
 
 ## Manage access to database objects
 
 In this task you will manage access to the database and its objects. The first thing you will do is create two users in the *AdventureWorksLT* database.
 
-1. From the lab virtual machine or your local machine if one wasn't provided, in SSMS, login to the *AdventureWorksLT* database using the Azure Server admin account or the Azure Active Directory admin account.
+1. From the lab virtual machine or your local machine if one wasn't provided, in SSMS, login to the *AdventureWorksLT* database using the Azure Server admin account or the Microsoft Entra admin account.
 
 1. Use the **Object Explorer** and expand **Databases**.
 
@@ -229,4 +227,4 @@ If you created a new LabFiles folder for this lab, and no longer need it, you ca
 
 You have successfully completed this lab.
 
-In this exercise, you've seen how you can use Azure Active Directory to grant Azure credentials access to a SQL Server hosted in Azure. You've also used T-SQL statement to create new database users and granted them permissions to run stored procedures.
+In this exercise, you've seen how you can use Microsoft Entra ID to grant Azure credentials access to a SQL Server hosted in Azure. You've also used T-SQL statement to create new database users and granted them permissions to run stored procedures.
