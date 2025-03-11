@@ -65,31 +65,33 @@ Log in to Azure and check if you have an existing Azure SQL Server instance runn
 
 1. From the lab virtual machine or your local machine if one wasn't provided, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/). Connect to the Portal using your Azure credentials.
 
-1. From the Azure Portal, search for *SQL servers*”* in the search box at the top, then select **SQL servers** from the list of options.
+1. From the Azure Portal, search for *SQL servers* in the search box at the top, then select **SQL servers** from the list of options.
 
 1. Select the SQL server **dp300-lab-xxxxxxxx**, where *xxxxxxxx* is a random numeric string.
 
     > &#128221; Note, if you are using your own Azure SQL server not created by this lab, select the name of that SQL server.
 
-1. From the main blade of your Azure SQL server, navigate to the **Security** section, and select **Microsoft Defender for Cloud**.
+1. In the *Overview* blade, select **Not configured** next to *Microsoft Defender for SQL*.
 
-1. On the **Microsoft Defender for Cloud** page, select **Configure** on the *Enablement Status: Enabled at the subscription level* section.
+1. Select the **X** at the upper right to close the *Microsoft Defender for Cloud* Overview pane.
 
-1. If **MICROSOFT DEFENDER FOR SQL** is set to **OFF**, select the toggle switch to set it to **ON**, select **Save** to save the changes.
+1. Select **Enable** under *Microsoft Defender for SQL*.
 
-1. There should be multiple recommendations listed. You can select **View additional recommendations in Defender for Cloud** to review all the *Microsoft Defender* recommendations for your Azure SQL Server. In a production environment, you would want to review all recommendations listed and implement them as appropriate.
+1. In a production environment, there should be multiple recommendations listed. You would want to select **View all recommendations in Defender for Cloud** and review all the *Microsoft Defender* recommendations listed for your Azure SQL Server and implement them as appropriate.
 
 ## Vulnerability Assessment
 
 1. From the main blade of your Azure SQL server, navigate to the **Settings** section, and select **SQL databases**, and then select the database named **AdventureWorksLT**.
 
-1. Select the **Microsoft Defender for Cloud** setting under **Security** to view the **Microsoft Defender for Cloud** dashboard for your `AdventureWorksLT` database.
+1. Select the **Microsoft Defender for Cloud** setting under **Security**.
+
+1. Select the **X** at the upper right to close the *Microsoft Defender for Cloud* Overview pane and view the **Microsoft Defender for Cloud** dashboard for your `AdventureWorksLT` database.
 
 1. To begin reviewing the Vulnerability Assessment capabilities, under **Vulnerability assessment findings**, select **View additional findings in Vulnerability Assessment**.  
 
 1. Select **Scan** to get the most current Vulnerability Assessment results. This process takes a few moments while Vulnerability Assessment scans the database.
 
-1. Every security risk has a risk level (high, medium, or low) and additional information. The rules in place are based on benchmarks that are provided by the [Center for Internet Security](https://www.cisecurity.org/benchmark/microsoft_sql_server/?azure-portal=true). In the **Findings** tab, select a vulnerability. Take note of the vulnerability's **ID**, for example **VA2108** (if listed).
+1. Every security risk has a risk level (high, medium, or low) and additional information. The rules in place are based on benchmarks that are provided by the [Center for Internet Security](https://www.cisecurity.org/benchmark/microsoft_sql_server/?azure-portal=true). In the **Findings** tab, select a vulnerability. Take note of the vulnerability's **ID**, for example **VA1143** (if listed).
 
 1. Depending on the security check, there will be alternate views and recommendations. Review the information that's provided. For this security check, you can select the **Add all results as baseline** button and then select **Yes** to set the baseline. Now that a baseline is in place, this security check will fail in any future scans where the results are different from the baseline. Select the **X** at the top-right to close the pane for the specific rule.  
 
