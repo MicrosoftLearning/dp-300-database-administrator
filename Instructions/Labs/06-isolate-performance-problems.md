@@ -65,7 +65,7 @@ Log in to Azure and check if you have an existing Azure SQL Server instance runn
 
 1. From the lab virtual machine or your local machine if one wasn't provided, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/). Connect to the Portal using your Azure credentials.
 
-1. From the Azure Portal, search for *SQL servers*”* in the search box at the top, then select **SQL servers** from the list of options.
+1. From the Azure Portal, search for *SQL servers* in the search box at the top, then select **SQL servers** from the list of options.
 
 1. Select the SQL server **dp300-lab-xxxxxxxx**, where *xxxxxxxx* is a random numeric string.
 
