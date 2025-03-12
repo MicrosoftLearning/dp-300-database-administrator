@@ -181,7 +181,7 @@ Next you'll run a workload to generate query statistics for query store, examine
 
 1. Copy and paste the following code into a new query window and execute it by selecting **Execute**.
 
-    This script changes the database compatibility mode to SQL Server 2019 (**150**). All the features and improvements since SQL Server 2008 will now be available to the database.
+    This script changes the database compatibility mode to SQL Server 2022 (**160**). All the features and improvements since SQL Server 2008 will now be available to the database.
 
     ```sql
     USE [master];
