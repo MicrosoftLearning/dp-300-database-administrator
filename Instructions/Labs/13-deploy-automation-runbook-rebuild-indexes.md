@@ -135,7 +135,7 @@ The next steps consist of configuring the assets required in preparation for the
 
 1. Select the SQL database **AdventureWorksLT**.
 
-1. On the **Overview** page copy the **Server name** of your Azure SQL Database as shown below (Your server name should start with *dp300-lab*). You'll paste this in later steps.
+1. On the **Overview** page copy the **Server name** of your Azure SQL Database (Your server name should start with *dp300-lab*). You'll paste this in later steps.
 
 1. On the Azure portal, in the top search box, type **automation** and select **Automation Accounts**.
 
@@ -143,7 +143,7 @@ The next steps consist of configuring the assets required in preparation for the
 
 1. Expand to the **Process Automation** section of the Automation account blade, select **Runbooks**.
 
-1. Select**+ Create a runbook**.
+1. Select **+ Create a runbook**.
 
     > &#128221; As we've learned, note that there are two existing runbooks created. These were automatically created during the automation account deployment.
 
