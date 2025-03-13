@@ -89,7 +89,9 @@ Log in to Azure and check if you have an existing Azure SQL Server instance runn
 
 1. Select **Review + create**, then select **Create**.
 
-    > &#128221;  Note that before you select **Create**, you can also select **Test action group (preview)** to test the Alert.
+1. Back in the **Create an alert rule** page, select **Next: Details** and give the alert rule a unique name.
+
+1. Select **Review + create**, then select **Create**.
 
 1. With the alert in place, if the CPU usage on average exceeds 80%, an email is sent out.
 
