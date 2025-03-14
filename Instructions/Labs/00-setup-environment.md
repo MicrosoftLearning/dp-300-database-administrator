@@ -20,11 +20,11 @@ Ideally, you should complete these labs in a hosted lab environment. If you want
 
 ### Edge
 
-1. Install the latest version of Microsoft Edge from [microsoft.com/edge].
+1. Install the latest version of Microsoft Edge from [https://microsoft.com/edge].
 
 ### Git
 
-1. Download and install from [git-scm.com/downloads].
+1. Download and install from [https://git-scm.com/downloads].
 
     - Use the default options in the installer.
 
@@ -36,7 +36,7 @@ Ideally, you should complete these labs in a hosted lab environment. If you want
 
 ### Visual Studio Code
 
-1. Download and install from [code.visualstudio.com/download].
+1. Download and install from [https://code.visualstudio.com/download].
 
     - Use the default options in the installer.
 
