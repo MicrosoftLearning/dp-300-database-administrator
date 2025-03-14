@@ -60,7 +60,7 @@ If you already have the **AdventureWorks2017** database restored, you can skip t
 
 1. Open the cloned repo at **C:\LabFiles\dp-300-database-administrator**.
 
-1. Right-click on the **Allfles** folder and select **Open in Integrated Terminal**. This will open a terminal window at the correct location.
+1. Right-click on the **Allfiles** folder and select **Open in Integrated Terminal**. This will open a terminal window at the correct location.
 
 1. In the terminal, type the following and press **Enter**.
 
@@ -179,7 +179,7 @@ To see that the file is actually in Azure, you can use Storage Explorer (preview
 1. Back on the Visual Studio code terminal, run this Azure CLI command:
 
     ```bash
-    az storage blob list -c "backups" --account-name "dp300backupstorage1234" --account-key "storage_key" --output table
+    az storage blob list -c "backups" --account-name "dp300bckupstrg########" --account-key "storage_key" --output table
     ```
 
     Make sure you use the same unique storage account name (after the **--account-name**) and account key (after the **--account-key**) that you used in the previous commands.
@@ -211,7 +211,7 @@ This task will show you how to restore a database from an Azure blob storage.
     GO
     ```
 
-1. Run this command to change the name of that customer.
+1. Run this command to change the address of that customer.
 
     ```sql
     UPDATE Person.Address
