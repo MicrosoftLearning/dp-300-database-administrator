@@ -12,25 +12,31 @@ Ideally, you should complete these labs in a hosted lab environment. If you want
 
 > &#128221; The instructions below are for a Windows 10 computer. You can also use Linux or MacOS. You may need to adapt the lab instructions for your chosen OS.
 
-### Windows 10 (OS)
+### Windows 11 (OS)
 
-1. Install Windows 10 (*version 2004 or later*).
+1. Install Windows 11.
 
 1. Apply all available updates.
 
 ### Edge
 
-1. Install the latest version of Microsoft Edge from [microsoft.com/edge].
+1. Install the latest version of Microsoft Edge from [https://microsoft.com/edge].
 
 ### Git
 
-1. Download and install from [git-scm.com/downloads].
+1. Download and install from [https://git-scm.com/downloads].
+
+    - Use the default options in the installer.
+
+### Azure CLI
+
+1. Download and install from [https://aka.ms/installazurecliwindows].
 
     - Use the default options in the installer.
 
 ### Visual Studio Code
 
-1. Download and install from [code.visualstudio.com/download].
+1. Download and install from [https://code.visualstudio.com/download].
 
     - Use the default options in the installer.
 
@@ -40,8 +46,10 @@ Ideally, you should complete these labs in a hosted lab environment. If you want
 
     - Use the default options in the installer.
 
-### Azure Data Studio
+### SQL Server 2022 Developer Edition
 
-1. Download and install from [https://docs.microsoft.com/sql/azure-data-studio/download-azure-data-studio].
+1. Download and install from [https://www.microsoft.com/en-us/sql-server/sql-server-downloads].
 
-    - Use the default options in the installer.
+    - Use the default options in the installer. Only the SQL Server Database Engine is required for these labs.
+    - You can use the default instance.
+    - You can use the default authentication mode.

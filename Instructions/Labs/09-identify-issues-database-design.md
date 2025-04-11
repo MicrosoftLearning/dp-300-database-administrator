@@ -12,43 +12,53 @@ The students will take the information gained in the lessons to scope out the de
 
 You have been hired as a database administrator to identify performance related issues and provide viable solutions to resolve any issues found. AdventureWorks has been selling bicycles and bicycle parts directly to consumers and distributors for over a decade. Your job is to identify issues in query performance and remedy them using techniques learned in this module.
 
-**Note:** These exercises ask you to copy and paste T-SQL code. Please verify that the code has been copied correctly, before executing the code.
+> &#128221; These exercises ask you to copy and paste T-SQL code. Please verify that the code has been copied correctly, before executing the code.
+
+## Setup environment
+
+If your lab virtual machine has been provided and pre-configured, you should find the lab files ready in the **C:\LabFiles** folder. *Take a moment to check, if the files are already there, skip this section*. However, if you're using your own machine or the lab files are missing, you'll need to clone them from *GitHub* to proceed.
+
+1. From the lab virtual machine or your local machine if one wasn't provided, start a Visual Studio Code session.
+
+1. Open the command palette (Ctrl+Shift+P) and type **Git: Clone**. Select the **Git: Clone** option.
+
+1. Paste the following URL into the **Repository URL** field and select **Enter**.
+
+    ```url
+    https://github.com/MicrosoftLearning/dp-300-database-administrator.git
+    ```
+
+1. Save the repository to the **C:\LabFiles** folder on the lab virtual machine or your local machine if one wasn't provided (create the folder if it does not exist).
+
+---
 
 ## Restore a database
 
-1. Download the database backup file located on **https://github.com/MicrosoftLearning/dp-300-database-administrator/blob/master/Instructions/Templates/AdventureWorks2017.bak** to **C:\LabFiles\Monitor and optimize** path on the lab virtual machine (create the folder structure if it does not exist).
+If you already have the **AdventureWorks2017** database restored, you can skip this section.
 
-    ![Picture 03](../images/dp-300-module-07-lab-03.png)
+1. From the lab virtual machine or your local machine if one wasn't provided, start a SQL Server Management Studio session (SSMS).
 
-1. Select the Windows Start button and type SSMS. Select **Microsoft SQL Server Management Studio 18** from the list.  
+1. When SSMS opens, by default the **Connect to Server** dialog will appear. Choose the Default instance and select **Connect**. You might need to check to the **Trust server certificate** checkbox.
 
-    ![Picture 01](../images/dp-300-module-01-lab-34.png)
-
-1. When SSMS opens, notice that the **Connect to Server** dialog will be pre-populated with the default instance name. Select **Connect**.
-
-    ![Picture 02](../images/dp-300-module-07-lab-01.png)
+    > &#128221; Note that if you are using your own SQL Server instance, you will need to connect to it using the appropriate server instance name and credentials.
 
 1. Select the **Databases** folder, and then **New Query**.
-
-    ![Picture 03](../images/dp-300-module-07-lab-04.png)
 
 1. In the new query window, copy and paste the below T-SQL into it. Execute the query to restore the database.
 
     ```sql
     RESTORE DATABASE AdventureWorks2017
-    FROM DISK = 'C:\LabFiles\Monitor and optimize\AdventureWorks2017.bak'
+    FROM DISK = 'C:\LabFiles\dp-300-database-administrator\Allfiles\Labs\Shared\AdventureWorks2017.bak'
     WITH RECOVERY,
           MOVE 'AdventureWorks2017' 
-            TO 'C:\LabFiles\Monitor and optimize\AdventureWorks2017.mdf',
+            TO 'C:\LabFiles\AdventureWorks2017.mdf',
           MOVE 'AdventureWorks2017_log'
-            TO 'C:\LabFiles\Monitor and optimize\AdventureWorks2017_log.ldf';
+            TO 'C:\LabFiles\AdventureWorks2017_log.ldf';
     ```
 
-    **Note:** The database backup file name and path should match with what you've downloaded on step 1, otherwise the command will fail.
+    > &#128221; You must have a folder named **C:\LabFiles**. If you don't have this folder, create it or specify another location for the database and backup files.
 
-1. You should see a successful message after the restore is complete.
-
-    ![Picture 03](../images/dp-300-module-07-lab-05.png)
+1. Under the **Messages** tab, you should see a message indicating that the database was restored successfully.
 
 ## Examine the query and identify the problem
 
@@ -56,6 +66,7 @@ You have been hired as a database administrator to identify performance related 
 
     ```sql
     USE AdventureWorks2017
+
     GO
     
     SELECT BusinessEntityID, NationalIDNumber, LoginID, HireDate, JobTitle
@@ -63,17 +74,15 @@ You have been hired as a database administrator to identify performance related 
     WHERE NationalIDNumber = 14417807;
     ```
 
-1. Select **Include Actual Execution Plan** icon as shown below before running the query or press **CTRL+M**. This will cause the execution plan to be displayed when you execute the query. Select **Execute** to execute this query.
+1. Select **Include Actual Execution Plan** icon to the right of the **Execute** button before running the query or press **CTRL+M**. This will cause the execution plan to be displayed when you execute the query. Select **Execute** to execute this query.
 
-    ![Picture 01](../images/dp-300-module-09-lab-01.png)
+1. Navigate to the execution plan, by selecting the **Execution plan** tab in the results panel. You will notice that the **SELECT** operator has a yellow triangle with an exclamation point in it. This indicates that there is a warning message associated with the operator. Hover over the warning icon to see the message and read the warning message.
 
-1. Navigate to the execution plan, by selecting the **Execution plan** tab in the results panel. In the execution plan, mouse over the `SELECT` operator. You will notice a warning message identified by an exclamation point in a yellow triangle as shown below. Identify what the warning message tells you.
-
-    ![Picture 02](../images/dp-300-module-09-lab-02.png)
+    > &#128221; The warning message states that there is an implicit conversion in the query. This means that the SQL Server query optimizer had to convert the data type of one of the columns in the query to another data type in order to execute the query.
 
 ## Identify ways to fix the warning message
 
-The *[HumanResources].[Employee]* table structure is shown in the follow data definition language (DDL) statement. Review the fields that are used in the previous SQL query against this DDL, paying attention to their types.
+The *[HumanResources].[Employee]* table structure is defined by the following data definition language (DDL) statement. Review the fields that are used in the previous SQL query against this DDL, paying attention to their types.
 
 ```sql
 CREATE TABLE [HumanResources].[Employee](
@@ -98,7 +107,7 @@ CREATE TABLE [HumanResources].[Employee](
 
 1. According to the warning message presented in the execution plan, what change would you recommend?
 
-    1. Identify what field is causing the implicit conversion and why. 
+    1. Identify what field is causing the implicit conversion and why.
     1. If you review the query:
 
         ```sql
@@ -107,9 +116,9 @@ CREATE TABLE [HumanResources].[Employee](
         WHERE NationalIDNumber = 14417807;
         ```
 
-        You'll note that the value compared to the *NationalIDNumber* column in the `WHERE` clause is compared as a number, since **14417807** isn't in a quoted string. 
+        You'll note that the value compared to the *NationalIDNumber* column in the **WHERE** clause is compared as a number, since **14417807** isn't in a quoted string.
 
-        After examining the table structure you will find the *NationalIDNumber* column is using the `NVARCHAR` data type and not an `INT` data type. This inconsistency causes the database optimizer to implicitly convert the number to a `NVARCHAR` value, causing additional overhead to the query performance by creating a suboptimal plan.
+        After examining the table structure you will find the *NationalIDNumber* column is using the **NVARCHAR** data type and not an **INT** data type. This inconsistency causes the database optimizer to implicitly convert the number to a *NVARCHAR* value, causing additional overhead to the query performance by creating a suboptimal plan.
 
 There are two approaches we can implement to fix the implicit conversion warning. We will investigate each of them in the next steps.
 
@@ -129,9 +138,7 @@ There are two approaches we can implement to fix the implicit conversion warning
     WHERE NationalIDNumber = '14417807';
     ```
 
-    ![Picture 03](../images/dp-300-module-09-lab-03.png)
-
-    **Note:** the warning message is now gone, and the query plan has improved. Changing the `WHERE` clause so that the value compared to the *NationalIDNumber* column matches the column's data type in the table, the optimizer was able to get rid of the implicit conversion.
+    > &#128221; Note that the warning message is now gone, and the query plan has improved. Changing the *WHERE* clause so that the value compared to the *NationalIDNumber* column matches the column's data type in the table, the optimizer was able to get rid of the implicit conversion and generate a more optimal plan.
 
 ### Change the data type
 
@@ -143,9 +150,12 @@ There are two approaches we can implement to fix the implicit conversion warning
     ALTER TABLE [HumanResources].[Employee] ALTER COLUMN [NationalIDNumber] INT NOT NULL;
     ```
 
-    Changing the *NationalIDNumber* column data type to INT would solve the conversion issue. However, this change introduces another issue that as a database administrator you need to resolve.
+    Changing the *NationalIDNumber* column data type to INT would solve the conversion issue. However, this change introduces another issue that as a database administrator you need to resolve. Running the above query will result in the following error message:
 
-    ![Picture 04](../images/dp-300-module-09-lab-04.png)
+    <span style="color:red">Msg 5074, Level 16, Sate 1, Line1
+    The index 'AK_Employee_NationalIDNumber' is dependent on column 'NationalIDNumber
+    Msg 4922, Level 16, State 9, Line 1
+    ALTER TABLE ALTER COLUMN NationalIDNumber failed because one or more objects access this column</span>
 
     The *NationalIDNumber* column is part of an already existing nonclustered index, the index has to be rebuilt/recreated in order to change the data type. **This could lead to extended downtime in production, which highlights the importance of choosing the right data types in your design.**
 
@@ -153,22 +163,26 @@ There are two approaches we can implement to fix the implicit conversion warning
 
     ```sql
     USE AdventureWorks2017
+
     GO
     
     --Dropping the index first
     DROP INDEX [AK_Employee_NationalIDNumber] ON [HumanResources].[Employee]
+
     GO
 
     --Changing the column data type to resolve the implicit conversion warning
     ALTER TABLE [HumanResources].[Employee] ALTER COLUMN [NationalIDNumber] INT NOT NULL;
+
     GO
 
     --Recreating the index
     CREATE UNIQUE NONCLUSTERED INDEX [AK_Employee_NationalIDNumber] ON [HumanResources].[Employee]( [NationalIDNumber] ASC );
+
     GO
     ```
 
-1. Alternatively, you can run the query below to confirm that the data type was successfully changed.
+1. Run the following query to confirm that the data type was successfully changed.
 
     ```sql
     SELECT c.name, t.name
@@ -177,9 +191,7 @@ There are two approaches we can implement to fix the implicit conversion warning
     WHERE OBJECT_ID('[HumanResources].[Employee]') = c.object_id
         AND c.name = 'NationalIDNumber'
     ```
-    
-    ![Picture 05](../images/dp-300-module-09-lab-05.png)
-    
+
 1. Now let's check the execution plan. Rerun the original query without the quotes.
 
     ```sql
@@ -191,8 +203,33 @@ There are two approaches we can implement to fix the implicit conversion warning
     WHERE NationalIDNumber = 14417807;
     ```
 
-    ![Picture 06](../images/dp-300-module-09-lab-06.png)
+     Examine the query plan, and note that you can now use an integer to filter by *NationalIDNumber* without the implicit conversion warning. The SQL query optimizer can now generate and execute the most optimal plan.
 
-    Examine the query plan, and note that you can now use an integer to filter by *NationalIDNumber* without the implicit conversion warning. The SQL query optimizer can now generate and execute the most optimal plan.
+>&#128221; While changing the data type of a column can resolve implicit conversion issues, it is not always the best solution. In this case, changing the data type of the *NationalIDNumber* column to an **INT** data type would have caused downtime in production, as the index on that column would have to be dropped and recreated. It is important to consider the impact of changing a column's data type on existing queries and indexes before making any changes. Additionally, there may be other queries that rely on the *NationalIDNumber* column being an **NVARCHAR** data type, so changing the data type could break those queries.
+
+---
+
+## Cleanup
+
+If you are not using the Database or the lab files for any other purpose, you can clean up the objects you created in this lab.
+
+### Delete the C:\LabFiles folder
+
+1. From the lab virtual machine or your local machine if one wasn't provided, open **File Explorer**.
+1. Navigate to **C:\\** .
+1. Delete the **C:\LabFiles** folder.
+
+## Delete the AdventureWorks2017 database
+
+1. From the lab virtual machine or your local machine if one wasn't provided, start a SQL Server Management Studio session (SSMS).
+1. When SSMS opens, by default the **Connect to Server** dialog will appear. Choose the Default instance and select **Connect**. You might need to check to the **Trust server certificate** checkbox.
+1. In **Object Explorer**, expand the **Databases** folder.
+1. Right-click on the **AdventureWorks2017** database and select **Delete**.
+1. In the **Delete Object** dialog, check the **Close existing connections** checkbox.
+1. Select **OK**.
+
+---
+
+You have successfully completed this lab.
 
 In this exercise, you've learned how to identify query problems caused by implicit data type conversions, and how to fix it to improve the query plan.
