@@ -37,19 +37,6 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
 1. Select **Review + Create**, review the settings for the new virtual network, and then select **Create**.
 
-1. Once the deployment is complete, select **Go to resource**.
-
-1. Configure the virtual network’s IP range for the Azure SQL database endpoint by navigating to the virtual network created, and on the **Settings** pane, select **Subnets**.
-
-1. Select on the **default** subnet link.
-
-1. In the **Edit subnet** pane on the right, expand the **Services** drop-down, and select **Microsoft.Sql**. Select **Save**.
-
-    1. If **Microsoft.Sql** is not available, on the left pane, under **Settings** select **Service endpoints**.
-    1. Select **+ Add service endpoint**.
-    1. Select **Microsoft.Sql** from the list, and select **default** from the **Subnet** drop-down.
-    1. Select **Add**.
-
 ## Provision an Azure SQL Database in the Azure portal
 
 1. From the Azure Portal, search for *SQL databases* in the search box at the top, then select **SQL databases** from the list of options.
