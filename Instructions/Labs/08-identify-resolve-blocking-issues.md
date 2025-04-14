@@ -237,7 +237,7 @@ If you are not using the Database or the lab files for any other purpose, you ca
 1. Navigate to **C:\\** .
 1. Delete the **C:\LabFiles** folder.
 
-## Delete the AdventureWorks2017 database
+### Delete the AdventureWorks2017 database
 
 1. From the lab virtual machine or your local machine if one wasn't provided, start a SQL Server Management Studio session (SSMS).
 1. When SSMS opens, by default the **Connect to Server** dialog will appear. Choose the Default instance and select **Connect**. You might need to check to the **Trust server certificate** checkbox.
