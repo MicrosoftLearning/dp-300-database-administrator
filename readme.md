@@ -1,4 +1,4 @@
-# DP-300: Administering Microsoft Azure SQL Solutions
+# DP-300: Implement scalable database solutions using Azure SQL
 
 - **Are you a MCT?** - Have a look at our [GitHub User Guide for MCTs](https://microsoftlearning.github.io/MCT-User-Guide/)
 
