@@ -14,7 +14,7 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
 ## Deploy a SQL Server on an Azure Virtual Machine
 
-1. From the lab virtual machine, start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/), and sign in using the Microsoft account associated with your Azure subscription.
+1. Start a browser session and navigate to [https://portal.azure.com](https://portal.azure.com/), and sign in using the Microsoft account associated with your Azure subscription.
 
 1. Locate the search bar at the top of the page. Search for **Azure SQL**. Select the search result for **Azure SQL** that appears in the results under **Services**.
 
