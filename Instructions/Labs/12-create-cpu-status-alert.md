@@ -1,7 +1,13 @@
 ---
 lab:
-    title: 'Lab 12 – Create a CPU status alert for a SQL Server'
-    module: 'Automate database tasks for Azure SQL'
+  title: Lab 12 – Create a CPU status alert for a SQL Server
+  module: Automate database tasks for Azure SQL
+  description: '**Estimated Time: 20 minutes**'
+  duration: 20 minutes
+  level: 300
+  islab: true
+  primarytopics:
+  - SQL Server
 ---
 
 # Create a CPU status alert for a SQL Server on Azure
