@@ -1,7 +1,14 @@
 ---
 lab:
-    title: 'Lab 2 - Provision an Azure SQL Database'
-    module: 'Plan and Implement Data Platform Resources'
+  title: Lab 2 - Provision an Azure SQL Database
+  module: Plan and Implement Data Platform Resources
+  description: '**Estimated Time: 40 minutes**'
+  duration: 40 minutes
+  level: 400
+  islab: true
+  primarytopics:
+  - Azure
+  - Azure SQL Database
 ---
 
 # Provision an Azure SQL Database
