@@ -1,7 +1,11 @@
 ---
 lab:
-    title: 'Lab 8 – Identify and resolve blocking issues'
-    module: 'Optimize query performance in Azure SQL'
+  title: Lab 8 – Identify and resolve blocking issues
+  module: Optimize query performance in Azure SQL
+  description: '**Estimated Time: 15 minutes**'
+  duration: 15 minutes
+  level: 100
+  islab: true
 ---
 
 # Identify and resolve blocking issues
