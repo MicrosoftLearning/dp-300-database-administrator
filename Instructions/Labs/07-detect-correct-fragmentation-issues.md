@@ -1,7 +1,11 @@
 ---
 lab:
-    title: 'Lab 7 – Detect and correct fragmentation issues'
-    module: 'Monitor and optimize operational resources in Azure SQL'
+  title: Lab 7 – Detect and correct fragmentation issues
+  module: Monitor and optimize operational resources in Azure SQL
+  description: '**Estimated Time: 20 minutes**'
+  duration: 20 minutes
+  level: 100
+  islab: true
 ---
 
 # Detect and correct fragmentation issues
