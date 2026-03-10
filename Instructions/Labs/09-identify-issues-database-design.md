@@ -1,7 +1,11 @@
 ---
 lab:
-    title: 'Lab 9 – Identify database design issues'
-    module: 'Optimize query performance in Azure SQL'
+  title: Lab 9 – Identify database design issues
+  module: Optimize query performance in Azure SQL
+  description: '**Estimated Time: 15 minutes**'
+  duration: 15 minutes
+  level: 100
+  islab: true
 ---
 
 # Identify database design issues
