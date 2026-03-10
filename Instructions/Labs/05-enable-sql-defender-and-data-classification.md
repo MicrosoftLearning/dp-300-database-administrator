@@ -1,7 +1,13 @@
 ---
 lab:
-    title: 'Lab 5 – Enable Microsoft Defender for SQL and Data classification'
-    module: 'Implement a Secure Environment for a Database Service'
+  title: Lab 5 – Enable Microsoft Defender for SQL and Data classification
+  module: Implement a Secure Environment for a Database Service
+  description: '**Estimated Time: 30 minutes**'
+  duration: 30 minutes
+  level: 500
+  islab: true
+  primarytopics:
+  - Microsoft Defender
 ---
 
 # Enable Microsoft Defender for SQL and Data Classification
