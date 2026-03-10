@@ -1,7 +1,11 @@
 ---
 lab:
-    title: 'Lab 6 – Isolate performance problems through monitoring'
-    module: 'Monitor and optimize operational resources in Azure SQL'
+  title: Lab 6 – Isolate performance problems through monitoring
+  module: Monitor and optimize operational resources in Azure SQL
+  description: '**Estimated Time: 30 minutes**'
+  duration: 30 minutes
+  level: 400
+  islab: true
 ---
 
 # Isolate performance problems through monitoring
