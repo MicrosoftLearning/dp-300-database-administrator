@@ -1,7 +1,16 @@
 ---
 lab:
-    title: 'Lab 11 – Deploy Azure SQL Database using Azure Resource Manager template'
-    module: 'Automate database tasks for Azure SQL'
+  title: Lab 11 – Deploy Azure SQL Database using Azure Resource Manager template
+  module: Automate database tasks for Azure SQL
+  description: If you are not using the Azure SQL Server for any other purpose, you can clean up the resources you created in this lab.
+  duration: 15 minutes
+  level: 300
+  islab: true
+  primarytopics:
+    - Azure
+    - Azure Resource Manager
+    - Azure SQL Database
+    - SQL Server
 ---
 
 # Deploy an Azure SQL Database from a template
