@@ -1,7 +1,11 @@
 ---
 lab:
-    title: 'Lab 9 – Identify database design issues'
-    module: 'Optimize query performance in Azure SQL'
+  title: Lab 9 – Identify database design issues
+  module: Optimize query performance in Azure SQL
+  description: If you are not using the Database or the lab files for any other purpose, you can clean up the objects you created in this lab.
+  duration: 15 minutes
+  level: 100
+  islab: true
 ---
 
 # Identify database design issues
