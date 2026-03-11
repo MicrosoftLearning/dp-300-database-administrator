@@ -1,7 +1,11 @@
 ---
 lab:
-    title: 'Lab 10 – Isolate problem areas in poorly performing queries in a SQL Database'
-    module: 'Optimize query performance in Azure SQL'
+  title: Lab 10 – Isolate problem areas in poorly performing queries in a SQL Database
+  module: Optimize query performance in Azure SQL
+  description: If you are not using the Database or the lab files for any other purpose, you can clean up the objects you created in this lab.
+  duration: 30 minutes
+  level: 100
+  islab: true
 ---
 
 # Isolate problem areas in poorly performing queries in a SQL Database
