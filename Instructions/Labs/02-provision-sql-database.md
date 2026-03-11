@@ -1,7 +1,15 @@
 ---
 lab:
-    title: 'Lab 2 - Provision an Azure SQL Database'
-    module: 'Plan and Implement Data Platform Resources'
+  title: Lab 2 - Provision an Azure SQL Database
+  module: Plan and Implement Data Platform Resources
+  description: In this exercise, you've seen how you deploy a Azure SQL Database with a Virtual Network Endpoint. You were also able to connect to the SQL Database you've created using SQL Server Management Studio.
+  duration: 40 minutes
+  level: 400
+  islab: true
+  primarytopics:
+    - Azure
+    - Azure SQL Database
+    - SQL Server
 ---
 
 # Provision an Azure SQL Database
