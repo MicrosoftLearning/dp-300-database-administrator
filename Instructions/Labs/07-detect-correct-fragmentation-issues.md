@@ -1,7 +1,11 @@
 ---
 lab:
-    title: 'Lab 7 – Detect and correct fragmentation issues'
-    module: 'Monitor and optimize operational resources in Azure SQL'
+  title: Lab 7 – Detect and correct fragmentation issues
+  module: Monitor and optimize operational resources in Azure SQL
+  description: In this exercise, you've learned how to rebuild index and analyze logical reads to increase query performance.
+  duration: 20 minutes
+  level: 100
+  islab: true
 ---
 
 # Detect and correct fragmentation issues
