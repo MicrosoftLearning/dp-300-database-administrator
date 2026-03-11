@@ -1,7 +1,11 @@
 ---
 lab:
-    title: 'Lab 15 – Backup to URL and Restore from URL'
-    module: 'Plan and implement a high availability and disaster recovery solution'
+  title: Lab 15 – Backup to URL and Restore from URL
+  module: Plan and implement a high availability and disaster recovery solution
+  description: If you didn't create a new resource group for this lab, and want to leave the resource group and its previous resources intact, you can still delete the resources created in this lab.
+  duration: 30 minutes
+  level: 300
+  islab: true
 ---
 
 # Backup to URL
