@@ -2,7 +2,7 @@
 lab:
   title: Lab 15 – Backup to URL and Restore from URL
   module: Plan and implement a high availability and disaster recovery solution
-  description: If you didn't create a new resource group for this lab, and want to leave the resource group and its previous resources intact, you can still delete the resources created in this lab.
+  description: "You'll back up a SQL Server database directly to Azure Blob Storage using a URL and restore it to simulate recovery from a human error. By the end, you'll understand how to integrate SQL Server backup and restore operations with Azure cloud storage."
   duration: 30 minutes
   level: 300
   islab: true

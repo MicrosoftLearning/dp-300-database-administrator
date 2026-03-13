@@ -2,7 +2,7 @@
 lab:
   title: Lab 14 – Configure geo-replication for Azure SQL Database
   module: Plan and implement a high availability and disaster recovery solution
-  description: Now that the Azure SQL Database replica is created, you will perform a failover.
+  description: "You'll configure geo-replication for an Azure SQL Database to create a readable secondary replica in another Azure region and perform a manual failover. By the end, you'll understand how to implement a cross-region high availability solution to protect against regional outages."
   duration: 30 minutes
   level: 400
   islab: true

@@ -2,9 +2,9 @@
 lab:
   title: Lab 7 – Detect and correct fragmentation issues
   module: Monitor and optimize operational resources in Azure SQL
-  description: In this exercise, you've learned how to rebuild index and analyze logical reads to increase query performance.
+  description: "You'll analyze index fragmentation in a SQL Server database and rebuild or reorganize indexes to improve query performance. By the end, you'll understand how to detect fragmentation and take the right corrective action to optimize database efficiency."
   duration: 20 minutes
-  level: 100
+  level: 300
   islab: true
 ---
 

@@ -2,9 +2,9 @@
 lab:
   title: Lab 10 – Isolate problem areas in poorly performing queries in a SQL Database
   module: Optimize query performance in Azure SQL
-  description: If you are not using the Database or the lab files for any other purpose, you can clean up the objects you created in this lab.
+  description: "You'll run queries with suboptimal performance against the AdventureWorks2017 database, analyze execution plans, and apply improvements to boost query efficiency. By the end, you'll understand how to diagnose and fix poorly performing T-SQL queries using SQL Server tools."
   duration: 30 minutes
-  level: 100
+  level: 300
   islab: true
 ---
 

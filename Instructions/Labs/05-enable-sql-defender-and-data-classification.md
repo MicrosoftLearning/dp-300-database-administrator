@@ -2,9 +2,9 @@
 lab:
   title: Lab 5 – Enable Microsoft Defender for SQL and Data classification
   module: Implement a Secure Environment for a Database Service
-  description: In this exercise, you've enhanced the security of an Azure SQL Database by enabling Microsoft Defender for SQL. You've also created classified columns based on Azure portal recommendations.
+  description: "You'll enable Microsoft Defender for SQL on an Azure SQL Database and apply data classification labels based on Azure portal recommendations. By the end, you'll understand how to strengthen your database security posture and identify sensitive data."
   duration: 30 minutes
-  level: 500
+  level: 400
   islab: true
   primarytopics:
     - Azure

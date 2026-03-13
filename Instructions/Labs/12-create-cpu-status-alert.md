@@ -2,7 +2,7 @@
 lab:
   title: Lab 12 – Create a CPU status alert for a SQL Server
   module: Automate database tasks for Azure SQL
-  description: If you are not using the Azure SQL Server for any other purpose, you can clean up the resources you created in this lab.
+  description: "You'll configure an Azure Monitor alert to notify you when CPU usage on an Azure SQL Server exceeds a defined threshold. By the end, you'll understand how to set up automated monitoring and alerting to help keep your databases performing optimally."
   duration: 20 minutes
   level: 300
   islab: true

@@ -2,9 +2,9 @@
 lab:
   title: Lab 3 – Authorize access to Azure SQL Database with Microsoft Entra ID
   module: Implement a Secure Environment for a Database Service
-  description: In this exercise, you've seen how you can use Microsoft Entra ID to grant Azure credentials access to a SQL Server hosted in Azure. You've also used T-SQL statement to create new database users and granted them permissions to run stored procedures.
+  description: "You'll use Microsoft Entra ID to grant access to an Azure SQL Database and create database users with T-SQL. By the end, you'll understand how to implement both Microsoft Entra and SQL-based authentication to secure your database."
   duration: 25 minutes
-  level: 400
+  level: 300
   islab: true
   primarytopics:
     - Azure

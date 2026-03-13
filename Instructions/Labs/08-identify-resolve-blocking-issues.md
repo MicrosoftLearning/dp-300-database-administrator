@@ -2,9 +2,9 @@
 lab:
   title: Lab 8 – Identify and resolve blocking issues
   module: Optimize query performance in Azure SQL
-  description: In this exercise, you've learned how to identify sessions being blocked, and to mitigate those scenarios.
+  description: "You'll identify sessions that are being blocked in SQL Server and learn how to diagnose and mitigate blocking scenarios. By the end, you'll understand how to use dynamic management views and query tools to resolve concurrency issues."
   duration: 15 minutes
-  level: 100
+  level: 300
   islab: true
 ---
 
