@@ -1,7 +1,14 @@
 ---
 lab:
-    title: 'Lab 13 – Deploy an automation runbook to automatically rebuild indexes'
-    module: 'Automate database tasks for Azure SQL'
+  title: Lab 13 – Deploy an automation runbook to automatically rebuild indexes
+  module: Automate database tasks for Azure SQL
+  description: "You'll create an Azure Automation runbook that automatically rebuilds indexes in an Azure SQL Database on a schedule. By the end, you'll understand how to use Azure Automation to reduce manual maintenance tasks and keep your databases performing optimally."
+  duration: 30 minutes
+  level: 400
+  islab: true
+  primarytopics:
+    - Azure
+    - SQL Server
 ---
 
 # Deploy an automation runbook to automatically rebuild indexes

@@ -1,7 +1,15 @@
 ---
 lab:
-    title: 'Lab 4 – Configure Azure SQL Database firewall rules'
-    module: 'Implement a Secure Environment for a Database Service'
+  title: Lab 4 – Configure Azure SQL Database firewall rules
+  module: Implement a Secure Environment for a Database Service
+  description: "You'll configure server-level and database-level firewall rules to control access to an Azure SQL Database, and create a contained database user using T-SQL. By the end, you'll understand how to apply network security controls to protect your Azure SQL resources."
+  duration: 30 minutes
+  level: 300
+  islab: true
+  primarytopics:
+    - Azure
+    - Azure SQL Database
+    - SQL Server
 ---
 
 # Implement a Secure Environment
