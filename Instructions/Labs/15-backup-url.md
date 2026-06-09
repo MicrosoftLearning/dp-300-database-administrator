@@ -1,11 +1,13 @@
 ---
 lab:
-  title: Lab 15 – Backup to URL and Restore from URL
-  module: Plan and implement a high availability and disaster recovery solution
-  description: "You'll back up a SQL Server database directly to Azure Blob Storage using a URL and restore it to simulate recovery from a human error. By the end, you'll understand how to integrate SQL Server backup and restore operations with Azure cloud storage."
-  duration: 30 minutes
-  level: 300
-  islab: true
+    title: 'Lab 15 – Backup to URL and Restore from URL'
+    module: Plan and implement a high availability and disaster recovery solution
+    description: "You'll back up a SQL Server database directly to Azure Blob Storage using a URL and restore it to simulate recovery from a human error. By the end, you'll understand how to integrate SQL Server backup and restore operations with Azure cloud storage."
+    duration: 30  # duration in minutes
+    level: 300 # 100 basic concepts, 200 foundations, 300 practical usage, 400 advanced scenarios, 500 expert design
+    islab: true # if this is not a lab that should be listed in the catalog, set to false
+    status: 'released' # in-development or released
+    targetDate: '2099-01-01' # Set to the future date when you expect an in-development lab to be released
 ---
 
 # Backup to URL

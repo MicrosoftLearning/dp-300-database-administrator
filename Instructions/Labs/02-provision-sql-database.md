@@ -1,15 +1,13 @@
 ---
 lab:
-  title: Lab 2 - Provision an Azure SQL Database
-  module: Plan and Implement Data Platform Resources
-  description: "You'll create an Azure SQL Database with a Virtual Network Endpoint and connect to it using SQL Server Management Studio. By the end, you'll understand how to deploy and access a fully managed PaaS database in Azure."
-  duration: 40 minutes
-  level: 400
-  islab: true
-  primarytopics:
-    - Azure
-    - Azure SQL Database
-    - SQL Server
+    title: 'Lab 2 - Provision an Azure SQL Database'
+    module: Plan and Implement Data Platform Resources
+    description: "You'll create an Azure SQL Database with a Virtual Network Endpoint and connect to it using SQL Server Management Studio. By the end, you'll understand how to deploy and access a fully managed PaaS database in Azure."
+    duration: 40  # duration in minutes
+    level: 300 # 100 basic concepts, 200 foundations, 300 practical usage, 400 advanced scenarios, 500 expert design
+    islab: true # if this is not a lab that should be listed in the catalog, set to false
+    status: 'released' # in-development or released
+    targetDate: '2099-01-01' # Set to the future date when you expect an in-development lab to be released
 ---
 
 # Provision an Azure SQL Database

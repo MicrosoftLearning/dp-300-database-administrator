@@ -1,16 +1,13 @@
 ---
 lab:
-  title: Lab 11 – Deploy Azure SQL Database using Azure Resource Manager template
-  module: Automate database tasks for Azure SQL
-  description: "You'll explore and deploy an Azure SQL Database using an Azure Resource Manager template from the Azure Quickstart Templates gallery. By the end, you'll understand how to automate Azure SQL deployments using an infrastructure-as-code approach."
-  duration: 15 minutes
-  level: 300
-  islab: true
-  primarytopics:
-    - Azure
-    - Azure Resource Manager
-    - Azure SQL Database
-    - SQL Server
+    title: 'Lab 11 – Deploy Azure SQL Database using Azure Resource Manager template'
+    module: Automate database tasks for Azure SQL
+    description: "You'll explore and deploy an Azure SQL Database using an Azure Resource Manager template from the Azure Quickstart Templates gallery. By the end, you'll understand how to automate Azure SQL deployments using an infrastructure-as-code approach."
+    duration: 15  # duration in minutes
+    level: 300 # 100 basic concepts, 200 foundations, 300 practical usage, 400 advanced scenarios, 500 expert design
+    islab: true # if this is not a lab that should be listed in the catalog, set to false
+    status: 'released' # in-development or released
+    targetDate: '2099-01-01' # Set to the future date when you expect an in-development lab to be released
 ---
 
 # Deploy an Azure SQL Database from a template

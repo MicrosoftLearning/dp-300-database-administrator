@@ -3,7 +3,11 @@ lab:
     title: 'Setup your own environment'
     module: 'Setup your own environment'
     description: "You'll install the required tools — including SQL Server Management Studio and Azure Data Studio — to complete the DP-300 labs on your own machine. This guide ensures your environment is ready before you start the hands-on exercises."
-    islab: false
+    duration: 30  # duration in minutes
+    level: 300 # 100 basic concepts, 200 foundations, 300 practical usage, 400 advanced scenarios, 500 expert design
+    islab: false # if this is not a lab that should be listed in the catalog, set to false
+    status: 'released' # in-development or released
+    targetDate: '2099-01-01' # Set to the future date when you expect an in-development lab to be released
 ---
 
 # Setup local lab environment

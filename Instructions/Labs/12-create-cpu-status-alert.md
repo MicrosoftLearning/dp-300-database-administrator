@@ -1,14 +1,13 @@
 ---
 lab:
-  title: Lab 12 – Create a CPU status alert for a SQL Server
-  module: Automate database tasks for Azure SQL
-  description: "You'll configure an Azure Monitor alert to notify you when CPU usage on an Azure SQL Server exceeds a defined threshold. By the end, you'll understand how to set up automated monitoring and alerting to help keep your databases performing optimally."
-  duration: 20 minutes
-  level: 300
-  islab: true
-  primarytopics:
-    - Azure
-    - SQL Server
+    title: 'Lab 12 – Create a CPU status alert for a SQL Server'
+    module: Automate database tasks for Azure SQL
+    description: "You'll configure an Azure Monitor alert to notify you when CPU usage on an Azure SQL Server exceeds a defined threshold. By the end, you'll understand how to set up automated monitoring and alerting to help keep your databases performing optimally."
+    duration: 20  # duration in minutes
+    level: 300 # 100 basic concepts, 200 foundations, 300 practical usage, 400 advanced scenarios, 500 expert design
+    islab: true # if this is not a lab that should be listed in the catalog, set to false
+    status: 'released' # in-development or released
+    targetDate: '2099-01-01' # Set to the future date when you expect an in-development lab to be released
 ---
 
 # Create a CPU status alert for a SQL Server on Azure

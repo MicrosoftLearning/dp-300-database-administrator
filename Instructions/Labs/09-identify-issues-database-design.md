@@ -1,11 +1,13 @@
 ---
 lab:
-  title: Lab 9 – Identify database design issues
-  module: Optimize query performance in Azure SQL
-  description: "You'll analyze the AdventureWorks database to identify performance issues caused by poor normalization, incorrect data type choices, and suboptimal index design. By the end, you'll understand how to evaluate and improve a database schema for better query performance."
-  duration: 15 minutes
-  level: 100
-  islab: true
+    title: 'Lab 9 – Identify database design issues'
+    module: Optimize query performance in Azure SQL
+    description: "You'll analyze the AdventureWorks database to identify performance issues caused by poor normalization, incorrect data type choices, and suboptimal index design. By the end, you'll understand how to evaluate and improve a database schema for better query performance."
+    duration: 15  # duration in minutes
+    level: 300 # 100 basic concepts, 200 foundations, 300 practical usage, 400 advanced scenarios, 500 expert design
+    islab: true # if this is not a lab that should be listed in the catalog, set to false
+    status: 'released' # in-development or released
+    targetDate: '2099-01-01' # Set to the future date when you expect an in-development lab to be released
 ---
 
 # Identify database design issues

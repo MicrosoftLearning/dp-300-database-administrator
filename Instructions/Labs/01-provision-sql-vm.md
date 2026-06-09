@@ -1,14 +1,13 @@
 ---
 lab:
-  title: Lab 1 - Provision SQL Server on an Azure Virtual Machine
-  module: Plan and Implement Data Platform Resources
-  description: "You'll deploy a SQL Server virtual machine in Azure and connect to it using SQL Server Management Studio. This lab gives you hands-on experience provisioning and configuring SQL Server as an IaaS resource in Azure."
-  duration: 30 minutes
-  level: 300
-  islab: true
-  primarytopics:
-    - Azure
-    - SQL Server
+    title: 'Lab 1 - Provision SQL Server on an Azure Virtual Machine'
+    module: Plan and Implement Data Platform Resources
+    description: "You'll deploy a SQL Server virtual machine in Azure and connect to it using SQL Server Management Studio. This lab gives you hands-on experience provisioning and configuring SQL Server as an IaaS resource in Azure."
+    duration: 30  # duration in minutes
+    level: 300 # 100 basic concepts, 200 foundations, 300 practical usage, 400 advanced scenarios, 500 expert design
+    islab: true # if this is not a lab that should be listed in the catalog, set to false
+    status: 'released' # in-development or released
+    targetDate: '2099-01-01' # Set to the future date when you expect an in-development lab to be released
 ---
 
 # Provision a SQL Server on an Azure Virtual Machine

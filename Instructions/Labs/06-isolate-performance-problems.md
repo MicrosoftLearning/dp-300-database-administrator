@@ -1,14 +1,13 @@
 ---
 lab:
-  title: Lab 6 – Isolate performance problems through monitoring
-  module: Monitor and optimize operational resources in Azure SQL
-  description: "You'll explore server resource metrics for an Azure SQL Database and use Query Performance Insight to identify poorly performing queries. By the end, you'll understand how to use built-in monitoring tools to diagnose and investigate performance issues proactively."
-  duration: 30 minutes
-  level: 400
-  islab: true
-  primarytopics:
-    - Azure
-    - Azure SQL Database
+    title: 'Lab 6 – Isolate performance problems through monitoring'
+    module: Monitor and optimize operational resources in Azure SQL
+    description: "You'll explore server resource metrics for an Azure SQL Database and use Query Performance Insight to identify poorly performing queries. By the end, you'll understand how to use built-in monitoring tools to diagnose and investigate performance issues proactively."
+    duration: 30  # duration in minutes
+    level: 300 # 100 basic concepts, 200 foundations, 300 practical usage, 400 advanced scenarios, 500 expert design
+    islab: true # if this is not a lab that should be listed in the catalog, set to false
+    status: 'released' # in-development or released
+    targetDate: '2099-01-01' # Set to the future date when you expect an in-development lab to be released
 ---
 
 # Isolate performance problems through monitoring
