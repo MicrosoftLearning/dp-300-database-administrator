@@ -32,6 +32,8 @@ After completing this exercise, you'll be able to:
 
 At Contoso Retail, we operate both physical stores and an e-commerce platform. We want to build a **product recommendation system** that suggests items to customers based on their browsing and purchase history.
 
+![Mock-up of the Contoso Retail mobile app showing personalized product recommendations to a customer.](../images/mock-up-app.png)
+
 Our goal is to increase customer engagement and sales by showing personalized product recommendations:
 
 - In our **mobile app**, customers should see recommendations immediately when they view a product.
@@ -101,19 +103,9 @@ Think through each decision carefully, considering trade-offs between cost, perf
 
 The following diagram shows one solution architecture that satisfies all of the requirements. Sketch your own design first, then expand the reference solution to compare.
 
-```mermaid
-flowchart LR
-    A[Azure SQL Database] --> E[ETL pipeline<br/>Azure Synapse Analytics]
-    B[Blob Storage<br/>JSON clickstream] --> E
-    C[Blob Storage<br/>product images] --> E
-    D[Dynamics 365 CRM] --> E
-    E --> F[(Azure Data Lake Storage<br/>unified training data)]
-    F --> G[Azure Machine Learning<br/>model training]
-    G --> H[Real-time endpoint<br/>mobile app]
-    G --> I[Batch endpoint<br/>weekly email campaign]
-```
+![Solution architecture diagram showing the four data sources flowing through an Azure Synapse Analytics ETL pipeline into Azure Data Lake Storage, then into Azure Machine Learning for training, which serves a real-time endpoint for the mobile app and a batch endpoint for the weekly email campaign.](../images/dp-300-lab-17-architecture.svg)
 
-<details>
+<details markdown="1">
 <summary>Show reference solution</summary>
 
 - **Data strategy**: Use an ETL pipeline (for example, Azure Synapse Analytics or Azure Data Factory) to extract data from Azure SQL Database, Blob Storage, and Dynamics 365 on a schedule, then transform and land it in a unified Azure Data Lake Storage layer in a training-ready format such as Parquet.
@@ -133,7 +125,7 @@ Answer the following questions based on the Contoso Retail case study. Select an
 - **B.** Create an ETL pipeline using Azure Synapse Analytics to extract, transform, and load data into a unified storage layer like Azure Data Lake Storage.
 - **C.** Keep data in separate sources and connect directly to each during model training.
 
-<details>
+<details markdown="1">
 <summary>Show answer</summary>
 
 ✅ **Correct answer: B.** Create an ETL pipeline using Azure Synapse Analytics to extract, transform, and load data into a unified storage layer like Azure Data Lake Storage.
@@ -148,7 +140,7 @@ The data is spread across structured, semi-structured, and unstructured sources 
 - **B.** Azure Machine Learning, because it supports the Python SDK, handles large datasets, and provides comprehensive tools for custom model training.
 - **C.** Azure Databricks, because it's required for any large-scale machine learning.
 
-<details>
+<details markdown="1">
 <summary>Show answer</summary>
 
 ✅ **Correct answer: B.** Azure Machine Learning, because it supports the Python SDK, handles large datasets, and provides comprehensive tools for custom model training.
@@ -163,7 +155,7 @@ The team has strong Python skills but limited Spark knowledge, which makes Azure
 - **B.** Deploy only a real-time endpoint and call it 2 million times for the email campaign.
 - **C.** Deploy only a batch endpoint and accept 5-10 minute delays for mobile app recommendations.
 
-<details>
+<details markdown="1">
 <summary>Show answer</summary>
 
 ✅ **Correct answer: A.** Deploy two separate models: a real-time endpoint for the mobile app and a batch endpoint for the email campaign.
@@ -178,7 +170,7 @@ The two scenarios have different latency and throughput needs. A real-time (onli
 - **B.** Immediately provision the largest GPU memory-optimized compute to ensure fast training.
 - **C.** Use only local development machines to minimize Azure costs.
 
-<details>
+<details markdown="1">
 <summary>Show answer</summary>
 
 ✅ **Correct answer: A.** Start with CPU general-purpose compute, monitor performance, and scale to memory-optimized or GPU if needed.
