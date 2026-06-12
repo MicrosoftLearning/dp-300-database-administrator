@@ -15,7 +15,7 @@ lab:
 **Estimated Time: 15 minutes**
 
 > [!NOTE]
-> To complete this exercise, read the case study carefully. Apply the design principles you've learned throughout this module to make informed decisions. At the end, you'll test your understanding by answering knowledge check questions.
+> To complete this exercise, read the case study carefully. Apply the design principles you've learned to make informed decisions. At the end, you'll test your understanding by answering knowledge check questions.
 
 Welcome to Contoso Retail! You've been hired as the **lead data scientist** to help us design a machine learning training solution.
 
@@ -115,7 +115,7 @@ The following diagram shows one solution architecture that satisfies all of the 
 
 </details>
 
-## Knowledge check
+## Put it into practice
 
 Answer the following questions based on the Contoso Retail case study. Select an answer for each question, then expand **Show answer** to check your reasoning.
 
