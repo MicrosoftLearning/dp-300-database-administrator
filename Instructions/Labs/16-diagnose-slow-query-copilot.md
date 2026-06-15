@@ -10,6 +10,10 @@ lab:
     targetDate: '2026-07-01' # Set to the future date when you expect an in-development lab to be released
 ---
 
+# Diagnose a slow query with Copilot
+
+**Estimated Time: 30 minutes**
+
 You're the DBA for the **ContosoOps** database. The operations team reports that `dbo.usp_GetOpenWorkOrdersByTechnician` has been running slow for the last two days. Response times that used to average 150 ms are now averaging 3.2 seconds. Your job: use Copilot to investigate, generate a fix, validate it, and apply it — following the validation gate from the previous unit.
 
 ## Prerequisites
