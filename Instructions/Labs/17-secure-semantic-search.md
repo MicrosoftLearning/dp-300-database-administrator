@@ -1,7 +1,7 @@
 ---
 lab:
     title: 'Lab 17 – Case study: Secure a retail semantic-search workload on Azure SQL'
-    module: Plan and Secure Azure SQL for AI Workloads
+    module: Plan and secure Azure SQL for AI workloads
     description: "You'll work through a retail semantic-search case study to complete the five pre-production tasks a DBA owns for an AI-enabled database. By the end, you'll understand how to plan and secure Azure SQL for AI workloads."
     duration: 20  # duration in minutes
     level: 300 # 100 basic concepts, 200 foundations, 300 practical usage, 400 advanced scenarios, 500 expert design
@@ -10,24 +10,17 @@ lab:
     targetDate: '2026-07-01' # Set to the future date when you expect an in-development lab to be released
 ---
 
-# Plan and secure Azure SQL for AI workloads
+# Case study: Secure a retail semantic-search workload on Azure SQL
 
 **Estimated Time: 20 minutes**
 
-A retail company wants to add semantic product search to its catalog. The catalog has 8 million SKUs. The initial embedding plan is 1,536 dimensions at single precision, refreshed nightly by an elastic job. Application traffic queries those embeddings during search. 
+A retail company wants to add semantic product search to its catalog. The catalog has 8 million SKUs. The initial embedding plan is 1,536 dimensions at single precision, refreshed nightly by an elastic job. Application traffic queries those embeddings during search.
 
-In this exercise, you work through the five pre-production decisions every DBA owns for a workload like this: a sizing worksheet, managed identity setup, external model creation, role assignment, and audit configuration. This is a design walkthrough, not a hands-on deployment — you reason about each decision and review the code it produces, but you don't need an Azure subscription or a running database to complete it.
+Get these decisions wrong and the consequences are real: a leaked API key or an over-permissioned account is exactly the kind of gap that turns an AI feature into a data breach, and an undersized tier means an emergency migration weeks after go-live. This is why the pre-production design is a shared DBA responsibility with developers, not an afterthought.
 
-> [!NOTE]
-> The Transact-SQL and Azure CLI snippets in this exercise are **reference examples** that show what each decision looks like in practice. You don't run them. Read each one to confirm it matches the decision you'd make, then adapt the placeholder names (`sql-retail-prod`, `<openai-resource>`, and so on) when you apply the pattern to a real workload.
+In this exercise, you work through the five pre-production decisions every DBA owns for a workload like this. It's a design walkthrough, not a hands-on deployment: you reason about each decision and review the reference code it produces, but you don't run anything and don't need an Azure subscription. Adapt the placeholder names (`sql-retail-prod`, `<openai-resource>`, and so on) when you apply the pattern to a real workload.
 
-| Decision | Why it matters |
-|---|---|
-| **Size the vector workload** | Vector columns and their indexes consume far more storage than typical relational data. Estimating the footprint up front lets you pick the right service tier and avoid costly resizing or throttling after go-live. |
-| **Enable system-assigned managed identity** | Authenticating with a managed identity means no API key is stored, rotated, or leaked. Azure Entra ID issues the credential and RBAC governs access, removing the most common secret-handling risk. |
-| **Create the external model** | The external model object pins the database to a specific Azure OpenAI deployment and API version. Callers reference one model object, so you update the endpoint in a single place instead of in every query. |
-| **Apply least-privilege roles** | Granting each principal only what it needs keeps the interactive query path away from the external endpoint. This blocks unauthorized access routes and caps unexpected cost from runaway embedding calls. |
-| **Enable audit and Defender** | Auditing external model calls and turning on Microsoft Defender for SQL give you a verifiable record of AI operations and proactive threat alerts, which are essential for compliance and incident response. |
+The five decisions are: **size the vector workload**, **authenticate with a managed identity**, **define the external model objects**, **apply least-privilege roles**, and **enable audit and Defender**. Each section works through one.
 
 ## Decision 1: Size the vector workload
 
@@ -55,12 +48,17 @@ Copilot returns the per-row size, the totals, and a tier recommendation with its
 > [!TIP]
 > Always confirm Copilot's arithmetic and assumptions. Ask a follow-up such as "Show your calculation step by step" so you can check each figure, and "How would your tier recommendation change if the catalog grew to 50 million rows?" to pressure-test the design.
 
-Work the math to verify Copilot's estimate:
+Understand the math to verify Copilot's estimate:
 
-- **Total vector column:** 8,000,000 × 6 KB ≈ **48 GB**.
-- **Vector index overhead at roughly 50% of the column:** ≈ **24 GB**.
-- **Total AI-related storage:** ≈ **72 GB**.
+- **Total vector column:** A 1,536-dimension `float32` vector is about 6 KB of payload (1,536 × 4 bytes + an 8-byte header). But a SQL data page holds only 8,060 bytes, and a vector this large forces **one vector per page**, so each row consumes a full ~8 KB page. Real on-disk footprint ≈ 8,000,000 × 8 KB ≈ **64 GB**, not the 48 GB a raw payload calculation suggests.
+- **Vector index overhead at roughly 50% of the column:** ≈ **32 GB**.
+- **Total AI-related storage:** ≈ **96 GB**.
 - **Recommended tier:** **General Purpose, 40-vCore** fits the storage footprint and the read-heavy query pattern for nightly refresh plus interactive search. Choose **Hyperscale** instead if the catalog is expected to grow past roughly 50 million SKUs within 12 months, because Hyperscale decouples storage growth from compute scaling.
+
+> [!NOTE]
+> Switching the column to half-precision (`float16`, 2 bytes per dimension) roughly halves both the column and index footprint and fits more vectors per page. It's worth considering for large catalogs because embeddings tolerate the small precision loss well.
+
+The next decision is how the database proves its identity to Azure OpenAI without storing a secret.
 
 ## Decision 2: Authenticate with a managed identity
 
@@ -87,12 +85,28 @@ az role assignment create \
 
 With this configuration, no secret has been created and no API key exists. The server identity is the entire authentication path to Azure OpenAI.
 
+> [!NOTE]
+> `Cognitive Services OpenAI User` is the least-privilege role for an Azure SQL Database that only *calls* the embedding endpoint. If you instead run this pattern on SQL Server 2025 connected through Azure Arc, the documentation requires the broader `Cognitive Services OpenAI Contributor` role for the Arc-enabled managed identity.
+
+With the identity in place, the next decision wires that identity into the database objects that actually call the model.
+
 ## Decision 3: Define the external model objects
+
+Before any external model call works, the server needs two configuration options turned on: the external REST endpoint, and — because this design authenticates with a managed identity — server-scoped database credentials:
+
+```sql
+EXECUTE sp_configure 'external rest endpoint enabled', 1;
+RECONFIGURE WITH OVERRIDE;
+
+EXECUTE sp_configure 'allow server scoped db credentials', 1;
+RECONFIGURE WITH OVERRIDE;
+```
 
 Inside the database, three objects support the external model: the master key (if one doesn't already exist), the credential bound to the managed identity, and the external model object itself. The script that defines them looks like this:
 
 ```sql
-CREATE MASTER KEY ENCRYPTION BY PASSWORD = '<strong-password>';
+IF NOT EXISTS (SELECT * FROM sys.symmetric_keys WHERE [name] = '##MS_DatabaseMasterKey##')
+    CREATE MASTER KEY ENCRYPTION BY PASSWORD = N'<strong-password>';
 
 -- The credential name must be the protocol + FQDN of the endpoint the model calls.
 CREATE DATABASE SCOPED CREDENTIAL [https://<openai-resource>.openai.azure.com]
@@ -111,6 +125,8 @@ WITH (
 
 The `LOCATION` value pins the model to a specific deployment and API version. If you change the deployment, you update the model object, not every caller's code.
 
+The model object exists, but right now any database user could call it. The next decision narrows that down to exactly the accounts that need it.
+
 ## Decision 4: Apply least-privilege role grants
 
 The role design calls for two principals, each granted exactly what it needs and no more. The grants look like this:
@@ -128,6 +144,8 @@ GRANT SELECT ON dbo.ProductEmbeddings TO [app_query_user];
 ```
 
 The query user has no path to Azure OpenAI. Search queries read the stored vectors directly. Only the nightly refresh job touches the external endpoint.
+
+With permissions scoped, the final decision makes every external call observable so you can prove what happened and catch what shouldn't.
 
 ## Decision 5: Enable audit and Defender
 
@@ -149,10 +167,36 @@ WITH (STATE = ON);
 az security pricing create --name SqlServers --tier Standard
 ```
 
+> [!NOTE]
+> Recent Azure CLI versions express the Defender for SQL plan through Microsoft Defender for Cloud plan settings rather than a Standard/Free tier. Check `az security pricing` for your current CLI version, or enable the plan from the Defender for Cloud portal.
+
 > [!TIP]
 > When you apply this pattern for real, validate the end-to-end flow with a single embedding generation before declaring the security baseline complete. If `AI_GENERATE_EMBEDDINGS` returns successfully **and** the audit log captures the call from `embedding_refresh_svc`, the baseline works. If the audit row is missing, fix that before you let the nightly job run for real.
 
-You've now worked through all five pre-production decisions — sizing the workload, configuring the identity path, defining the external model, scoping permissions, and turning on auditing — that every DBA owns for an AI-enabled database.
+## Common mistakes to avoid
+
+Each of these anti-patterns is something a real review would flag. Contrast the wrong approach with the design you just worked through:
+
+| Anti-pattern (wrong) | What goes wrong | Do this instead (right) |
+|---|---|---|
+| Store the Azure OpenAI **API key in a connection string** or app config | The secret lives in source control, logs, and every developer's environment — one leak exposes the endpoint | Use a **system-assigned managed identity**; no secret exists to leak (Decision 2) |
+| Grant the interactive **query user `EXECUTE` on the external model** | The search path can now trigger paid embedding calls and reach the external endpoint, widening the attack surface | Grant the query user only **`SELECT`** on the embeddings table; reserve model access for the refresh account (Decision 4) |
+| **Skip the database master key** before creating the scoped credential | `CREATE DATABASE SCOPED CREDENTIAL` fails, or the credential can't be protected | Create the master key first, guarded by `IF NOT EXISTS` (Decision 3) |
+| Forget to enable **`external rest endpoint enabled`** / `allow server scoped db credentials` | The external model call fails at runtime with a configuration error | Turn both options on with `sp_configure` before defining the model (Decision 3) |
+| **Size only on raw payload** (1,536 × 4 bytes) and ignore page allocation | The database runs out of storage because each large vector consumes a full page | Size on real **per-page** footprint and add index overhead (Decision 1) |
+| Ship without **auditing or Defender** | No record of who called the model and no threat alerts — a compliance and incident-response gap | Enable SQL Audit on the external model and Microsoft Defender for SQL (Decision 5) |
+
+## Decision scorecard
+
+Use this scorecard as a reusable summary of the design. For a real workload, swap in your own numbers and resource names.
+
+| Decision | Recommended choice | Why |
+|---|---|---|
+| **Size the vector workload** | General Purpose, 40-vCore (~96 GB AI-related storage) | Fits the storage footprint and read-heavy nightly-refresh-plus-search pattern. Move to Hyperscale if the catalog grows past ~50 million SKUs within 12 months. |
+| **Authenticate to Azure OpenAI** | System-assigned managed identity + `Cognitive Services OpenAI User` role | No secret to store, rotate, or leak; Azure Entra ID issues the credential and RBAC governs access. |
+| **Define the external model** | Master key, database scoped credential, and external model object | Pins the database to one deployment and API version; callers reference a single model object. |
+| **Scope permissions** | `embedding_refresh_svc` (refresh path) and `app_query_user` (read-only) | Least privilege — only the nightly job reaches the external endpoint; search reads stored vectors. |
+| **Monitor operations** | SQL Audit on the external model + Microsoft Defender for SQL | Verifiable record of AI operations plus proactive threat alerts for compliance and incident response. |
 
 ## Validate the design decisions
 
@@ -214,6 +258,6 @@ Azure SQL matches the credential to an outbound call by URL, so the credential n
 
 ✅ **Correct answer: C.** If the catalog is expected to grow past roughly 50 million SKUs within 12 months, because Hyperscale decouples storage growth from compute scaling.
 
-General Purpose fits the current ~72 GB AI-related footprint and the read-heavy nightly-refresh-plus-search pattern. Hyperscale becomes the better choice when storage is expected to grow rapidly, because it lets storage scale independently of compute. Vector search alone doesn't require Hyperscale, and the design here stores embeddings rather than generating them on every query.
+General Purpose fits the current ~96 GB AI-related footprint and the read-heavy nightly-refresh-plus-search pattern. Hyperscale becomes the better choice when storage is expected to grow rapidly, because it lets storage scale independently of compute. Vector search alone doesn't require Hyperscale, and the design here stores embeddings rather than generating them on every query.
 
 </details>
