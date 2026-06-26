@@ -43,7 +43,7 @@ Rather than work the math by hand, you can ask GitHub Copilot in SSMS (or Copilo
 
 > "I'm planning a vector column in Azure SQL. I have 8,000,000 rows, each storing a 1,536-dimension embedding at float32 (4 bytes per dimension). Estimate the per-row vector size, the total vector column storage, vector index overhead at about 50%, and the total AI-related storage. Then recommend an Azure SQL service tier for a read-heavy nightly-refresh-plus-search workload."
 
-Copilot returns the per-row size, the totals, and a tier recommendation with its reasoning. Treat the result as a starting point and validate the numbers against the worked math below.
+Copilot returns the per-row size, the totals, and a tier recommendation with its reasoning. The result you get back will likely differ from the worked math below — that's the point. Most models size on the raw payload (about 48 GB) and miss SQL Server page allocation, so compare the two and notice whether Copilot accounted for the full per-page footprint. Treat the result as a starting point and validate the numbers against the worked math below.
 
 > [!TIP]
 > Always confirm Copilot's arithmetic and assumptions. Ask a follow-up such as "Show your calculation step by step" so you can check each figure, and "How would your tier recommendation change if the catalog grew to 50 million rows?" to pressure-test the design.
