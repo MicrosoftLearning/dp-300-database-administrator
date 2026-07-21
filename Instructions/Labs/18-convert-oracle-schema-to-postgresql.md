@@ -14,19 +14,19 @@ lab:
 
 **Estimated Time: 30 minutes**
 
-Throughout this module, you followed Contoso Retail's move from Oracle to Azure Database for PostgreSQL flexible server. In this exercise, you run the same end-to-end workflow yourself: you create a migration project, run the conversion pipeline, interpret the conversion report, resolve a Mandatory review task with GitHub Copilot agent mode, and locate the generated `deploy.sql`.
+In this exercise, you run an end-to-end schema conversion from Oracle to Azure Database for PostgreSQL flexible server: you create a migration project, run the conversion pipeline, interpret the conversion report, resolve a Mandatory review task with GitHub Copilot agent mode, and locate the generated `deploy.sql`.
 
 You run this exercise against your own environment rather than a prebuilt sandbox, because the tool reads schema metadata directly from a live Oracle data dictionary and validates the converted objects against a real Azure Database for PostgreSQL flexible server.
 
 > [!NOTE]
-> This exercise uses the environment you prepared in the previous units. Before you start, confirm that you have:
+> This exercise runs against a live environment. Before you start, confirm that you have:
 >
 > - The **PostgreSQL** extension for Visual Studio Code installed and signed in.
 > - A source Oracle database you can reach, with a migration user that holds `SELECT_CATALOG_ROLE` and read access to `SYS.ARGUMENT$`.
 > - An Azure Database for PostgreSQL flexible server to use as the scratch database, with the extensions your schema needs allowlisted and installed.
 > - A Microsoft Foundry deployment of `gpt-5.2` with enough tokens-per-minute (TPM) capacity for your schema.
 >
-> If you haven't set up an environment yet, complete the steps in the earlier units first.
+> If any of these pieces are missing, set them up before you begin.
 
 ## Create the migration project
 
