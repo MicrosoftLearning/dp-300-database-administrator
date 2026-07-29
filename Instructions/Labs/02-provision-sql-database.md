@@ -45,9 +45,9 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
 ## Provision an Azure SQL Database in the Azure portal
 
-1. From the Azure Portal, search for *SQL databases* in the search box at the top, then select **SQL databases** from the list of options.
+1. From the Azure Portal, search for *SQL databases* in the search box at the top, then select **Azure SQL databases** from the list of services.
 
-1. On the **SQL databases** blade, select **+ Create**.
+1. On the **Azure SQL databases** page, select **+ Create**.
 
 1. On the **Create SQL Database** page, select the following options on the **Basics** tab and then select **Next: Networking**.
 
@@ -66,7 +66,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
     - **Workload environment:** Development
     - On the **Compute + Storage** option, select on **Configure database** link. On the **Configure** page, for **Service tier** dropdown, select **Basic**, and then **Apply**.
 
-1. For the **Backup storage redundancy** option, keep the default value: **Local-redundant backup storage**.
+1. For the **Backup storage redundancy** option, keep the default value: **Locally-redundant backup storage**.
 
 1. Then select **Next: Networking**.
 
@@ -117,7 +117,7 @@ As a database administrator for AdventureWorks, you will set up a new SQL Databa
 
 ## Connect to an Azure SQL Database in SQL Server Management Studio
 
-1. On the Azure portal, select the **SQL databases** in the left navigation pane. And then select the **AdventureWorksLT** database.
+1. On the Azure portal, select the **SQL database** resource. And then select the **AdventureWorksLT** database.
 
 1. Copy the **Server name** value from the **Overview** page.
 

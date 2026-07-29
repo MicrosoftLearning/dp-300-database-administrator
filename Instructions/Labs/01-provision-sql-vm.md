@@ -24,7 +24,7 @@ You are a database administrator for AdventureWorks. You need to create a test e
 
 1. Locate the search bar at the top of the page. Search for **Azure SQL**. Select the search result for **Azure SQL** that appears in the results under **Services**.
 
-1. On the **Azure SQL** blade, select **Create**.
+1. On the side bar, expand the **SQL server** and select the **SQL server on Azure VMs**, then select **Create**.
 
 1. On the **Select SQL deployment option** blade, click on the drop-down box under **SQL virtual machines**. Select the option labeled **Free SQL Server License: SQL Server 2022 Developer on Windows Server 2022**. Then select **Create**.
 
