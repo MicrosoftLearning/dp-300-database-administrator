@@ -35,9 +35,6 @@ This section isn't required, but it's recommended if you need a quick way to pro
 
 If you don't already have the Oracle source, PostgreSQL flexible server, and Microsoft Foundry deployment, a community **Deploy to Azure** template can stand up the whole environment for you. If you're bringing your own environment, skip this section — just confirm it meets the prerequisites above.
 
-[!div class="nextstepaction"]
-[Deploy the environment](https://github.com/Balunywa/azure-oracle-pg-migrator)
-
 > [!NOTE]
 > This template is a community-maintained, third-party resource — not an official Microsoft asset — offered as an interim option pending official publication. Review it before deploying. It creates billable Azure resources, so use its teardown option to remove them when you finish.
 
