@@ -29,11 +29,14 @@ You run this exercise against your own environment rather than a prebuilt sandbo
 >
 > If any of these pieces are missing, set them up before you begin.
 
-## Provision the lab environment (optional)
+## Provision the lab environment
+
+This section isn't required, but it's recommended if you need a quick way to provision the lab environment.
 
 If you don't already have the Oracle source, PostgreSQL flexible server, and Microsoft Foundry deployment, a community **Deploy to Azure** template can stand up the whole environment for you. If you're bringing your own environment, skip this section — just confirm it meets the prerequisites above.
 
-Deploy from the [azure-oracle-pg-migrator](https://github.com/Balunywa/azure-oracle-pg-migrator) repository, then continue with the steps below.
+[!div class="nextstepaction"]
+[Deploy the environment](https://github.com/Balunywa/azure-oracle-pg-migrator)
 
 > [!NOTE]
 > This template is a community-maintained, third-party resource — not an official Microsoft asset — offered as an interim option pending official publication. Review it before deploying. It creates billable Azure resources, so use its teardown option to remove them when you finish.
